@@ -176,7 +176,7 @@
       <nav class="build-workspace-tabs" aria-label="لوحات مساحة البناء"><button type="button" data-build-panel="editor" aria-pressed="true">خصائص الشاشة</button><button type="button" data-build-panel="tools" aria-pressed="false">إضافة مكوّن</button><button type="button" data-build-panel="canvas" aria-pressed="false">لوحة الشاشات</button><button type="button" data-build-panel="next" aria-pressed="false">إرشاد</button><button type="button" data-build-panel="output" aria-pressed="false">الحفظ والكود</button></nav>
       <div id="buildWorkspaceDock" class="build-workspace-dock" data-active-panel="editor"></div>
       <section id="designCanvasWorkspace" class="design-canvas-workspace" aria-label="لوحة تصميم الشاشات ومسارات التنقل" hidden>
-        <div class="screen-board-main"><div class="screen-board-toolbar"><div><strong>لوحة الشاشات</strong><small>اضغط انتقالًا لترى وجهته بجوار مصدره · اسحب الخلفية لتحريك اللوحة</small></div><div class="screen-board-actions"><button type="button" data-board-command="zoom-out" aria-label="تصغير">−</button><output id="screenBoardZoom">٨٠٪</output><button type="button" data-board-command="zoom-in" aria-label="تكبير">＋</button><button type="button" data-board-command="fit">ملاءمة</button><button type="button" data-board-command="center">الصفحة الحالية</button></div></div><div id="screenBoardViewport" class="screen-board-viewport" tabindex="0" aria-label="لوحة قابلة للتحريك والتكبير"><div id="screenBoardWorld" class="screen-board-world"><svg id="screenBoardLinks" aria-hidden="true"></svg><div id="screenBoardCards"></div></div></div></div>
+        <div class="screen-board-main"><div class="screen-board-toolbar"><div><strong>لوحة الشاشات</strong><small>اضغط انتقالًا لترى وجهته بجوار مصدره · اسحب الخلفية لتحريك اللوحة</small></div><div class="screen-board-actions"><button type="button" data-board-command="zoom-out" aria-label="تصغير">−</button><output id="screenBoardZoom">٨٠٪</output><button type="button" data-board-command="zoom-in" aria-label="تكبير">＋</button><button type="button" data-board-command="fit">عرض الكل</button><button type="button" data-board-command="center">الصفحة الحالية</button></div></div><div id="screenBoardViewport" class="screen-board-viewport" tabindex="0" aria-label="لوحة قابلة للتحريك والتكبير"><div id="screenBoardWorld" class="screen-board-world"><svg id="screenBoardLinks" aria-hidden="true"></svg><div id="screenBoardCards"></div></div></div></div>
         <aside id="screenBoardInspector" class="screen-board-inspector" aria-label="خصائص الشاشة المحددة"></aside>
       </section>
     </div>
@@ -795,12 +795,42 @@ body.build-open{overflow:hidden}
 .screen-board-viewport{position:relative;flex:1;min-height:0;overflow:hidden;touch-action:none;cursor:grab;background-color:#f3f8fc;background-image:linear-gradient(#dbe8f36b 1px,transparent 1px),linear-gradient(90deg,#dbe8f36b 1px,transparent 1px);background-size:28px 28px}.screen-board-viewport.dragging{cursor:grabbing}.screen-board-world{position:absolute;left:0;top:0;transform-origin:0 0;transition:transform .23s ease-out}.screen-board-viewport.dragging .screen-board-world{transition:none}#screenBoardLinks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}.board-link{fill:none;stroke:#438acb;stroke-width:3}.board-link.tab-link{stroke:#9ab6ca;stroke-dasharray:7 6;stroke-width:2}
 .screen-board-card{position:absolute;width:220px;height:470px;padding:8px;border:1px solid #b9d5e8;border-radius:20px;background:#fff;box-shadow:0 12px 30px #244d6d21;cursor:pointer;display:flex;flex-direction:column;gap:7px}.screen-board-card.selected{border:3px solid #287bd1;padding:6px;box-shadow:0 0 0 5px #5d9ce733,0 14px 35px #244d6d35}.screen-board-card-head{display:flex;justify-content:space-between;align-items:center;gap:4px;color:#5f85a3;font-size:10px}.screen-board-card-head strong{font-size:11px;color:#123857;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.screen-board-phone{border:5px solid #162635;border-radius:28px;background:#f3f6f9;flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column}.screen-board-status{height:25px;display:flex;justify-content:space-between;padding:5px 14px;font-size:9px;font-weight:900;background:#f7f9fc}.screen-board-status i{width:45px;height:13px;border-radius:20px;background:#07111a}.screen-board-nav{height:30px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:#224461;position:relative;box-shadow:0 2px 8px #364c5b18}.screen-board-nav:not(:has(b:only-child)){justify-content:space-around}.screen-board-page{padding:12px 10px;flex:1;min-height:0;overflow:hidden;text-align:right}.screen-board-page small{color:#3177ad;font-size:8px}.screen-board-page h3{margin:4px 0;color:#163a5b;font-size:20px}.screen-board-page p{font-size:9px;line-height:1.45;color:#64809a;margin:0 0 10px}.screen-board-sample{display:grid;gap:5px}.screen-board-sample span,.screen-board-tools span{display:block;background:#fff;border:1px solid #dce7ef;border-radius:7px;padding:6px;font-size:8px;color:#476781}.screen-board-tools{display:flex;gap:3px;margin-top:8px;flex-wrap:wrap}.screen-board-tools span{background:#eaf4fd}.screen-board-follow{margin-top:10px;width:100%}.screen-board-tabs{height:34px;background:#eef5fc;display:flex;justify-content:space-around;align-items:center}.screen-board-tabs button{min-height:24px;border:0;background:transparent;font-size:13px;padding:2px 8px}.screen-board-tabs button.active{background:#d7eaff;color:#1675c5}.screen-board-card-foot{display:flex;align-items:center;justify-content:space-between;color:#7891a5;font-size:9px}.screen-board-card-foot button{min-height:27px;padding:3px 7px}
 .screen-board-inspector{padding:14px;overflow:auto;overscroll-behavior:contain}.screen-board-inspector-head small{color:#4784a9;font-weight:800}.screen-board-inspector-head h3{margin:5px 0;color:#153a5a}.screen-board-inspector-head p,.screen-board-note{font-size:11px;line-height:1.55;color:#658197}.screen-board-inspector-fields{display:grid;gap:10px;margin:14px 0}.screen-board-inspector-fields label{display:grid;gap:5px;color:#3d6682;font-size:11px;font-weight:800}.screen-board-inspector-fields input,.screen-board-inspector-fields select,.screen-board-inspector-fields textarea{width:100%;min-height:36px;border:1px solid #c2d9e8;border-radius:8px;background:#fbfdff;color:#123a5d;font:inherit;padding:6px 8px}.screen-board-connection{border-top:1px solid #e1eaf1;padding-top:12px}.screen-board-connection strong{color:#1a466b;font-size:12px}.screen-board-connection-list,.screen-board-inspector-actions{display:grid;gap:6px;margin-top:8px}.screen-board-connection-list button,.screen-board-inspector-actions button{text-align:right}.screen-board-inspector-actions{margin-top:14px}.screen-board-inspector-actions button.primary{background:#216db8;color:#fff;border-color:#216db8}
-@media(max-width:710px){.build-workspace-tabs{gap:4px}.build-workspace-tabs button{font-size:10px;padding:5px 8px;min-height:36px}.design-canvas-workspace{display:flex;flex-direction:column}.screen-board-main{flex:1;min-height:45%}.screen-board-inspector{flex:none;max-height:38%;padding:10px}.screen-board-toolbar{padding:7px;gap:5px;flex-wrap:wrap}.screen-board-toolbar small{display:none}.screen-board-actions button{min-height:29px}}
+@media(max-width:710px){.build-workspace-tabs{gap:4px}.build-workspace-tabs button{font-size:10px;padding:5px 8px;min-height:36px}.design-canvas-workspace{display:flex;flex-direction:column}.screen-board-inspector{order:0;flex:0 0 39%;max-height:39%;padding:10px}.screen-board-main{order:1;flex:1;min-height:0}.screen-board-toolbar{padding:7px;gap:5px;flex-wrap:wrap}.screen-board-toolbar small{display:none}.screen-board-actions button{min-height:29px}}
 @media(prefers-reduced-motion:reduce){.screen-board-world,.tool-group-title::before{transition:none}}
 .hig-coverage{grid-column:1/-1}.hig-coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:12px 0}.hig-coverage-grid>div{display:grid;gap:5px;border:1px solid #d8e6ef;border-radius:10px;padding:10px;background:#f8fbfe}.hig-coverage-grid strong{color:#245e8a}.hig-coverage-grid span{color:#4b687f;font-size:12px;line-height:1.5}
 .page-tree-disclosure{border:1px solid #d7e6f1;border-radius:11px;padding:8px;margin:12px 0;background:#fbfdff}.page-tree-disclosure summary{cursor:pointer;color:#285e86;font-size:12px;font-weight:800}.page-tree-disclosure .page-tree{margin-top:8px;max-height:220px;overflow:auto;overscroll-behavior:contain}
 .hig-page-audit{margin:12px 0;border:1px solid #c9dce9;border-radius:10px;background:#f7fbff;padding:10px 12px}.hig-page-audit summary{color:#23618f;font-weight:800;cursor:pointer}.hig-page-audit ul{padding-inline-start:22px;line-height:1.7;font-size:12px;color:#425f76}
-
+/* Multi-screen editing canvas: each row and sheet owns a saved screen. */
+.screen-board-card{height:430px}
+.screen-board-card.sheet-card{border-style:dashed;border-color:#a875d1;background:#fcf8ff}
+.screen-board-card.sheet-card.selected{border-style:solid;border-color:#8c57bd}
+.screen-board-source-list{display:grid;gap:3px;max-height:109px;overflow:auto;scrollbar-width:thin}
+.screen-board-source{display:flex;justify-content:space-between;align-items:center;gap:4px;text-align:right;width:100%;min-height:22px!important;padding:2px 6px!important;font-size:8px!important;border-radius:6px!important}
+.screen-board-source span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.screen-board-source.sheet{background:#f4eafc!important;border-color:#d8bde9!important;color:#7946a3!important}
+.board-link.sheet-link{stroke:#a875d1;stroke-dasharray:6 5}
+.screen-board-inspector-fields textarea[data-board-field="dataItems"]{min-height:84px;resize:vertical}
+.screen-board-inspector-actions{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.screen-board-inspector-actions button{min-height:37px}
+.flow-sheet{max-height:min(76vh,600px);overflow-y:auto;overscroll-behavior:contain;text-align:right}
+.flow-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.flow-sheet-head h4{margin:0}
+.flow-sheet-head button{font-size:22px;min-width:36px}
+@media(max-width:710px){.screen-board-inspector-actions{grid-template-columns:1fr 1fr}.flow-sheet{max-height:70vh}}
+.builder-guide-group{border:1px solid #d7e7ef;border-radius:13px;background:#fff;margin:8px 0;padding:8px;direction:rtl}
+.builder-guide-group>summary{font-weight:900;color:#174b70;cursor:pointer;min-height:32px;display:list-item;padding:6px}
+.builder-guide-group>p{font-size:11px;line-height:1.55;color:#58788d;margin:3px 5px 10px}
+.builder-method,.builder-pattern-card{border:1px solid #e0ebf2;border-radius:10px;background:#f9fcfe;margin:6px 0;padding:9px;text-align:right}
+.builder-method strong,.builder-pattern-card strong{font-size:12px;color:#183e60}
+.builder-method p,.builder-pattern-card p{font-size:10px;line-height:1.55;color:#627f94;margin:4px 0}
+.builder-method button,.builder-pattern-actions button,.builder-pattern-actions a{border:1px solid #b9d9ed;border-radius:8px;background:#fff;color:#216eaa;font:inherit;font-size:10px;font-weight:800;padding:6px 8px;min-height:30px;cursor:pointer;text-decoration:none}
+.builder-pattern-search{display:grid;gap:4px;color:#4f738d;font-size:10px;font-weight:800;margin:8px 3px}
+.builder-pattern-search input,.builder-pattern-search select{width:100%;min-height:36px;border:1px solid #c9ddea;border-radius:8px;padding:7px;font:inherit;font-size:12px;background:#fff;color:#173d5d}
+.builder-pattern-results{max-height:45vh;overflow:auto;overscroll-behavior:contain;padding:0 3px}
+.builder-pattern-card small{color:#327aa9;font-size:10px}
+.builder-pattern-actions{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.builder-pattern-actions button:first-child{background:#e7f4ff}
+.builder-pattern-empty{font-size:11px;color:#6c879a;padding:10px}
 </style>
 <script>
 (function () {
@@ -997,6 +1027,53 @@ body.build-open{overflow:hidden}
     settings: { display: 'settings', action: 'push', tools: ['toggle', 'picker'], text: 'اجمع التفضيلات في صفوف واضحة، وضع الخيارات المتقدمة في صفحة فرعية.' , alternatives: ['settings', 'list', 'cards'] },
     form: { display: 'form', action: 'sheet', tools: ['textfield', 'picker', 'button'], text: 'اجمع المدخلات في نموذج، واعرض المهمة المؤقتة في ورقة عند الحاجة.' , alternatives: ['form', 'cards', 'list'] }
   };
+  const builderMethods = [
+    { name: 'ابدأ بالمهمة', text: 'عرّف ما يريد الشخص إنجازه، ثم ارسم الشاشات المطلوبة للوصول والعودة. أنشئ البيانات والتفاعل قبل الزينة.', pattern: 'reminders' },
+    { name: 'ابدأ بالبيانات', text: 'عندما تكون السجلات محور التطبيق، حدّد الحقول والحفظ والبحث، ثم ابنِ قائمة وسجلًا وتحريرًا منفصلًا.', pattern: 'files' },
+    { name: 'ابدأ بلوحة قرار', text: 'إذا كان هدف المستخدم قراءة الحالة واتخاذ قرار، ابدأ بمؤشر واضح ثم افتح تفاصيله عند اللمس.', pattern: 'health' },
+    { name: 'تحقق قبل التوسّع', text: 'جرّب المسار على الهاتف والآيباد، ثم راجع النص الديناميكي والتباين وVoiceOver وحالات البيانات الفارغة.', pattern: 'notes' }
+  ];
+  const builderPatterns = [
+    { id:'reminders', app:'التذكيرات', name:'قائمة مهام مع تفاصيل وورقة إضافة', display:'list', kind:'list', icon:'checkmark.circle', title:'المهام', items:'اليوم، المخطط، المهم، المكتمل، جميع المهام', tools:['searchfield','editablelist'], sheet:true, tool:'editablelist', url:'https://support.apple.com/guide/iphone/get-started-with-reminders-iphc7880ecd6/ios', note:'قوائم ومهام قابلة للتنظيم؛ يبقى نموذج البيانات والحفظ قرارًا مستقلًا.' },
+    { id:'notes', app:'الملاحظات', name:'مجلدات ومحرر ملاحظة', display:'list', kind:'list', icon:'doc.text', title:'المجلدات', items:'كل الملاحظات، المثبتة، العمل، الشخصي', tools:['searchfield','texteditor'], sheet:true, tool:'texteditor', url:'https://support.apple.com/guide/iphone/get-started-with-notes-iph9e04f3be2/ios', note:'قائمة منظمة تقود إلى محرر نص؛ يمكن إضافة الرسم أو المرفقات عند الحاجة.' },
+    { id:'photos', app:'الصور', name:'مجموعات وألبومات', display:'cards', kind:'overview', icon:'photo', title:'الألبومات', items:'الأشخاص، الرحلات، المفضلة، الألبومات المشتركة', tools:['photospicker','carousel'], sheet:true, tool:'photospicker', url:'https://support.apple.com/guide/iphone/create-and-work-with-photo-albums-iphc0fc668ab/27/ios/27', note:'شبكة مجموعات تقود إلى ألبوم؛ اختيار الصور يتطلب صلاحيات وتجربة أصلية.' },
+    { id:'files', app:'الملفات', name:'متصفح ملفات بمجلدات ومستندات', display:'list', kind:'list', icon:'folder', title:'المواقع', items:'الحديثة، على جهازي، iCloud Drive، التنزيلات', tools:['searchfield','fileimporter','sidebar'], sheet:true, tool:'fileimporter', url:'https://support.apple.com/guide/iphone/modify-files-and-folders-iphc61044c11/27/ios/27', note:'تنقل هرمي بين مواقع ومجلدات مع خيارات عرض؛ الوصول الآمن للمستندات يحتاج تنفيذًا أصليًا.' },
+    { id:'calendar', app:'التقويم', name:'أحداث يومية وإضافة موعد', display:'list', kind:'list', icon:'calendar', title:'الأحداث', items:'اليوم، القادم، الاجتماعات، المناسبات', tools:['calendar','datetime'], sheet:true, tool:'datetime', url:'https://support.apple.com/guide/iphone/create-and-edit-events-in-calendar-iph3d110f84/27/ios/27', note:'اختيار يوم ثم عرض أحداثه، مع ورقة لإنشاء الموعد.' },
+    { id:'health', app:'الصحة', name:'ملخص مؤشرات وتفاصيلها', display:'metrics', kind:'overview', icon:'heart', title:'المؤشرات', items:'النشاط، النوم، الخطوات، الاتجاهات', tools:['gauge','charttool'], sheet:false, tool:'gauge', url:'https://support.apple.com/guide/iphone/view-your-health-data-iphe3d379c32/26/ios/26', note:'مؤشرات تقود إلى تفاصيل واتجاهات؛ بيانات الصحة الحقيقية تحتاج HealthKit وأذونات مناسبة.' },
+    { id:'weather', app:'الطقس', name:'لوحة توقعات وخريطة', display:'weather', kind:'overview', icon:'cloud.sun', title:'الطقس', items:'الآن، الساعات، الأيام، الخريطة', tools:['map','gauge'], sheet:false, tool:'map', url:'https://support.apple.com/en-ie/guide/iphone/iph0960651f5/ios', note:'بطاقات حالة وخريطة وتوقع زمني؛ البيانات في المختبر أمثلة وليست خدمة طقس حية.' },
+    { id:'numbers', app:'Numbers', name:'جدول وخلايا وتصفية', display:'spreadsheet', kind:'form', icon:'tablecells', title:'الجدول', items:'الدخل، المصروفات، الملخص', tools:['sortabletable','charttool'], sheet:false, tool:'sortabletable', url:'https://support.apple.com/guide/numbers-iphone/welcome/10.3/ios', note:'خلايا قابلة للإدخال مع عرض بيانات؛ الصيغ والمزامنة تحتاج تنفيذًا منفصلًا.' }
+    ,{ id:'reminders-board', app:'التذكيرات', name:'لوحة قوائم ذكية', display:'cards', kind:'overview', icon:'checkmark.circle', title:'القوائم', items:'اليوم، المجدولة، المهمة، المكتملة', tools:['badge','editablelist'], sheet:true, tool:'badge', url:'https://support.apple.com/guide/iphone/get-started-with-reminders-iphc7880ecd6/ios', note:'مدخل سريع إلى مجموعات المهام قبل الوصول إلى القائمة والتفاصيل.' }
+    ,{ id:'photos-viewer', app:'الصور', name:'عارض صور بألبومات', display:'cards', kind:'overview', icon:'photo', title:'العناصر', items:'الأخيرة، المفضلة، الأماكن، المشارَكة', tools:['photospicker','carousel','image'], sheet:false, tool:'carousel', url:'https://support.apple.com/guide/iphone/create-and-work-with-photo-albums-iphc0fc668ab/27/ios/27', note:'انتقال من المجموعة إلى المحتوى ثم معاينة العنصر، مع تصفح أفقي عند الحاجة.' }
+    ,{ id:'maps', app:'الخرائط', name:'أماكن ومسارات', display:'cards', kind:'overview', icon:'map', title:'الأماكن', items:'الموقع الحالي، المحفوظة، البحث، المسارات', tools:['map','searchfield','sheetdetents'], sheet:true, tool:'map', url:'https://support.apple.com/en-gb/guide/iphone/iph02f94fc1c/ios', note:'الخريطة مع نتائج ومعلومات المكان في ورقة؛ الموقع الحقيقي يتطلب إذنًا وخدمة خرائط.' }
+    ,{ id:'mail', app:'البريد', name:'صناديق ورسائل', display:'list', kind:'list', icon:'envelope', title:'صناديق البريد', items:'الوارد، غير المقروءة، المسودات، المرسلة', tools:['searchfield','editablelist','contentmenu'], sheet:true, tool:'contentmenu', url:'https://support.apple.com/guide/iphone/organize-email-in-mailboxes-iph376ef8aa3/27/ios/27', note:'قائمة صناديق تقود إلى رسائل؛ إجراءات السحب والبيانات الحية تحتاج تنفيذًا أصليًا.' }
+    ,{ id:'safari', app:'Safari', name:'علامات تبويب وصفحات ويب', display:'cards', kind:'overview', icon:'safari', title:'علامات التبويب', items:'المفتوحة، المجموعات، المفضلة، قائمة القراءة', tools:['webview','searchfield','carousel'], sheet:false, tool:'webview', url:'https://support.apple.com/guide/iphone/open-and-close-tabs-iph489b9313f/ios', note:'تنقل بين علامات التبويب والمحتوى؛ WKWebView في التطبيق الأصلي يحتاج سياسة روابط وخصوصية.' }
+    ,{ id:'music', app:'الموسيقى', name:'مكتبة وألبومات', display:'cards', kind:'overview', icon:'music.note', title:'المكتبة', items:'أضيف مؤخرًا، الفنانين، الألبومات، قوائم التشغيل', tools:['audio','carousel','searchfield'], sheet:false, tool:'audio', url:'https://support.apple.com/guide/iphone/get-started-with-music-iph850be8527/27/ios/27', note:'مدخل مكتبة يقود إلى ألبوم ومشغل؛ المحتوى المرخّص والتشغيل بالخلفية خارج المحاكي.' }
+    ,{ id:'books', app:'الكتب', name:'مكتبة ومجموعات قراءة', display:'cards', kind:'overview', icon:'book', title:'المكتبة', items:'أقرأ الآن، أريد قراءتها، المنتهية، ملفات PDF', tools:['document','carousel','progress'], sheet:false, tool:'document', url:'https://support.apple.com/guide/iphone/read-books-iphc1af7c57/27/ios/27', note:'بطاقات كتب تقود إلى القارئ مع تقدم القراءة؛ حفظ الموضع يحتاج نموذج بيانات.' }
+    ,{ id:'freeform', app:'Freeform', name:'لوحات ومساحة رسم', display:'cards', kind:'overview', icon:'square.on.square', title:'اللوحات', items:'الأخيرة، المشتركة، المفضلة، كل اللوحات', tools:['canvas','image','colorpicker'], sheet:true, tool:'canvas', url:'https://support.apple.com/guide/iphone/get-started-with-freeform-iphb86e84e2b/27/ios/27', note:'قائمة لوحات تفتح مساحة رسم؛ التعاون الفعلي يتطلب مزامنة وصلاحيات.' }
+    ,{ id:'journal', app:'اليوميات', name:'مدخلات يومية ومحرر', display:'list', kind:'list', icon:'book', title:'اليوميات', items:'اليوم، هذا الأسبوع، المحفوظة، كل المدخلات', tools:['texteditor','photospicker','calendar'], sheet:true, tool:'texteditor', url:'https://support.apple.com/en-gb/guide/iphone/iph0e5ca7dd3/27/ios/27', note:'سجل زمني يفتح محررًا ومرفقات؛ حماية البيانات والمزامنة تحتاجان تنفيذًا أصليًا.' }
+    ,{ id:'shortcuts', app:'الاختصارات', name:'معرض أتمتة وبطاقات', display:'cards', kind:'overview', icon:'square.grid.2x2', title:'الاختصارات', items:'المفضلة، الإنتاجية، المنزل، المعرض', tools:['searchfield','carousel','contentmenu'], sheet:true, tool:'carousel', url:'https://support.apple.com/en-ge/guide/shortcuts/apdd018638ca/ios', note:'فئات قابلة للاستكشاف ثم صفحة تفاصيل؛ تشغيل الأتمتة يحتاج ربطًا فعليًا بالنظام.' }
+    ,{ id:'home', app:'المنزل', name:'غرف ومشاهد تحكم', display:'cards', kind:'overview', icon:'house', title:'الغرف', items:'المنزل، غرفة المعيشة، الإضاءة، المشاهد', tools:['toggle','slider','gauge'], sheet:true, tool:'toggle', url:'https://support.apple.com/en-ie/guide/iphone/iphb96e3f655/ios', note:'غرف ومشاهد تقود إلى عناصر التحكم؛ الأجهزة الحقيقية تحتاج HomeKit وإذنًا.' }
+    ,{ id:'clock', app:'الساعة', name:'قائمة منبهات وإعدادها', display:'list', kind:'list', icon:'clock', title:'المنبهات', items:'العمل، عطلة الأسبوع، تذكير الدواء', tools:['datetime','toggle','editablelist'], sheet:true, tool:'datetime', url:'https://support.apple.com/en-euro/guide/iphone/iph2909d3a74/ios', note:'صف منبه يفتح إعداد الوقت والتكرار؛ التنبيه الحقيقي يحتاج واجهات النظام.' }
+    ,{ id:'voicememos', app:'المذكرات الصوتية', name:'تسجيلات ومشغل', display:'list', kind:'list', icon:'waveform', title:'التسجيلات', items:'الأخيرة، المفضلة، المشتركة، المحذوفة مؤخرًا', tools:['audio','searchfield','contentmenu'], sheet:false, tool:'audio', url:'https://support.apple.com/guide/iphone/play-it-back-iphebbd067ce/27/ios/27', note:'قائمة تسجيلات تقود إلى المشغل؛ التسجيل والصلاحيات الصوتية تحتاج تنفيذًا أصليًا.' }
+  ];
+  let builderPatternQuery = '';
+  let builderPatternApp = '';
+  function renderBuilderPatternResults() {
+    const target=document.querySelector('#builderPatternResults');if(!target)return;
+    const query=builderPatternQuery.trim().toLocaleLowerCase();
+    const matches=builderPatterns.filter(item=>(!builderPatternApp||item.app===builderPatternApp)&&(!query||`${item.app} ${item.name} ${item.note} ${item.tools.map(id=>toolInfo[id]?.name||id).join(' ')}`.toLocaleLowerCase().includes(query)));
+    target.innerHTML=matches.map(item=>`<article class="builder-pattern-card"><div><strong>${escapeHtml(item.app)} · ${escapeHtml(item.name)}</strong><p>${escapeHtml(item.note)}</p><small>واجهة ${escapeHtml(displayKinds[item.display]?.label||item.display)} · أداة ${escapeHtml(toolInfo[item.tool]?.name||item.tool)}</small></div><div class="builder-pattern-actions"><button type="button" data-pattern-apply="${item.id}">استخدم الواجهة هنا</button><button type="button" data-pattern-new="${item.id}">صفحة جديدة</button><button type="button" data-pattern-tool="${item.id}">أضف الأداة</button><a href="${item.url}" target="_blank" rel="noopener">مرجع Apple ↗</a></div></article>`).join('')||'<p class="builder-pattern-empty">لا توجد أمثلة مطابقة. جرّب اسم تطبيق أو أداة أخرى.</p>';
+  }
+  function applyBuilderPattern(item,page) {
+    const tab=currentTab(), parentId=activeFlowRoute()?.id||'';
+    if(parentId){const toRemove=new Set([parentId]);let changed=true;while(changed){changed=false;tab.flowPages.forEach(route=>{if(toRemove.has(route.parentId)&&!toRemove.has(route.id)){toRemove.add(route.id);changed=true;}});}tab.flowPages=tab.flowPages.filter(route=>!toRemove.has(route.id)||route.id===parentId);}
+    else tab.flowPages=[];
+    page.display=item.display;page.kind=item.kind;page.icon=item.icon;page.dataTitle=item.title;page.dataItems=item.items;page.action='push';page.tools=[...item.tools];page.purpose=item.note;page.layoutMode='native';page.flowLeaf=false;
+    if(item.sheet)page.headerActions=[...page.headerActions.filter(action=>action.behavior!=='sheet'),makeHeaderAction('إضافة','plus.circle','sheet')];
+    page.inspiration={app:item.app,pattern:item.name,url:item.url};
+    state.architecture.inspiredBy=[...new Set([...state.architecture.inspiredBy,item.id])];
+    reconcileFlowPages(tab);state.reviewed.pages=true;state.reviewed.data=true;state.reviewed.navigation=true;state.reviewed.interaction=true;
+  }
   const navigationKinds = {
     push: { label: 'فتح صفحة تفاصيل', help: 'انتقال هرمي باستخدام NavigationStack مع زر رجوع.' },
     sheet: { label: 'فتح ورقة', help: 'مهمة مؤقتة فوق الصفحة، ثم عودة للسياق.' },
@@ -1009,7 +1086,7 @@ body.build-open{overflow:hidden}
     menuItems: [{ label: 'إضافة عنصر', behavior: 'count' }, { label: 'عرض التفاصيل', behavior: 'push' }]
   });
   const makeTab = (label = 'صفحة جديدة', icon = 'square.grid.2x2') => ({
-    label, icon, kind: 'overview', display: 'summary', dataTitle: 'البيانات', dataItems: 'العنصر الأول، العنصر الثاني، العنصر الثالث', action: 'push', purpose: 'صفحة جديدة في التطبيق.', layoutMode: 'native', canvasScreens: 1, layoutVersion: 2, layout: {}, backgroundStyle: 'system', backgroundMotion: true, listStyle: 'inset', cardStyle: 'glass', titleStyle: 'inline', contentUnderHeader: false, featureCard: false, featureTitle: 'بطاقة مميزة', featureSubtitle: 'معلومة رئيسية داخل الصفحة', collapseFeatureOnScroll: false, keyboardStyle: 'numbers', headerActions: [], tools: [], componentOptions: {}, blocks: [], values: defaultValues(), detailPage: null
+    label, icon, kind: 'overview', display: 'summary', dataTitle: 'البيانات', dataItems: 'العنصر الأول، العنصر الثاني، العنصر الثالث', action: 'push', purpose: 'صفحة جديدة في التطبيق.', layoutMode: 'native', canvasScreens: 1, layoutVersion: 2, layout: {}, backgroundStyle: 'system', backgroundMotion: true, listStyle: 'inset', cardStyle: 'glass', titleStyle: 'inline', contentUnderHeader: false, featureCard: false, featureTitle: 'بطاقة مميزة', featureSubtitle: 'معلومة رئيسية داخل الصفحة', collapseFeatureOnScroll: false, keyboardStyle: 'numbers', headerActions: [], tools: [], componentOptions: {}, blocks: [], values: defaultValues(), detailPage: null, flowPages: []
   });
   function makeDetailPage(title = 'صفحة التفاصيل', parent = null) {
     return { ...makeTab(clean(title, 18) || 'صفحة التفاصيل', 'doc.text'), kind: 'list', display: 'list', dataTitle: 'التفاصيل', dataItems: parent?.dataItems || 'العنصر الأول، العنصر الثاني، العنصر الثالث', purpose: 'تفاصيل قابلة للتحرير لهذه الصفحة.', action: 'sheet', detailPage: null };
@@ -1036,7 +1113,7 @@ body.build-open{overflow:hidden}
     safe.architecture = { data: ['undecided', 'swiftdata', 'files', 'remote'].includes(arch.data) ? arch.data : 'undecided', sync: ['undecided', 'none', 'cloudkit', 'custom'].includes(arch.sync) ? arch.sync : 'undecided', audience: ['private', 'shared', 'public'].includes(arch.audience) ? arch.audience : 'private', selectedTools: Array.isArray(arch.selectedTools) ? arch.selectedTools.filter(id => typeof id === 'string' && /^[a-z0-9-]{1,32}$/.test(id)).slice(0, 50) : [], inspiredBy: Array.isArray(arch.inspiredBy) ? arch.inspiredBy.filter(id => typeof id === 'string' && /^[a-z0-9-]{1,32}$/.test(id)).slice(0, 50) : [] };
     safe.intendedType = ['auto', 'admin', 'finance', 'reminders', 'gallery', 'notes', 'commerce', 'general'].includes(candidate.intendedType) ? candidate.intendedType : 'auto';
     safe.mapView = ['network', 'flow', 'storyboard', 'tree'].includes(candidate.mapView) ? candidate.mapView : 'network';
-    safe.platformChoices = Array.isArray(candidate.platformChoices) ? [...new Set(candidate.platformChoices.filter(id => platformBehaviors.some(item => item[0] === id)))].slice(0, 7) : [];
+    safe.platformChoices = Array.isArray(candidate.platformChoices) ? [...new Set(candidate.platformChoices.filter(id => platformBehaviors.some(item => item[0] === id)))].slice(0, 30) : [];
     if (candidate.reviewed && typeof candidate.reviewed === 'object') safe.reviewed = Object.fromEntries(reviewKeys.map(key => [key, candidate.reviewed[key] === true]));
     else {
       const defaults = defaultTabs();
@@ -1103,7 +1180,10 @@ body.build-open{overflow:hidden}
           value: block.type === 'toggle' ? block.value !== false : block.type === 'button' ? Math.max(0, Number(block.value) || 0) : block.type === 'slider' ? Math.max(0, Math.min(1, Number(block.value) || 0)) : block.type === 'picker' ? ['اليوم', 'الأسبوع', 'الشهر'].includes(block.value) ? block.value : 'اليوم' : clean(block.value, 100)
         })) : [],
         values: { ...defaultValues(), ...values, sheetCells: Array.isArray(values.sheetCells) ? [...values.sheetCells.slice(0, 9).map(value => clean(value, 24)), ...Array(9).fill('')].slice(0, 9) : defaultValues().sheetCells, detail: false },
-        detailPage: current?.detailPage && typeof current.detailPage === 'object' ? sanitizeDetailPage(current.detailPage, current) : null
+        detailPage: current?.detailPage && typeof current.detailPage === 'object' ? sanitizeDetailPage(current.detailPage, current) : null,
+        flowLeaf: current?.flowLeaf === true,
+        inspiration: current?.inspiration && typeof current.inspiration === 'object' ? { app: clean(current.inspiration.app, 32), pattern: clean(current.inspiration.pattern, 64), url: /^https:\/\/support\.apple\.com\//.test(current.inspiration.url || '') ? clean(current.inspiration.url, 220) : '' } : null,
+        flowPages: Array.isArray(current?.flowPages) ? current.flowPages.slice(0, 120).filter(route => route && typeof route === 'object' && route.page && /^[a-zA-Z0-9_-]{1,36}$/.test(route.id || '')).map(route => ({ id: route.id, parentId: /^[a-zA-Z0-9_-]{1,36}$/.test(route.parentId || '') ? route.parentId : '', sourceKey: clean(route.sourceKey, 60), sourceLabel: clean(route.sourceLabel, 40), presentation: route.presentation === 'sheet' ? 'sheet' : 'push', page: sanitizeDetailPage(route.page, current) })) : []
       };
     });
     safe.activeTab = Math.max(0, Math.min(safe.tabs.length - 1, Number(candidate.activeTab) || 0));
@@ -1112,11 +1192,12 @@ body.build-open{overflow:hidden}
   }
   function sanitizeDetailPage(raw, parent) {
     const seed = makeDetailPage(raw?.label || `تفاصيل ${parent?.label || 'الصفحة'}`, parent);
-    const source = { ...seed, ...raw, detailPage: null, values: { ...seed.values, ...(raw?.values || {}) } };
+    const source = { ...seed, ...raw, detailPage: null, flowPages: [], values: { ...seed.values, ...(raw?.values || {}) } };
     const result = validatedState({ tabs: [source], tabsEnabled: false });
     return { ...result.tabs[0], detailPage: null, values: { ...result.tabs[0].values, detail: false } };
   }
   let state = freshState();
+  let flowPath = [];
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || localStorage.getItem(OLD_STORAGE_KEY) || 'null');
     if (saved?.state) state = validatedState(saved.state);
@@ -1198,7 +1279,7 @@ body.build-open{overflow:hidden}
     document.querySelector('#toggleBuildPhone').setAttribute('aria-pressed', 'false');
     document.querySelector('#toggleBuildPhone').textContent = '⤢ تكبير الهاتف';
     buildOverlay.querySelectorAll('[data-build-panel]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.buildPanel === name)));
-    document.querySelector('#buildContext').textContent = canvas ? 'الشاشات ومساراتها في لوحة واحدة' : name === 'tools' ? 'اختر مكوّنًا ليُضاف للشاشة الحالية' : name === 'editor' ? `تحرير ${activePage().label}` : name === 'next' ? 'إرشادات عند الحاجة' : 'احفظ المشروع والكود';
+    document.querySelector('#buildContext').textContent = canvas ? 'واجهات كل اختيار والورقة على لوحة تحرير واحدة' : name === 'tools' ? 'اختر مكوّنًا ليُضاف للشاشة الحالية' : name === 'editor' ? `تحرير ${activePage().label}` : name === 'next' ? 'إرشادات عند الحاجة' : 'احفظ المشروع والكود';
     if (canvas) requestAnimationFrame(() => renderDesignCanvas(true));
     else requestAnimationFrame(updateBuildScale);
   }
@@ -1207,106 +1288,114 @@ body.build-open{overflow:hidden}
   const boardCards = document.querySelector('#screenBoardCards');
   const boardInspector = document.querySelector('#screenBoardInspector');
   let boardZoom = 0.86, boardPanX = 24, boardPanY = 30;
-  let boardSelected = { page: 0, detail: false };
+  let boardSelected = { page: 0, routeId: '' };
   let boardDrag = null;
   const boardPointers = new Map();
   let boardPinch = null;
-  const boardMetrics = { gap: 550, start: 60, top: 95, width: 220, detailOffset: 270, height: 470 };
-  function boardPosition(index, detail = false) {
-    return { x: boardMetrics.start + index * boardMetrics.gap + (detail ? boardMetrics.detailOffset : 0), y: boardMetrics.top };
-  }
+  const boardMetrics = { width: 220, height: 430, column: 280, row: 455, margin: 60 };
+  let boardPositions = new Map();
+  let boardWorldSize = { width: 620, height: 650 };
+  function boardPosition(index, routeId = '') { return boardPositions.get(routeId) || { x: boardMetrics.margin, y: 90 }; }
   function boardTransform() {
     boardWorld.style.transform = `translate(${boardPanX}px, ${boardPanY}px) scale(${boardZoom})`;
     document.querySelector('#screenBoardZoom').textContent = `${Math.round(boardZoom * 100)}٪`;
   }
-  function boardFocus(index, detail = false, keepZoom = false) {
+  function boardFocus(index, routeId = '', keepZoom = false) {
     const rect = boardViewport.getBoundingClientRect();
-    if (!keepZoom) boardZoom = Math.max(0.68, Math.min(1, (rect.width - (detail ? 520 : 270)) / (detail ? 520 : 270)));
-    const pos = boardPosition(index, detail);
-    const centerX = detail ? pos.x - 25 : pos.x + boardMetrics.width / 2;
-    boardPanX = rect.width / 2 - centerX * boardZoom;
+    if (!keepZoom) boardZoom = Math.max(.68, Math.min(1, (rect.width - 36) / 350, (rect.height - 28) / boardMetrics.height));
+    const pos = boardPosition(index, routeId);
+    boardPanX = rect.width / 2 - (pos.x + boardMetrics.width / 2) * boardZoom;
     boardPanY = rect.height / 2 - (pos.y + boardMetrics.height / 2) * boardZoom;
     boardTransform();
   }
-  function boardScreen(tab, index, detail) {
-    const page = detail ? tab.detailPage : tab;
-    if (!page) return '';
-    const pos = boardPosition(index, detail);
-    const selected = boardSelected.page === index && boardSelected.detail === detail;
-    const items = sampleItems(page).slice(0, 3);
-    const destination = !detail && (page.action === 'push' || page.headerActions.some(action => action.behavior === 'push'));
-    const label = detail ? 'صفحة التفاصيل' : `التبويب ${formatNumber(index + 1)}`;
-    const display = displayKinds[page.display]?.label || page.display;
-    return `<article class="screen-board-card ${selected ? 'selected' : ''}" data-board-page="${index}" data-board-detail="${detail}" style="left:${pos.x}px;top:${pos.y}px"><div class="screen-board-card-head"><span>${label}</span><strong>${escapeHtml(page.label)}</strong></div><div class="screen-board-phone"><div class="screen-board-status">٩:٤١ <i></i> ▰</div><div class="screen-board-nav">${detail ? '‹ رجوع' : ''}<b>${escapeHtml(page.label)}</b></div><div class="screen-board-page"><small>${display}</small><h3>${escapeHtml(page.label)}</h3><p>${escapeHtml(page.purpose)}</p><div class="screen-board-sample">${items.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>${page.tools.length ? `<div class="screen-board-tools">${page.tools.slice(0, 3).map(id => `<span>${escapeHtml(toolInfo[id]?.name || id)}</span>`).join('')}${page.tools.length > 3 ? `<span>+${page.tools.length - 3}</span>` : ''}</div>` : ''}${destination ? `<button type="button" class="screen-board-follow" data-board-follow="${index}">الانتقال إلى التفاصيل ←</button>` : ''}</div>${!detail && state.tabsEnabled ? `<div class="screen-board-tabs">${state.tabs.slice(0,5).map((item,n)=>`<button type="button" data-board-jump="${n}" class="${n === index ? 'active' : ''}" title="${escapeHtml(item.label)}">${iconChoices[item.icon]?.[1] || '▦'}</button>`).join('')}</div>` : ''}</div><div class="screen-board-card-foot"><button type="button" data-board-edit="${index}" data-board-edit-detail="${detail}">تحرير هذه الشاشة</button><span>${page.tools.length} مكوّن</span></div></article>`;
+  function boardScreen(tab, index, routeId = '') {
+    const route = routeId ? flowRoute(tab, routeId) : null;
+    const page = route?.page || tab;
+    const pos = boardPosition(index, routeId);
+    const selected = boardSelected.page === index && boardSelected.routeId === routeId;
+    const sources = flowSources(page);
+    const label = route ? route.presentation === 'sheet' ? 'ورقة مرتبطة' : 'شاشة اختيار' : `التبويب ${formatNumber(index + 1)}`;
+    const rows = sampleItems(page).slice(0, 6);
+    const sourceButtons = sources.map(source => {
+      const child = tab.flowPages.find(item => item.parentId === routeId && item.sourceKey === source.key);
+      return child ? `<button type="button" data-board-follow="${child.id}" class="screen-board-source ${child.presentation}"><span>${escapeHtml(source.label)}</span><b>${child.presentation === 'sheet' ? '▧' : '←'}</b></button>` : '';
+    }).join('');
+    return `<article class="screen-board-card ${selected ? 'selected' : ''} ${route?.presentation === 'sheet' ? 'sheet-card' : ''}" data-board-page="${index}" data-board-route="${routeId}" style="left:${pos.x}px;top:${pos.y}px"><div class="screen-board-card-head"><span>${label}</span><strong>${escapeHtml(page.label)}</strong></div><div class="screen-board-phone"><div class="screen-board-status">٩:٤١ <i></i> ▰</div><div class="screen-board-nav">${route ? '‹ رجوع' : ''}<b>${escapeHtml(page.label)}</b></div><div class="screen-board-page"><small>${escapeHtml(displayKinds[page.display]?.label || page.display)}</small><h3>${escapeHtml(page.label)}</h3><p>${escapeHtml(page.purpose)}</p><div class="screen-board-sample">${rows.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div>${page.tools.length ? `<div class="screen-board-tools">${page.tools.slice(0, 2).map(id => `<span>${escapeHtml(toolInfo[id]?.name || id)}</span>`).join('')}</div>` : ''}</div>${!route && state.tabsEnabled ? `<div class="screen-board-tabs">${state.tabs.slice(0,5).map((item,n)=>`<button type="button" data-board-jump="${n}" class="${n === index ? 'active' : ''}" title="${escapeHtml(item.label)}">${iconChoices[item.icon]?.[1] || '▦'}</button>`).join('')}</div>` : ''}</div><div class="screen-board-card-foot"><button type="button" data-board-edit="${index}" data-board-edit-route="${routeId}">تحرير هذه الشاشة</button><span>${sources.length} وجهة</span></div><div class="screen-board-source-list">${sourceButtons}</div></article>`;
   }
   function boardRenderInspector() {
     const index = Math.max(0, Math.min(state.tabs.length - 1, boardSelected.page));
     const tab = state.tabs[index];
-    const detail = boardSelected.detail && Boolean(tab.detailPage);
-    const page = detail ? tab.detailPage : tab;
-    boardSelected = { page: index, detail };
-    boardInspector.innerHTML = `<div class="screen-board-inspector-head"><small>${detail ? 'صفحة فرعية' : 'شاشة رئيسية'} · ${formatNumber(index+1)} من ${formatNumber(state.tabs.length)}</small><h3>${escapeHtml(page.label)}</h3><p>التغييرات هنا تظهر في اللوحة والهاتف والمشروع المحفوظ.</p></div><div class="screen-board-inspector-fields"><label>عنوان الشاشة<input data-board-field="label" maxlength="18" value="${escapeHtml(page.label)}"></label><label>الغرض<textarea data-board-field="purpose" maxlength="90" rows="3">${escapeHtml(page.purpose)}</textarea></label><label>نوع المحتوى<select data-board-field="display">${Object.entries(displayKinds).map(([id,kind])=>`<option value="${id}" ${page.display===id?'selected':''}>${kind.label}</option>`).join('')}</select></label>${detail ? '' : `<label>الانتقال الأساسي<select data-board-field="action">${Object.entries(navigationKinds).map(([id,kind])=>`<option value="${id}" ${page.action===id?'selected':''}>${kind.label}</option>`).join('')}</select></label>`}</div><div class="screen-board-connection"><strong>وجهات هذه الشاشة</strong>${detail ? `<button type="button" data-board-jump="${index}">↩ العودة إلى ${escapeHtml(tab.label)}</button>` : `<div class="screen-board-connection-list">${tab.detailPage ? `<button type="button" data-board-follow="${index}">صفحة التفاصيل ← ${escapeHtml(tab.detailPage.label)}</button>` : '<span>لا توجد صفحة تفاصيل محفوظة.</span>'}${state.tabsEnabled ? state.tabs.filter((_,n)=>n!==index).slice(0,4).map(item=>`<button type="button" data-board-jump="${state.tabs.indexOf(item)}">تبويب ← ${escapeHtml(item.label)}</button>`).join('') : ''}</div>`}</div><div class="screen-board-inspector-actions"><button type="button" data-board-edit="${index}" data-board-edit-detail="${detail}" class="primary">تحرير مع معاينة الهاتف</button><button type="button" data-board-add-tool="${index}">إضافة مكوّن لهذه الشاشة</button><button type="button" data-board-add-page="true">＋ شاشة جديدة</button></div><p class="screen-board-note">اللوحة توضح البنية ومسارات التنقل؛ جرّب سلوك iOS الفعلي على جهاز أو في Xcode Preview.</p>`;
+    const route = boardSelected.routeId ? flowRoute(tab, boardSelected.routeId) : null;
+    const page = route?.page || tab;
+    boardSelected = { page: index, routeId: route?.id || '' };
+    const parent = route ? flowParentPage(tab, route.parentId) : null;
+    const destinations = tab.flowPages.filter(item => item.parentId === boardSelected.routeId);
+    boardInspector.innerHTML = `<div class="screen-board-inspector-head"><small>${route ? route.presentation === 'sheet' ? 'ورقة' : 'صفحة اختيار' : 'شاشة التبويب'} · ${formatNumber(index+1)} من ${formatNumber(state.tabs.length)}</small><h3>${escapeHtml(page.label)}</h3><p>${route ? `مرتبطة بـ «${escapeHtml(parent?.label || tab.label)}» عبر «${escapeHtml(route.sourceLabel)}».` : 'اختر اختيارًا في الشاشة لترى واجهته وتحررها مباشرة.'}</p></div><div class="screen-board-inspector-fields"><label>التبويب<select data-board-tab="true">${state.tabs.map((item,n)=>`<option value="${n}" ${n===index?'selected':''}>${escapeHtml(item.label)}</option>`).join('')}</select></label><label>عنوان الشاشة<input data-board-field="label" maxlength="18" value="${escapeHtml(page.label)}"></label><label>الغرض<textarea data-board-field="purpose" maxlength="90" rows="2">${escapeHtml(page.purpose)}</textarea></label><label>نوع المحتوى<select data-board-field="display">${Object.entries(displayKinds).map(([id,kind])=>`<option value="${id}" ${page.display===id?'selected':''}>${kind.label}</option>`).join('')}</select></label><label>عنوان القائمة<input data-board-field="dataTitle" maxlength="40" value="${escapeHtml(page.dataTitle)}"></label><label>اختيارات الشاشة، كل سطر يفتح شاشة مستقلة<textarea data-board-field="dataItems" maxlength="180" rows="5" placeholder="اختيار ١&#10;اختيار ٢">${escapeHtml(page.dataItems)}</textarea></label><label>سلوك الاختيارات<select data-board-field="action">${Object.entries(navigationKinds).map(([id,kind])=>`<option value="${id}" ${page.action===id?'selected':''}>${kind.label}</option>`).join('')}</select></label></div><div class="screen-board-inspector-actions"><button type="button" data-board-add-row="true">＋ اختيار مع شاشة</button><button type="button" data-board-add-sheet="true">＋ زر يفتح ورقة</button><button type="button" data-board-preview="true">▶ تجربة هذه الشاشة</button><button type="button" data-board-edit="${index}" data-board-edit-route="${route?.id || ''}" class="primary">تحرير العناصر مع الهاتف</button><button type="button" data-board-add-page="true">＋ تبويب جديد</button></div><div class="screen-board-connection"><strong>الواجهات المرتبطة (${formatNumber(destinations.length)})</strong><div class="screen-board-connection-list">${destinations.map(item=>`<button type="button" data-board-follow="${item.id}">${item.presentation==='sheet'?'▧':'←'} ${escapeHtml(item.sourceLabel)} · ${escapeHtml(item.page.label)}</button>`).join('') || '<span>أضف اختيارًا أو زرًا يفتح ورقة.</span>'}</div>${route ? `<button type="button" data-board-follow="${route.parentId}">↩ العودة إلى ${escapeHtml(parent?.label || tab.label)}</button>` : ''}</div><p class="screen-board-note">كل وجهة شاشة محفوظة مستقلة في المشروع. اسحب اللوحة للتنقل، وقربها بإيماءة الإصبعين أو أزرار التكبير.</p>`;
   }
   function renderDesignCanvas(focus = false) {
     if (!buildWorkspaceOpen || designCanvasWorkspace.hidden) return;
-    state.tabs.forEach(tab => { if ((tab.action === 'push' || tab.headerActions.some(action => action.behavior === 'push')) && !tab.detailPage) ensureDetailPage(tab); });
-    const width = boardMetrics.start * 2 + state.tabs.length * boardMetrics.gap;
-    const height = 680;
-    boardWorld.style.width = `${width}px`; boardWorld.style.height = `${height}px`;
-    boardCards.innerHTML = state.tabs.map((tab,index)=>boardScreen(tab,index,false)+(tab.detailPage ? boardScreen(tab,index,true) : '')).join('');
-    const links = [];
-    state.tabs.forEach((tab,index)=>{
-      const start = boardPosition(index), detail = boardPosition(index,true);
-      if (tab.detailPage) links.push(`<path d="M ${start.x + boardMetrics.width} ${start.y + 215} C ${start.x + 245} ${start.y + 215}, ${detail.x - 25} ${detail.y + 215}, ${detail.x} ${detail.y + 215}" class="board-link detail" marker-end="url(#boardArrow)"/>`);
-      if (index < state.tabs.length-1) { const next = boardPosition(index+1); links.push(`<path d="M ${start.x + boardMetrics.width/2} ${start.y - 12} C ${start.x + boardMetrics.width/2} 28, ${next.x + boardMetrics.width/2} 28, ${next.x + boardMetrics.width/2} ${next.y - 12}" class="board-link tab-link" marker-end="url(#boardArrow)"/>`); }
+    const tab = state.tabs[Math.max(0,Math.min(state.tabs.length-1,boardSelected.page))];
+    reconcileFlowPages(tab);
+    const levels = new Map([['', 0]]), columns = new Map([[0, ['']]]);
+    tab.flowPages.forEach(route => { const depth = Math.min(8,(levels.get(route.parentId) || 0) + 1); levels.set(route.id,depth); (columns.get(depth) || (columns.set(depth,[]),columns.get(depth))).push(route.id); });
+    boardPositions = new Map();
+    let nextX=boardMetrics.margin, maxRows=1;
+    [...columns.entries()].sort((a,b)=>a[0]-b[0]).forEach(([depth,ids])=>{
+      const groups=depth===0?1:Math.ceil(ids.length/3);
+      const rows=Math.min(3,ids.length);maxRows=Math.max(maxRows,rows);
+      ids.forEach((id,n)=>boardPositions.set(id,{x:nextX+Math.floor(n/3)*boardMetrics.column,y:75+(depth===0&&columns.get(1)?.length?boardMetrics.row:0)+(depth===0?0:n%3*boardMetrics.row)}));
+      nextX+=groups*boardMetrics.column;
     });
-    document.querySelector('#screenBoardLinks').setAttribute('viewBox',`0 0 ${width} ${height}`);
-    document.querySelector('#screenBoardLinks').innerHTML = `<defs><marker id="boardArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#438acb"/></marker></defs>${links.join('')}`;
+    boardWorldSize = { width: Math.max(620,nextX+boardMetrics.margin), height: Math.max(650,75+maxRows*boardMetrics.row+70) };
+    boardWorld.style.width=`${boardWorldSize.width}px`; boardWorld.style.height=`${boardWorldSize.height}px`;
+    boardCards.innerHTML = boardScreen(tab,boardSelected.page,'') + tab.flowPages.map(route=>boardScreen(tab,boardSelected.page,route.id)).join('');
+    const links=tab.flowPages.map(route=>{const a=boardPosition(boardSelected.page,route.parentId),b=boardPosition(boardSelected.page,route.id);return `<path d="M ${a.x+boardMetrics.width} ${a.y+215} C ${a.x+260} ${a.y+215}, ${b.x-40} ${b.y+215}, ${b.x} ${b.y+215}" class="board-link ${route.presentation==='sheet'?'sheet-link':'detail'}" marker-end="url(#boardArrow)"/>`;});
+    document.querySelector('#screenBoardLinks').setAttribute('viewBox',`0 0 ${boardWorldSize.width} ${boardWorldSize.height}`);
+    document.querySelector('#screenBoardLinks').innerHTML=`<defs><marker id="boardArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#438acb"/></marker></defs>${links.join('')}`;
     boardRenderInspector();
-    if (focus) boardFocus(boardSelected.page,boardSelected.detail); else boardTransform();
+    if (focus) boardFocus(boardSelected.page,boardSelected.routeId); else boardTransform();
   }
-  function boardSelect(index, detail = false) {
+  function boardSelect(index, routeId = '') {
     if (!Number.isInteger(index) || !state.tabs[index]) return;
-    if (detail && !state.tabs[index].detailPage) ensureDetailPage(state.tabs[index]);
-    boardSelected = { page:index,detail };
-    renderDesignCanvas();
-    boardFocus(index,detail,true);
+    boardSelected={page:index,routeId:flowRoute(state.tabs[index],routeId)?.id || ''};
+    renderDesignCanvas(); boardFocus(index,boardSelected.routeId,boardZoom>=.65);
+  }
+  function flowAncestry(tab,routeId) {
+    const path=[]; let route=flowRoute(tab,routeId);
+    while(route && path.length<20) {path.unshift(route.id);route=route.parentId?flowRoute(tab,route.parentId):null;}
+    return path;
   }
   designCanvasWorkspace.addEventListener('click', event => {
-    const command = event.target.closest('[data-board-command]')?.dataset.boardCommand;
-    if (command) {
-      if (command === 'zoom-in') boardZoom = Math.min(1.8,boardZoom+0.12);
-      if (command === 'zoom-out') boardZoom = Math.max(0.25,boardZoom-0.12);
-      if (command === 'fit') { const rect=boardViewport.getBoundingClientRect();boardZoom=Math.max(0.25,Math.min(1.1,(rect.width-40)/(boardMetrics.start*2+state.tabs.length*boardMetrics.gap),(rect.height-40)/680));boardPanX=20;boardPanY=20; }
-      if (command === 'center') { boardFocus(state.activeTab,currentTab().values.detail); return; }
-      boardTransform(); return;
+    const command=event.target.closest('[data-board-command]')?.dataset.boardCommand;
+    if(command){
+      if(command==='zoom-in')boardZoom=Math.min(1.8,boardZoom+.12);
+      if(command==='zoom-out')boardZoom=Math.max(.25,boardZoom-.12);
+      if(command==='fit'){const rect=boardViewport.getBoundingClientRect();boardZoom=Math.max(.25,Math.min(1.1,(rect.width-40)/boardWorldSize.width,(rect.height-40)/boardWorldSize.height));boardPanX=20;boardPanY=20;}
+      if(command==='center'){boardFocus(boardSelected.page,boardSelected.routeId);return;}
+      boardTransform();return;
     }
-    const follow=event.target.closest('[data-board-follow]');
-    if (follow) { boardSelect(Number(follow.dataset.boardFollow),true); return; }
-    const jump=event.target.closest('[data-board-jump]');
-    if (jump) { boardSelect(Number(jump.dataset.boardJump),false); return; }
+    const follow=event.target.closest('[data-board-follow]'); if(follow){boardSelect(boardSelected.page,follow.dataset.boardFollow);return;}
+    const jump=event.target.closest('[data-board-jump]'); if(jump){boardSelect(Number(jump.dataset.boardJump),'');return;}
     const edit=event.target.closest('[data-board-edit]');
-    if (edit) {
-      state.activeTab=Number(edit.dataset.boardEdit);
-      const detail=edit.dataset.boardEditDetail==='true';
-      currentTab().values.detail=detail; if (detail) currentTab().values.detailTitle=currentTab().detailPage?.label || '';
-      layoutSelection=null; showEditorView('page',true); selectBuildPanel('editor'); renderAll(); return;
-    }
-    if (event.target.closest('[data-board-add-tool]')) { state.activeTab=Number(event.target.closest('[data-board-add-tool]').dataset.boardAddTool);selectBuildPanel('tools');renderAll();return; }
-    if (event.target.closest('[data-board-add-page]')) { if (state.tabs.length>=50) return;state.tabs.push(makeTab());state.activeTab=state.tabs.length-1;state.reviewed.pages=true;boardSelect(state.activeTab);renderAll();return; }
-    const card=event.target.closest('[data-board-page]');
-    if (card) boardSelect(Number(card.dataset.boardPage),card.dataset.boardDetail==='true');
+    if(edit){state.activeTab=Number(edit.dataset.boardEdit);flowPath=flowAncestry(currentTab(),edit.dataset.boardEditRoute);currentTab().values.detail=false;layoutSelection=null;showEditorView('page',true);selectBuildPanel('editor');renderAll();return;}
+    if(event.target.closest('[data-board-preview]')){state.activeTab=boardSelected.page;const route=flowRoute(currentTab(),boardSelected.routeId);flowPath=flowAncestry(currentTab(),route?.presentation==='sheet'?route.parentId:boardSelected.routeId);currentTab().values.detail=false;openExperience();if(route?.presentation==='sheet'){overlay=`flow-sheet:${route.id}`;renderPreview();}return;}
+    if(event.target.closest('[data-board-add-row]')){const page=flowParentPage(state.tabs[boardSelected.page],boardSelected.routeId);page.display='list';page.dataItems=(page.dataItems==='محتوى جديد'?'':page.dataItems.trim()).concat(page.dataItems && page.dataItems!=='محتوى جديد'?'، ':'',`اختيار ${sampleItems(page).length+1}`);reconcileFlowPages(state.tabs[boardSelected.page]);renderAll(true);renderDesignCanvas(true);return;}
+    if(event.target.closest('[data-board-add-sheet]')){const page=flowParentPage(state.tabs[boardSelected.page],boardSelected.routeId);page.headerActions.push(makeHeaderAction('إضافة','plus.circle','sheet'));reconcileFlowPages(state.tabs[boardSelected.page]);renderAll(true);renderDesignCanvas(true);return;}
+    if(event.target.closest('[data-board-add-page]')){if(state.tabs.length>=50)return;state.tabs.push(makeTab());state.activeTab=state.tabs.length-1;state.reviewed.pages=true;boardSelect(state.activeTab);renderAll();return;}
+    const card=event.target.closest('[data-board-page]');if(card)boardSelect(Number(card.dataset.boardPage),card.dataset.boardRoute);
   });
-  boardInspector.addEventListener('change', event => {
-    const field=event.target.dataset.boardField;
-    if (!field) return;
-    const tab=state.tabs[boardSelected.page], page=boardSelected.detail ? tab.detailPage : tab;
-    if (field==='label') page.label=clean(event.target.value,18)||page.label;
-    if (field==='purpose') page.purpose=clean(event.target.value,90)||page.purpose;
-    if (field==='display' && displayKinds[event.target.value]) page.display=event.target.value;
-    if (field==='action' && navigationKinds[event.target.value]) { page.action=event.target.value;if(page.action==='push') ensureDetailPage(tab); }
+  boardInspector.addEventListener('change',event=>{
+    if(event.target.dataset.boardTab){boardSelect(Number(event.target.value),'');return;}
+    const field=event.target.dataset.boardField;if(!field)return;
+    const tab=state.tabs[boardSelected.page],page=flowParentPage(tab,boardSelected.routeId);if(!page)return;
+    if(field==='label')page.label=clean(event.target.value,18)||page.label;
+    if(field==='purpose')page.purpose=clean(event.target.value,90)||page.purpose;
+    if(field==='display'&&displayKinds[event.target.value])page.display=event.target.value;
+    if(field==='dataTitle')page.dataTitle=clean(event.target.value,40)||'المحتوى';
+    if(field==='dataItems')page.dataItems=clean(event.target.value,180);
+    if(field==='action'&&navigationKinds[event.target.value])page.action=event.target.value;
     state.reviewed.pages=true;state.reviewed.data=true;state.reviewed.navigation=true;
-    renderAll(true);
+    reconcileFlowPages(tab);renderAll(true);renderDesignCanvas(true);
   });
   boardViewport.addEventListener('pointerdown', event => {
     if (event.target.closest('.screen-board-card,button,input,select,textarea')) return;
@@ -1510,7 +1599,57 @@ body.build-open{overflow:hidden}
     else if (title && (tab.detailPage.label === `تفاصيل ${tab.label}` || tab.detailPage.label === 'صفحة التفاصيل')) tab.detailPage.label = clean(title, 18);
     return tab.detailPage;
   }
-  function activePage() { const tab = currentTab(); return tab.values.detail ? ensureDetailPage(tab, tab.values.detailTitle) : tab; }
+  function flowRoute(tab, id) { return (tab.flowPages || []).find(route => route.id === id); }
+  function flowParentPage(tab, parentId) { return parentId ? flowRoute(tab, parentId)?.page : tab; }
+  function flowSources(page) {
+    const sources = [];
+    if (['list', 'cards', 'settings', 'forecast'].includes(page.display)) sampleItems(page).slice(0, 20).forEach((label, index) => sources.push({ key: `row:${index}`, label, presentation: page.action === 'sheet' ? 'sheet' : 'push' }));
+    page.headerActions.forEach(action => { if (['push', 'sheet'].includes(action.behavior)) sources.push({ key: `header:${action.id}`, label: action.label, presentation: action.behavior }); });
+    if (page.tools.includes('sheet')) sources.push({ key: 'tool:sheet', label: 'ورقة الأداة', presentation: 'sheet' });
+    page.blocks.forEach(block => { if (block.type === 'button' && ['push', 'sheet'].includes(block.action)) sources.push({ key: `block:${block.id}`, label: block.label, presentation: block.action }); });
+    if (!page.flowLeaf && !['list', 'cards', 'settings', 'forecast'].includes(page.display) && ['push', 'sheet'].includes(page.action)) sources.push({ key: 'primary', label: page.action === 'sheet' ? 'ورقة' : 'التفاصيل', presentation: page.action });
+    return sources;
+  }
+  function newFlowId() { return `r${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`; }
+  function makeFlowDestination(source) {
+    const page = makeTab(source.label, source.presentation === 'sheet' ? 'square.and.pencil' : 'doc.text');
+    page.display = 'summary'; page.kind = 'overview'; page.dataTitle = 'المحتوى'; page.dataItems = 'محتوى جديد';
+    page.purpose = source.presentation === 'sheet' ? 'صمّم المهمة التي تظهر في هذه الورقة.' : 'صمّم محتوى هذه الشاشة.';
+    page.headerActions = []; page.tools = []; page.action = 'push'; page.detailPage = null; page.flowLeaf = true;
+    return page;
+  }
+  function reconcileFlowPages(tab) {
+    tab.flowPages ||= [];
+    const retained = [], queue = [{ id: '', page: tab }];
+    while (queue.length && retained.length < 120) {
+      const parent = queue.shift();
+      flowSources(parent.page).forEach(source => {
+        if (retained.length >= 120) return;
+        const siblings = tab.flowPages.filter(route => route.parentId === parent.id && !retained.includes(route));
+        const route = siblings.find(item => item.sourceKey === source.key && item.sourceLabel === source.label) || (source.key.startsWith('row:') ? siblings.find(item => item.sourceKey.startsWith('row:') && item.sourceLabel === source.label) : null) || siblings.find(item => item.sourceKey === source.key);
+        const next = route || { id: newFlowId(), parentId: parent.id, sourceKey: source.key, sourceLabel: source.label, presentation: source.presentation, page: makeFlowDestination(source) };
+        if (next.page.label === next.sourceLabel && next.sourceLabel !== source.label) next.page.label = source.label;
+        next.sourceKey = source.key; next.sourceLabel = source.label; next.presentation = source.presentation;
+        retained.push(next); queue.push({ id: next.id, page: next.page });
+      });
+    }
+    tab.flowPages = retained;
+    if (tab === currentTab()) flowPath = flowPath.filter(id => retained.some(route => route.id === id));
+    return retained;
+  }
+  function activeFlowRoute() { const tab = currentTab(); return flowPath.length ? flowRoute(tab, flowPath[flowPath.length - 1]) : null; }
+  function activePage() { const tab = currentTab(); return activeFlowRoute()?.page || (tab.values.detail ? ensureDetailPage(tab, tab.values.detailTitle) : tab); }
+  function interactionPage(element) { return element?.closest('.flow-sheet') && overlay?.startsWith('flow-sheet:') ? flowRoute(currentTab(),overlay.slice(11))?.page || activePage() : activePage(); }
+  function interactionParentId(element) { return element?.closest('.flow-sheet') && overlay?.startsWith('flow-sheet:') ? overlay.slice(11) : activeFlowRoute()?.id || ''; }
+  function openFlowSource(parentId, sourceKey, title = '') {
+    const tab = currentTab(); reconcileFlowPages(tab);
+    let route = tab.flowPages.find(item => item.parentId === parentId && item.sourceKey === sourceKey);
+    if (!route && sourceKey.startsWith('row:') && title) route = tab.flowPages.find(item => item.parentId === parentId && item.sourceLabel === title);
+    if (!route) return false;
+    if (route.presentation === 'sheet') overlay = `flow-sheet:${route.id}`;
+    else { overlay = null; flowPath.push(route.id); }
+    return true;
+  }
   function selected(id) { return id === 'toolbar' ? activePage().headerActions.length > 0 : activePage().tools.includes(id); }
   function inspect(id) {
     inspected = id;
@@ -1528,7 +1667,7 @@ body.build-open{overflow:hidden}
   }
   function renderNavigationEditor() {
     const tab = currentTab();
-    const detail = tab.values.detail;
+    const detail = Boolean(flowPath.length || tab.values.detail);
     const page = detail ? ensureDetailPage(tab, tab.values.detailTitle) : tab;
     const suggestion = pageSuggestions[page.kind];
     navigationEditor.innerHTML = `
@@ -1684,17 +1823,17 @@ body.build-open{overflow:hidden}
     const label = (index, fallback) => escapeHtml(items[index] || fallback);
     if (!items.length && tab.display !== 'spreadsheet') return `<div class="builder-section-label">${title}</div><div class="builder-empty">لا توجد نتائج مطابقة في بيانات المثال.</div>`;
     if (tab.display === 'list') {
-      const rows = items.slice(0, 10).map((item, i) => `<button class="builder-row selectable list-item tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}"><span class="row-icon">${['▤', '◉', '◫', '✦', '▦'][i % 5]}</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('');
-      return `<div class="builder-section-label">${title}</div><div class="builder-list-view style-${tab.listStyle}">${tab.listStyle === 'grouped' ? `<small>المجموعة الأولى</small><div class="builder-list-group">${items.slice(0, 5).map((item, i) => `<button class="builder-row selectable tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}"><span class="row-icon">▤</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div><small>المجموعة الثانية</small><div class="builder-list-group">${items.slice(5, 10).map(item => `<button class="builder-row selectable" data-ui="navigate" data-detail-title="${escapeHtml(item)}"><span class="row-icon">▤</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div>` : rows}</div>`;
+      const rows = items.slice(0, 10).map((item, i) => `<button class="builder-row selectable list-item tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span class="row-icon">${['▤', '◉', '◫', '✦', '▦'][i % 5]}</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('');
+      return `<div class="builder-section-label">${title}</div><div class="builder-list-view style-${tab.listStyle}">${tab.listStyle === 'grouped' ? `<small>المجموعة الأولى</small><div class="builder-list-group">${items.slice(0, 5).map((item, i) => `<button class="builder-row selectable tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span class="row-icon">▤</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div><small>المجموعة الثانية</small><div class="builder-list-group">${items.slice(5, 10).map(item => `<button class="builder-row selectable" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span class="row-icon">▤</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div>` : rows}</div>`;
     }
-    if (tab.display === 'cards') return `<div class="builder-section-label">${title}</div><div class="builder-card-grid card-style-${tab.cardStyle}">${items.slice(0, 8).map((item, i) => `<button class="builder-data-card tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}"><span>◫</span><strong>${escapeHtml(item)}</strong><small>عرض التفاصيل ←</small></button>`).join('')}</div>`;
+    if (tab.display === 'cards') return `<div class="builder-section-label">${title}</div><div class="builder-card-grid card-style-${tab.cardStyle}">${items.slice(0, 8).map((item, i) => `<button class="builder-data-card tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span>◫</span><strong>${escapeHtml(item)}</strong><small>عرض التفاصيل ←</small></button>`).join('')}</div>`;
     if (tab.display === 'metrics') return `<div class="builder-section-label">${title}</div><div class="builder-metric-grid">${items.slice(0, 2).map((item, i) => `<div><strong>${i ? '٨' : '١٢'}</strong><small>${escapeHtml(item)}</small></div>`).join('')}</div>`;
     if (tab.display === 'chart') return `<div class="builder-section-label">${title}</div><div class="builder-chart" aria-label="مخطط أعمدة لبيانات تجريبية"><div class="builder-bars">${items.slice(0, 4).map((item, i) => `<div><i style="height:${Math.round([12, 20, 16, 28][i] / 28 * 100)}%"></i><small>${escapeHtml(item)}</small></div>`).join('')}</div><p>القيم تجريبية لتوضيح أسلوب العرض.</p></div>`;
     if (tab.display === 'table') return `<div class="builder-section-label">${title}</div><div class="builder-mini-table"><div class="table-head"><b>الاسم</b><b>الحالة</b><b>القيمة</b></div>${items.slice(0, 4).map((item, i) => `<div><span>${escapeHtml(item)}</span><span>${i % 2 ? 'قيد العمل' : 'نشط'}</span><span>${formatNumber((i + 1) * 5)}</span></div>`).join('')}</div>`;
-    if (tab.display === 'forecast') return `<div class="builder-section-label">${title}</div><div class="builder-forecast">${items.slice(0, 8).map((item, i) => `<button class="forecast-row" data-ui="navigate" data-detail-title="${escapeHtml(item)}"><b>${escapeHtml(item)}</b><span>${i ? '☀︎' : '☾'}</span><i style="--range-start:${15 + i * 3}%;--range-width:${45 + (i % 3) * 8}%"></i><em>${28 + i}°</em></button>`).join('')}</div>`;
+    if (tab.display === 'forecast') return `<div class="builder-section-label">${title}</div><div class="builder-forecast">${items.slice(0, 8).map((item, i) => `<button class="forecast-row" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><b>${escapeHtml(item)}</b><span>${i ? '☀︎' : '☾'}</span><i style="--range-start:${15 + i * 3}%;--range-width:${45 + (i % 3) * 8}%"></i><em>${28 + i}°</em></button>`).join('')}</div>`;
     if (tab.display === 'weather') return `<div class="builder-section-label">${title}</div><div class="weather-dashboard"><div class="weather-hours">${['الآن','٩ م','١٠ م','١١ م'].map((hour, i) => `<div><b>${hour}</b><span>☾</span><strong>${33 - i}°</strong></div>`).join('')}</div><button class="weather-map" data-ui="navigate" data-detail-title="خريطة الطقس"><span>خريطة رياح توضيحية</span><i class="map-current">●</i><b>أبو ظبي</b><small>نموذج بصري، ليس بيانات طقس حية</small></button><div class="weather-tile-grid">${[['الرياح','13','كم/س','◌'],['المتوسطات','+3°','اليوم','⌁'],['الشروق','6:13','ص','☼'],['القمر','◐','الطور الحالي','☾'],['الرطوبة','65%','درجة التكثف','◍'],['الضغط','1,009','هكتوباسكال','◉']].map(([name,value,unit,icon]) => `<button class="weather-tile" data-ui="navigate" data-detail-title="${name}"><small>${icon} ${name}</small><strong>${value}</strong><span>${unit}</span></button>`).join('')}</div></div>`;
     if (tab.display === 'spreadsheet') return `<div class="builder-section-label">${title}</div><div class="builder-sheet-grid"><div class="sheet-corner"></div>${['A', 'B', 'C'].map(letter => `<div class="sheet-heading">${letter}</div>`).join('')}${Array.from({ length: 3 }, (_, row) => `<div class="sheet-heading">${row + 1}</div>${Array.from({ length: 3 }, (_, col) => { const n = row * 3 + col; return `<input class="${activeNumberCell === n ? 'active-cell' : ''}" data-ui="number-cell" data-cell-index="${n}" inputmode="${tab.keyboardStyle === 'numbers' ? 'none' : 'decimal'}" ${tab.keyboardStyle === 'numbers' ? 'readonly' : ''} aria-label="خلية ${['A', 'B', 'C'][col]}${row + 1}" value="${escapeHtml(tab.values.sheetCells?.[n] || '')}">`; }).join('')}`).join('')}</div>`;
-    if (tab.display === 'settings') return `<div class="builder-section-label">${title}</div><div class="builder-section">${items.slice(0, 3).map(item => `<button class="builder-row selectable" data-ui="navigate" data-detail-title="${escapeHtml(item)}"><span class="row-icon">⚙</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div>`;
+    if (tab.display === 'settings') return `<div class="builder-section-label">${title}</div><div class="builder-section">${items.slice(0, 3).map(item => `<button class="builder-row selectable" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span class="row-icon">⚙</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div>`;
     if (tab.display === 'form') return `<div class="builder-section-label">${title}</div><div class="builder-section"><div class="builder-row"><span>${label(0, 'الاسم')}</span><input class="builder-input" data-ui="sample-input" data-sample-index="0" value="${escapeHtml(tab.values.sampleInput || '')}" placeholder="اكتب هنا"></div><div class="builder-row"><span>${label(1, 'الملاحظات')}</span><input class="builder-input" data-ui="sample-input" data-sample-index="1" value="${escapeHtml(tab.values.sampleNote || '')}" placeholder="اكتب هنا"></div></div>`;
     return `<div class="builder-section-label">${title}</div><div class="builder-section"><div class="builder-row"><span class="row-icon">◫</span><span class="row-main">${label(0, 'ملخص القسم')}</span><span class="row-hint">${escapeHtml(tab.label)}</span></div><button class="builder-row selectable" data-ui="navigate" data-detail-title="${label(0, 'ملخص القسم')}"><span class="row-icon">↗</span><span class="row-main">استكشف المزيد</span><span class="row-hint">‹</span></button></div>`;
   }
@@ -1894,6 +2033,13 @@ body.build-open{overflow:hidden}
       }
       return `<div class="builder-scrim header-menu-scrim" data-ui="dismiss"></div><div class="builder-header-popup ${overlay.endsWith('leading') ? 'leading' : ''}">${actions.map(item => `<button type="button" data-ui="${item.ui}" data-header-id="${escapeHtml(item.id)}" ${item.index === undefined ? '' : `data-menu-index="${item.index}"`}><b>${iconChoices[item.icon]?.[1] || '•'}</b><span>${escapeHtml(item.label)}</span></button>`).join('')}</div>`;
     }
+    if (overlay.startsWith('flow-sheet:')) {
+      const route = flowRoute(currentTab(), overlay.slice(11));
+      if (route) {
+        const page = route.page;
+        return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-sheet flow-sheet"><div class="flow-sheet-head"><h4>${escapeHtml(page.label)}</h4><button type="button" data-ui="dismiss" aria-label="إغلاق الورقة">×</button></div><p>${escapeHtml(page.purpose)}</p>${previewPageKind(page)}${previewTools(page)}${previewCustomBlocks(page)}${simulatorMode === 'build' ? `<button type="button" data-ui="edit-flow-sheet" data-route-id="${route.id}">تحرير هذه الورقة</button>` : ''}</div>`;
+      }
+    }
     if (overlay === 'sheet') return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-sheet"><h4>ورقة مؤقتة</h4><p>هذه مهمة مرتبطة بصفحة «${escapeHtml(tab.label)}». إغلاقها يعيدك إلى الصفحة نفسها.</p><button data-ui="dismiss">إغلاق</button></div>`;
     if (overlay === 'share') return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-sheet"><h4>مشاركة</h4><p>في تطبيق SwiftUI الأصلي يفتح ShareLink خيارات مشاركة النظام.</p><button data-ui="dismiss">إغلاق</button></div>`;
     if (overlay === 'alert') return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-alert"><h4>تنبيه</h4><p>معلومة قصيرة مرتبطة بالقسم الحالي.</p><button data-ui="dismiss">حسنًا</button></div>`;
@@ -1906,11 +2052,13 @@ body.build-open{overflow:hidden}
     const actions = tab.headerActions.filter(action => action.placement === side);
     return `${actions.slice(0, headerVisibleCount(actions)).map(action => `<button type="button" class="${simulatorMode === 'build' && layoutSelection === `header:${action.id}` ? 'is-selected' : ''}" data-ui="header-action" data-header-id="${escapeHtml(action.id)}" aria-label="${escapeHtml(action.label)}" title="${escapeHtml(action.label)}">${iconChoices[action.icon]?.[1] || '＋'}${action.behavior === 'count' && tab.values.count ? `<small class="header-badge">${formatNumber(tab.values.count)}</small>` : ''}</button>`).join('')}${actions.length > 2 ? `<button type="button" data-ui="header-overflow" data-side="${side}" aria-label="المزيد من أوامر الصفحة">⋯</button>` : ''}`;
   }
-  function runHeaderBehavior(tab, behavior, label) {
+  function runHeaderBehavior(tab, behavior, label, sourceKey = '') {
     overlay = null;
     if (behavior === 'count') tab.values.count += 1;
-    if (behavior === 'push') { const root = currentTab(); root.values.detail = true; root.values.detailTitle = label || 'التفاصيل'; ensureDetailPage(root, label); if (simulatorMode === 'build') showEditorView('page', true); }
-    if (behavior === 'sheet' || behavior === 'alert') overlay = behavior;
+    const parentId = activeFlowRoute()?.id || '';
+    const opened = ['push', 'sheet'].includes(behavior) && sourceKey && openFlowSource(parentId, sourceKey, label);
+    if (behavior === 'push' && !opened) { const root = currentTab(); root.values.detail = true; root.values.detailTitle = label || 'التفاصيل'; ensureDetailPage(root, label); }
+    if (behavior === 'sheet' && !opened || behavior === 'alert') overlay = behavior;
     if (simulatorMode === 'experience') pendingMotion = behavior === 'push' ? 'push' : behavior === 'sheet' || behavior === 'alert' ? 'present' : null;
     if (behavior === 'push') renderAll(); else renderPreview(true);
     experienceSignal(behavior === 'push' ? 'فُتحت صفحة التفاصيل' : behavior === 'sheet' ? 'فُتحت الورقة' : behavior === 'alert' ? 'ظهر التنبيه' : 'تم تنفيذ الأمر');
@@ -1953,7 +2101,7 @@ body.build-open{overflow:hidden}
       return;
     }
     const enabled = new Set(page.tools);
-    const detail = tab.values.detail;
+    const detail = Boolean(flowPath.length || tab.values.detail);
     const free = page.layoutMode === 'free';
     const primaryLabel = page.action === 'push' ? 'عرض التفاصيل' : page.action === 'sheet' ? 'فتح ورقة' : 'عرض تنبيه';
     const content = globalSearchOpen && state.tabsEnabled && state.searchRoleEnabled ? renderGlobalSearch() : detail
@@ -1962,7 +2110,7 @@ body.build-open{overflow:hidden}
       : `${state.activeTab === 0 ? `<span class="builder-app-name">${escapeHtml(state.appName)}</span>` : ''}<h3>${escapeHtml(page.label)}</h3><p class="builder-purpose">${escapeHtml(page.purpose)}</p>${previewFeatureCard(page)}
          ${enabled.has('segmented') ? `<div class="builder-segments" data-tool-inspect="segmented"><button class="${page.values.segment === 0 ? 'active' : ''}" data-ui="segment" data-value="0">الكل</button><button class="${page.values.segment === 1 ? 'active' : ''}" data-ui="segment" data-value="1">المهم</button></div>` : ''}
          ${previewPageKind(page)}${previewTools(page)}${previewCustomBlocks(page)}
-         <div class="builder-section-label">طريقة الانتقال المختارة</div><div class="builder-section"><button class="builder-row selectable" data-ui="navigate" data-tool-inspect="navigation"><span class="row-icon">${page.action === 'push' ? '↩' : page.action === 'sheet' ? '▧' : '!'}</span><span class="row-main">${primaryLabel}</span><span class="row-hint">‹</span></button></div>`;
+         ${['list','cards','settings','forecast'].includes(page.display) ? '' : `<div class="builder-section-label">طريقة الانتقال المختارة</div><div class="builder-section"><button class="builder-row selectable" data-ui="navigate" data-flow-key="primary" data-tool-inspect="navigation"><span class="row-icon">${page.action === 'push' ? '↩' : page.action === 'sheet' ? '▧' : '!'}</span><span class="row-main">${primaryLabel}</span><span class="row-hint">‹</span></button></div>`}`;
     const nativeSearch = !globalSearchOpen && !free && enabled.has('searchfield') ? `<div class="builder-search-dock"><input class="builder-search" type="search" data-ui="search" value="${escapeHtml(page.values.search)}" placeholder="⌕ ابحث داخل هذا القسم" aria-label="بحث داخل ${escapeHtml(page.label)}"></div>` : '';
     const roleSearch = state.tabsEnabled && state.searchRoleEnabled;
     const searchDock = roleSearch && globalSearchOpen ? `<div class="global-search-dock"><span aria-hidden="true">⌕</span><input data-ui="global-search-input" type="search" value="${escapeHtml(globalSearchText)}" placeholder="ابحث في التطبيق" aria-label="بحث في التطبيق"><button type="button" data-ui="global-search-cancel">إلغاء</button></div><div class="global-search-keyboard" aria-label="لوحة مفاتيح مصغرة لمحاكاة البحث"><div>${'ض ص ث ق ف غ ع ه خ ح ج د'.split(' ').map(letter => `<button type="button" data-ui="keyboard-key" data-key="${letter}">${letter}</button>`).join('')}</div><div>${'ش س ي ب ل ا ت ن م ك ط'.split(' ').map(letter => `<button type="button" data-ui="keyboard-key" data-key="${letter}">${letter}</button>`).join('')}</div><div>${'ئ ء ؤ ر ى ة و ز ظ'.split(' ').map(letter => `<button type="button" data-ui="keyboard-key" data-key="${letter}">${letter}</button>`).join('')}</div><div><button type="button" data-ui="keyboard-delete" aria-label="حذف">⌫</button><button type="button" class="space" data-ui="keyboard-key" data-key=" ">مسافة</button><button type="button" data-ui="keyboard-done">تم</button></div></div>` : '';
@@ -2061,9 +2209,9 @@ body.build-open{overflow:hidden}
     }
     if (tab.display === 'list' && tab.listStyle === 'carousel') result.push('                    ScrollView(.horizontal) {', '                        HStack {', `                            ForEach(Array(visibleItems${index}.prefix(10).enumerated()), id: \\.offset) { entry in`, '                                Text(entry.element).padding().frame(width: 180).background(.regularMaterial, in: RoundedRectangle(cornerRadius: 16))', '                            }', '                        }', '                    }');
     if (tab.display === 'list' && tab.listStyle !== 'carousel' || tab.display === 'settings' || tab.display === 'cards') {
-      result.push(`                    ForEach(Array(visibleItems${index}.prefix(4).enumerated()), id: \\.offset) { entry in`);
-      if (tab.action === 'push') result.push('                        NavigationLink {', '                            Text(entry.element).navigationTitle(entry.element)', '                        } label: {', '                            Label(entry.element, systemImage: "chevron.left")', '                        }');
-      if (tab.action === 'sheet') result.push(`                        Button { showSheet${index} = true } label: { Label(entry.element, systemImage: "rectangle.portrait.and.arrow.right") }`);
+      result.push(`                    ForEach(Array(visibleItems${index}.prefix(20).enumerated()), id: \\.offset) { entry in`);
+      if (tab.action === 'push') result.push('                        NavigationLink {', `                            flowRowDestination${index}(entry.element)`, '                        } label: {', '                            Label(entry.element, systemImage: "chevron.left")', '                        }');
+      if (tab.action === 'sheet') result.push(`                        Button { selectedFlowSheet${index} = flowSheetRouteID${index}(entry.element); showSheet${index} = true } label: { Label(entry.element, systemImage: "rectangle.portrait.and.arrow.right") }`);
       if (tab.action === 'alert') result.push(`                        Button { showAlert${index} = true } label: { Label(entry.element, systemImage: "bell") }`);
       if (tab.display === 'list' && tab.listStyle === 'tiles') result.push('                        .listRowBackground(Color.blue.opacity(0.16))');
       result.push('                    }', `                    if visibleItems${index}.isEmpty { Text("لا توجد نتائج") }`);
@@ -2168,10 +2316,10 @@ body.build-open{overflow:hidden}
   function hasHeaderBehavior(tab, behavior) {
     return tab.headerActions.some(action => action.behavior === behavior || action.behavior === 'menu' && action.menuItems.some(item => item.behavior === behavior));
   }
-  function swiftHeaderCommand(behavior, index) {
+  function swiftHeaderCommand(behavior, index, sourceKey = '') {
     if (behavior === 'count') return `itemCount${index} += 1`;
-    if (behavior === 'push') return `showDetail${index} = true`;
-    if (behavior === 'sheet') return `showSheet${index} = true`;
+    if (behavior === 'push') { const route = state.tabs[index]?.flowPages?.find(item => item.parentId === '' && item.sourceKey === sourceKey); return route ? `selectedFlowPush${index} = ${swiftString(route.id)}; showDetail${index} = true` : `showDetail${index} = true`; }
+    if (behavior === 'sheet') { const route = state.tabs[index]?.flowPages?.find(item => item.parentId === '' && item.sourceKey === sourceKey); return route ? `selectedFlowSheet${index} = ${swiftString(route.id)}; showSheet${index} = true` : `showSheet${index} = true`; }
     if (behavior === 'alert') return `showAlert${index} = true`;
     return '';
   }
@@ -2183,7 +2331,7 @@ body.build-open{overflow:hidden}
       rows.push(`${pad}} label: {`, `${pad}    Image(systemName: ${symbol})`, `${pad}}`, `${pad}.accessibilityLabel(${label})`);
       return rows;
     }
-    return [`${pad}Button { ${swiftHeaderCommand(action.behavior, index)} } label: {`, `${pad}    Image(systemName: ${symbol})`, `${pad}}`, `${pad}.accessibilityLabel(${label})`];
+    return [`${pad}Button { ${swiftHeaderCommand(action.behavior, index, `header:${action.id}`)} } label: {`, `${pad}    Image(systemName: ${symbol})`, `${pad}}`, `${pad}.accessibilityLabel(${label})`];
   }
   function swiftHeaderToolbar(tab, index) {
     if (!tab.headerActions.length) return [];
@@ -2201,7 +2349,7 @@ body.build-open{overflow:hidden}
             rows.push(`                        Menu(${swiftString(action.label)}) {`);
             action.menuItems.forEach(item => rows.push(`                            Button(${swiftString(item.label)}) { ${swiftHeaderCommand(item.behavior, index)} }`));
             rows.push('                        }');
-          } else rows.push(`                        Button(${swiftString(action.label)}) { ${swiftHeaderCommand(action.behavior, index)} }`);
+          } else rows.push(`                        Button(${swiftString(action.label)}) { ${swiftHeaderCommand(action.behavior, index, `header:${action.id}`)} }`);
         });
         rows.push('                    } label: {', '                        Image(systemName: "ellipsis")', '                    }', '                    .accessibilityLabel("المزيد من أوامر الصفحة")', '                }');
       }
@@ -2230,17 +2378,95 @@ body.build-open{overflow:hidden}
     if (tab.display === 'spreadsheet' && tab.keyboardStyle === 'numbers') result.push(...swiftNumberKeyboardToolbar(index));
     result.push('        }');
     if (tab.backgroundStyle !== 'system') result.push(`        .background { VisualSceneBackground(style: ${swiftString(tab.backgroundStyle)}, motion: ${tab.backgroundMotion}) }`);
-    const needsSheet = tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet');
+    const needsSheet = tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet') || tab.flowPages.some(route => route.presentation === 'sheet');
     const needsAlert = tab.action === 'alert' || enabled.has('alert') || hasHeaderBehavior(tab, 'alert') || tab.blocks.some(block => block.type === 'button' && block.action === 'alert');
     if (needsSheet) result.push(`        .sheet(isPresented: $showSheet${index}) {`, '            NavigationStack {', '                Text("مهمة مؤقتة مرتبطة بالصفحة")', '                    .padding()', '                    .navigationTitle("ورقة")', '            }', '        }');
     if (needsAlert) result.push(`        .alert("تنبيه", isPresented: $showAlert${index}) {`, '            Button("حسنًا", role: .cancel) { }', '        } message: {', '            Text("معلومة قصيرة مرتبطة بالقسم الحالي.")', '        }');
     result.push('    }');
     return result.join('\n');
   }
+  function swiftFlowName(index, route, tab) { return `flowPage${index}_${tab.flowPages.indexOf(route)}`; }
+  function swiftFlowPage(tab, index, route) {
+    const page=route.page, name=swiftFlowName(index,route,tab), rows=[`    private var ${name}: some View {`, '        Form {', '            Section("المحتوى") {', `                Text(${swiftString(page.purpose)})`, '            }', `            Section(${swiftString(page.dataTitle)}) {`];
+    const sources=flowSources(page), items=sampleItems(page);
+    if (['list','cards','settings','forecast'].includes(page.display)) {
+      items.forEach((item,n)=>{
+        const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey===`row:${n}`);
+        if(child?.presentation==='push')rows.push(`                NavigationLink(${swiftString(item)}) { ${swiftFlowName(index,child,tab)} }`);
+        else if(child?.presentation==='sheet')rows.push(`                Button(${swiftString(item)}) { selectedFlowSheet${index} = ${swiftString(child.id)}; showSheet${index} = true }`);
+        else rows.push(`                Text(${swiftString(item)})`);
+      });
+    } else items.forEach(item=>rows.push(`                Text(${swiftString(item)})`));
+    rows.push('            }');
+    if(page.tools.length){
+      rows.push('            Section("الأدوات") {');
+      page.tools.forEach((id,n)=>{
+        const suffix=`${index}_${tab.flowPages.indexOf(route)}_${n}`;
+        if(id==='textfield')rows.push(`                TextField("العنوان", text: $flowText${suffix})`);
+        else if(id==='toggle')rows.push(`                Toggle("تفعيل", isOn: $flowToggle${suffix})`);
+        else if(id==='slider')rows.push(`                Slider(value: $flowSlider${suffix}, in: 0...1)`);
+        else if(id==='button')rows.push(`                Button("إضافة") { flowCount${suffix} += 1 }`, `                Text("العدد: \\(flowCount${suffix})")`);
+        else if(id==='sheet'){const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey==='tool:sheet');rows.push(`                Button("فتح ورقة") { selectedFlowSheet${index} = ${swiftString(child?.id||'')}; showSheet${index} = true }`);}
+        else if(id==='progress')rows.push('                ProgressView("التقدم", value: 0.6)');
+        else if(extendedIds.has(id))rows.push(`                BuilderExtendedComponent(kind: ${swiftString(id)}, label: ${swiftString(componentOption(page,id).label)}, behavior: ${swiftString(componentOption(page,id).behavior)})`);
+        else rows.push(`                Text(${swiftString(toolInfo[id]?.name||id)})`);
+      });
+      rows.push('            }');
+    }
+    if(page.blocks.length){
+      rows.push('            Section("عناصر مخصصة") {');
+      page.blocks.forEach((block,n)=>{
+        const variable=`flowCustom${index}_${tab.flowPages.indexOf(route)}_${n}`, title=swiftString(block.label);
+        if(block.type==='text')rows.push(`                Text(${title})`);
+        if(block.type==='textfield')rows.push(`                TextField(${title}, text: $${variable})`);
+        if(block.type==='toggle')rows.push(`                Toggle(${title}, isOn: $${variable})`);
+        if(block.type==='slider')rows.push(`                Slider(value: $${variable}, in: 0...1) { Text(${title}) }`);
+        if(block.type==='picker')rows.push(`                Picker(${title}, selection: $${variable}) { Text("اليوم").tag("اليوم"); Text("الأسبوع").tag("الأسبوع"); Text("الشهر").tag("الشهر") }`);
+        if(block.type==='button'&&block.action==='count')rows.push(`                Button(${title}) { ${variable} += 1 }`,`                Text("عدد الضغطات: \\(${variable})")`);
+        if(block.type==='button'&&['push','sheet'].includes(block.action)){
+          const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey===`block:${block.id}`);
+          if(child?.presentation==='push')rows.push(`                NavigationLink(${title}) { ${swiftFlowName(index,child,tab)} }`);
+          if(child?.presentation==='sheet')rows.push(`                Button(${title}) { selectedFlowSheet${index} = ${swiftString(child.id)}; showSheet${index} = true }`);
+        }
+        if(block.type==='button'&&block.action==='alert')rows.push(`                Button(${title}) { flowAlert${index}_${tab.flowPages.indexOf(route)} = true }`);
+      });
+      rows.push('            }');
+    }
+    const otherSources=sources.filter(s=>!s.key.startsWith('row:'));
+    if(otherSources.length){rows.push('            Section("أوامر الشاشة") {');otherSources.forEach(source=>{const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey===source.key);if(!child)return;if(child.presentation==='push')rows.push(`                NavigationLink(${swiftString(source.label)}) { ${swiftFlowName(index,child,tab)} }`);else rows.push(`                Button(${swiftString(source.label)}) { selectedFlowSheet${index} = ${swiftString(child.id)}; showSheet${index} = true }`);});rows.push('            }');}
+    rows.push('        }',`        .navigationTitle(${swiftString(page.label)})`,`        .navigationBarTitleDisplayMode(${page.titleStyle==='large'?'.large':'.inline'})`);
+    if(page.blocks.some(block=>block.type==='button'&&block.action==='alert'))rows.push(`        .alert("تنبيه", isPresented: $flowAlert${index}_${tab.flowPages.indexOf(route)}) { Button("حسنًا", role: .cancel) { } }`);
+    rows.push('    }');
+    return rows.join('\n');
+  }
+  function swiftFlowHelpers(tab,index) {
+    const rows=tab.flowPages.filter(route=>route.parentId===''&&route.sourceKey.startsWith('row:'));
+    const push=rows.filter(route=>route.presentation==='push');
+    const sheets=rows.filter(route=>route.presentation==='sheet');
+    const out=[];
+    if(tab.action==='push') {
+      out.push(`    @ViewBuilder private func flowRowDestination${index}(_ title: String) -> some View {`,'        switch title {');
+      const seen=new Set();push.forEach(route=>{if(seen.has(route.sourceLabel))return;seen.add(route.sourceLabel);out.push(`        case ${swiftString(route.sourceLabel)}: ${swiftFlowName(index,route,tab)}`);});
+      out.push(`        default: detailPage${index}`,'        }','    }');
+    }
+    if(tab.action==='sheet'){
+      out.push(`    private func flowSheetRouteID${index}(_ title: String) -> String {`,'        switch title {');
+      const seen=new Set();sheets.forEach(route=>{if(seen.has(route.sourceLabel))return;seen.add(route.sourceLabel);out.push(`        case ${swiftString(route.sourceLabel)}: return ${swiftString(route.id)}`);});
+      out.push('        default: return ""','        }','    }');
+    }
+    if(tab.flowPages.some(route=>route.presentation==='sheet')){
+      out.push(`    @ViewBuilder private var flowSheetDestination${index}: some View {`,'        switch selectedFlowSheet'+index+' {');
+      tab.flowPages.filter(route=>route.presentation==='sheet').forEach(route=>out.push(`        case ${swiftString(route.id)}: ${swiftFlowName(index,route,tab)}`));
+      out.push('        default: Text("ورقة")','        }','    }');
+    }
+    const headerPush=tab.flowPages.filter(route=>route.parentId===''&&route.sourceKey.startsWith('header:')&&route.presentation==='push');
+    if(headerPush.length){out.push(`    @ViewBuilder private var flowPushDestination${index}: some View {`,'        switch selectedFlowPush'+index+' {');headerPush.forEach(route=>out.push(`        case ${swiftString(route.id)}: ${swiftFlowName(index,route,tab)}`));out.push(`        default: detailPage${index}`,'        }','    }');}
+    return out.join('\n');
+  }
   function swiftPage(tab, index) {
     if (tab.layoutMode === 'free') return swiftFreePage(tab, index);
     const enabled = new Set(tab.tools);
-    const needsSheet = tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet');
+    const needsSheet = tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet') || tab.flowPages.some(route => route.presentation === 'sheet');
     const needsAlert = tab.action === 'alert' || enabled.has('alert') || hasHeaderBehavior(tab, 'alert') || tab.blocks.some(block => block.type === 'button' && block.action === 'alert');
     const result = [`    private var page${index}: some View {`, '        NavigationStack {', '            Form {', '                Section("محتوى الصفحة") {'];
     if (index === 0) result.push(`                    Text(${swiftString(state.appName)})`, '                        .font(.headline)');
@@ -2248,8 +2474,8 @@ body.build-open{overflow:hidden}
     result.push('                }');
     if (tab.featureCard) result.push('                Section {', '                    VStack(alignment: .leading, spacing: 7) {', `                        Text(${swiftString(tab.featureTitle)}).font(.caption.bold())`, `                        Text(${swiftString(tab.featureSubtitle)}).font(.headline)`, '                    }', '                    .frame(maxWidth: .infinity, alignment: .leading)', ...(tab.collapseFeatureOnScroll ? ['                    .scrollTransition { content, phase in content.opacity(phase.isIdentity ? 1 : 0) }'] : []), '                }');
     result.push(...swiftDataSection(tab, index), '                Section("التنقل") {');
-    if (tab.action === 'push') result.push('                    NavigationLink {', `                        detailPage${index}`, '                    } label: {', '                        Label("عرض التفاصيل", systemImage: "chevron.left")', '                    }');
-    if (tab.action === 'sheet') result.push(`                    Button("فتح ورقة") { showSheet${index} = true }`);
+    if (tab.action === 'push') { const route=tab.flowPages.find(item=>item.parentId===''&&item.sourceKey==='primary'); result.push('                    NavigationLink {', `                        ${route?swiftFlowName(index,route,tab):`detailPage${index}`}`, '                    } label: {', '                        Label("عرض التفاصيل", systemImage: "chevron.left")', '                    }'); }
+    if (tab.action === 'sheet') { const route=tab.flowPages.find(item=>item.parentId===''&&item.sourceKey==='primary'); result.push(`                    Button("فتح ورقة") { ${route?`selectedFlowSheet${index} = ${swiftString(route.id)}; `:''}showSheet${index} = true }`); }
     if (tab.action === 'alert') result.push(`                    Button("عرض تنبيه") { showAlert${index} = true }`);
     result.push('                }');
     const controls = [];
@@ -2287,13 +2513,13 @@ body.build-open{overflow:hidden}
     if (tab.backgroundStyle !== 'system') result.push('            .scrollContentBackground(.hidden)');
     result.push(`            .navigationTitle(${swiftString(tab.label)})`, `            .navigationBarTitleDisplayMode(${tab.titleStyle === 'large' ? '.large' : '.inline'})`);
     if (enabled.has('searchfield')) result.push(`            .searchable(text: $searchText${index}, prompt: "ابحث داخل القسم")`);
-    if (hasHeaderBehavior(tab, 'push')) result.push(`            .navigationDestination(isPresented: $showDetail${index}) { detailPage${index} }`);
+    if (hasHeaderBehavior(tab, 'push')) result.push(`            .navigationDestination(isPresented: $showDetail${index}) { ${tab.flowPages.some(route=>route.parentId===''&&route.sourceKey.startsWith('header:')&&route.presentation==='push')?`flowPushDestination${index}`:`detailPage${index}`} }`);
     result.push(...swiftHeaderToolbar(tab, index));
     if (tab.display === 'spreadsheet' && tab.keyboardStyle === 'numbers') result.push(...swiftNumberKeyboardToolbar(index));
     if (enabled.has('searchfield')) result.push('            .toolbar {', '                if #available(iOS 26.0, *) {', '                    DefaultToolbarItem(kind: .search, placement: .bottomBar)', '                }', '            }');
     result.push('        }');
     if (tab.backgroundStyle !== 'system') result.push(`        .background { VisualSceneBackground(style: ${swiftString(tab.backgroundStyle)}, motion: ${tab.backgroundMotion}) }`);
-    if (needsSheet) result.push(`        .sheet(isPresented: $showSheet${index}) {`, '            NavigationStack {', '                Text("مهمة مؤقتة مرتبطة بالصفحة")', '                    .padding()', '                    .navigationTitle("ورقة")', '                    .toolbar {', '                        ToolbarItem(placement: .cancellationAction) {', `                            Button("إغلاق") { showSheet${index} = false }`, '                        }', '                    }', '            }', '        }');
+    if (needsSheet) result.push(`        .sheet(isPresented: $showSheet${index}) {`, '            NavigationStack {', `                ${tab.flowPages.some(route=>route.presentation==='sheet')?`flowSheetDestination${index}`:'Text("مهمة مؤقتة مرتبطة بالصفحة")'}`, '                    .toolbar {', '                        ToolbarItem(placement: .cancellationAction) {', `                            Button("إغلاق") { showSheet${index} = false }`, '                        }', '                    }', '            }', '        }');
     if (needsAlert) result.push(`        .alert("تنبيه", isPresented: $showAlert${index}) {`, '            Button("حسنًا", role: .cancel) { }', '        } message: {', '            Text("معلومة قصيرة مرتبطة بالقسم الحالي.")', '        }');
     result.push('    }');
     return result.join('\n');
@@ -2488,6 +2714,7 @@ struct BuilderWebPreview: UIViewRepresentable {
 `;
   function generateCode() {
     const tabs = state.tabsEnabled ? state.tabs : state.tabs.slice(0, 1);
+    tabs.forEach(reconcileFlowPages);
     const declarations = [];
     if (state.tabsEnabled) declarations.push('    @State private var selectedTab = 0');
     if (state.tabsEnabled && state.searchRoleEnabled) declarations.push('    @State private var globalSearchText = ""');
@@ -2501,8 +2728,8 @@ struct BuilderWebPreview: UIViewRepresentable {
       if (enabled.has('picker')) declarations.push(`    @State private var period${i} = ${swiftString(tab.values.period || 'اليوم')}`);
       if (enabled.has('button') || hasHeaderBehavior(tab, 'count')) declarations.push(`    @State private var itemCount${i} = ${Math.max(0, Math.floor(Number(tab.values.count) || 0))}`);
       if (tab.action === 'push' || hasHeaderBehavior(tab, 'push')) ensureDetailPage(tab);
-      if (hasHeaderBehavior(tab, 'push')) declarations.push(`    @State private var showDetail${i} = false`);
-      if (tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet')) declarations.push(`    @State private var showSheet${i} = false`);
+      if (hasHeaderBehavior(tab, 'push')) { declarations.push(`    @State private var showDetail${i} = false`); if(tab.flowPages.some(route=>route.parentId===''&&route.sourceKey.startsWith('header:')&&route.presentation==='push'))declarations.push(`    @State private var selectedFlowPush${i} = ""`); }
+      if (tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet') || tab.flowPages.some(route=>route.presentation==='sheet')) { declarations.push(`    @State private var showSheet${i} = false`); if(tab.flowPages.some(route=>route.presentation==='sheet'))declarations.push(`    @State private var selectedFlowSheet${i} = ""`); }
       if (tab.action === 'alert' || enabled.has('alert') || hasHeaderBehavior(tab, 'alert') || tab.blocks.some(block => block.type === 'button' && block.action === 'alert')) declarations.push(`    @State private var showAlert${i} = false`);
       if (enabled.has('contextmenu')) declarations.push(`    @State private var selectedText${i} = ${swiftString(tab.values.contextSelected ? 'تم تحديد العنصر' : 'عنصر تجريبي')}`);
       if (tab.display === 'form') declarations.push(`    @State private var sampleInput${i} = ${swiftString(tab.values.sampleInput || '')}`, `    @State private var sampleNote${i} = ${swiftString(tab.values.sampleNote || '')}`);
@@ -2525,6 +2752,11 @@ struct BuilderWebPreview: UIViewRepresentable {
           if (block.type === 'button' && block.action === 'count') declarations.push(`    @State private var ${variable} = ${Math.max(0, Math.floor(Number(block.value) || 0))}`);
         });
       }
+      tab.flowPages.forEach((route,routeIndex)=>{
+        route.page.tools.forEach((id,toolIndex)=>{const suffix=`${i}_${routeIndex}_${toolIndex}`;if(id==='textfield')declarations.push(`    @State private var flowText${suffix} = ""`);if(id==='toggle')declarations.push(`    @State private var flowToggle${suffix} = true`);if(id==='slider')declarations.push(`    @State private var flowSlider${suffix} = 0.5`);if(id==='button')declarations.push(`    @State private var flowCount${suffix} = 0`); });
+        route.page.blocks.forEach((block,n)=>{const variable=`flowCustom${i}_${routeIndex}_${n}`;if(block.type==='textfield')declarations.push(`    @State private var ${variable} = ${swiftString(block.value||'')}`);if(block.type==='toggle')declarations.push(`    @State private var ${variable} = ${block.value!==false?'true':'false'}`);if(block.type==='slider')declarations.push(`    @State private var ${variable} = ${Math.max(0,Math.min(1,Number(block.value)||0)).toFixed(2)}`);if(block.type==='picker')declarations.push(`    @State private var ${variable} = ${swiftString(block.value||'اليوم')}`);if(block.type==='button'&&block.action==='count')declarations.push(`    @State private var ${variable} = ${Math.max(0,Math.floor(Number(block.value)||0))}`);});
+        if(route.page.blocks.some(block=>block.type==='button'&&block.action==='alert'))declarations.push(`    @State private var flowAlert${i}_${routeIndex} = false`);
+      });
       tab.blocks.forEach((block, j) => {
         const variable = `custom${i}_${j}`;
         if (block.type === 'textfield') declarations.push(`    @State private var ${variable} = ${swiftString(block.value || '')}`);
@@ -2604,9 +2836,9 @@ private struct VisualSceneBackground: View {
     }
 }
 ` : '';
-    const hasExtended = tabs.some(tab => tab.tools.some(id => extendedIds.has(id)) || tab.detailPage?.tools.some(id => extendedIds.has(id)));
+    const hasExtended = tabs.some(tab => tab.tools.some(id => extendedIds.has(id)) || tab.detailPage?.tools.some(id => extendedIds.has(id)) || tab.flowPages.some(route=>route.page.tools.some(id=>extendedIds.has(id))));
     const extraImports = hasExtended ? '\nimport Charts\nimport MapKit\nimport PhotosUI\nimport AVKit\nimport WebKit\nimport UniformTypeIdentifiers' : tabs.some(tab => tab.display === 'chart') ? '\nimport Charts' : '';
-    return `import SwiftUI${extraImports}\n\n@main\nstruct VisualBuilderApp: App {\n    var body: some Scene {\n        WindowGroup {\n            BuilderContentView()\n        }\n    }\n}\n\nstruct BuilderContentView: View {\n${declarations.join('\n')}\n\n${tabs.map(swiftVisibleItems).join('\n\n')}\n\n${searchModel}\n\n${body}\n\n${tabs.map(swiftPage).join('\n\n')}\n\n${tabs.map(swiftDetailPage).filter(Boolean).join('\n\n')}\n}\n${sceneSupport}${hasExtended ? extendedSwiftSupport : ''}`;
+    return `import SwiftUI${extraImports}\n\n@main\nstruct VisualBuilderApp: App {\n    var body: some Scene {\n        WindowGroup {\n            BuilderContentView()\n        }\n    }\n}\n\nstruct BuilderContentView: View {\n${declarations.join('\n')}\n\n${tabs.map(swiftVisibleItems).join('\n\n')}\n\n${searchModel}\n\n${body}\n\n${tabs.map(swiftPage).join('\n\n')}\n\n${tabs.map(swiftDetailPage).filter(Boolean).join('\n\n')}\n\n${tabs.map((tab,i)=>swiftFlowHelpers(tab,i)).filter(Boolean).join('\n\n')}\n\n${tabs.flatMap((tab,i)=>tab.flowPages.map(route=>swiftFlowPage(tab,i,route))).join('\n\n')}\n}\n${sceneSupport}${hasExtended ? extendedSwiftSupport : ''}`;
   }
   function renderCode() {
     const oldTop = codeElement.parentElement.scrollTop;
@@ -3098,8 +3330,20 @@ private struct VisualSceneBackground: View {
     if (!tab.blocks.length) steps.push({ id: 'custom', title: 'أضف عنصرًا باسمك', detail: 'أنشئ زرًا أو حقلًا أو مفتاحًا جديدًا في الصفحة.' });
     if (tab.display === 'summary') steps.push({ id: 'display', title: 'اختر عرضًا للبيانات', detail: 'جرّب قائمة أو بطاقات أو مؤشرات أو مخططًا.' });
     steps.push({ id: 'handoff', title: 'احفظ ما بنيته', detail: 'نزّل ملف الوصف وأرفقه لأي نموذج ذكاء اصطناعي.' });
-    document.querySelector('#nextStepPanel').innerHTML = steps.slice(0, 5).map((step, index) => `<button class="next-step" type="button" data-next-action="${step.id}"><small>الخطوة ${formatNumber(index + 1)}</small><strong>${step.title}</strong><span>${step.detail}</span><b>نفّذ الآن ←</b></button>`).join('');
+    document.querySelector('#nextStepPanel').innerHTML = `<details class="builder-guide-group"><summary>الخطوة التالية حسب ما بنيته</summary>${steps.slice(0, 5).map((step, index) => `<button class="next-step" type="button" data-next-action="${step.id}"><small>الخطوة ${formatNumber(index + 1)}</small><strong>${step.title}</strong><span>${step.detail}</span><b>نفّذ الآن ←</b></button>`).join('')}</details><details class="builder-guide-group"><summary>طرق بناء عملية</summary>${builderMethods.map(method=>`<article class="builder-method"><strong>${escapeHtml(method.name)}</strong><p>${escapeHtml(method.text)}</p><button type="button" data-method-pattern="${method.pattern}">اعرض مثالًا مناسبًا</button></article>`).join('')}</details><details class="builder-guide-group" open><summary>اقتراحات صفحات من تطبيقات Apple</summary><p>اختر نمط واجهة أو أداة مستقلة، ثم عدّل شاشاته ومحتواه بما يناسب تطبيقك. الأمثلة تعليمية ولا تصف بنية تطبيقات Apple الداخلية.</p><label class="builder-pattern-search">اختر تطبيق Apple<select id="builderPatternApp"><option value="">جميع التطبيقات (${formatNumber(new Set(builderPatterns.map(item=>item.app)).size)})</option>${[...new Set(builderPatterns.map(item=>item.app))].map(app=>`<option value="${escapeHtml(app)}" ${builderPatternApp===app?'selected':''}>${escapeHtml(app)}</option>`).join('')}</select></label><label class="builder-pattern-search">بحث في الواجهات والأدوات<input type="search" id="builderPatternSearch" value="${escapeHtml(builderPatternQuery)}" placeholder="قائمة، خريطة، رسم، صوت…" autocomplete="off"></label><div id="builderPatternResults" class="builder-pattern-results"></div></details>`;
+    renderBuilderPatternResults();
   }
+  document.querySelector('#nextStepPanel').addEventListener('input',event=>{if(event.target.id==='builderPatternSearch'){builderPatternQuery=event.target.value;renderBuilderPatternResults();}});
+  document.querySelector('#nextStepPanel').addEventListener('change',event=>{if(event.target.id==='builderPatternApp'){builderPatternApp=event.target.value;renderBuilderPatternResults();}});
+  document.querySelector('#nextStepPanel').addEventListener('click',event=>{
+    const method=event.target.closest('[data-method-pattern]');if(method){builderPatternQuery=builderPatterns.find(item=>item.id===method.dataset.methodPattern)?.app||'';const input=document.querySelector('#builderPatternSearch');if(input){input.value=builderPatternQuery;renderBuilderPatternResults();input.focus();}return;}
+    const apply=event.target.closest('[data-pattern-apply],[data-pattern-new],[data-pattern-tool]');if(!apply)return;
+    const id=apply.dataset.patternApply||apply.dataset.patternNew||apply.dataset.patternTool;
+    const item=builderPatterns.find(pattern=>pattern.id===id);if(!item)return;
+    if(apply.dataset.patternTool){if(!activePage().tools.includes(item.tool))toggleTool(item.tool);selectBuildPanel('editor');renderAll(true);return;}
+    if(apply.dataset.patternNew){if(state.tabs.length>=50){document.querySelector('#nextStepStatus').textContent='بلغ المشروع الحد الأقصى للتبويبات.';return;}const page=makeTab(item.app,item.icon);state.tabs.splice(state.activeTab+1,0,page);state.activeTab++;flowPath=[];state.tabsEnabled=true;}
+    applyBuilderPattern(item,activePage());boardSelected={page:state.activeTab,routeId:activeFlowRoute()?.id||''};selectBuildPanel('canvas');renderAll();renderDesignCanvas(true);
+  });
   document.querySelector('#nextStepPanel').addEventListener('click', event => {
     const id = event.target.closest('[data-next-action]')?.dataset.nextAction;
     if (!id) return;
@@ -3136,6 +3380,7 @@ private struct VisualSceneBackground: View {
     if (!Number.isInteger(index) || index < 0 || index >= state.tabs.length || (!state.tabsEnabled && index !== 0)) return;
     if (simulatorMode === 'experience' && index !== state.activeTab) pendingMotion = 'tab';
     state.activeTab = index;
+    flowPath = [];
     globalSearchOpen = false;
     globalSearchText = '';
     activeNumberCell = null;
@@ -3444,7 +3689,7 @@ private struct VisualSceneBackground: View {
     renderLayoutProperties(); renderPageTree(); renderSelectionInspector(); renderCode();
   });
   function newBlockId() { return `b${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`; }
-  function getBlock(id) { return activePage().blocks.find(block => block.id === id); }
+  function getBlock(id,page=activePage()) { return page.blocks.find(block => block.id === id); }
   customBlocks.addEventListener('click', event => {
     const button = event.target.closest('[data-block-command]');
     if (!button) return;
@@ -3507,12 +3752,12 @@ private struct VisualSceneBackground: View {
     }
     const custom = event.target.closest('[data-block-inspect],[data-block-id]');
     if (custom && !isExperience) {
-      const block = getBlock(custom.dataset.blockInspect || custom.dataset.blockId);
+      const block = getBlock(custom.dataset.blockInspect || custom.dataset.blockId,interactionPage(custom));
       if (block) inspector.innerHTML = `<strong>${escapeHtml(block.label)}</strong> — ${blockKinds[block.type]} مخصص في هذه الصفحة.`;
     }
     if (!element) return;
     const action = element.dataset.ui;
-    const tab = activePage();
+    const tab = interactionPage(element);
     if (action === 'number-cell') {
       activeNumberCell = Number(element.dataset.cellIndex);
       if (tab.keyboardStyle === 'numbers') renderPreview(true);
@@ -3536,8 +3781,9 @@ private struct VisualSceneBackground: View {
     if (action === 'global-search-cancel') { globalSearchOpen = false; globalSearchText = ''; pendingMotion = 'back'; renderPreview(); experienceSignal('عودة إلى التبويب السابق'); return; }
     if (action === 'keyboard-key' || action === 'keyboard-delete') { globalSearchText = action === 'keyboard-delete' ? globalSearchText.slice(0, -1) : globalSearchText + (element.dataset.key || ''); renderPreview(); builderScreen.querySelector('[data-ui="global-search-input"]')?.focus({ preventScroll: true }); return; }
     if (action === 'keyboard-done') { builderScreen.querySelector('[data-ui="global-search-input"]')?.blur(); experienceSignal('اكتمل البحث'); return; }
-    if (action === 'global-search-result') { const index = Number(element.dataset.index); globalSearchOpen = false; globalSearchText = ''; switchTab(index); currentTab().values.detail = true; currentTab().values.detailTitle = element.dataset.title || 'النتيجة'; ensureDetailPage(currentTab(), currentTab().values.detailTitle); pendingMotion = 'push'; renderAll(); experienceSignal('فُتحت نتيجة البحث'); return; }
+    if (action === 'global-search-result') { const index = Number(element.dataset.index); globalSearchOpen = false; globalSearchText = ''; switchTab(index); const title = element.dataset.title || 'النتيجة'; if (!openFlowSource('', `row:${sampleItems(currentTab()).indexOf(title)}`, title)) { currentTab().values.detail = true; currentTab().values.detailTitle = title; ensureDetailPage(currentTab(), title); } pendingMotion = 'push'; renderAll(); experienceSignal('فُتحت نتيجة البحث'); return; }
     if (action === 'edit-detail') { showEditorView('page', true); renderAll(true); return; }
+    if (action === 'edit-flow-sheet') { const id=element.dataset.routeId;overlay=null;flowPath=flowAncestry(currentTab(),id);showEditorView('page',true);renderAll();return; }
     if (action === 'extended-action') {
       const id = element.dataset.extendedId;
       if (!extendedIds.has(id)) return;
@@ -3569,7 +3815,7 @@ private struct VisualSceneBackground: View {
       const header = tab.headerActions.find(item => item.id === element.dataset.headerId);
       if (!header) return;
       if (!isExperience) {
-        if (layoutSelection === `header:${header.id}` && header.behavior === 'push') { runHeaderBehavior(tab, header.behavior, header.label); return; }
+        if (layoutSelection === `header:${header.id}` && ['push','sheet'].includes(header.behavior)) { runHeaderBehavior(tab, header.behavior, header.label, `header:${header.id}`); return; }
         overlay = null;
         layoutSelection = `header:${header.id}`;
         showEditorView('element', true);
@@ -3577,7 +3823,7 @@ private struct VisualSceneBackground: View {
         return;
       }
       if (header.behavior === 'menu') { overlay = `header-menu:${header.id}`; if (isExperience) pendingMotion = 'present'; renderPreview(true); experienceSignal('فُتحت القائمة'); }
-      else runHeaderBehavior(tab, header.behavior, header.label);
+      else runHeaderBehavior(tab, header.behavior, header.label, `header:${header.id}`);
       return;
     }
     if (action === 'header-title') {
@@ -3599,15 +3845,17 @@ private struct VisualSceneBackground: View {
     if (action === 'tab') { if (tabBarCompact) { setTabBarCompact(false); experienceSignal('ظهر شريط التبويبات'); return; } switchTab(Number(element.dataset.index)); return; }
     if (action === 'more') { overlay = 'more'; if (isExperience) pendingMotion = 'present'; renderPreview(); experienceSignal('المزيد من التبويبات'); return; }
     if (action === 'more-tab') { switchTab(Number(element.dataset.index)); return; }
-    if (action === 'back') { currentTab().values.detail = false; currentTab().values.detailTitle = ''; if (isExperience) pendingMotion = 'back'; else inspect('navigation'); renderAll(); experienceSignal('عودة إلى القسم'); return; }
+    if (action === 'back') { if (flowPath.length) { const leaving=flowRoute(currentTab(),flowPath.pop()); if(leaving?.parentId && flowRoute(currentTab(),leaving.parentId)?.presentation==='sheet')overlay=`flow-sheet:${leaving.parentId}`; } else { currentTab().values.detail = false; currentTab().values.detailTitle = ''; } if (isExperience) pendingMotion = 'back'; else inspect('navigation'); renderAll(); experienceSignal('عودة إلى القسم'); return; }
     if (action === 'navigate') {
       if (!isExperience) inspect('navigation');
-      if (tab.action === 'push') { const root = currentTab(); root.values.detail = true; root.values.detailTitle = element.dataset.detailTitle || 'التفاصيل'; ensureDetailPage(root, root.values.detailTitle); }
-      else overlay = tab.action;
+      const key = element.dataset.flowKey || (element.dataset.detailTitle ? `row:${sampleItems(tab).indexOf(element.dataset.detailTitle)}` : 'primary');
+      const opened = openFlowSource(interactionParentId(element), key, element.dataset.detailTitle || 'التفاصيل');
+      if (!opened && tab.action === 'push') { const root = currentTab(); root.values.detail = true; root.values.detailTitle = element.dataset.detailTitle || 'التفاصيل'; ensureDetailPage(root, root.values.detailTitle); }
+      else if (!opened) overlay = tab.action;
       if (isExperience) pendingMotion = tab.action === 'push' ? 'push' : 'present';
       renderAll(); experienceSignal(tab.action === 'push' ? 'فُتحت صفحة التفاصيل' : tab.action === 'sheet' ? 'فُتحت الورقة' : 'ظهر التنبيه'); return;
     }
-    if (action === 'tool-sheet') overlay = 'sheet';
+    if (action === 'tool-sheet') { if (!openFlowSource(interactionParentId(element), 'tool:sheet')) overlay = 'sheet'; }
     if (action === 'tool-alert') overlay = 'alert';
     if (action === 'share') overlay = 'share';
     if (action === 'context') overlay = 'menu';
@@ -3618,11 +3866,12 @@ private struct VisualSceneBackground: View {
     if (action === 'add' || action === 'toolbar') { tab.values.count += 1; if (!isExperience) inspect(action === 'toolbar' ? 'toolbar' : 'button'); renderCode(); }
     if (action === 'segment') { tab.values.segment = Number(element.dataset.value); if (!isExperience) inspect('segmented'); renderCode(); }
     if (action === 'block-toggle' || action === 'block-button') {
-      const block = getBlock(element.dataset.blockId);
+      const block = getBlock(element.dataset.blockId,tab);
       if (block) {
         if (action === 'block-toggle') block.value = block.value === false;
-        else if (block.action === 'push') { const root = currentTab(); root.values.detail = true; root.values.detailTitle = block.label; ensureDetailPage(root, block.label); if (isExperience) pendingMotion = 'push'; }
-        else if (block.action === 'sheet' || block.action === 'alert') { overlay = block.action; if (isExperience) pendingMotion = 'present'; }
+        else if (block.action === 'push') { if(!openFlowSource(interactionParentId(element),`block:${block.id}`,block.label)){const root=currentTab();root.values.detail=true;root.values.detailTitle=block.label;ensureDetailPage(root,block.label);} if (isExperience) pendingMotion = 'push'; }
+        else if (block.action === 'sheet') { if(!openFlowSource(interactionParentId(element),`block:${block.id}`,block.label))overlay='sheet'; if(isExperience)pendingMotion='present'; }
+        else if (block.action === 'alert') { overlay='alert'; if(isExperience)pendingMotion='present'; }
         else block.value = (Number(block.value) || 0) + 1;
         if (!isExperience) inspector.innerHTML = `<strong>${escapeHtml(block.label)}</strong> — ${blockKinds[block.type]} مخصص في هذه الصفحة.`;
         renderCode();
@@ -3632,19 +3881,20 @@ private struct VisualSceneBackground: View {
   });
   builderScreen.addEventListener('input', event => {
     const action = event.target.dataset.ui;
+    const page = interactionPage(event.target);
     if (action === 'extended-input') {
       const id = event.target.dataset.extendedId;
       if (!extendedIds.has(id)) return;
-      activePage().componentOptions ||= {};
-      (activePage().componentOptions[id] ||= defaultComponentOption(id)).value = clean(event.target.value, 120);
+      page.componentOptions ||= {};
+      (page.componentOptions[id] ||= defaultComponentOption(id)).value = clean(event.target.value, 120);
       renderCode();
       return;
     }
-    if (action === 'number-cell') { const n = Number(event.target.dataset.cellIndex); activePage().values.sheetCells[n] = clean(event.target.value, 24); renderCode(); return; }
+    if (action === 'number-cell') { const n = Number(event.target.dataset.cellIndex); page.values.sheetCells[n] = clean(event.target.value, 24); renderCode(); return; }
     if (action === 'global-search-input') { const caret = event.target.selectionStart; globalSearchText = event.target.value; renderPreview(); const replacement = builderScreen.querySelector('[data-ui="global-search-input"]'); replacement?.focus({ preventScroll: true }); if (replacement && caret !== null) replacement.setSelectionRange(caret, caret); return; }
     if (action === 'search') {
       const caret = event.target.selectionStart;
-      activePage().values.search = event.target.value;
+      page.values.search = event.target.value;
       if (simulatorMode !== 'experience') inspect('searchfield');
       renderPreview(true);
       const replacement = builderScreen.querySelector('[data-ui="search"]');
@@ -3652,50 +3902,51 @@ private struct VisualSceneBackground: View {
       if (caret !== null && replacement) replacement.setSelectionRange(caret, caret);
       renderCode();
     }
-    if (action === 'text') { activePage().values.text = event.target.value; if (simulatorMode !== 'experience') inspect('textfield'); renderCode(); }
+    if (action === 'text') { page.values.text = event.target.value; if (simulatorMode !== 'experience') inspect('textfield'); renderCode(); }
     if (action === 'slider') {
-      activePage().values.slider = Number(event.target.value) / 100;
+      page.values.slider = Number(event.target.value) / 100;
       const value = builderScreen.querySelector('#builderSliderValue');
       if (value) value.textContent = `${event.target.value}٪`;
       if (simulatorMode !== 'experience') inspect('slider'); renderCode();
     }
     if (action === 'block-text') {
-      const block = getBlock(event.target.dataset.blockId);
+      const block = getBlock(event.target.dataset.blockId,page);
       if (block) { block.value = clean(event.target.value, 100); if (simulatorMode !== 'experience') inspector.innerHTML = `<strong>${escapeHtml(block.label)}</strong> — ${blockKinds[block.type]} مخصص في هذه الصفحة.`; renderCode(); }
     }
     if (action === 'block-slider') {
-      const block = getBlock(event.target.dataset.blockId);
+      const block = getBlock(event.target.dataset.blockId,page);
       if (block) { block.value = Number(event.target.value) / 100; renderCode(); }
     }
     if (action === 'sample-input') {
       const key = event.target.dataset.sampleIndex === '0' ? 'sampleInput' : 'sampleNote';
-      activePage().values[key] = clean(event.target.value, 100);
+      page.values[key] = clean(event.target.value, 100);
       renderCode();
     }
   });
   builderScreen.addEventListener('change', event => {
+    const page=interactionPage(event.target);
     if (event.target.dataset.ui === 'extended-file') {
       const id = event.target.dataset.extendedId;
       if (!extendedIds.has(id)) return;
-      activePage().componentOptions ||= {};
-      (activePage().componentOptions[id] ||= defaultComponentOption(id)).value = clean(event.target.files?.[0]?.name || '', 120);
+      page.componentOptions ||= {};
+      (page.componentOptions[id] ||= defaultComponentOption(id)).value = clean(event.target.files?.[0]?.name || '', 120);
       renderPreview(true); renderCode();
       return;
     }
     if (event.target.dataset.ui === 'extended-select') {
       const id = event.target.dataset.extendedId;
       if (id !== 'multiselect') return;
-      activePage().componentOptions ||= {};
-      const option = activePage().componentOptions[id] ||= defaultComponentOption(id);
+      page.componentOptions ||= {};
+      const option = page.componentOptions[id] ||= defaultComponentOption(id);
       const chosen = new Set((option.value || '').split(',').filter(Boolean));
       if (event.target.checked) chosen.add(event.target.dataset.index); else chosen.delete(event.target.dataset.index);
       option.value = [...chosen].sort().join(',');
       renderCode();
       return;
     }
-    if (event.target.dataset.ui === 'picker') { activePage().values.period = event.target.value; inspect('picker'); renderCode(); }
+    if (event.target.dataset.ui === 'picker') { page.values.period = event.target.value; inspect('picker'); renderCode(); }
     if (event.target.dataset.ui === 'block-picker') {
-      const block = getBlock(event.target.dataset.blockId);
+      const block = getBlock(event.target.dataset.blockId,page);
       if (block) { block.value = event.target.value; renderCode(); }
     }
   });
@@ -3713,6 +3964,7 @@ private struct VisualSceneBackground: View {
   detailBuildButton.addEventListener('click', () => { if (toolInfo[detailBuildButton.dataset.tool]) toggleTool(detailBuildButton.dataset.tool); });
   document.querySelector('#resetBuilder').addEventListener('click', () => {
     state = { ...freshState(), tabsEnabled: false, searchRoleEnabled: false, tabs: [makeTab('الرئيسية', 'house')] };
+    flowPath = [];
     globalSearchOpen = false; globalSearchText = ''; tabBarCompact = false;
     appNameInput.value = state.appName;
     appGoalInput.value = '';
@@ -3750,8 +4002,9 @@ private struct VisualSceneBackground: View {
     setTimeout(() => URL.revokeObjectURL(url), 5000);
   }
   function projectDocument() {
+    state.tabs.forEach(reconcileFlowPages);
     return {
-      format: 'ios-visual-builder-project', schemaVersion: 2,
+      format: 'ios-visual-builder-project', schemaVersion: 3,
       exportedAt: new Date().toISOString(),
       target: { platform: 'iOS', device: 'iPhone 17 Pro', portraitScreenPoints: { width: 402, height: 874 }, framework: 'SwiftUI' },
       appName: state.appName,
@@ -3770,7 +4023,8 @@ private struct VisualSceneBackground: View {
         tools: tab.tools.map(id => ({ type: id, name: toolInfo[id].name, purpose: toolInfo[id].description, ...(extendedIds.has(id) ? { label: componentOption(tab, id).label, behavior: behaviorChoice(id, componentOption(tab, id).behavior)?.[1], behaviorId: componentOption(tab, id).behavior, browserSupport: behaviorChoice(id, componentOption(tab, id).behavior)?.[2] } : {}) })),
         customElements: tab.blocks.map(block => ({ type: block.type, label: block.label, action: block.type === 'button' ? block.action : undefined, previewValue: block.value })),
         previewState: { ...tab.values, detail: false },
-        detailPage: tab.detailPage ? { title: tab.detailPage.label, purpose: tab.detailPage.purpose, pageType: tab.detailPage.kind, dataPresentation: { style: tab.detailPage.display, title: tab.detailPage.dataTitle, sampleItems: sampleItems(tab.detailPage) }, headerActions: tab.detailPage.headerActions, tools: tab.detailPage.tools, customElements: tab.detailPage.blocks, visualPresentation: { background: tab.detailPage.backgroundStyle, listStyle: tab.detailPage.listStyle, cardStyle: tab.detailPage.cardStyle }, layout: { mode: tab.detailPage.layoutMode, positionsPercent: tab.detailPage.layout } } : null
+        detailPage: tab.detailPage ? { title: tab.detailPage.label, purpose: tab.detailPage.purpose, pageType: tab.detailPage.kind, dataPresentation: { style: tab.detailPage.display, title: tab.detailPage.dataTitle, sampleItems: sampleItems(tab.detailPage) }, headerActions: tab.detailPage.headerActions, tools: tab.detailPage.tools, customElements: tab.detailPage.blocks, visualPresentation: { background: tab.detailPage.backgroundStyle, listStyle: tab.detailPage.listStyle, cardStyle: tab.detailPage.cardStyle }, layout: { mode: tab.detailPage.layoutMode, positionsPercent: tab.detailPage.layout } } : null,
+        flowScreens: tab.flowPages.map(route => ({ id: route.id, parentId: route.parentId || null, trigger: route.sourceKey, triggerLabel: route.sourceLabel, presentation: route.presentation, title: route.page.label, purpose: route.page.purpose, display: route.page.display, dataTitle: route.page.dataTitle, choices: sampleItems(route.page), headerActions: route.page.headerActions, tools: route.page.tools, customElements: route.page.blocks }))
       })),
       integration: { nodes: appGraph().nodes.length, connectedNodes: appGraph().nodes.filter(node => node.connected).length, interpretation: 'العداد يقيس ترابط مخطط الصفحات والأدوات وتقنيات التنفيذ المختارة، وليس تنفيذها في Xcode أو جاهزية التطبيق للإنتاج.' },
       blueprintAssessment: (() => { const result = assessProject(); return { completed: result.complete, total: result.checks.length, checks: result.checks, inferredType: result.inferred, selectedType: result.chosen, directionGoal: result.directionGoal, limitation: 'هذا تقييم لمدى توثيق مخطط الواجهة فقط؛ لا يثبت تنفيذ البيانات أو الخصوصية أو الوصولية أو الاختبار على جهاز.' }; })(),
@@ -3807,6 +4061,7 @@ private struct VisualSceneBackground: View {
       const project = JSON.parse(jsonText);
       if (project.format !== 'ios-visual-builder-project' || !project.builderState) throw new Error('هذا ليس ملف مشروع صادرًا من المختبر.');
       state = validatedState(project.builderState);
+      flowPath = [];
       globalSearchOpen = false; globalSearchText = ''; tabBarCompact = false;
       appNameInput.value = state.appName;
       appGoalInput.value = state.appGoal;
@@ -3831,13 +4086,12 @@ private struct VisualSceneBackground: View {
       else if (globalSearchOpen) { globalSearchOpen = false; globalSearchText = ''; pendingMotion = 'back'; renderPreview(); experienceSignal('عودة إلى التبويب السابق'); }
       else if (builderScreen.contains(document.activeElement) && ['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) { document.activeElement.blur(); experienceSignal('أُغلق الإدخال'); }
       else if (experienceSurface !== 'app') { experienceSurface = 'app'; pendingMotion = 'push'; renderPreview(); }
-      else if (currentTab().values.detail) { currentTab().values.detail = false; currentTab().values.detailTitle = ''; pendingMotion = 'back'; renderPreview(); experienceSignal('عودة إلى القسم'); }
+      else if (flowPath.length || currentTab().values.detail) { if(flowPath.length)flowPath.pop();else{currentTab().values.detail = false; currentTab().values.detailTitle = '';} pendingMotion = 'back'; renderPreview(); experienceSignal('عودة إلى القسم'); }
       else closeExperience();
     }
-    if (event.altKey && event.key === 'ArrowRight' && currentTab().values.detail) {
+    if (event.altKey && event.key === 'ArrowRight' && (flowPath.length || currentTab().values.detail)) {
       event.preventDefault();
-      currentTab().values.detail = false;
-      currentTab().values.detailTitle = '';
+      if(flowPath.length)flowPath.pop();else{currentTab().values.detail = false;currentTab().values.detailTitle = '';}
       pendingMotion = 'back';
       renderPreview();
       experienceSignal('عودة إلى القسم');
@@ -3855,8 +4109,8 @@ private struct VisualSceneBackground: View {
     const dx = event.clientX - start.x, dy = event.clientY - start.y;
     const rect = builderScreen.getBoundingClientRect();
     if (['sheet', 'share', 'more'].includes(overlay) && dy > 65 && Math.abs(dy) > Math.abs(dx) * 1.3) { overlay = null; pendingMotion = 'back'; renderPreview(true); experienceSignal('أُغلقت الورقة'); return; }
-    if (experienceSurface === 'app' && currentTab().values.detail && rect.right - start.x < rect.width * .32 && dx < -55 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-      currentTab().values.detail = false; currentTab().values.detailTitle = ''; pendingMotion = 'back'; renderPreview(); experienceSignal('عودة بالسحب'); return;
+    if (experienceSurface === 'app' && (flowPath.length || currentTab().values.detail) && rect.right - start.x < rect.width * .32 && dx < -55 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      if(flowPath.length)flowPath.pop();else{currentTab().values.detail=false;currentTab().values.detailTitle='';} pendingMotion = 'back'; renderPreview(); experienceSignal('عودة بالسحب'); return;
     }
     if (experienceSurface === 'app' && start.y > rect.bottom - 70 && dy < -75 && Math.abs(dy) > Math.abs(dx) * 1.3) {
       experienceSurface = performance.now() - start.time > 500 ? 'switcher' : 'home';
@@ -3882,7 +4136,6 @@ private struct VisualSceneBackground: View {
   select(activeId);
   if (location.hash === '#builderStage') requestAnimationFrame(openBuildWorkspace);
 })();
-
 </script>
 <!-- BUILDER_END -->
 <!-- NATIVE_LEARNING_START -->
