@@ -75,7 +75,7 @@
       </div>
     </aside>
     <aside class="panel next-panel" aria-label="مقترحات الخطوة التالية وأمثلة">
-      <span class="code-kicker">مساعد البناء</span><h2>الخطوة التالية</h2><p>قائمة خطوات مرتبطة بما تبنيه الآن، ثم أمثلة يمكن إدراجها كتَبويبات قابلة للتعديل.</p>
+      <span class="code-kicker">مساعد البناء</span><h2>الطرق والواجهات</h2><p>اختر طريقة بناء أو واجهة من تطبيق Apple، ثم عدّلها بما يناسب مشروعك.</p>
       <div id="nextStepPanel" class="next-step-list"></div>
       <h3>أمثلة قابلة للتعديل</h3>
       <div class="example-presets"><button type="button" data-example="tasks">مهام · قائمة قابلة للبحث</button><button type="button" data-example="dashboard">لوحة مؤشرات · مخطط وملخص</button><button type="button" data-example="profile">ملف شخصي · حقول وإعدادات</button><button type="button" data-example="weather">طقس · خلفية حية وتوقعات</button><button type="button" data-example="reminders">تذكيرات · بلاطات وقوائم</button><button type="button" data-example="numbers">جدول · خلايا ولوحة أرقام</button></div>
@@ -831,6 +831,9 @@ body.build-open{overflow:hidden}
 .builder-pattern-actions{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
 .builder-pattern-actions button:first-child{background:#e7f4ff}
 .builder-pattern-empty{font-size:11px;color:#6c879a;padding:10px}
+.build-workspace-dock>.next-panel>h3,.build-workspace-dock>.next-panel>.example-presets{display:none}
+.build-workspace-dock>.next-panel .next-step-list{flex:1 1 0;min-height:100px}
+@media(max-width:710px){.build-workspace-dock[data-active-panel=next]>.builder-stage{flex:0 0 45%;height:45%}}
 </style>
 <script>
 (function () {
@@ -4146,7 +4149,14 @@ private struct VisualSceneBackground: View {
   select(activeId);
   if (location.hash === '#builderStage' || location.hash === '#builderIdeas') requestAnimationFrame(() => {
     openBuildWorkspace();
-    if (location.hash === '#builderIdeas') selectBuildPanel('next');
+    if (location.hash === '#builderIdeas') {
+      selectBuildPanel('next');
+      requestAnimationFrame(() => {
+        const list = document.querySelector('#nextStepPanel');
+        const appIdeas = document.querySelector('#builderPatternApp');
+        if (list && appIdeas) list.scrollTop = Math.max(0, appIdeas.getBoundingClientRect().top - list.getBoundingClientRect().top - 45);
+      });
+    }
   });
 })();
 </script>
