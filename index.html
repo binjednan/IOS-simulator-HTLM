@@ -38,7 +38,7 @@
   </header>
   <main class="workspace">
     <section class="builder-work-area" id="builderLab" aria-label="مختبر بناء التطبيق">
-      <div class="workspace-intro"><span>١ · ابنِ وجرّب</span><h2>محاكي بناء التطبيق</h2><p>اختر الأدوات، حرّكها في الهاتف، ثم عدّل الصفحات واحفظ وصف المشروع والكود.</p></div>
+      <div class="workspace-intro"><span>١ · ابنِ وجرّب</span><h2>محاكي بناء التطبيق</h2><p>اختر الأدوات، حرّكها في الهاتف، ثم عدّل الصفحات واحفظ وصف المشروع والكود.</p><button id="openBuildWorkspace" type="button" class="focus-build-button">◈ افتح مساحة البناء</button></div>
     <aside class="panel tools-panel" aria-label="مكتبة أدوات التطبيق">
       <span class="code-kicker">مكتبة العناصر</span><h2>الأدوات</h2><p>قائمة منظّمة حسب وظيفة العنصر. اختر أي أداة لإضافتها إلى الصفحة النشطة.</p>
       <label class="tool-search-label" for="toolSearch">ابحث في الأدوات</label><input id="toolSearch" class="tool-search" type="search" placeholder="اسم الأداة أو وظيفتها">
@@ -48,7 +48,7 @@
       <div class="stage-head"><span class="section-label">iPhone 17 Pro · تطبيقك</span><span class="count-pill" id="builderCount">٠ أدوات</span></div>
       <div class="builder-phone-wrap"><div class="phone builder-phone"><div class="phone-screen"><div class="builder-screen" id="builderScreen" dir="rtl"></div></div></div></div>
       <div id="builderStagePlaceholder" class="builder-stage-placeholder" hidden>الهاتف مفتوح في وضع تجربة المستخدم.</div>
-      <div class="builder-mode-toolbar"><button id="openExperience" type="button" class="experience-launch">▶ تجربة المستخدم</button><button id="toggleLayoutEdit" type="button">✥ تحريك العناصر</button><span id="layoutModeHint">وضع البناء: عدّل العناصر والمواضع ثم افتح تجربة المستخدم للتنقل دون أدوات التحرير.</span></div>
+      <div class="builder-mode-toolbar"><button id="toggleBuildPhone" type="button" aria-pressed="false">⤢ تكبير الهاتف</button><button id="openBuildFromPhone" type="button">◈ التركيز على البناء</button><button id="openExperience" type="button" class="experience-launch">▶ تجربة المستخدم</button><button id="toggleLayoutEdit" type="button">✥ تحريك العناصر</button><span id="layoutModeHint">وضع البناء: عدّل العناصر والمواضع ثم افتح تجربة المستخدم للتنقل دون أدوات التحرير.</span></div>
     </section>
     <aside class="panel editor-panel" aria-label="محرر التطبيق وخصائص عناصره">
       <div class="code-heading"><div><span class="code-kicker">محرر التطبيق</span><h2>الصفحات والخصائص</h2></div><div class="code-heading-actions"><button id="saveDraft" class="text-button" type="button">حفظ المسودة</button><button id="resetBuilder" class="text-button" type="button">بدء فارغ</button></div></div>
@@ -152,7 +152,7 @@
     <nav class="guide-jump" aria-label="أقسام دليل الاستخدام"><a href="#guideStart">البدء</a><a href="#guideBuild">البناء</a><a href="#guideTry">التجربة</a><a href="#guideFiles">الحفظ والتصدير</a><a href="#guideImport">الاستيراد</a><a href="#guideSwift">استخدام الناتج</a><a href="#guideMap">الخريطة والتقييم</a><a href="#nativeLab">Apple Native</a><a href="#guideHelp">حل المشكلات</a></nav>
     <div class="guide-grid">
       <article class="guide-card" id="guideStart"><h3>١. تعرّف على عناصر iOS</h3><ol><li>اختر مصطلحًا من <a href="#termList">فهرس المصطلحات</a> أو ابحث عنه بالعربية أو الإنجليزية.</li><li>راقب موضعه في هاتف الأمثلة، أو اضغط عنصرًا مضيئًا داخل الهاتف لاختياره مباشرة.</li><li>اقرأ معناه، أين يستخدم، أين لا يستخدم، وطريقة التفاعل معه.</li></ol><p class="guide-note">المعجم مرجع تعليمي عام. عناصر النظام مثل شريط الحالة والجزيرة الديناميكية تُشرح هنا، ولا تضاف كأزرار عادية داخل تطبيقك.</p></article>
-      <article class="guide-card" id="guideBuild"><h3>٢. ابنِ هيكل تطبيقك</h3><ol><li>اكتب <a href="#appName">اسم التطبيق</a> وهدفه، ثم افتح «الصفحة والتنقل» لإضافة تبويب وتحديد نوع الصفحة وعرض بياناتها.</li><li>اختر أدوات من المكتبة. يمكن الضغط على عنصر داخل هاتف البناء لتحديده وفتح خصائصه، أو إنشاء عناصر متكررة من «عناصر مخصصة».</li><li>اضغط أمرًا بجانب عنوان الهاتف لتعديل اسمه وأيقونته وجانبه ووظيفته. اسحبه بين جانبي الشريط، أو افتح «خيارات وترتيب متقدم» لإدارة القوائم والترتيب؛ اضغط العنوان نفسه لتعديل اسم الصفحة.</li><li>يبدأ البناء بتخطيط نظامي متكيف، ويمكنك اختيار «حر بالسحب» لتحديد مواضع محتوى الصفحة. في الوضع الحر اضغط «تحريك العناصر» ثم اسحب العنصر أو اضبط إحداثياته.</li><li>اضبط سلوك انكماش التبويبات وزر البحث المستقل من «الصفحة والتنقل». البحث المحلي أداة تخص الصفحة الحالية.</li><li>افتح «المشهد والتمرير وأسلوب العرض» لاختيار الخلفية المتحركة، أسلوب القوائم والبطاقات، العنوان الكبير، وتلاشي البطاقة عند التمرير. أضف مثال «جدول» لتجربة لوحة الأرقام والخلايا.</li><li>على iPhone وiPad استخدم روابط الانتقال أعلى الصفحة؛ افتح «تحريك العناصر» قبل سحب عنصر باللمس، ثم جرّب النتيجة في «تجربة المستخدم».</li></ol><p class="guide-note">زر «بدء فارغ» ينشئ مشروعًا جديدًا مكان البناء الحالي. نزّل ملف المشروع أولًا إذا أردت الاحتفاظ بالنسخة الحالية.</p></article>
+      <article class="guide-card" id="guideBuild"><h3>٢. ابنِ هيكل تطبيقك</h3><ol><li>اضغط <a href="#openBuildWorkspace">«افتح مساحة البناء»</a> للعمل في واجهة معزولة؛ يبقى الهاتف ظاهرًا، وتُمرّر الأدوات والمحرر والاقتراحات داخل لوحاتها. زر «العودة للصفحة» يعيدك إلى مكانك. على الهاتف اختر اللوحة من الأزرار أعلى المساحة، واضغط «تكبير الهاتف» عند الحاجة للتفاعل مع تفاصيل أصغر.</li><li>اكتب <a href="#appName">اسم التطبيق</a> وهدفه، ثم افتح «الصفحة والتنقل» لإضافة تبويب وتحديد نوع الصفحة وعرض بياناتها.</li><li>اختر أدوات من المكتبة. يمكن الضغط على عنصر داخل هاتف البناء لتحديده وفتح خصائصه، أو إنشاء عناصر متكررة من «عناصر مخصصة».</li><li>اضغط أمرًا بجانب عنوان الهاتف لتعديل اسمه وأيقونته وجانبه ووظيفته. اسحبه بين جانبي الشريط، أو افتح «خيارات وترتيب متقدم» لإدارة القوائم والترتيب؛ اضغط العنوان نفسه لتعديل اسم الصفحة.</li><li>يبدأ البناء بتخطيط نظامي متكيف، ويمكنك اختيار «حر بالسحب» لتحديد مواضع محتوى الصفحة. في الوضع الحر اضغط «تحريك العناصر» ثم اسحب العنصر أو اضبط إحداثياته.</li><li>اضبط سلوك انكماش التبويبات وزر البحث المستقل من «الصفحة والتنقل». البحث المحلي أداة تخص الصفحة الحالية.</li><li>افتح «المشهد والتمرير وأسلوب العرض» لاختيار الخلفية المتحركة، أسلوب القوائم والبطاقات، العنوان الكبير، وتلاشي البطاقة عند التمرير. أضف مثال «جدول» لتجربة لوحة الأرقام والخلايا.</li><li>على iPhone وiPad استخدم روابط الانتقال أعلى الصفحة؛ افتح «تحريك العناصر» قبل سحب عنصر باللمس، ثم جرّب النتيجة في «تجربة المستخدم».</li></ol><p class="guide-note">زر «بدء فارغ» ينشئ مشروعًا جديدًا مكان البناء الحالي. نزّل ملف المشروع أولًا إذا أردت الاحتفاظ بالنسخة الحالية.</p></article>
       <article class="guide-card" id="guideTry"><h3>٣. جرّب التطبيق كما يراه المستخدم</h3><ol><li>اضغط <a href="#openExperience">«تجربة المستخدم»</a> لفتح الهاتف دون أدوات التحرير.</li><li>جرّب التبويبات، البحث، الصفحات الفرعية، الأوراق والتنبيهات. مرّر المحتوى لتجربة انكماش الشريط، واسحب للرجوع أو لإغلاق الورقة.</li><li>اختبر المظهر الفاتح والداكن، التباين الأعلى، وتقليل الشفافية والحركة. استخدم <kbd>Esc</kbd> للرجوع، ثم «العودة للبناء» لإغلاق التجربة.</li></ol><p class="guide-note">التغييرات التي تجريها أثناء التجربة مؤقتة؛ عند العودة للبناء تستعاد حالة المشروع السابقة. المحاكاة المرئية لا تنتج اهتزازات iPhone الفعلية.</p></article>
       <article class="guide-card" id="guideMap"><h3>٤. راجع ترابط الصفحات وجودة المخطط</h3><p>يعرض <a href="#appMap">مخطط التطبيق</a> أربع طرق: خريطة شاملة، مسارات تنقل، لوحة شاشات، وشجرة بنية. اضغط أي عقدة للانتقال إلى صفحتها أو إعدادها. عداد الترابط يوضح العناصر الموصولة بمسار داخل النموذج.</p><p>تعرض «أساسيات مخطط التطبيق» ما راجعته من صفحات وتنقل وبيانات وتفاعل. اختر نوع التطبيق في «اتجاه التطبيق» لترى مقياس تغطية هدفه، المعايير الناقصة، والاقتراحات المرتبطة بمحرر الصفحة. يظهر ما يحتاج تنفيذًا واختبارًا خارج المحاكي في قائمة منفصلة، ويُحفظ التقييم مع ملف المشروع والوصف.</p><p class="guide-note warning">اكتمال العداد يعني اكتمال توثيق الواجهة في هذا المختبر؛ لا يثبت جاهزية البيانات أو الصلاحيات أو اختبار التطبيق على جهاز.</p></article>
       <article class="guide-card wide" id="guideFiles"><h3>٥. اختر طريقة الحفظ المناسبة</h3><div class="guide-file-grid">
@@ -169,6 +169,13 @@
     <div class="guide-card wide" id="shareSimulator" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px;background:#eef8ff"><div><h3>رابط المحاكي للمشاركة</h3><p>افتح الرابط أو امسح رمز QR للانتقال مباشرة إلى هاتف البناء في النسخة المنشورة.</p><a dir="ltr" href="https://binjednan.github.io/ios-visual-glossary/#builderStage" style="overflow-wrap:anywhere">https://binjednan.github.io/ios-visual-glossary/#builderStage</a></div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnwAAAJ8CAIAAADrj+sBAAAPPUlEQVR4nO3c0a3j2rFFUbXRCXQczsXBvlxeHCcEOQODQO87UbU5RgAiRVKa4M/69f1+PwDAP+9fwTEAANEFgI7oAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAER+f4b58+//fN7q5///b9R1PnU+p4516tk4dazynE/ZeM6nTHvGnrj1Obz1f/UJb7oAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4AvHV7eeOW5hPl9mm51/rmjdlpW9Abz3nad791//wJ/6sNb7oAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4ARFZuL0/b5Lx1s7TcxT11Dadt1T65Phvvxcbf18ad3mk23vdpvOkCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAELl2e/nNNm6WTtsNLregp20Cl1vQ5b14wvnwT/OmCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkDE9vIy5RZruYd861btqWu4cZ952lb2tN8F7+RNFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYDItdvL5b5u6dRW7bRjlabtM0/bgp5238t95mnPxjRv/u6neNMFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBILJye3nj3u+bt3OfKDdvN27wTjufW6/zKRu3oKf9J9zKmy4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAb91e3rizutG0HePStPO59Xdx6jpv3OU+pfxeNLzpAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6APDW7eVTTu2jntosLfdabcP+/bFuvV+nlPfr1usz7XudOmc7z/+bN10AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIiu3lzfu4k7bcC63Yd+8xXrrfZ+2LTxtx3iajRvpT2zcgvamCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBk5fbytN3gJ8c6tRE6bUf0iWlbvrduAk/bQ55m2u70tF3uaTvGfy59Vr3pAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6APDW7eVyo3jjLm65fXrqWOXnbNxrffP3Kk37vd/qzTvzT3jTBYCI6AJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASDy6/v9fraZtkO7cVf5lFPfa+PnPFHeU7+LOcfaeD7T/Fn4G3zCmy4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAb91e3rjBO23b85Rbt3ynHeuUaRvF03475f269XuVfi79X/WmCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkDk9+fFyo3ZN++13noNN244nzpWuas87dmYdg3f/PvayJsuAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILAJFXby9v3CzduNd6670od2g3Xp/yfKbtIZc2bnefMu1ePOFNFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYDIr+/3+5mk3D49dayNm7flZum08zll2n0vTdvlvnUL+tb/jT+X/ic84U0XACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgMjvz0LTdjun7RhPO9a063NqO3faDu2038U00zacn5h23zfuV/8Me+a96QJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugDw1u3laRuhp2zcLN1o2lbtxm3qac/htK3jaab9J7x5V/kJb7oAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4ARH59v9/PJOUu7qljTfucWzd4p933U8fa+N1v/V4bTXueb/3tnOJNFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYDI788w03Y7b/2c8l6U26cbd7Cn3Xfm2Pi/8cSfYb+vkjddAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4AREQXAN66vXzKqX3dU8fauFm68fqUNl6f8pzL3eA372lPO+dp/1E/w/5/vOkCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEFm5vbxxb3PaOU/bR31i2j0tbbxf07z5+pTPT7nLvZE3XQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiK7eXy63RjbvB03ZNy83bW3dfN+5Ob3zmn5zzqWfs1v+fjedT8qYLABHRBYCI6AJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQOTX9/v9TDJts3Sjjddn2har5/DvTdsonvaMPbHx+Sm31p+Ydt+96QJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugDw1u3lJ27dWd241zptf9h9v+86v3l/+An71bt40wWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEg8vszTLkjekp5Pm/ePi33Y8sd2lPHKp/Dadd5427wxv+Eaf+rG3nTBYCI6AJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASDy6/v9fraZtte6cff1iY3fa+Oe7a33a9r5bNx+f/PO/BPTnp8nvOkCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroA8Nbt5Y27neU5T/tet25cO9bff840vtc7/QzbZ/amCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkDk92eYcmP2zTvP5eds3GeettdaPqvT7sUTt24LT3sO+XvedAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCI/Pp+v59JTm2ontqGnXasaXutt+7rbjznJzZuJk/7fZ2y8T9q2n3fyJsuAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILAJFrt5dPmbb/ufH6lPuxt244b3w2Tpm29ztto/iJad/rlI3n7E0XACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgMi128u3bt7aUG1s3Ok9Zdre76ljlcrn54k3X5+fYd/dmy4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAkd+fhaZtaZ46n2k7q+Wu6a27yqfO54lpW74bj3XqfDZen2n/Y7fypgsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6ALAW7eXp+0qT9vpvdWt13naLu7Ga7hxN3jarvI0P5d+rye86QJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQ+fX9fj/bTNvkLHdfb92mLt26izttf3jj+UzbeS5/O9Oe1T/DnsNTvOkCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroA8Nbt5Wnbpxs3Xd+8xXrrVm1p2u+r9ObfYOnH9jIA8E8TXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAER+f4YpdzI3HuvU/vC0zzml/F6nTLs+t7p173fa87Pxf6PkTRcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAt24v24a9b3942o5xua9bXsNbN3ifmLan/UR5PtOenzfzpgsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6ALAW7eXn9i4EbpxY/bUscpN6fK7l+wq//2xNm5lb3yebUr/b950ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIis3F6etv85bdvzlGm7ytP2Y8vvXiqv86ljlTvGT0zbeb7Vz8L/Xm+6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAESu3V6+1cad1fKcp12fUxu80z7niY3nfOv3mrZbfsq0zfYnvOkCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAELG9zD/u1PbptE3gaW79XtP2dU9dwzdvFP8cOta0XeUnvOkCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAELl2e3njJufG71Vuuk777tOU92LaDvbGbeFp1/CUaTvYP8P+N7zpAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABBZub1c7ohudGqPdNqma7lVu/F8bt37nfYc3mradvfPof+oabzpAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABD59f1+q2MBwKt50wWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4AREQXACKiCwAR0QWAiOgCQER0ASAiugAQEV0AiIguAEREFwAiogsAEdEFgIjoAkBEdAEgIroAEBFdAIiILgBERBcAIqILABHRBYCI6AJARHQBICK6ABARXQCIiC4AREQXAD6N/wJRcHe+EqfnjQAAAABJRU5ErkJggg==" alt="رمز QR يفتح محاكي بناء تطبيقات iOS" width="154" height="154" style="border:1px solid #d6e4ec;border-radius:12px;background:white;padding:5px"></div>
     <p class="guide-footer">عند الحاجة للعودة إلى الأعلى: <a href="#userGuide">بداية الدليل</a> · <a href="#downloadProject">لوحة الحفظ</a> · <a href="#openExperience">هاتف التجربة</a>.</p>
   </section>
+  <div id="buildOverlay" class="build-overlay" role="dialog" aria-modal="true" aria-label="مساحة بناء التطبيق" hidden>
+    <div class="build-workspace">
+      <header class="build-workspace-bar"><div><strong>◈ مساحة البناء</strong><span>الهاتف والأدوات والمحرر في مكان واحد</span></div><div class="build-workspace-actions"><button type="button" id="buildSave">حفظ المسودة</button><button type="button" id="buildExport">تنزيل المشروع</button><button type="button" id="closeBuildWorkspace" class="build-close">↩ العودة للصفحة</button></div></header>
+      <nav class="build-workspace-tabs" aria-label="لوحات مساحة البناء"><button type="button" data-build-panel="tools" aria-pressed="false">الأدوات</button><button type="button" data-build-panel="editor" aria-pressed="true">المحرر</button><button type="button" data-build-panel="next" aria-pressed="false">الاقتراحات</button><button type="button" data-build-panel="output" aria-pressed="false">الحفظ والكود</button></nav>
+      <div id="buildWorkspaceDock" class="build-workspace-dock" data-active-panel="editor"></div>
+    </div>
+  </div>
   <div id="experienceOverlay" class="experience-overlay" role="dialog" aria-modal="true" aria-label="وضع تجربة المستخدم" hidden>
     <div class="experience-window">
       <div class="experience-window-bar"><div class="experience-window-title"><b>◉</b><span>تجربة المستخدم</span><small>iPhone 17 Pro · iOS 27 بصريًا</small></div><div class="experience-window-actions"><button id="experienceHome" type="button" title="الشاشة الرئيسية">⌂ الرئيسية</button><button id="experienceSwitcher" type="button" title="مبدّل التطبيقات">▣ التطبيقات</button><button id="closeExperience" type="button" class="experience-close">↩ العودة للبناء</button></div></div>
@@ -662,7 +669,7 @@ html{scroll-padding-top:12px}button,input,select,summary{touch-action:manipulati
 
 .builder-screen.scene-night:not(.experience-dark) .builder-tab.active,.builder-screen.scene-aurora:not(.experience-dark) .builder-tab.active,.builder-screen.scene-sunset:not(.experience-dark) .builder-tab.active{color:#174a87}
 
-/* Keep the canvas in sight while the independent tool and property lists scroll. */
+/* The page remains a normal document. Focus mode provides a separate, fixed workspace. */
 .builder-analysis-area>.app-map-panel{grid-column:1;grid-row:1}
 .builder-analysis-area>.glossary-work-area{grid-column:1;grid-row:2;min-width:0}
 .builder-analysis-area>.quality-panel{grid-column:2;grid-row:1 / span 2}
@@ -672,7 +679,7 @@ html{scroll-padding-top:12px}button,input,select,summary{touch-action:manipulati
 @media(min-width:901px){
   .builder-work-area{--studio-height:clamp(710px,calc(100dvh - 24px),850px);grid-template-rows:auto var(--studio-height) auto auto auto}
   .builder-work-area>.tools-panel,.builder-work-area>.editor-panel,.builder-work-area>.next-panel,.builder-work-area>.builder-stage{height:var(--studio-height);min-height:0;max-height:var(--studio-height)}
-  .builder-work-area>.builder-stage{position:sticky;top:10px;z-index:5;align-self:start}
+  .builder-work-area>.builder-stage{position:relative;top:auto;z-index:auto;align-self:stretch}
   .builder-work-area>.tools-panel{overflow:hidden}
   .builder-work-area>.tools-panel .builder-tools{min-height:0;max-height:none;overflow:auto}
   .builder-work-area>.editor-panel{overflow:hidden}
@@ -692,7 +699,7 @@ html{scroll-padding-top:12px}button,input,select,summary{touch-action:manipulati
 }
 @media(max-width:710px){
   .builder-work-area>.workspace-intro{order:0}
-  .builder-work-area>.builder-stage{order:1;position:sticky;top:env(safe-area-inset-top);z-index:25;height:clamp(390px,59dvh,560px);min-height:0;max-height:560px;box-shadow:0 14px 32px #12304a30}
+  .builder-work-area>.builder-stage{order:1;position:relative;top:auto;z-index:auto;height:790px;min-height:790px;max-height:none;box-shadow:none}
   .builder-work-area>.tools-panel{order:2;height:clamp(250px,38dvh,430px);min-height:0;max-height:none;overflow:hidden}
   .builder-work-area>.tools-panel .builder-tools{flex:1;min-height:0;max-height:none;overflow:auto}
   .builder-work-area>.editor-panel{order:3;height:clamp(310px,48dvh,520px);min-height:0;max-height:none;overflow:hidden}
@@ -705,6 +712,49 @@ html{scroll-padding-top:12px}button,input,select,summary{touch-action:manipulati
   .builder-analysis-area .glossary-work-area>.catalog{height:auto;max-height:310px;min-height:0}
   .builder-analysis-area .glossary-work-area>.stage{height:735px;min-height:735px}
   .builder-analysis-area .glossary-work-area>.details{height:auto;min-height:0}
+}
+
+/* Isolated editing workspace. The source panels are moved here, so their live state and listeners survive. */
+.focus-build-button,.build-workspace button{font:inherit;cursor:pointer}
+.focus-build-button{margin-top:12px;border:1px solid #8bb9e6;background:#e9f4ff;color:#145a9c;border-radius:11px;padding:9px 14px;font-size:12px;font-weight:900}
+#toggleBuildPhone{display:none}
+body.build-open{overflow:hidden}
+.build-overlay{position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));background:radial-gradient(circle at 55% 30%,#406b9673,#0b1d34ed 65%);-webkit-backdrop-filter:blur(15px);backdrop-filter:blur(15px)}
+.build-overlay[hidden]{display:none}
+.build-workspace{direction:rtl;width:min(1800px,100%);height:100%;max-height:100%;min-height:0;display:flex;flex-direction:column;gap:9px;padding:10px;border:1px solid #ffffff52;border-radius:20px;background:#eff5fbf5;box-shadow:0 20px 70px #051423a6;overflow:hidden}
+.build-workspace-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none;min-height:43px;padding:0 5px;color:#193958}
+.build-workspace-bar>div:first-child{display:flex;flex-direction:column;gap:2px}.build-workspace-bar strong{font-size:17px}.build-workspace-bar span{font-size:10px;color:#63809a}
+.build-workspace-actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.build-workspace-actions button,.build-workspace-tabs button{border:1px solid #c3d9e9;border-radius:9px;background:white;color:#215d94;padding:7px 10px;font-size:11px;font-weight:800;min-height:34px}.build-workspace-actions .build-close{background:#245fa6;color:white;border-color:#245fa6}
+.build-workspace-tabs{display:none;gap:5px;flex:none;overflow:auto;scrollbar-width:none}.build-workspace-tabs button{white-space:nowrap;flex:1}.build-workspace-tabs button[aria-pressed=true]{background:#d8eaff;color:#145891;border-color:#7db2e4}
+.build-workspace-dock{display:grid;grid-template-columns:minmax(205px,250px) minmax(310px,410px) minmax(300px,1fr) minmax(195px,245px);grid-template-rows:minmax(0,1fr);gap:9px;flex:1;min-height:0;min-width:0}
+.build-workspace-dock>.panel{min-width:0;height:100%;min-height:0;max-height:none;grid-row:1;box-shadow:none;overflow:hidden}
+.build-workspace-dock>.tools-panel{grid-column:1;padding:13px;display:flex;flex-direction:column}.build-workspace-dock>.tools-panel .builder-tools{flex:1;min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain}
+.build-workspace-dock>.builder-stage{grid-column:2;padding:10px 6px;display:flex;flex-direction:column;align-items:center}.build-workspace-dock>.builder-stage .stage-head{flex:none}.build-workspace-dock>.builder-stage .builder-phone-wrap{position:relative;flex:1;min-height:0;width:100%;overflow:hidden;padding:0;display:block}.build-workspace-dock>.builder-stage .builder-phone{position:absolute;top:50%;left:50%;margin:0;transform:translate(-50%,-50%) scale(var(--builder-phone-scale,1));transform-origin:center}
+.build-workspace-dock>.builder-stage .builder-mode-toolbar{flex:none;justify-content:center;gap:4px;padding:0 3px}.build-workspace-dock>.builder-stage #openBuildFromPhone{display:none}.build-workspace-dock>.builder-stage #layoutModeHint{display:none}
+.build-workspace-dock>.editor-panel{grid-column:3;padding:13px;display:flex;flex-direction:column}.build-workspace-dock>.editor-panel .builder-controls{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain}
+.build-workspace-dock>.next-panel{grid-column:4;padding:13px;display:flex;flex-direction:column}.build-workspace-dock>.next-panel .next-step-list{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain}
+.build-workspace-dock>.output-panel{display:none;grid-column:3/5;padding:14px;flex-direction:column;overflow:auto}.build-workspace-dock[data-active-panel=output]>.output-panel{display:flex}.build-workspace-dock[data-active-panel=output]>.editor-panel,.build-workspace-dock[data-active-panel=output]>.next-panel{display:none}.build-workspace-dock>.output-panel>.code-frame{flex:1;min-height:160px;height:auto}.build-workspace-dock>.output-panel>.project-actions{display:flex;flex-wrap:wrap}.build-workspace-dock>.output-panel>.project-actions button{flex:1 1 150px;width:auto}.build-workspace-dock>.output-panel>.builder-rule.last{margin-bottom:0}
+.build-workspace :focus-visible{outline:3px solid #ed9f35;outline-offset:2px}
+@media(max-width:1450px){
+  .build-workspace-tabs{display:flex}
+  .build-workspace-dock{grid-template-columns:minmax(300px,420px) minmax(300px,1fr)}
+  .build-workspace-dock>.builder-stage{grid-column:1}
+  .build-workspace-dock>.tools-panel,.build-workspace-dock>.editor-panel,.build-workspace-dock>.next-panel,.build-workspace-dock>.output-panel{grid-column:2;display:none}
+  .build-workspace-dock[data-active-panel=tools]>.tools-panel,.build-workspace-dock[data-active-panel=editor]>.editor-panel,.build-workspace-dock[data-active-panel=next]>.next-panel,.build-workspace-dock[data-active-panel=output]>.output-panel{display:flex}
+}
+@media(max-width:710px){
+  .build-overlay{padding:0}
+  .build-workspace{border:0;border-radius:0;gap:6px;padding:calc(5px + env(safe-area-inset-top)) 6px calc(5px + env(safe-area-inset-bottom));height:100dvh}
+  .build-workspace-bar{min-height:0;flex-wrap:wrap;gap:5px;padding:0 2px}.build-workspace-bar strong{font-size:13px}.build-workspace-bar span{display:none}.build-workspace-actions{gap:4px}.build-workspace-actions button{min-height:30px;padding:4px 6px;font-size:10px}
+  .build-workspace-tabs button{min-height:34px;padding:5px;font-size:10px}
+  .build-workspace-dock{display:flex;flex-direction:column;gap:6px}
+  .build-workspace-dock>.builder-stage{order:0;flex:0 0 62%;width:100%;height:62%;min-height:0;max-height:none;padding:5px}
+  .build-workspace-dock>.tools-panel,.build-workspace-dock>.editor-panel,.build-workspace-dock>.next-panel,.build-workspace-dock>.output-panel{order:1;flex:1;min-height:0;width:100%;max-height:none;padding:10px}
+  .build-workspace-dock>.builder-stage .builder-mode-toolbar button{min-height:30px;padding:4px 7px}
+  .build-workspace-dock>.builder-stage #toggleBuildPhone{display:inline-block}
+  .build-workspace-dock.phone-expanded>.builder-stage{flex:1;height:100%}
+  .build-workspace-dock.phone-expanded>.tools-panel,.build-workspace-dock.phone-expanded>.editor-panel,.build-workspace-dock.phone-expanded>.next-panel,.build-workspace-dock.phone-expanded>.output-panel{display:none!important}
+  .build-workspace-dock>.output-panel>.code-frame{min-height:100px}
 }
 .detail-page-switch,.builder-detail-banner{display:flex;align-items:center;justify-content:space-between;gap:8px;border:1px solid #afd7ce;background:#effaf6;color:#1c6a5a;border-radius:13px;padding:9px 11px;font-size:12px;line-height:1.5}
 .detail-page-switch{margin:0 0 12px;flex-wrap:wrap}
@@ -940,6 +990,16 @@ html{scroll-padding-top:12px}button,input,select,summary{touch-action:manipulati
   const experienceMount = document.querySelector('#experiencePhoneMount');
   const builderPhoneWrap = document.querySelector('.builder-stage > .builder-phone-wrap');
   const builderStage = document.querySelector('.builder-stage');
+  const buildOverlay = document.querySelector('#buildOverlay');
+  const buildDock = document.querySelector('#buildWorkspaceDock');
+  const buildPanels = ['.tools-panel', '.builder-stage', '.editor-panel', '.next-panel', '.output-panel'].map(selector => document.querySelector(`#builderLab > ${selector}`));
+  const buildMarkers = new Map();
+  let buildWorkspaceOpen = false;
+  let resumeBuildAfterExperience = false;
+  let resumeBuildPanel = 'editor';
+  let resumePhoneExpanded = false;
+  let buildReturnFocus = null;
+  let buildReturnScroll = 0;
   const experienceFeedback = document.querySelector('#experienceFeedback');
   const navigationEditor = document.querySelector('#navigationEditor');
   const builderTools = document.querySelector('#builderTools');
@@ -972,8 +1032,86 @@ html{scroll-padding-top:12px}button,input,select,summary{touch-action:manipulati
     experienceMount.style.height = `${656 * scale}px`;
     builderPhoneWrap.style.transform = `scale(${scale})`;
   }
+  function selectBuildPanel(name) {
+    buildDock.dataset.activePanel = name;
+    buildDock.classList.remove('phone-expanded');
+    document.querySelector('#toggleBuildPhone').setAttribute('aria-pressed', 'false');
+    document.querySelector('#toggleBuildPhone').textContent = '⤢ تكبير الهاتف';
+    buildOverlay.querySelectorAll('[data-build-panel]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.buildPanel === name)));
+    requestAnimationFrame(updateBuildScale);
+  }
+  function updateBuildScale() {
+    if (!buildWorkspaceOpen) return;
+    const rect = builderPhoneWrap.getBoundingClientRect();
+    const scale = Math.max(.22, Math.min(1.2, (rect.width - 8) / 302, (rect.height - 8) / 656));
+    builderStage.style.setProperty('--builder-phone-scale', scale.toFixed(3));
+  }
+  function openBuildWorkspace() {
+    if (buildWorkspaceOpen || simulatorMode === 'experience') return;
+    buildReturnFocus = document.activeElement;
+    buildReturnScroll = window.scrollY;
+    buildPanels.forEach(panel => {
+      const marker = document.createComment(`build return: ${panel.className}`);
+      panel.before(marker);
+      buildMarkers.set(panel, marker);
+      buildDock.appendChild(panel);
+    });
+    selectBuildPanel('editor');
+    buildOverlay.hidden = false;
+    buildWorkspaceOpen = true;
+    document.querySelector('main').inert = true;
+    document.querySelector('#userGuide').inert = true;
+    document.querySelector('#nativeLab').inert = true;
+    document.querySelector('.footer').inert = true;
+    document.body.classList.add('build-open');
+    requestAnimationFrame(updateBuildScale);
+    document.querySelector('#closeBuildWorkspace').focus();
+  }
+  function closeBuildWorkspace(forExperience = false) {
+    if (!buildWorkspaceOpen) return;
+    buildPanels.forEach(panel => {
+      buildMarkers.get(panel).replaceWith(panel);
+      buildMarkers.delete(panel);
+    });
+    buildWorkspaceOpen = false;
+    buildOverlay.hidden = true;
+    document.querySelector('main').inert = false;
+    document.querySelector('#userGuide').inert = false;
+    document.querySelector('#nativeLab').inert = false;
+    document.querySelector('.footer').inert = false;
+    document.body.classList.remove('build-open');
+    if (window.innerWidth > 710) builderStage.style.removeProperty('--builder-phone-scale');
+    if (!forExperience) {
+      window.scrollTo(0, buildReturnScroll);
+      if (buildReturnFocus?.isConnected) buildReturnFocus.focus({ preventScroll: true });
+    }
+  }
+  document.querySelector('#openBuildWorkspace').addEventListener('click', openBuildWorkspace);
+  document.querySelector('#openBuildFromPhone').addEventListener('click', openBuildWorkspace);
+  document.querySelector('#closeBuildWorkspace').addEventListener('click', () => closeBuildWorkspace());
+  document.querySelector('#buildSave').addEventListener('click', () => document.querySelector('#saveDraft').click());
+  document.querySelector('#buildExport').addEventListener('click', () => document.querySelector('#downloadProject').click());
+  document.querySelector('#toggleBuildPhone').addEventListener('click', event => {
+    const expanded = buildDock.classList.toggle('phone-expanded');
+    event.currentTarget.setAttribute('aria-pressed', String(expanded));
+    event.currentTarget.textContent = expanded ? '⤡ عرض المحرر' : '⤢ تكبير الهاتف';
+    requestAnimationFrame(updateBuildScale);
+  });
+  buildOverlay.querySelectorAll('[data-build-panel]').forEach(button => button.addEventListener('click', () => selectBuildPanel(button.dataset.buildPanel)));
+  buildOverlay.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !event.defaultPrevented && buildWorkspaceOpen) {
+      event.preventDefault();
+      closeBuildWorkspace();
+    }
+  });
   function openExperience() {
     if (simulatorMode === 'experience') return;
+    resumeBuildAfterExperience = buildWorkspaceOpen;
+    if (buildWorkspaceOpen) {
+      resumeBuildPanel = buildDock.dataset.activePanel;
+      resumePhoneExpanded = buildDock.classList.contains('phone-expanded');
+    }
+    if (buildWorkspaceOpen) closeBuildWorkspace(true);
     experienceSnapshot = JSON.stringify(state);
     simulatorMode = 'experience';
     experienceSurface = 'app';
@@ -1012,7 +1150,12 @@ html{scroll-padding-top:12px}button,input,select,summary{touch-action:manipulati
     if (experienceSnapshot) state = validatedState(JSON.parse(experienceSnapshot));
     experienceSnapshot = null;
     renderAll();
-    document.querySelector('#openExperience').focus();
+    if (resumeBuildAfterExperience) {
+      resumeBuildAfterExperience = false;
+      openBuildWorkspace();
+      selectBuildPanel(resumeBuildPanel);
+      if (resumePhoneExpanded) document.querySelector('#toggleBuildPhone').click();
+    } else document.querySelector('#openExperience').focus();
   }
   document.querySelector('#openExperience').addEventListener('click', openExperience);
   document.querySelector('#closeExperience').addEventListener('click', closeExperience);
@@ -3095,14 +3238,16 @@ private struct VisualSceneBackground: View {
   };
   if (builderPhoneWrap && 'ResizeObserver' in window) {
     new ResizeObserver(entries => {
+      if (buildWorkspaceOpen) { updateBuildScale(); return; }
       if (window.innerWidth > 710) return;
       const { width, height } = entries[0].contentRect;
-      const scale = Math.max(.35, Math.min(.93, (width - 12) / 302, (height - 12) / 656));
+      const scale = Math.max(.22, Math.min(.93, (width - 12) / 302, (height - 12) / 656));
       document.querySelector('#builderStage').style.setProperty('--builder-phone-scale', scale.toFixed(3));
     }).observe(builderPhoneWrap);
   }
   renderAll();
   select(activeId);
+  if (location.hash === '#builderStage') requestAnimationFrame(openBuildWorkspace);
 })();
 
 </script>
