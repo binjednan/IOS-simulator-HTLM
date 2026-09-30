@@ -2,6 +2,6 @@
 
 معجم بصري ومحاكي تعليمي مستقل لبناء واجهة SwiftUI، باللغة العربية واتجاه RTL.
 
-[افتح المحاكي مباشرة](https://binjednan.github.io/ios-visual-glossary/#builderStage)
+[افتح المحاكي مباشرة](https://binjednan.github.io/IOS-simulator-HTLM/#builderStage)
 
 المعاينة في المتصفح تعليمية، ويحتاج التطبيق النهائي إلى تنفيذ واختبار داخل Xcode وعلى جهاز iPhone.
