@@ -173,16 +173,18 @@
   </section>
   <div id="buildOverlay" class="build-overlay" role="dialog" aria-modal="true" aria-label="مساحة بناء التطبيق" hidden>
     <div class="build-workspace">
-      <header class="build-workspace-bar"><div><strong>◈ مختبر بناء التطبيق</strong><span id="buildContext">اختر شاشة وعدّلها، ثم افتح وجهاتها المرتبطة</span></div><div class="build-workspace-actions"><button type="button" id="closeBuildWorkspace" class="build-close">↩ العودة للصفحة</button><button type="button" id="buildUndo" title="تراجع ⌘Z" aria-label="تراجع عن آخر تغيير" disabled>↶ تراجع</button><button type="button" id="buildRedo" title="إعادة ⇧⌘Z" aria-label="إعادة آخر تغيير" disabled>↷ إعادة</button><button type="button" id="buildModel" aria-expanded="false" aria-controls="modelPanel">◇ نموذج البيانات</button><button type="button" id="buildLifecycle" aria-expanded="false" aria-controls="lifecyclePanel">◎ فحص المخرجات والحفظ</button><button type="button" id="buildTheme" aria-pressed="false">☾ الوضع الداكن</button><button type="button" id="buildTry">▶ جرّب التطبيق</button><button type="button" id="buildSave">حفظ المسودة</button><button type="button" id="buildExport">تنزيل مشروع Xcode</button></div></header>
-      <nav class="build-workspace-tabs" aria-label="مهام مساحة البناء"><button type="button" data-build-panel="canvas" aria-pressed="true">الشاشات والمسارات</button><button type="button" data-build-panel="editor" aria-pressed="false">تحرير مع الهاتف</button><button type="button" data-build-panel="tools" aria-pressed="false">مكتبة المكوّنات</button><button type="button" data-build-panel="next" aria-pressed="false">الخطوة التالية</button><button type="button" data-build-panel="output" aria-pressed="false">التصدير والكود</button></nav>
+      <header class="build-workspace-bar"><div><strong>◈ مختبر بناء التطبيق</strong><span id="buildContext">اختر شاشة وعدّلها، ثم افتح وجهاتها المرتبطة</span></div><div class="build-workspace-actions"><button type="button" id="closeBuildWorkspace" class="build-close">↩ العودة للصفحة</button><button type="button" id="buildUndo" title="تراجع ⌘Z" aria-label="تراجع عن آخر تغيير" disabled>↶ تراجع</button><button type="button" id="buildRedo" title="إعادة ⇧⌘Z" aria-label="إعادة آخر تغيير" disabled>↷ إعادة</button><button type="button" id="buildTry">▶ جرّب التطبيق</button><button type="button" id="buildSave">حفظ المسودة</button><details class="build-more-menu"><summary>المزيد</summary><div><button type="button" id="buildModel" aria-expanded="false" aria-controls="modelPanel">◇ نموذج البيانات</button><button type="button" id="buildLifecycle" aria-expanded="false" aria-controls="lifecyclePanel">◎ فحص المخرجات والحفظ</button><button type="button" id="buildTheme" aria-pressed="false">☾ الوضع الداكن</button><button type="button" data-build-panel="tools" aria-pressed="false">مكتبة المكوّنات</button><button type="button" data-build-panel="next" aria-pressed="false">إرشادات البناء</button><button type="button" id="buildExport">تنزيل مشروع Xcode</button></div></details></div></header>
+      <nav class="build-workspace-tabs" aria-label="مهام مساحة البناء"><button type="button" data-build-panel="canvas" aria-pressed="true">١ · الشاشات</button><button type="button" data-build-panel="editor" aria-pressed="false">٢ · تحرير الهاتف</button><button type="button" data-build-panel="output" aria-pressed="false">٣ · المشروع والكود</button></nav>
       <section id="lifecyclePanel" class="build-lifecycle-panel" aria-label="فحص دورة حياة الشاشة" hidden></section>
       <section id="modelPanel" class="build-model-panel" aria-label="تصميم نموذج البيانات والعلاقات" hidden></section>
+      <div class="build-workspace-body">
       <div id="buildWorkspaceDock" class="build-workspace-dock" data-active-panel="editor"></div>
       <section id="designCanvasWorkspace" class="design-canvas-workspace" aria-label="لوحة تصميم الشاشات ومسارات التنقل" hidden>
         <aside id="screenBoardNavigator" class="screen-board-navigator" aria-label="شاشات التطبيق"></aside>
-        <div class="screen-board-main"><div class="screen-board-toolbar"><div><strong>لوحة الشاشات</strong><small>اختر شاشة من القائمة أو اضغط عنصرًا في المعاينة لفتح وجهته</small></div><div class="screen-board-actions"><button type="button" data-board-command="navigator" aria-expanded="false" aria-controls="screenBoardNavigator" class="board-mobile-control">☰ الشاشات</button><button type="button" data-board-command="inspector" aria-expanded="false" aria-controls="screenBoardInspector" class="board-mobile-control">✎ الخصائص</button><button type="button" data-board-command="scope" aria-pressed="true">عرض الكل</button><button type="button" data-board-command="zoom-out" aria-label="تصغير">−</button><output id="screenBoardZoom">٨٠٪</output><button type="button" data-board-command="zoom-in" aria-label="تكبير">＋</button><button type="button" data-board-command="fit">ملاءمة</button><button type="button" data-board-command="center">الشاشة المحددة</button></div></div><div id="screenBoardViewport" class="screen-board-viewport" tabindex="0" aria-label="لوحة واجهات: اضغط اختيارًا داخل الهاتف لفتح واجهته، واسحب الشاشات لترتيبها، ومرّر بإصبعين لتحريك اللوحة"><div id="screenBoardWorld" class="screen-board-world"><svg id="screenBoardLinks" aria-hidden="true"></svg><div id="screenBoardCards"></div></div></div></div>
+        <div class="screen-board-main"><div class="screen-board-toolbar"><div><strong>لوحة الشاشات</strong><small>اختر شاشة من القائمة أو اضغط عنصرًا في المعاينة لفتح وجهته</small></div><div class="screen-board-actions"><button type="button" data-board-command="navigator" aria-expanded="false" aria-controls="screenBoardNavigator" class="board-mobile-control">☰ كل الشاشات</button><button type="button" data-board-command="inspector" aria-expanded="false" aria-controls="screenBoardInspector" class="board-mobile-control">✎ الخصائص</button><button type="button" data-board-command="scope" aria-pressed="true">عرض الكل</button><button type="button" data-board-command="zoom-out" aria-label="تصغير">−</button><output id="screenBoardZoom">٨٠٪</output><button type="button" data-board-command="zoom-in" aria-label="تكبير">＋</button><button type="button" data-board-command="fit">ملاءمة</button><button type="button" data-board-command="center">الشاشة المحددة</button></div></div><div id="screenBoardViewport" class="screen-board-viewport" tabindex="0" aria-label="لوحة واجهات: اضغط اختيارًا داخل الهاتف لفتح واجهته، واسحب الشاشات لترتيبها، ومرّر بإصبعين لتحريك اللوحة"><div id="screenBoardWorld" class="screen-board-world"><svg id="screenBoardLinks" aria-hidden="true"></svg><div id="screenBoardCards"></div></div></div></div>
         <aside id="screenBoardInspector" class="screen-board-inspector" aria-label="خصائص الشاشة المحددة"></aside>
       </section>
+      </div>
     </div>
   </div>
   <div id="experienceOverlay" class="experience-overlay" role="dialog" aria-modal="true" aria-label="وضع تجربة المستخدم" hidden>
@@ -949,6 +951,66 @@ body.build-open{overflow:hidden}
 @media(max-width:710px){.build-model-panel{top:104px;inset-inline:7px;width:auto;max-height:calc(100% - 116px)}.model-form,.model-concepts,.builder-concept-grid{grid-template-columns:1fr}}
 
 @media(max-width:710px){.build-workspace-bar{display:block}.build-workspace-actions{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;padding:4px 0;scrollbar-width:thin}.build-workspace-actions button{flex:none;white-space:nowrap}.build-workspace-actions .build-close{position:sticky;inset-inline-start:0;z-index:1}}
+/* Task-first workspace: the canvas stays visible and the selected screen owns its controls. */
+.design-canvas-workspace{grid-template-columns:minmax(0,1fr) 320px}
+.design-canvas-workspace .screen-board-navigator{display:none;position:absolute;z-index:25;inset-block:0;inset-inline-start:0;width:min(290px,85vw);box-shadow:0 14px 42px #173a5966}
+.design-canvas-workspace.navigator-open .screen-board-navigator{display:flex}
+.board-mobile-control[data-board-command="navigator"]{display:inline-flex!important;align-items:center}
+.build-more-menu{position:relative;flex:none}
+.build-more-menu>summary{list-style:none;display:flex;align-items:center;justify-content:center;cursor:pointer;min-height:34px;padding:7px 12px;border:1px solid #c3d9e9;border-radius:9px;background:#fff;color:#215d94;font-size:11px;font-weight:800}
+.build-more-menu>summary::-webkit-details-marker{display:none}
+.build-more-menu>div{position:absolute;z-index:50;inset-inline-end:0;top:calc(100% + 6px);display:grid;gap:4px;width:min(250px,75vw);padding:8px;border:1px solid #c6dce9;border-radius:12px;background:#fff;box-shadow:0 12px 35px #153c5d38}
+.build-more-menu>div>button{width:100%;text-align:right;min-height:38px}
+.board-task-sections{display:grid;gap:8px;margin:12px 0}
+.board-task-section{border:1px solid #d7e5ee;border-radius:11px;background:#f9fcff;overflow:hidden}
+.board-task-section[open]{background:#fff;border-color:#aed0e8;box-shadow:0 2px 8px #194b6a12}
+.board-task-section>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;min-height:50px;padding:9px 11px;color:#19496e}
+.board-task-section>summary::-webkit-details-marker{display:none}
+.board-task-section>summary span{display:grid;gap:2px;font-size:12px;font-weight:900}
+.board-task-section>summary small{font-size:10px;font-weight:500;color:#6b879d}
+.board-task-section>summary b{font-size:15px;color:#497a9e;transition:transform .2s ease}
+.board-task-section[open]>summary b{transform:rotate(180deg)}
+.board-task-section-body{display:grid;gap:10px;padding:2px 11px 12px;border-top:1px solid #e2edf4}
+.board-task-section-body label{display:grid;gap:5px;color:#365e7b;font-size:11px;font-weight:800}
+.board-task-section-body input,.board-task-section-body select,.board-task-section-body textarea{width:100%;min-height:38px;border:1px solid #c2d9e8;border-radius:8px;background:#fbfdff;color:#123a5d;font:inherit;padding:7px 9px}
+.board-task-section-body textarea{resize:vertical;min-height:70px}
+.board-task-section-body button{text-align:right;min-height:38px}
+.board-task-section-body .screen-board-connection-list{margin-top:0}
+.board-task-section-body .screen-board-components{margin:0;padding:0;border:0;background:transparent}
+.board-task-section-body .screen-board-components>strong,.board-task-section-body .screen-board-components>p{display:none}
+.board-task-section-body .board-data-relation{margin:0}
+.screen-board-inspector-head{position:sticky;top:-12px;z-index:2;background:#fff;padding-top:5px}
+.screen-board-inspector-head p{max-width:35ch}
+.screen-board-inspector .screen-board-mode-button{display:none}
+.screen-board-inspector .screen-board-note{margin:5px 0}
+.build-overlay.lab-dark .build-more-menu>summary,.build-overlay.lab-dark .build-more-menu>div,.build-overlay.lab-dark .board-task-section,.build-overlay.lab-dark .screen-board-inspector-head{background:#1c3044;color:#e8f3fc;border-color:#395a72}
+.build-overlay.lab-dark .board-task-section[open]{background:#20374d;border-color:#5485a2}
+.build-overlay.lab-dark .board-task-section>summary,.build-overlay.lab-dark .board-task-section-body label{color:#e2f1fb}
+.build-overlay.lab-dark .board-task-section>summary small{color:#acc5d8}
+.build-overlay.lab-dark .board-task-section-body{border-color:#395a72}
+.build-overlay.lab-dark .board-task-section-body input,.build-overlay.lab-dark .board-task-section-body select,.build-overlay.lab-dark .board-task-section-body textarea{background:#213a51;border-color:#43657d;color:#edf6ff}
+@media(max-width:710px){.design-canvas-workspace .screen-board-navigator{width:min(360px,calc(100% - 12px))}.build-workspace-actions #buildExport{display:block}.screen-board-inspector-head{top:-12px}}
+/* The phone editor is a contextual drawer over the screen board. */
+.build-workspace-body{position:relative;display:flex;flex:1;min-height:0;min-width:0}
+.build-workspace-body>.design-canvas-workspace{flex:1;min-height:0;width:100%}
+.build-workspace-body>.build-workspace-dock{position:absolute;z-index:30;inset-block:0;inset-inline-end:0;width:min(940px,94%);height:100%;padding:7px;grid-template-columns:minmax(280px,390px) minmax(300px,1fr);border:1px solid #afcce0;border-radius:16px;background:#eef5fa;box-shadow:0 18px 56px #092b4770}
+.build-workspace-body>.build-workspace-dock[hidden]{display:none!important}
+.build-workspace-body>.build-workspace-dock[data-active-panel=output]{width:100%;grid-template-columns:minmax(260px,360px) minmax(300px,1fr)}
+.build-workspace-body>.build-workspace-dock>.panel{height:100%;min-height:0;grid-row:1}
+.build-workspace-body>.build-workspace-dock>.builder-stage{grid-column:1;display:flex}
+.build-workspace-body>.build-workspace-dock>.tools-panel,.build-workspace-body>.build-workspace-dock>.editor-panel,.build-workspace-body>.build-workspace-dock>.next-panel,.build-workspace-body>.build-workspace-dock>.output-panel{grid-column:2;display:none}
+.build-workspace-body>.build-workspace-dock[data-active-panel=tools]>.tools-panel,.build-workspace-body>.build-workspace-dock[data-active-panel=editor]>.editor-panel,.build-workspace-body>.build-workspace-dock[data-active-panel=next]>.next-panel,.build-workspace-body>.build-workspace-dock[data-active-panel=output]>.output-panel{display:flex}
+.build-overlay.lab-dark .build-workspace-body>.build-workspace-dock{background:#12283b;border-color:#34536a}
+@media(max-width:710px){.build-workspace-body>.build-workspace-dock{width:100%;padding:4px;display:flex;flex-direction:column;border-radius:10px}.build-workspace-body>.build-workspace-dock>.builder-stage{flex:0 0 53%;height:53%;min-height:0;width:100%}.build-workspace-body>.build-workspace-dock>.tools-panel,.build-workspace-body>.build-workspace-dock>.editor-panel,.build-workspace-body>.build-workspace-dock>.next-panel,.build-workspace-body>.build-workspace-dock>.output-panel{flex:1;min-height:0;width:100%;height:auto}.build-workspace-body>.build-workspace-dock[data-active-panel=output]{width:100%}}
+.board-task-quickbar{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0 4px}
+.board-task-quickbar button{min-height:42px;text-align:center!important;background:#eaf5ff!important;color:#155e99!important;border-color:#b6d5ea!important}
+.board-task-quickbar [data-board-edit]{background:#2370b8!important;border-color:#2370b8!important;color:#fff!important}
+.board-data-commands{display:grid;gap:6px;padding-top:8px;border-top:1px solid #e0ebf2}
+.board-data-commands button{width:100%;text-align:right}
+@media(max-width:420px){.board-task-quickbar{grid-template-columns:1fr}}
+@media(min-width:711px){.build-workspace-body>.build-workspace-dock{width:min(900px,78%)}}
+.build-overlay.lab-dark .board-task-quickbar button{background:#264861!important;color:#e9f5ff!important;border-color:#4c7190!important}
+.build-overlay.lab-dark .board-task-quickbar [data-board-edit]{background:#2872ab!important;color:#fff!important}
 </style>
 <script>
 (function () {
@@ -1546,11 +1608,21 @@ body.build-open{overflow:hidden}
     builderPhoneWrap.style.transform = `scale(${scale})`;
   }
   function selectBuildPanel(name) {
+    buildOverlay.querySelectorAll('.build-more-menu').forEach(menu => { menu.open = false; });
+    if (name !== 'canvas' && name !== 'output' && buildWorkspaceOpen && buildDock.hidden) {
+      state.activeTab = boardSelected.page;
+      flowPath = flowAncestry(state.tabs[boardSelected.page], boardSelected.routeId);
+      currentTab().values.detail = false;
+      buildDock.querySelectorAll('[data-build-return]').forEach(button => {
+        button.textContent = `↩ العودة إلى «${flowParentPage(currentTab(), boardSelected.routeId)?.label || currentTab().label}» في لوحة الشاشات`;
+      });
+    }
     buildDock.dataset.activePanel = name;
     const canvas = name === 'canvas';
     if (canvas) boardEditing = true;
     buildDock.hidden = canvas;
-    designCanvasWorkspace.hidden = !canvas;
+    // A focused phone editor opens over the same canvas, preserving screen context.
+    designCanvasWorkspace.hidden = !canvas && name === 'output';
     buildDock.classList.remove('phone-expanded');
     document.querySelector('#toggleBuildPhone').setAttribute('aria-pressed', 'false');
     document.querySelector('#toggleBuildPhone').textContent = '⤢ تكبير الهاتف';
@@ -1568,6 +1640,7 @@ body.build-open{overflow:hidden}
   let boardGesture = null, boardWheelTimer = null;
   let boardSelected = { page: 0, routeId: '' };
   let boardEditing = false;
+  const boardInspectorSections = new Map();
   let boardScope = 'focus';
   const boardNavExpanded = new Set([0]);
   let boardDrag = null;
@@ -1771,6 +1844,73 @@ body.build-open{overflow:hidden}
       const available = toolGroups.flatMap(group => group.tools).filter(([id]) => !['tabbar','toolbar','divider'].includes(id) && !page.tools.includes(id));
       actions.insertAdjacentHTML('afterend', `<section class="screen-board-components"><strong>مكوّنات «${escapeHtml(page.label)}»</strong><p>كل إضافة وتعديل يخص هذه الشاشة فقط.</p><div class="screen-board-component-add"><select data-board-tool-choice aria-label="اختر مكوّنًا">${available.map(([id,name]) => `<option value="${id}">${escapeHtml(name)}</option>`).join('')}</select><button type="button" data-board-add-tool ${available.length ? '' : 'disabled'}>＋ أضف المكوّن</button></div><div class="screen-board-component-list">${page.tools.map(id => `<div><span>${escapeHtml(toolInfo[id]?.name || id)}</span><button type="button" data-board-remove-tool="${id}" aria-label="إزالة ${escapeHtml(toolInfo[id]?.name || id)}">إزالة</button></div>`).join('') || '<small>لا توجد مكوّنات مضافة بعد.</small>'}</div><div class="screen-board-divider-head"><strong>الفواصل بين الخيارات</strong><button type="button" data-board-add-divider>＋ أضف فاصلًا</button></div><div class="screen-board-divider-list">${repeatable.map((block,i) => `<div data-board-divider="${escapeHtml(block.id)}"><span>فاصل ${formatNumber(i+1)}</span><select data-board-divider-after="${escapeHtml(block.id)}" aria-label="موضع الفاصل ${i+1}"><option value="0" ${block.afterRow === 0 ? 'selected' : ''}>قبل الخيار الأول</option>${choices.map((item,n) => `<option value="${n+1}" ${block.afterRow === n+1 ? 'selected' : ''}>بعد «${escapeHtml(item)}»</option>`).join('')}</select><button type="button" data-board-remove-divider="${escapeHtml(block.id)}" aria-label="حذف الفاصل ${i+1}">حذف</button></div>`).join('') || '<small>اضغط «أضف فاصلًا» ويمكنك تكرار الإضافة.</small>'}</div></section>`);
     }
+    // Keep the canvas as the home for editing. Reveal only the controls needed for this screen.
+    const head = boardInspector.querySelector('.screen-board-inspector-head');
+    head.querySelector('.screen-board-mode-button')?.remove();
+    const sections = document.createElement('div');
+    sections.className = 'board-task-sections';
+    const section = (key, title, hint) => {
+      const details = document.createElement('details');
+      details.className = 'board-task-section';
+      details.dataset.boardSection = key;
+      details.innerHTML = `<summary><span>${title}<small>${hint}</small></span><b aria-hidden="true">⌄</b></summary><div class="board-task-section-body"></div>`;
+      sections.append(details);
+      return details.querySelector('.board-task-section-body');
+    };
+    const content = section('content', 'محتوى الشاشة', 'العنوان، الشكل والاختيارات');
+    const navigation = section('navigation', 'التنقّل والعرض', `${formatNumber(destinations.length)} وجهة مرتبطة`);
+    const data = section('data', 'البيانات والحفظ', page.recordMode === 'local' ? 'سجلات محفوظة' : 'مصدر العرض');
+    const components = section('components', 'المكوّنات', `${formatNumber(page.tools.length)} مكوّن`);
+    const extra = section('extra', 'إعدادات إضافية', 'تفاصيل متقدمة');
+    head.after(sections);
+    const fieldHost = boardInspector.querySelector('.screen-board-inspector-fields');
+    const moveField = (name, target) => {
+      const control = fieldHost.querySelector(`[data-board-field="${name}"]`);
+      if (control) target.append(control.closest('label'));
+    };
+    ['label','purpose','display','dataTitle','dataItems'].forEach(name => moveField(name, content));
+    ['action','hideTabBar','tabBarMode'].forEach(name => moveField(name, navigation));
+    ['recordMode','dataSourceKey'].forEach(name => moveField(name, data));
+    const tabPicker = fieldHost.querySelector('[data-board-tab]')?.closest('label');
+    if (tabPicker) extra.append(tabPicker);
+    const oldAdvanced = fieldHost.querySelector('.screen-board-advanced');
+    if (oldAdvanced) {
+      while (oldAdvanced.querySelector('label')) extra.append(oldAdvanced.querySelector('label'));
+      oldAdvanced.remove();
+    }
+    fieldHost.remove();
+    const taskActions = boardInspector.querySelector('.screen-board-inspector-actions');
+    const addRow = taskActions.querySelector('[data-board-add-row]');
+    const addSheet = taskActions.querySelector('[data-board-add-sheet]');
+    if (addRow) navigation.append(addRow);
+    if (addSheet) navigation.append(addSheet);
+    const links = boardInspector.querySelector('.screen-board-links');
+    if (links) {
+      const list = links.querySelector('.screen-board-connection-list');
+      if (list) navigation.append(list);
+      links.remove();
+    }
+    const relation = boardInspector.querySelector('.board-data-relation');
+    if (relation) data.append(relation);
+    const componentPanel = boardInspector.querySelector('.screen-board-components');
+    if (componentPanel) components.append(componentPanel);
+    const moreOptions = boardInspector.querySelector('.screen-board-more-actions');
+    if (moreOptions) { moreOptions.querySelectorAll('button').forEach(button => extra.append(button)); moreOptions.remove(); }
+    const previewButton = taskActions.querySelector('[data-board-preview]');
+    const phoneEdit = taskActions.querySelector('[data-board-edit]');
+    if (phoneEdit) phoneEdit.textContent = '✎ تحرير العناصر على الهاتف';
+    taskActions.remove();
+    const quickbar = document.createElement('div');
+    quickbar.className = 'board-task-quickbar';
+    if (previewButton) { previewButton.textContent = '▶ جرّب هذه الشاشة'; quickbar.append(previewButton); }
+    if (phoneEdit) quickbar.append(phoneEdit);
+    head.after(quickbar);
+    data.insertAdjacentHTML('beforeend', '<div class="board-data-commands"><button type="button" data-board-open-model>◇ بناء نموذج البيانات</button><button type="button" data-board-open-lifecycle>◎ اختبار الحفظ والمخرجات</button></div>');
+    const note = boardInspector.querySelector('.screen-board-note');
+    if (note) { note.textContent = 'اضغط عنصرًا داخل شاشة اللوحة لفتح الشاشة التي يستدعيها. اسحب الشاشة لترتيبها؛ تبقى الوصلات مرتبطة.'; extra.append(note); }
+    const key = `${index}:${route?.id || ''}`;
+    const open = boardInspectorSections.get(key) || new Set(['content']);
+    sections.querySelectorAll('details[data-board-section]').forEach(details => { details.open = open.has(details.dataset.boardSection); });
   }
   function renderDesignCanvas(focus = false) {
     if (!buildWorkspaceOpen || designCanvasWorkspace.hidden) return;
@@ -1778,6 +1918,10 @@ body.build-open{overflow:hidden}
     const selectedKey = `${boardSelected.page}:${boardSelected.routeId}`;
     const advancedOpen = boardInspector.dataset.screenKey === selectedKey && Boolean(boardInspector.querySelector('.screen-board-advanced')?.open);
     const moreActionsOpen = boardInspector.dataset.screenKey === selectedKey && Boolean(boardInspector.querySelector('.screen-board-more-actions')?.open);
+    if (boardInspector.dataset.screenKey) {
+      boardInspectorSections.set(boardInspector.dataset.screenKey,
+        new Set([...boardInspector.querySelectorAll('.board-task-section[open]')].map(item => item.dataset.boardSection)));
+    }
     const tab = state.tabs[Math.max(0,Math.min(state.tabs.length-1,boardSelected.page))];
     reconcileFlowPages(tab);
     const levels = new Map([['', 0]]), columns = new Map([[0, ['']]]);
@@ -1851,6 +1995,8 @@ body.build-open{overflow:hidden}
     if(navScreen){boardSelect(Number(navScreen.dataset.boardNavPage),navScreen.dataset.boardNavRoute || '');return;}
     const navToggle=event.target.closest('[data-board-toggle]');
     if(navToggle){const index=Number(navToggle.dataset.boardToggle);if(boardNavExpanded.has(index))boardNavExpanded.delete(index);else boardNavExpanded.add(index);boardRenderNavigator();return;}
+    if(event.target.closest('[data-board-open-model]')){document.querySelector('#buildModel').click();return;}
+    if(event.target.closest('[data-board-open-lifecycle]')){document.querySelector('#buildLifecycle').click();return;}
     const previewTarget=event.target.closest('.screen-board-preview [data-flow-key],.screen-board-preview [data-header-id],.screen-board-preview [data-block-id],.screen-board-preview [data-tool-inspect="sheet"],.screen-board-preview .builder-tab');
     if(previewTarget){
       event.preventDefault();
@@ -1865,7 +2011,7 @@ body.build-open{overflow:hidden}
     const follow=event.target.closest('[data-board-follow]'); if(follow){boardSelect(boardSelected.page,follow.dataset.boardFollow);return;}
     const jump=event.target.closest('[data-board-jump]'); if(jump){boardSelect(Number(jump.dataset.boardJump),'');return;}
     const mode=event.target.closest('[data-board-mode]');if(mode){boardEditing=mode.dataset.boardMode==='edit';renderDesignCanvas();return;}
-    const directEdit=event.target.closest('[data-board-edit-mode]');if(directEdit){const index=Number(directEdit.dataset.boardEditMode),routeId=directEdit.dataset.boardEditRoute;if(boardSelected.page!==index||boardSelected.routeId!==routeId)boardSelect(index,routeId);else{boardEditing=true;renderDesignCanvas();}return;}
+    const directEdit=event.target.closest('[data-board-edit-mode]');if(directEdit){const index=Number(directEdit.dataset.boardEditMode),routeId=directEdit.dataset.boardEditRoute;if(boardSelected.page!==index||boardSelected.routeId!==routeId)boardSelect(index,routeId);else{boardEditing=true;renderDesignCanvas();}designCanvasWorkspace.classList.add('inspector-open');return;}
     const dividerAdd=event.target.closest('[data-board-add-divider]');if(dividerAdd){const page=flowParentPage(state.tabs[boardSelected.page],boardSelected.routeId);addDivider(page);renderAll(true);return;}
     const dividerRemove=event.target.closest('[data-board-remove-divider]');if(dividerRemove){const page=flowParentPage(state.tabs[boardSelected.page],boardSelected.routeId);page.blocks=page.blocks.filter(block=>block.id!==dividerRemove.dataset.boardRemoveDivider);renderAll(true);return;}
     const toolAdd=event.target.closest('[data-board-add-tool]');if(toolAdd){const page=flowParentPage(state.tabs[boardSelected.page],boardSelected.routeId),id=boardInspector.querySelector('[data-board-tool-choice]')?.value;if(id&&toolInfo[id]&&!page.tools.includes(id)){page.tools.push(id);if(extendedIds.has(id))page.componentOptions[id] ||= defaultComponentOption(id);state.reviewed.interaction=true;renderAll(true);}return;}
