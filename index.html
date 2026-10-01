@@ -38,7 +38,7 @@
   </header>
   <main class="workspace">
     <section class="builder-work-area" id="builderLab" aria-label="مختبر بناء التطبيق">
-      <div class="workspace-intro"><span>١ · ابنِ وجرّب</span><h2>محاكي بناء التطبيق</h2><p>اختر الأدوات، حرّكها في الهاتف، ثم عدّل الصفحات واحفظ وصف المشروع والكود.</p><button id="openBuildWorkspace" type="button" class="focus-build-button">◈ افتح مساحة البناء</button></div>
+      <div class="workspace-intro builder-launch"><div class="builder-launch-copy"><span>١ · مساحة التصميم</span><h2>محاكي بناء التطبيق</h2><p>ابدأ من شاشة واحدة، أضف خياراتها، ثم صمّم كل وجهة في لوح متصل. اختر أي شاشة لتظهر خصائصها وأدواتها بجانبها.</p><div class="builder-launch-actions"><button id="openBuildWorkspace" type="button" class="focus-build-button">افتح مختبر البناء ←</button><a href="#userGuide">كيف أبدأ؟</a></div></div><div class="builder-launch-steps" aria-label="طريقة العمل"><div><b>١</b><span>اختر الشاشة</span></div><div><b>٢</b><span>عدّلها وأضف وجهاتها</span></div><div><b>٣</b><span>جرّب ثم احفظ</span></div></div></div>
     <aside class="panel tools-panel" aria-label="مكتبة أدوات التطبيق">
       <span class="code-kicker">مكتبة العناصر</span><h2>الأدوات</h2><p>قائمة منظّمة حسب وظيفة العنصر. اختر أي أداة لإضافتها إلى الصفحة النشطة.</p>
       <label class="tool-search-label" for="toolSearch">ابحث في الأدوات</label><input id="toolSearch" class="tool-search" type="search" placeholder="اسم الأداة أو وظيفتها">
@@ -83,8 +83,8 @@
     </aside>
     <section class="panel code-panel output-panel" aria-label="تصدير المشروع وكود SwiftUI">
       <div class="code-heading"><div><span class="code-kicker">الناتج القابل للحفظ</span><h2>المشروع وكود SwiftUI</h2></div><p>احفظ نموذجك لاستكماله هنا أو أرفق الوصف لنموذج ذكاء اصطناعي.</p></div>
-      <div class="project-actions" aria-label="حفظ المشروع ونقله"><button id="downloadHandoff" class="text-button primary" type="button">تنزيل وصف للذكاء الاصطناعي</button><button id="downloadProject" class="text-button" type="button">تنزيل مشروع JSON</button><button id="importProject" class="text-button" type="button">استيراد مشروع</button><input id="projectFile" type="file" accept=".json,.md,application/json,text/markdown" hidden></div>
-      <p id="projectStatus" class="project-status" role="status">ملف الوصف يتضمن الصفحات والتبويبات والأدوات والتفاعلات والكود.</p>
+      <div class="project-actions" aria-label="حفظ المشروع ونقله"><button id="downloadXcodeProject" class="text-button primary" type="button">تنزيل مشروع Xcode قابل للبناء</button><button id="downloadProject" class="text-button" type="button">تنزيل ملف التحرير JSON</button><button id="importProject" class="text-button" type="button">استيراد مشروع</button><button id="downloadHandoff" class="text-button" type="button">تنزيل وصف للذكاء الاصطناعي</button><input id="projectFile" type="file" accept=".json,.md,application/json,text/markdown" hidden></div>
+      <p id="projectStatus" class="project-status" role="status">ملف Xcode يحتوي الواجهات والتنقل. اربط بياناتك وخدمات Apple الفعلية قبل استخدام التطبيق ببيانات حقيقية.</p>
       <div class="code-heading code-subhead"><div><span class="code-kicker">SwiftUI</span><h2>الكود الناتج</h2></div><div class="code-heading-actions"><button id="expandCode" class="text-button" type="button">تكبير</button><button id="copyCode" class="text-button" type="button">نسخ</button></div></div>
       <div class="code-frame"><div class="code-frame-head"><span>VisualBuilderApp.swift</span><button id="downloadCode" type="button">تنزيل الملف ↓</button></div><pre dir="ltr"><code id="swiftCode"></code></pre></div>
       <p class="builder-rule last">نموذج تعليمي لواجهة تطبيق. عناصر النظام، مثل شريط الحالة والجزيرة الديناميكية، لا تُضاف كعناصر عادية داخل SwiftUI View.</p>
@@ -148,35 +148,39 @@
     <p class="native-disclosure">الأنماط المرصودة في تطبيقات Apple للاقتداء التصميمي. التقنيات المذكورة هي واجهات عامة متاحة للمطور لتنفيذ وظيفة مشابهة؛ لا تكشف Apple هنا عن البنية الداخلية لتطبيقاتها. الفهرس يغطي تطبيقات Apple الشائعة على iPhone وiPad وبعض أدوات الإنشاء، ويتغير توفرها بحسب الجهاز والمنطقة وإصدار النظام. <a href="https://www.apple.com/apps/" target="_blank" rel="noopener">قائمة Apple الرسمية للتطبيقات ↗</a></p>
   </section>
   <section class="panel user-guide" id="userGuide" aria-labelledby="guideTitle">
-    <div class="guide-head"><div><span class="code-kicker">مرجع عملي داخل الملف</span><h2 id="guideTitle">دليل الاستخدام</h2><p>ابدأ من المعجم، ثم صمّم شاشات مترابطة في مساحة البناء، وجرّب التنقلات واحفظ المشروع.</p></div><span class="guide-head-badge">يعمل هذا الدليل دون اتصال</span></div>
-    <nav class="guide-jump" aria-label="أقسام دليل الاستخدام"><a href="#guideStart">البدء</a><a href="#guideBuild">البناء</a><a href="#guideTry">التجربة</a><a href="#guideFiles">الحفظ والتصدير</a><a href="#guideImport">الاستيراد</a><a href="#guideSwift">استخدام الناتج</a><a href="#guideMap">الخريطة والتقييم</a><a href="#nativeLab">Apple Native</a><a href="#guideCoverage">تغطية Apple</a><a href="#guideHelp">حل المشكلات</a></nav>
+    <div class="guide-head"><div><span class="code-kicker">مرجع عملي داخل الملف</span><h2 id="guideTitle">دليل الاستخدام</h2><p>صمّم الشاشات ونموذج بياناتها، جرّب رحلة السجل من الإدخال إلى الاسترجاع، ثم نزّل مشروع Xcode.</p></div><span class="guide-head-badge">يعمل هذا الدليل دون اتصال</span></div>
+    <nav class="guide-jump" aria-label="أقسام دليل الاستخدام"><a href="#guideStart">البدء</a><a href="#guideBuild">البناء</a><a href="#guideTry">التجربة</a><a href="#guideModel">البيانات والعلاقات</a><a href="#guideFiles">الحفظ والتصدير</a><a href="#guideImport">الاستيراد</a><a href="#guideSwift">استخدام الناتج</a><a href="#guideMap">الخريطة والتقييم</a><a href="#nativeLab">Apple Native</a><a href="#guideCoverage">تغطية Apple</a><a href="#guideHelp">حل المشكلات</a></nav>
     <div class="guide-grid">
       <article class="guide-card" id="guideStart"><h3>١. تعرّف على عناصر iOS</h3><ol><li>اختر مصطلحًا من <a href="#termList">فهرس المصطلحات</a> أو ابحث عنه بالعربية أو الإنجليزية.</li><li>راقب موضعه في هاتف الأمثلة، أو اضغط عنصرًا مضيئًا داخل الهاتف لاختياره مباشرة.</li><li>اقرأ معناه، أين يستخدم، أين لا يستخدم، وطريقة التفاعل معه.</li></ol><p class="guide-note">المعجم مرجع تعليمي عام. عناصر النظام مثل شريط الحالة والجزيرة الديناميكية تُشرح هنا، ولا تضاف كأزرار عادية داخل تطبيقك.</p></article>
       <article class="guide-card" id="guideBuild"><h3>٢. ابنِ هيكل تطبيقك</h3><ol><li>اضغط <a href="#openBuildWorkspace">«افتح مساحة البناء»</a> للعمل في واجهة معزولة؛ يبقى الهاتف ظاهرًا بجانب لوحة واحدة حسب المهمة؛ اختر الخصائص أو الأدوات أو الإرشاد من الأعلى. افتح «لوحة الشاشات» لرؤية الصفحات والانتقالات جنبًا إلى جنب مع التكبير والتحريك. زر «العودة للصفحة» يعيدك إلى مكانك. على الهاتف اضغط «تكبير الهاتف» عند الحاجة.</li><li>اكتب <a href="#appName">اسم التطبيق</a> وهدفه، ثم افتح «الصفحة والتنقل» لإضافة تبويب وتحديد نوع الصفحة وعرض بياناتها.</li><li>اختر أدوات من المكتبة. يمكن الضغط على عنصر داخل هاتف البناء لتحديده وفتح خصائصه، أو إنشاء عناصر متكررة من «عناصر مخصصة».</li><li>اضغط أمرًا بجانب عنوان الهاتف لتعديل اسمه وأيقونته وجانبه ووظيفته. اسحبه بين جانبي الشريط، أو افتح «خيارات وترتيب متقدم» لإدارة القوائم والترتيب؛ اضغط العنوان نفسه لتعديل اسم الصفحة.</li><li>يبدأ البناء بتخطيط نظامي متكيف، ويمكنك اختيار «حر بالسحب» لتحديد مواضع محتوى الصفحة. في الوضع الحر اضغط «تحريك العناصر» ثم اسحب العنصر أو اضبط إحداثياته.</li><li>اضبط سلوك انكماش التبويبات وزر البحث المستقل من «الصفحة والتنقل». البحث المحلي أداة تخص الصفحة الحالية.</li><li>افتح «المشهد والتمرير وأسلوب العرض» لاختيار الخلفية المتحركة، أسلوب القوائم والبطاقات، العنوان الكبير، وتلاشي البطاقة عند التمرير. أضف مثال «جدول» لتجربة لوحة الأرقام والخلايا.</li><li>على iPhone وiPad استخدم روابط الانتقال أعلى الصفحة؛ افتح «تحريك العناصر» قبل سحب عنصر باللمس، ثم جرّب النتيجة في «تجربة المستخدم».</li></ol><p class="guide-note">زر «بدء فارغ» ينشئ مشروعًا جديدًا مكان البناء الحالي. نزّل ملف المشروع أولًا إذا أردت الاحتفاظ بالنسخة الحالية.</p></article>
-      <article class="guide-card" id="guideTry"><h3>٣. جرّب التطبيق كما يراه المستخدم</h3><ol><li>اضغط <a href="#openExperience">«تجربة المستخدم»</a> لفتح الهاتف دون أدوات التحرير.</li><li>جرّب التبويبات، البحث، الصفحات الفرعية، الأوراق والتنبيهات. مرّر المحتوى لتجربة انكماش الشريط، واسحب للرجوع أو لإغلاق الورقة.</li><li>اختبر المظهر الفاتح والداكن، التباين الأعلى، وتقليل الشفافية والحركة. استخدم <kbd>Esc</kbd> للرجوع، ثم «العودة للبناء» لإغلاق التجربة.</li></ol><p class="guide-note">التغييرات التي تجريها أثناء التجربة مؤقتة؛ عند العودة للبناء تستعاد حالة المشروع السابقة. المحاكاة المرئية لا تنتج اهتزازات iPhone الفعلية.</p></article>
+      <article class="guide-card" id="guideTry"><h3>٣. جرّب التطبيق كما يراه المستخدم</h3><ol><li>اضغط <a href="#openExperience">«تجربة المستخدم»</a> لفتح الهاتف دون أدوات التحرير.</li><li>جرّب التبويبات، البحث، الصفحات الفرعية، الأوراق والتنبيهات. مرّر المحتوى لتجربة انكماش الشريط، واسحب للرجوع أو لإغلاق الورقة.</li><li>اختبر المظهر الفاتح والداكن، التباين الأعلى، وتقليل الشفافية والحركة. استخدم <kbd>Esc</kbd> للرجوع، ثم «العودة للبناء» لإغلاق التجربة.</li></ol><p class="guide-note">للتراجع عن تعديل في البناء استخدم «تراجع» أو <kbd>⌘Z</kbd>، ولإعادته «إعادة» أو <kbd>⇧⌘Z</kbd>. أثناء الكتابة في حقل، يبقى التراجع للحقل نفسه.</p><p class="guide-note">التغييرات التي تجريها أثناء التجربة مؤقتة؛ عند العودة للبناء تستعاد حالة المشروع السابقة. المحاكاة المرئية لا تنتج اهتزازات iPhone الفعلية.</p></article>
+      <article class="guide-card" id="guideModel"><h3>نموذج البيانات ودورة حياة السجل</h3><ol><li>في مساحة البناء افتح «نموذج البيانات»، ثم أضف مفهومًا باسم ومعنى؛ ينشئ المختبر شاشة سجلات مستقلة محفوظة محليًا.</li><li>حدد حقول كل مفهوم ونوعها، ثم أضف علاقة مسماة بين مفهومين. في مشروع Xcode الناتج تستطيع تحرير حقول السجل وربطه بسجل آخر.</li><li>افتح «فحص المخرجات والحفظ»، أضف سجلًا تجريبيًا ثم أعد فتح الصفحة لتتأكد من استرجاعه في المتصفح.</li><li>يمكن بدء النموذج بمفاهيم النواة العشرة أو أفكار بن قضير ثم تعديل الشاشات والروابط بنفس الأدوات. هذه بدايات اختيارية، وليست قواعد أعمال مفروضة.</li></ol><p class="guide-note warning">فحص المتصفح مستقل عن SwiftData. مشروع Xcode يحفظ العنوان والحقول والملاحظات والحالة والروابط؛ قواعد المال والصلاحيات والتحقق والمزامنة تحتاج تنفيذًا معتمدًا واختبارًا مستقلًا.</p></article>
       <article class="guide-card" id="guideMap"><h3>٤. راجع ترابط الصفحات وجودة المخطط</h3><p>يعرض <a href="#appMap">مخطط التطبيق</a> أربع طرق: خريطة شاملة، مسارات تنقل، لوحة شاشات، وشجرة بنية. اضغط أي عقدة للانتقال إلى صفحتها أو إعدادها. عداد الترابط يوضح العناصر الموصولة بمسار داخل النموذج.</p><p>تعرض «أساسيات مخطط التطبيق» ما راجعته من صفحات وتنقل وبيانات وتفاعل. اختر نوع التطبيق في «اتجاه التطبيق» لترى مقياس تغطية هدفه، المعايير الناقصة، والاقتراحات المرتبطة بمحرر الصفحة. يظهر ما يحتاج تنفيذًا واختبارًا خارج المحاكي في قائمة منفصلة، ويُحفظ التقييم مع ملف المشروع والوصف.</p><p class="guide-note warning">اكتمال العداد يعني اكتمال توثيق الواجهة في هذا المختبر؛ لا يثبت جاهزية البيانات أو الصلاحيات أو اختبار التطبيق على جهاز.</p></article>
       <article class="guide-card wide" id="guideFiles"><h3>٥. اختر طريقة الحفظ المناسبة</h3><div class="guide-file-grid">
         <div class="guide-file"><strong>حفظ المسودة</strong><code>داخل المتصفح</code><p>يحفظ الحالة في التخزين المحلي لهذا المتصفح إذا كان متاحًا. تُحدّث المسودة أيضًا أثناء التحرير. مناسب للمتابعة السريعة على الجهاز نفسه.</p><a href="#saveDraft">اذهب إلى «حفظ المسودة» ↑</a></div>
         <div class="guide-file"><strong>مشروع قابل للاستيراد</strong><code>VisualBuilderProject.json</code><p>يحفظ الصفحات والأدوات والمواضع وخطة Apple Native مع كود SwiftUI. هذه النسخة التي نزّلها للاحتفاظ بالمشروع أو نقله ثم استيراده لاحقًا.</p><a href="#downloadProject">اذهب إلى «تنزيل مشروع JSON» ↑</a></div>
         <div class="guide-file"><strong>وصف لنموذج ذكاء اصطناعي</strong><code>VisualBuilderAI-Handoff.md</code><p>وصف مقروء يتضمن بنية المشروع بصيغة JSON والكود. أرفقه مع طلبك؛ ويمكن استيراد الملف نفسه هنا إذا لم يُعدّل بناؤه.</p><a href="#downloadHandoff">اذهب إلى «تنزيل وصف للذكاء الاصطناعي» ↑</a></div>
-        <div class="guide-file"><strong>كود التطبيق الأولي</strong><code>VisualBuilderApp.swift</code><p>مصدر SwiftUI مولّد من النموذج لتبدأ تطويره في Xcode. لا يحفظ مشروع البناء وحده ولا يُستورد عبر زر «استيراد مشروع».</p><a href="#downloadCode">اذهب إلى «تنزيل الملف» ↑</a></div>
+        <div class="guide-file"><strong>مشروع Xcode</strong><code>VisualBuilderApp.zip</code><p>مشروع SwiftUI قابل للبناء. يتضمن شاشاتك وسجلات SwiftData العامة وروابطها عندما تختار التخزين المحلي.</p><a href="#downloadXcodeProject">اذهب إلى «تنزيل مشروع Xcode» ↑</a></div>
       </div><p class="guide-note">للاحتفاظ بنسخة يمكن استعادتها بثقة، نزّل ملف <bdi dir="ltr">JSON</bdi> بعد التغييرات المهمة. التخزين المحلي قد لا ينتقل إلى متصفح آخر أو مسار ملف آخر.</p></article>
       <article class="guide-card wide" id="guideImport"><h3>٦. استورد مشروعًا محفوظًا</h3><ol><li>إذا أردت الاحتفاظ بما تراه الآن، نزّل <a href="#downloadProject">مشروع JSON</a> قبل الاستيراد؛ الاستيراد يستبدل البناء الحالي.</li><li>اضغط <a href="#importProject">«استيراد مشروع»</a> واختر ملف <bdi dir="ltr">VisualBuilderProject.json</bdi> أو ملف الوصف <bdi dir="ltr">VisualBuilderAI-Handoff.md</bdi> الذي نزّلته من هذا المختبر.</li><li>انتظر رسالة حالة المشروع أسفل أزرار التصدير، ثم راجع عدد الصفحات والهاتف والخريطة والكود.</li></ol><p class="guide-note warning">ملف <bdi dir="ltr">.swift</bdi> وحده لا يعيد إعدادات المحاكي. لا تعدّل بنية <bdi dir="ltr">JSON</bdi> داخل ملف الوصف إذا كنت تنوي استيراده.</p></article>
       <article class="guide-card wide" id="guideNative"><h3>٧. من النموذج إلى تطبيق Apple Native</h3><p>افتح <a href="#nativeLab">مختبر Apple Native</a> واختر التخزين والمزامنة والجمهور. ابحث عن تطبيق يشبه فكرتك، أضف صفحته إلى المحاكي، ثم اختر التقنيات العامة ذات الصلة. نزّل خطة التنفيذ ومشروع JSON؛ تظهر الاختيارات أيضًا في ملف وصف الذكاء الاصطناعي.</p><p class="guide-note warning">مخطط CloudKit داخل الملف قرار هندسي فقط. يلزم إعداد Xcode والقدرات ونموذج بيانات متوافق، ثم اختبار السلوك على أجهزة وحسابات حقيقية.</p></article>
-      <article class="guide-card wide" id="guideSwift"><h3>٨. انقل الفكرة إلى التطوير الفعلي</h3><ol><li>لإكمال العمل مع نموذج ذكاء اصطناعي، أرفق ملف <bdi dir="ltr">VisualBuilderAI-Handoff.md</bdi> واذكر بوضوح ما تريد إضافته أو تغييره؛ يتضمن الملف البنية والكود الحاليين.</li><li>لبدء مشروع Xcode، نزّل <bdi dir="ltr">VisualBuilderApp.swift</bdi> وأضفه إلى مشروع SwiftUI. يحتوي الملف على مدخل التطبيق <bdi dir="ltr">@main</bdi>؛ احتفظ بمدخل واحد فقط داخل مشروع Xcode.</li><li>استبدل بيانات الأمثلة بمنطق التطبيق الحقيقي، ثم راجع التنقل والوصولية والصلاحيات واختبر الناتج على الجهاز المستهدف.</li></ol><p class="guide-note">يعرض كود SwiftUI الناتج بنية أولية قابلة للتطوير، بينما يبقى ملف <bdi dir="ltr">JSON</bdi> مرجعك لاستكمال التحرير في هذا المختبر.</p></article>
+      <article class="guide-card wide" id="guideSwift"><h3>٨. انقل الفكرة إلى التطوير الفعلي</h3><ol><li>لإكمال العمل مع نموذج ذكاء اصطناعي، أرفق ملف <bdi dir="ltr">VisualBuilderAI-Handoff.md</bdi> واذكر بوضوح ما تريد إضافته أو تغييره؛ يتضمن الملف البنية والكود الحاليين.</li><li>لبدء مشروع Xcode، نزّل الحزمة من «تنزيل مشروع Xcode قابل للبناء» وافتح <bdi dir="ltr">VisualBuilderApp.xcodeproj</bdi>. لا تضف ملف التطبيق إلى مشروع آخر فيه مدخل <bdi dir="ltr">@main</bdi> ثانٍ.</li><li>استبدل بيانات الأمثلة بمنطق التطبيق الحقيقي، ثم راجع التنقل والوصولية والصلاحيات واختبر الناتج على الجهاز المستهدف.</li></ol><p class="guide-note">يعرض كود SwiftUI الناتج بنية أولية قابلة للتطوير، بينما يبقى ملف <bdi dir="ltr">JSON</bdi> مرجعك لاستكمال التحرير في هذا المختبر.</p></article>
     </div>
-    <details class="guide-faq" id="guideHelp"><summary>أسئلة سريعة وحل المشكلات</summary><div class="guide-faq-content"><ul><li><strong>أين أجد الملفات التي نزّلتها؟</strong> في مجلد التنزيلات أو الموقع الذي اخترته في المتصفح؛ يمكنك البحث عن اسم الملف الظاهر في قسم الحفظ أعلاه.</li><li><strong>اختفت مسودتي بعد فتح الملف في مكان آخر؟</strong> استورد نسخة <bdi dir="ltr">JSON</bdi> التي نزّلتها؛ الحفظ المحلي مرتبط بالمتصفح والسياق الذي فتح منه الملف.</li><li><strong>لم يظهر عنصر في الهاتف؟</strong> تأكد من اختيار الصفحة الصحيحة، وأن الأداة مفعّلة، ثم راجع تبويب «العنصر وموضعه» أو عقدته في الخريطة. بعض عناصر النظام معروضة للتعلّم فقط.</li><li><strong>لم أستطع استيراد ملف؟</strong> استخدم ملف <bdi dir="ltr">JSON</bdi> أو <bdi dir="ltr">Markdown</bdi> الصادر من المختبر نفسه، وراجع رسالة الحالة التي تظهر بعد المحاولة.</li><li><strong>هل الكود تطبيق مكتمل؟</strong> الكود نقطة بدء SwiftUI ببيانات أمثلة. راجع منطق البيانات والصلاحيات والوصولية واختبره في Xcode وعلى iPhone قبل الاعتماد عليه.</li></ul></div></details>
+    <details class="guide-faq" id="guideHelp"><summary>أسئلة سريعة وحل المشكلات</summary><div class="guide-faq-content"><ul><li><strong>أين أجد الملفات التي نزّلتها؟</strong> في مجلد التنزيلات أو الموقع الذي اخترته في المتصفح؛ يمكنك البحث عن اسم الملف الظاهر في قسم الحفظ أعلاه.</li><li><strong>اختفت مسودتي بعد فتح الملف في مكان آخر؟</strong> استورد نسخة <bdi dir="ltr">JSON</bdi> التي نزّلتها؛ الحفظ المحلي مرتبط بالمتصفح والسياق الذي فتح منه الملف.</li><li><strong>لم يظهر عنصر في الهاتف؟</strong> تأكد من اختيار الصفحة الصحيحة، وأن الأداة مفعّلة، ثم راجع تبويب «العنصر وموضعه» أو عقدته في الخريطة. بعض عناصر النظام معروضة للتعلّم فقط.</li><li><strong>لم أستطع استيراد ملف؟</strong> استخدم ملف <bdi dir="ltr">JSON</bdi> أو <bdi dir="ltr">Markdown</bdi> الصادر من المختبر نفسه، وراجع رسالة الحالة التي تظهر بعد المحاولة.</li><li><strong>هل المشروع تطبيق مكتمل؟</strong> مشروع Xcode قابل للبناء، ويدعم سجلات وروابط محلية عامة. أمثلة العرض وبقية قواعد المجال والخدمات لا تصبح منطق أعمال تلقائيًا؛ اختبرها وأكملها في Xcode وعلى iPhone.</li></ul></div></details>
     <div class="guide-card wide" id="shareSimulator" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px;background:#eef8ff"><div><h3>رابط المحاكي للمشاركة</h3><p>افتح الرابط أو امسح رمز QR لعرض مساحة البناء والاقتراحات في النسخة المنشورة.</p><a dir="ltr" href="https://binjednan.github.io/IOS-simulator-HTLM/#builderStage" style="overflow-wrap:anywhere">https://binjednan.github.io/IOS-simulator-HTLM/#builderStage</a></div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMMAAADDAQAAAAAXBJgHAAACGUlEQVR4nO2YwY6bQAyGfwPS0NPQJ5hI+x4heaxKaSGi77Vh90WGW4/DbZCAvxrYYyP1sHEu6wtCFrLlsb9/jBD/tiG74wC+PPh0D0VE6uoqUzYWmE64ikilmpslI3BxZnGTAMjJVbk6VwHGAnjDb5SpCeWkfz4Smh4Y6flaPTLOfQ+dHORMqcv38L/ffKKnIWSYgePY+cgKjjfdDEaRks74SNcO0y8sIpliBuBuIadZbes+XkmvyINqERH3M/GAPSjtMGnyoADGFmRG74DlZRBiKOub5imstmOUkPu49SSQ+0Qpr5kBacjWRQkNudrZRd0MGBpGYetwtPSxZkfedGuA3JubbZHi0jBcnPIsSICbzgN9KWGRSGd6ZV2gmwezVHDTCbmfTuMMsNIlUpueF0ThjHgEYLSJBGdWa7x5lQKlsPOjJpHAFQ3TBHikgeDNzvtUZEoZZBDKwV5ldua1yv10Dnn/kDh3jQlBqHdl2mA0p0PR5UHj2ad2FM4u1uGi24lg0uR9DGA7mj7x+Qm6sNrOb3RM1XCx1q0Bch8lADua00VdlcoFJCny8n1++ZNWBcCGYfq26vIAwDHJUx+QWqDzUZQ7kYzHtDOladyEGZoZZB87kzX9eA7AdBrlwEV3b9ztxwFvwFCmakzZE7a2oXBl0mR2AcPj4tzvgzpcXDwmKHDb2pSpjH0W0iXBbfcDVR7I138kPN/zFwZDamELt2hvAAAAAElFTkSuQmCC" alt="رمز QR يفتح محاكي بناء تطبيقات iOS" width="154" height="154" style="border:1px solid #d6e4ec;border-radius:12px;background:white;padding:5px"></div>
     <article class="guide-card hig-coverage" id="guideCoverage"><h3>تغطية إرشادات Apple ومكوّنات الواجهة</h3><p>توضح صفحة <a href="https://developer.apple.com/design/human-interface-guidelines/designing-for-ios" target="_blank" rel="noopener">Designing for iOS</a> مبادئ الشاشة واللمس وإتاحة الوصول. ويقسم <a href="https://developer.apple.com/design/human-interface-guidelines/components/" target="_blank" rel="noopener">فهرس المكوّنات</a> عناصر المنصة إلى سبع عائلات. يتيح هذا الملف ٥٠ مكوّنًا قابلاً للاختيار مع خيارات سلوك، ويشرح عناصر النظام والخدمات التي لا تُبنى كمكوّن صفحة.</p><div class="hig-coverage-grid"><div><strong>المحتوى</strong><span>الصور والرموز والويب والوثائق والفيديو والصوت والخريطة والرسم وحالات الفراغ.</span></div><div><strong>التخطيط والتنظيم</strong><span>الصفحات والشريط الجانبي والتقسيم والبطاقات والمجموعات والقوائم والجداول.</span></div><div><strong>القوائم والإجراءات</strong><span>الأزرار وأوامر العنوان والقوائم السياقية والتأكيد والمشاركة.</span></div><div><strong>التنقل والبحث</strong><span>التبويبات وصفحات التفاصيل ومسارات اللوحة والبحث المحلي والشامل.</span></div><div><strong>العروض</strong><span>الأوراق وارتفاعاتها والتنبيهات والنوافذ المنبثقة والعرض الكامل.</span></div><div><strong>الاختيار والإدخال</strong><span>الحقول والمفاتيح والمنتقيات والتاريخ واللون والصور والملفات والتحديد المتعدد.</span></div><div><strong>الحالة</strong><span>التقدم والتحميل والمقياس والشارات. شريط الحالة والجزيرة الديناميكية يشرحهما المعجم ولا يُسحبان للصفحة.</span></div></div><details class="hig-page-audit"><summary>مطابقة النقاط المذكورة في صفحة Designing for iOS</summary><ul><li><b>الشاشة والإمساك بالهاتف:</b> معاينة متكيفة للهاتف والآيباد ولوحة لمس يمكن تحريكها وتكبيرها؛ اختبر الوصول إلى الأوامر السفلية.</li><li><b>المدخلات:</b> اللمس ولوحة المفاتيح والتركيز والتحكم الصوتي ومدخلات الحركة موضحة في سلوكيات المنصة، مع حدود اختبار كل منها.</li><li><b>ميزات النظام الخمس:</b> Widgets وإجراءات الشاشة الرئيسية وSpotlight والاختصارات وواجهة المشاركة مدرجة في قرارات المنصة والتنفيذ الأصلي.</li><li><b>المظهر وإتاحة الوصول:</b> جرّب الفاتح والداكن والتباين وتقليل الشفافية والحركة؛ راجع Dynamic Type والاتجاه وVoiceOver على الجهاز.</li><li><b>البيانات بإذن المستخدم:</b> الموقع والتحقق الحيوي وApple Pay مذكورة كقدرات تحتاج أذونات ومشروعًا أصليًا؛ لا تعرض معاينة المتصفح ادعاء تشغيلها.</li></ul></details><p class="guide-note">نطاق المحاكي تعليمي: بعض تأثيرات iOS وقدرات الجهاز، مثل Taptic Engine وWidgetKit وActivityKit والصلاحيات ولوحات المفاتيح الأصلية، تتطلب تنفيذًا أصليًا واختبارًا في Xcode وعلى iPhone. افتح سلوك كل مكوّن لمعرفة ما يعمل في المتصفح وما يحتاج النظام. لا تعني تغطية الفهرس اعتماد Apple أو تطابقًا تامًا مع كل إصدارات iOS.</p></article>
     <p class="guide-footer">عند الحاجة للعودة إلى الأعلى: <a href="#userGuide">بداية الدليل</a> · <a href="#downloadProject">لوحة الحفظ</a> · <a href="#openExperience">هاتف التجربة</a>.</p>
   </section>
   <div id="buildOverlay" class="build-overlay" role="dialog" aria-modal="true" aria-label="مساحة بناء التطبيق" hidden>
     <div class="build-workspace">
-      <header class="build-workspace-bar"><div><strong>◈ مساحة البناء</strong><span id="buildContext">اختر شاشة أو عنصرًا؛ خصائصه تظهر بجانب المعاينة</span></div><div class="build-workspace-actions"><button type="button" id="buildSave">حفظ المسودة</button><button type="button" id="buildExport">تنزيل المشروع</button><button type="button" id="closeBuildWorkspace" class="build-close">↩ العودة للصفحة</button></div></header>
-      <nav class="build-workspace-tabs" aria-label="لوحات مساحة البناء"><button type="button" data-build-panel="editor" aria-pressed="true">خصائص الشاشة</button><button type="button" data-build-panel="tools" aria-pressed="false">إضافة مكوّن</button><button type="button" data-build-panel="canvas" aria-pressed="false">لوحة الشاشات</button><button type="button" data-build-panel="next" aria-pressed="false">إرشاد</button><button type="button" data-build-panel="output" aria-pressed="false">الحفظ والكود</button></nav>
+      <header class="build-workspace-bar"><div><strong>◈ مختبر بناء التطبيق</strong><span id="buildContext">اختر شاشة وعدّلها، ثم افتح وجهاتها المرتبطة</span></div><div class="build-workspace-actions"><button type="button" id="closeBuildWorkspace" class="build-close">↩ العودة للصفحة</button><button type="button" id="buildUndo" title="تراجع ⌘Z" aria-label="تراجع عن آخر تغيير" disabled>↶ تراجع</button><button type="button" id="buildRedo" title="إعادة ⇧⌘Z" aria-label="إعادة آخر تغيير" disabled>↷ إعادة</button><button type="button" id="buildModel" aria-expanded="false" aria-controls="modelPanel">◇ نموذج البيانات</button><button type="button" id="buildLifecycle" aria-expanded="false" aria-controls="lifecyclePanel">◎ فحص المخرجات والحفظ</button><button type="button" id="buildTheme" aria-pressed="false">☾ الوضع الداكن</button><button type="button" id="buildTry">▶ جرّب التطبيق</button><button type="button" id="buildSave">حفظ المسودة</button><button type="button" id="buildExport">تنزيل مشروع Xcode</button></div></header>
+      <nav class="build-workspace-tabs" aria-label="مهام مساحة البناء"><button type="button" data-build-panel="canvas" aria-pressed="true">الشاشات والمسارات</button><button type="button" data-build-panel="editor" aria-pressed="false">تحرير مع الهاتف</button><button type="button" data-build-panel="tools" aria-pressed="false">مكتبة المكوّنات</button><button type="button" data-build-panel="next" aria-pressed="false">الخطوة التالية</button><button type="button" data-build-panel="output" aria-pressed="false">التصدير والكود</button></nav>
+      <section id="lifecyclePanel" class="build-lifecycle-panel" aria-label="فحص دورة حياة الشاشة" hidden></section>
+      <section id="modelPanel" class="build-model-panel" aria-label="تصميم نموذج البيانات والعلاقات" hidden></section>
       <div id="buildWorkspaceDock" class="build-workspace-dock" data-active-panel="editor"></div>
       <section id="designCanvasWorkspace" class="design-canvas-workspace" aria-label="لوحة تصميم الشاشات ومسارات التنقل" hidden>
-        <div class="screen-board-main"><div class="screen-board-toolbar"><div><strong>لوحة الشاشات</strong><small>اضغط اختيارًا داخل الهاتف لفتح واجهته · اسحب الشاشة لترتيبها · مرّر بإصبعين لتحريك اللوحة</small></div><div class="screen-board-actions"><button type="button" data-board-command="scope" aria-pressed="true">عرض كل الشاشات</button><button type="button" data-board-command="zoom-out" aria-label="تصغير">−</button><output id="screenBoardZoom">٨٠٪</output><button type="button" data-board-command="zoom-in" aria-label="تكبير">＋</button><button type="button" data-board-command="fit">ملاءمة</button><button type="button" data-board-command="center">الصفحة الحالية</button></div></div><div id="screenBoardViewport" class="screen-board-viewport" tabindex="0" aria-label="لوحة واجهات: اضغط اختيارًا داخل الهاتف لفتح واجهته، واسحب الشاشات لترتيبها، ومرّر بإصبعين لتحريك اللوحة"><div id="screenBoardWorld" class="screen-board-world"><svg id="screenBoardLinks" aria-hidden="true"></svg><div id="screenBoardCards"></div></div></div></div>
+        <aside id="screenBoardNavigator" class="screen-board-navigator" aria-label="شاشات التطبيق"></aside>
+        <div class="screen-board-main"><div class="screen-board-toolbar"><div><strong>لوحة الشاشات</strong><small>اختر شاشة من القائمة أو اضغط عنصرًا في المعاينة لفتح وجهته</small></div><div class="screen-board-actions"><button type="button" data-board-command="navigator" aria-expanded="false" aria-controls="screenBoardNavigator" class="board-mobile-control">☰ الشاشات</button><button type="button" data-board-command="inspector" aria-expanded="false" aria-controls="screenBoardInspector" class="board-mobile-control">✎ الخصائص</button><button type="button" data-board-command="scope" aria-pressed="true">عرض الكل</button><button type="button" data-board-command="zoom-out" aria-label="تصغير">−</button><output id="screenBoardZoom">٨٠٪</output><button type="button" data-board-command="zoom-in" aria-label="تكبير">＋</button><button type="button" data-board-command="fit">ملاءمة</button><button type="button" data-board-command="center">الشاشة المحددة</button></div></div><div id="screenBoardViewport" class="screen-board-viewport" tabindex="0" aria-label="لوحة واجهات: اضغط اختيارًا داخل الهاتف لفتح واجهته، واسحب الشاشات لترتيبها، ومرّر بإصبعين لتحريك اللوحة"><div id="screenBoardWorld" class="screen-board-world"><svg id="screenBoardLinks" aria-hidden="true"></svg><div id="screenBoardCards"></div></div></div></div>
         <aside id="screenBoardInspector" class="screen-board-inspector" aria-label="خصائص الشاشة المحددة"></aside>
       </section>
     </div>
@@ -858,6 +862,93 @@ body.build-open{overflow:hidden}
 .build-workspace-dock>.next-panel>h3,.build-workspace-dock>.next-panel>.example-presets{display:none}
 .build-workspace-dock>.next-panel .next-step-list{flex:1 1 0;min-height:100px}
 @media(max-width:710px){.build-workspace-dock[data-active-panel=next]>.builder-stage{flex:0 0 45%;height:45%}}
+
+/* Builder workspace: screen list, focused canvas, and contextual properties. */
+.builder-work-area{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto}
+.builder-work-area>.tools-panel,.builder-work-area>.builder-stage,.builder-work-area>.editor-panel,.builder-work-area>.next-panel,.builder-work-area>.output-panel{display:none!important}
+.builder-work-area>.builder-analysis-area{grid-column:1;grid-row:2}
+.builder-work-area>.builder-launch{grid-column:1;grid-row:1}
+.builder-launch{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 30px!important;margin:0 0 4px;border:1px solid #cbdceb;border-radius:22px;background:linear-gradient(125deg,#e7f2ff,#f9fcff 68%);box-shadow:0 12px 35px #173d5f10}
+.builder-launch-copy{max-width:650px}.builder-launch h2{font-size:clamp(23px,2.5vw,35px);margin:6px 0 9px}.builder-launch p{font-size:14px;line-height:1.7;max-width:610px}
+.builder-launch-actions{display:flex;align-items:center;gap:11px;margin-top:18px}.builder-launch-actions a{color:#23669d;font-size:12px;font-weight:800;text-decoration:none}
+.builder-launch .focus-build-button{min-height:46px;border-radius:12px;padding:10px 18px;background:#205f9f;color:#fff;border:1px solid #205f9f;font:inherit;font-weight:900;cursor:pointer}
+.builder-launch-steps{display:grid;gap:9px;min-width:250px}.builder-launch-steps>div{display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid #d9e6f0;border-radius:12px;background:#ffffffbd;color:#355b78;font-size:12px;font-weight:800}.builder-launch-steps b{display:grid;place-items:center;width:25px;height:25px;border-radius:8px;background:#e6f1fb;color:#1e6ca7}
+.build-workspace{gap:7px;background:#edf3f8}
+.build-workspace-bar{padding:3px 8px 5px;border-bottom:1px solid #d5e2ed}
+.build-workspace-bar strong{font-size:16px;letter-spacing:-.2px}
+.build-workspace-actions #buildTry{background:#e6f4ed;border-color:#a5d7bd;color:#176747}
+.build-return-canvas{align-self:flex-start;min-height:36px;padding:6px 10px;margin:0 0 8px;border:1px solid #bdd6e9;border-radius:9px;background:#eef7ff;color:#1e6296;font:inherit;font-size:11px;font-weight:800;cursor:pointer}
+.build-workspace-dock>.output-panel>.build-return-canvas{grid-column:1/-1}
+.build-workspace-tabs{background:#e3ebf3;border:1px solid #d0e0eb;border-radius:12px;padding:4px;gap:2px;overflow:auto}
+.build-workspace-tabs button{border:0;background:transparent;color:#4e6e87;border-radius:8px;min-height:38px;flex:0 0 auto;padding:7px 14px;font-size:11px}
+.build-workspace-tabs button[aria-pressed=true]{background:#fff;color:#155f9a;border:0;box-shadow:0 1px 5px #203d5b22}
+.design-canvas-workspace{position:relative;grid-template-columns:220px minmax(0,1fr) 310px;gap:7px}
+.screen-board-navigator,.screen-board-main,.screen-board-inspector{border:1px solid #cfdeea;border-radius:14px;box-shadow:0 1px 5px #284c6510}
+.screen-board-navigator{min-width:0;min-height:0;display:flex;flex-direction:column;overflow:hidden;background:#fff}
+.board-nav-head{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:15px 13px 10px}
+.board-nav-head>div{display:grid;gap:3px}.board-nav-head strong{color:#173e5f;font-size:14px}.board-nav-head small{font-size:10px;color:#728a9b;line-height:1.4}
+.board-nav-search{display:grid;gap:5px;margin:0 11px 10px;color:#5d7a91;font-size:10px;font-weight:800}
+.board-nav-search input{width:100%;min-height:38px;padding:7px 9px;border:1px solid #cbdce9;border-radius:9px;background:#f7fafd;color:#173f61;font:inherit;font-size:12px}
+.board-nav-list{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:2px 7px 12px}
+.board-nav-group{margin:0 0 7px;padding:3px;border-bottom:1px solid #ebf0f4}
+.board-nav-group ul{list-style:none;margin:0;padding:0}
+.board-nav-group-head{display:flex;align-items:center;gap:2px}.board-nav-group-head .board-nav-root{flex:1;min-width:0}
+.board-nav-toggle{flex:none;width:32px;height:36px;border:0;border-radius:7px;background:transparent;color:#688aa3;font-size:18px;cursor:pointer;transition:transform .16s ease}
+.board-nav-toggle[aria-expanded=true]{transform:rotate(180deg)}.board-nav-toggle:hover{background:#f1f7fc}
+.board-nav-root,.board-nav-item>button{display:flex;align-items:center;gap:8px;width:100%;text-align:right;border:0;background:transparent;color:#355f7c;cursor:pointer;border-radius:9px;min-height:44px;padding:7px 8px;font:inherit}
+.board-nav-root:hover,.board-nav-item>button:hover{background:#f1f7fc}
+.board-nav-root[aria-current=page],.board-nav-item>button[aria-current=page]{background:#e4f1ff;color:#135c98;box-shadow:inset 3px 0 #2b82cf}
+.board-nav-index,.board-nav-icon{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:#e7eff7;color:#3c78a5;font-size:11px;font-weight:900}
+.board-nav-item>button{padding-inline-start:calc(8px + var(--depth)*10px);min-height:40px}
+.board-nav-item .board-nav-icon{width:20px;height:20px;background:transparent;color:#668fab;font-size:14px}
+.board-nav-label{display:grid;gap:2px;min-width:0}.board-nav-label b{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.board-nav-label small{font-size:9px;color:#7890a2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.board-nav-add{margin:8px 10px 10px;min-height:40px;border:1px dashed #8ebce0;border-radius:9px;background:#f4faff;color:#22699e;font:inherit;font-weight:800;cursor:pointer}
+.screen-board-toolbar{padding:9px 11px;gap:8px}.screen-board-toolbar strong{font-size:13px}.screen-board-toolbar small{font-size:9px;line-height:1.35}
+.screen-board-actions{flex-wrap:nowrap;gap:3px}.screen-board-actions button{min-height:34px;padding:5px 7px;white-space:nowrap}.screen-board-actions output{min-width:34px}
+.screen-board-inspector{padding:12px;background:#fff}
+.screen-board-inspector-head{padding-bottom:10px;border-bottom:1px solid #e4edf4}
+.screen-board-inspector-head h3{font-size:17px;line-height:1.2}.screen-board-inspector-head p{margin:5px 0}
+.screen-board-inspector-actions{grid-template-columns:1fr 1fr;margin:12px 0}
+.screen-board-inspector-actions [data-board-edit]{grid-column:1/-1;min-height:42px;text-align:center}
+.screen-board-inspector-actions [data-board-preview]{background:#f2f8ff}
+.screen-board-inspector-fields{border-top:1px solid #e4edf4;padding-top:12px}
+.screen-board-components{margin:8px 0;padding:9px}
+.screen-board-components .screen-board-component-list{max-height:130px;overflow:auto}
+.screen-board-note{border-top:1px solid #e4edf4;padding-top:10px}
+.board-mobile-control{display:none!important}
+@media(max-width:1160px) and (min-width:711px){
+  .design-canvas-workspace{grid-template-columns:minmax(0,1fr) 300px}
+  .screen-board-navigator{display:none;position:absolute;z-index:20;inset-block:0;inset-inline-start:0;width:min(280px,80vw);box-shadow:0 12px 34px #173a5966}
+  .design-canvas-workspace.navigator-open .screen-board-navigator{display:flex}
+  .board-mobile-control[data-board-command=navigator]{display:inline-flex!important;align-items:center}
+}
+@media(max-width:710px){
+  .builder-work-area{display:block}.builder-launch{display:block;padding:19px!important}.builder-launch-steps{grid-template-columns:1fr;margin-top:18px}.builder-launch-actions{flex-wrap:wrap}
+  .build-workspace{gap:5px}.build-workspace-bar{padding:2px 4px 4px}.build-workspace-actions #buildExport{display:none}
+  .build-workspace-tabs{flex:0 0 auto;gap:2px}.build-workspace-tabs button{min-height:38px;font-size:10px;padding:5px 8px}
+  .design-canvas-workspace{display:block;position:relative}
+  .screen-board-main{height:100%;width:100%;min-height:0}
+  .screen-board-navigator,.screen-board-inspector{display:none;position:absolute;z-index:20;inset-block:0;width:min(360px,calc(100% - 12px));max-height:none;height:100%;box-shadow:0 10px 35px #142f4a69}
+  .screen-board-navigator{inset-inline-start:0}.screen-board-inspector{inset-inline-end:0;overflow:auto;padding:12px}
+  .design-canvas-workspace.navigator-open .screen-board-navigator{display:flex}
+  .design-canvas-workspace.inspector-open .screen-board-inspector{display:block}
+  .board-mobile-control{display:inline-flex!important;align-items:center;justify-content:center}
+  .screen-board-toolbar{display:block;padding:5px 7px}.screen-board-toolbar>div:first-child{display:none}
+  .screen-board-actions{overflow-x:auto;scrollbar-width:none;gap:4px}.screen-board-actions button{min-height:38px;font-size:10px}
+  .screen-board-actions [data-board-command=center]{display:none}
+}
+/* Data lineage and lifecycle checks belong to the selected screen. */
+.board-data-mark{font-style:normal;font-size:8px;font-weight:900;white-space:nowrap}.board-data-mark.sample{color:#72899b}.board-data-mark.local{color:#14775f}.board-data-mark.linked{color:#7654aa}.board-data-mark.count{color:#aa6727}
+.board-data-relation{margin:10px 0;padding:10px;border:1px solid #d3e4ef;border-radius:12px;background:#f7fbff;color:#315b78}.board-data-relation>strong{font-size:11px}.board-data-relation p{font-size:10px;line-height:1.55;margin:8px 0 0;color:#58758c}.board-data-flow{display:flex;align-items:stretch;gap:4px;margin-top:8px}.board-data-flow span{flex:1;min-width:0;display:grid;gap:4px;padding:7px;border-radius:8px;background:#fff;border:1px solid #dce8f0}.board-data-flow small{font-size:8px;color:#7691a4}.board-data-flow b{font-size:9px;overflow-wrap:anywhere}.board-data-flow i{align-self:center;font-style:normal;font-size:13px;color:#8ca8bb}.board-data-relation.local{border-color:#a7dbc9;background:#f1fbf6}.board-data-relation.local .board-data-flow span:first-child{border-color:#a7dbc9;color:#176f54}.board-data-relation.linked{border-color:#d7c5ee;background:#faf6ff}.board-data-relation.linked .board-data-flow span:first-child{border-color:#d7c5ee;color:#7654aa}.board-data-relation.count{border-color:#ead2a8;background:#fffbf2}.board-data-relation.count .board-data-flow span:last-child{border-color:#ead2a8;color:#9d611c}
+.screen-board-inspector-fields label small{font-size:9px;line-height:1.5;color:#6d8798;font-weight:500}
+.build-workspace{position:relative}.build-lifecycle-panel{position:absolute;z-index:35;top:108px;inset-inline-end:14px;width:min(430px,calc(100% - 28px));max-height:calc(100% - 125px);overflow:auto;overscroll-behavior:contain;padding:15px;border:1px solid #bdd5e7;border-radius:16px;background:#fff;box-shadow:0 18px 55px #0d31506b;color:#244c69;direction:rtl}.build-lifecycle-panel[hidden]{display:none}.lifecycle-head{display:flex;justify-content:space-between;align-items:start;gap:9px}.lifecycle-head small{font-size:10px;color:#5381a0}.lifecycle-head h3{font-size:17px;margin:2px 0 9px}.lifecycle-head button,.lifecycle-buttons button{border:1px solid #bad4e6;border-radius:8px;background:#fff;color:#1b659a;font:inherit;font-size:11px;font-weight:800;padding:7px 10px;min-height:34px;cursor:pointer}.lifecycle-steps{display:flex;align-items:center;gap:3px;margin:5px 0 10px}.lifecycle-steps span{flex:1;text-align:center;padding:7px 3px;border-radius:8px;background:#edf5fb;color:#34678b;font-size:9px;font-weight:800}.lifecycle-steps i{font-style:normal;color:#7b9ab0}.lifecycle-data{border:1px solid #d8e5ef;border-radius:12px;background:#f8fbfe;padding:11px}.lifecycle-data.local{border-color:#a9d9c5;background:#f4fbf7}.lifecycle-data.linked{border-color:#d6c2eb;background:#fbf7ff}.lifecycle-data.count{border-color:#e8d0a9;background:#fffbf4}.lifecycle-data strong{font-size:12px}.lifecycle-data p{font-size:10px;line-height:1.55;margin:5px 0 9px;color:#5b7589}.lifecycle-data label{display:grid;gap:5px;font-size:10px;font-weight:800}.lifecycle-data input{min-height:36px;border:1px solid #bbd4e4;border-radius:8px;padding:7px;background:#fff;color:#123b5c;font:inherit}.lifecycle-buttons{display:flex;gap:6px;margin:8px 0}.lifecycle-buttons [data-lifecycle-add]{background:#2776b5;color:#fff;border-color:#2776b5}.lifecycle-output{display:grid;gap:4px;margin-top:9px;padding:10px;border-radius:9px;background:#fff;border:1px solid #d8e5ee}.lifecycle-output small{font-size:9px;color:#718aa0}.lifecycle-output b{font-size:14px;color:#173d5d}.lifecycle-output>div{display:flex;gap:4px;flex-wrap:wrap}.lifecycle-output span{padding:4px 7px;border-radius:6px;background:#eaf3fc;font-size:9px}.lifecycle-output em{font-size:10px;color:#8096a6;font-style:normal}.lifecycle-boundary{border-top:1px solid #dce8ef;padding-top:7px}.lifecycle-tools{margin:10px 0;border:1px solid #dae7ee;border-radius:10px;padding:8px}.lifecycle-tools summary{font-size:11px;font-weight:800;cursor:pointer}.lifecycle-tools ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px}.lifecycle-tools li{display:flex;justify-content:space-between;gap:8px;padding:7px;border-radius:7px;background:#f4f8fb;font-size:9px}.lifecycle-tools li b{white-space:nowrap}.lifecycle-tools li span{text-align:left}.lifecycle-tools li.saved{background:#eaf8f1;color:#176b51}.lifecycle-tools li.transient{background:#f0f3f6;color:#607686}.lifecycle-tools li.native{background:#fff6e8;color:#8a6228}#lifecycleStatus{font-size:10px;font-weight:800;color:#167453}
+/* The lab theme changes the editing environment; the phone remains an app preview. */
+.build-overlay.lab-dark{color-scheme:dark}.build-overlay.lab-dark .build-workspace{background:#101b2a;border-color:#314b64;color:#e3edf5}.build-overlay.lab-dark .build-workspace-bar{color:#edf6ff;border-color:#2a445d}.build-overlay.lab-dark .build-workspace-bar span{color:#a2b8c9}.build-overlay.lab-dark .build-workspace-tabs{background:#1a2d42;border-color:#314b64}.build-overlay.lab-dark .build-workspace-tabs button{color:#b8cde0}.build-overlay.lab-dark .build-workspace-tabs button[aria-pressed=true]{background:#315577;color:#fff}.build-overlay.lab-dark .build-workspace-actions button:not(.build-close){background:#203a54;border-color:#42647e;color:#e6f2fa}.build-overlay.lab-dark .screen-board-main,.build-overlay.lab-dark .screen-board-navigator,.build-overlay.lab-dark .screen-board-inspector,.build-overlay.lab-dark .build-workspace-dock>.panel,.build-overlay.lab-dark .build-lifecycle-panel{background:#182a3d;border-color:#34536a;color:#e3edf5}.build-overlay.lab-dark .screen-board-toolbar,.build-overlay.lab-dark .board-nav-group,.build-overlay.lab-dark .screen-board-inspector-head,.build-overlay.lab-dark .screen-board-inspector-fields{background:#182a3d;border-color:#314a5d}.build-overlay.lab-dark .screen-board-viewport{background-color:#152638;background-image:linear-gradient(#39546b60 1px,transparent 1px),linear-gradient(90deg,#39546b60 1px,transparent 1px)}.build-overlay.lab-dark .screen-board-card{background:#22374b;border-color:#496a83}.build-overlay.lab-dark .screen-board-card.selected{border-color:#62afff}.build-overlay.lab-dark .screen-board-card-head strong,.build-overlay.lab-dark .screen-board-toolbar strong,.build-overlay.lab-dark .board-nav-head strong,.build-overlay.lab-dark .screen-board-inspector-head h3,.build-overlay.lab-dark .board-data-relation>strong,.build-overlay.lab-dark .lifecycle-head h3{color:#edf7ff}.build-overlay.lab-dark .screen-board-card-head,.build-overlay.lab-dark .screen-board-inspector-head p,.build-overlay.lab-dark .screen-board-toolbar small,.build-overlay.lab-dark .board-nav-label small,.build-overlay.lab-dark .screen-board-note,.build-overlay.lab-dark .board-data-relation p{color:#abc0d1}.build-overlay.lab-dark .board-nav-root,.build-overlay.lab-dark .board-nav-item>button,.build-overlay.lab-dark .screen-board-inspector-fields label{color:#dcecf9}.build-overlay.lab-dark .board-nav-root[aria-current=page],.build-overlay.lab-dark .board-nav-item>button[aria-current=page]{background:#254d70;color:#fff}.build-overlay.lab-dark .screen-board-actions button,.build-overlay.lab-dark .screen-board-inspector button,.build-overlay.lab-dark .board-nav-add,.build-overlay.lab-dark .screen-board-inspector-fields input,.build-overlay.lab-dark .screen-board-inspector-fields select,.build-overlay.lab-dark .screen-board-inspector-fields textarea,.build-overlay.lab-dark .board-nav-search input,.build-overlay.lab-dark .lifecycle-data input{background:#213a51;border-color:#43657d;color:#edf6ff}.build-overlay.lab-dark .screen-board-links,.build-overlay.lab-dark .screen-board-advanced,.build-overlay.lab-dark .screen-board-more-actions,.build-overlay.lab-dark .screen-board-components,.build-overlay.lab-dark .board-data-relation,.build-overlay.lab-dark .lifecycle-data,.build-overlay.lab-dark .lifecycle-tools{background:#20374b;border-color:#43637a;color:#e7f3fb}.build-overlay.lab-dark .board-data-flow span,.build-overlay.lab-dark .lifecycle-output{background:#1b3045;border-color:#43637a;color:#e6f1fa}.build-overlay.lab-dark .lifecycle-output b,.build-overlay.lab-dark .lifecycle-tools summary{color:#edf6ff}.build-overlay.lab-dark .lifecycle-steps span{background:#25455f;color:#d4ebfc}.build-overlay.lab-dark .lifecycle-tools li{background:#243e53;color:#d8e8f3}.build-overlay.lab-dark .lifecycle-tools li.saved{color:#9be0be}.build-overlay.lab-dark .lifecycle-tools li.native{color:#f0cc8b}.build-overlay.lab-dark .build-workspace-dock .panel h2,.build-overlay.lab-dark .build-workspace-dock .panel h3,.build-overlay.lab-dark .build-workspace-dock .panel strong{color:#ecf6ff}.build-overlay.lab-dark .build-workspace-dock .panel p,.build-overlay.lab-dark .build-workspace-dock .panel label{color:#b9cbdb}
+@media(max-width:710px){.build-lifecycle-panel{top:104px;inset-inline:7px;width:auto;max-height:calc(100% - 116px)}.build-workspace-actions{gap:3px}.build-workspace-actions button{font-size:9px;padding:5px 7px}.board-data-flow{flex-wrap:wrap}.board-data-flow span{min-width:26%}}
+.build-model-panel{position:absolute;z-index:35;top:108px;inset-inline-end:14px;width:min(560px,calc(100% - 28px));max-height:calc(100% - 125px);overflow:auto;overscroll-behavior:contain;padding:16px;border:1px solid #bdd5e7;border-radius:16px;background:#fff;box-shadow:0 18px 55px #0d31506b;color:#244c69;direction:rtl}.build-model-panel[hidden]{display:none}.build-model-panel>p{font-size:11px;line-height:1.7}.build-model-panel h4{font-size:13px;margin:16px 0 8px}.model-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px;border:1px solid #d9e8f2;border-radius:12px;background:#f6faff}.model-form label{display:grid;gap:5px;font-size:10px;font-weight:800}.model-form input,.model-form select{min-height:38px;width:100%;min-width:0;border:1px solid #bbd4e4;border-radius:8px;padding:7px;background:#fff;color:#123b5c;font:inherit}.model-form button{align-self:end;min-height:38px;border:1px solid #2475ae;border-radius:8px;background:#2475ae;color:#fff;font:inherit;font-weight:800;cursor:pointer}.model-concepts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:11px 0}.model-concepts button{text-align:right;display:grid;gap:3px;min-height:56px;border:1px solid #b8dccd;border-radius:9px;background:#f1fbf6;color:#185d4b;padding:8px;cursor:pointer}.model-concepts small{font-size:9px;line-height:1.4;color:#527f70}.model-links{display:grid;gap:6px;margin:9px 0}.model-links>div{display:flex;align-items:center;justify-content:space-between;gap:7px;border:1px solid #d6c6e9;border-radius:8px;background:#faf6ff;padding:7px;color:#5f4b80;font-size:10px}.model-links button{border:1px solid #d7bdd4;border-radius:7px;background:#fff;color:#9a486d;cursor:pointer;padding:5px 8px}.model-links p{font-size:10px;color:#718a9d}.builder-concept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.builder-concept-grid article{display:grid;gap:3px;padding:8px;border:1px solid #d6e7ef;border-radius:8px;background:#f8fbff}.builder-concept-grid strong{font-size:11px}.builder-concept-grid span{font-size:10px;line-height:1.5;color:#617a8c}.build-overlay.lab-dark .build-model-panel{background:#182a3d;border-color:#34536a;color:#e3edf5}.build-overlay.lab-dark .model-form,.build-overlay.lab-dark .model-concepts button,.build-overlay.lab-dark .model-links>div{background:#20374b;border-color:#43637a;color:#e7f3fb}.build-overlay.lab-dark .model-form input,.build-overlay.lab-dark .model-form select{background:#213a51;border-color:#43657d;color:#edf6ff}.build-overlay.lab-dark .model-concepts small{color:#b4d9cd}.build-overlay.lab-dark .build-workspace-actions button:disabled{opacity:.45}.build-workspace-actions button:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:710px){.build-model-panel{top:104px;inset-inline:7px;width:auto;max-height:calc(100% - 116px)}.model-form,.model-concepts,.builder-concept-grid{grid-template-columns:1fr}}
+
+@media(max-width:710px){.build-workspace-bar{display:block}.build-workspace-actions{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;padding:4px 0;scrollbar-width:thin}.build-workspace-actions button{flex:none;white-space:nowrap}.build-workspace-actions .build-close{position:sticky;inset-inline-start:0;z-index:1}}
 </style>
 <script>
 (function () {
@@ -1094,7 +1185,39 @@ body.build-open{overflow:hidden}
     ,{ id:'tv', app:'Apple TV', name:'مكتبة أفلام ومشغل', display:'cards', kind:'overview', icon:'play.rectangle', title:'المكتبة', items:'المشتريات، التنزيلات، الأفلام، المسلسلات', tools:['video','carousel','searchfield'], sheet:false, tool:'video', url:'https://support.apple.com/guide/iphone/manage-your-library-iph3ecbb37ad/26/ios/26', note:'مكتبة مرئية تقود إلى صفحة محتوى ومشغل؛ حقوق العرض والتدفق خارج المحاكي.' }
   ];
   const renterFields = ['معرّف المستأجر', 'الاسم الكامل', 'رقم الهاتف', 'البريد الإلكتروني', 'رقم الهوية أو الإقامة', 'الجنسية', 'جهة الاتصال للطوارئ', 'معرّف الوحدة', 'تاريخ بداية الإشغال', 'تاريخ نهايته', 'الحالة', 'ملاحظات'];
+  const businessCoreConcepts = [
+    ['الطرف','شخص أو جهة له حق أو التزام، أو يقوم بفعل في الأعمال.','person.2'],
+    ['الأصل','شيء أو حق محدد يُملك أو يُستخدم أو يُدار عبر الزمن.','building.2'],
+    ['المشروع','مسعى له هدف ونهاية ويدور حول أصل أو أكثر.','square.grid.2x2'],
+    ['الاتفاق','التزامات متبادلة بين طرفين مختلفين أو أكثر.','doc.text'],
+    ['الاستحقاق المالي','مبلغ يدين به طرف لطرف آخر، لسبب ووقت أو حدث.','creditcard'],
+    ['حركة المال','مال انتقل فعلًا في وقت معيّن.','chart.bar'],
+    ['التخصيص','ربط حركة مال باستحقاق سدّدته.','tag'],
+    ['العمل','ما يجب أن يُعمل أو عُمل، أيًّا كان منفّذه.','checkmark.circle'],
+    ['المستند','أثر مسجّل يمكن الرجوع إلى محتواه كما صدر.','doc.text'],
+    ['حدث الأعمال','واقعة حصلت في الأعمال في زمن معيّن.','calendar']
+  ];
+  const businessCoreFieldSchemas = {
+    'الطرف': [['الاسم','text'],['نوع الطرف','text']],
+    'الأصل': [['اسم الأصل','text'],['نوع الأصل','text']],
+    'المشروع': [['الهدف','text'],['تاريخ النهاية','date']],
+    'الاتفاق': [['موضوع الاتفاق','text'],['تاريخ السريان','date']],
+    'الاستحقاق المالي': [['المبلغ','number'],['السبب','text'],['تاريخ الاستحقاق','date']],
+    'حركة المال': [['المبلغ المنتقل','number'],['تاريخ الحركة','date']],
+    'التخصيص': [['المبلغ المخصص','number'],['تاريخ التخصيص','date']],
+    'العمل': [['الوصف','text'],['تاريخ التنفيذ','date']],
+    'المستند': [['مرجع المستند','text'],['تاريخ الإصدار','date']],
+    'حدث الأعمال': [['وصف الواقعة','text'],['تاريخ الحدث','date']]
+  };
+  const businessCoreStructures = [
+    ['علاقة','التفويض والتمثيل بين الأطراف.'],
+    ['خاصية علاقة','حصة الملكية على علاقة الطرف بالأصل.'],
+    ['آلية','مصدر المعلومة وكيفية التحقق منها.'],
+    ['بنية داعمة','المعرّفات الخارجية ومرجع الحساب المالي.']
+  ];
   const builderStarterKits = [
+    { id:'business-core-ten', name:'النواة المفاهيمية للأعمال · ١٠ مفاهيم', summary:'أنشئ عشرة سجلات مستقلة كما في المثال المنطقي، واختبر الإضافة والعرض والتعديل والحذف محليًا في مشروع Xcode.', relation:'التفويض والتمثيل، حصة الملكية، مصدر المعلومة والتحقق، المعرّفات الخارجية ومرجع الحساب المالي تبقى علاقات وآليات داعمة؛ لا تتحول إلى كيانات مستقلة تلقائيًا.', concepts:businessCoreConcepts, structures:businessCoreStructures, pages:businessCoreConcepts.map(([label,purpose,icon])=>({label,icon,display:'list',title:label,items:'',purpose,tools:['searchfield'],recordMode:'local',schema:businessCoreFieldSchemas[label]})) },
+    { id:'binqdair-idea', name:'فكرة بن قضير · انتباه وسياق وقرار', summary:'بداية قابلة للتعديل لثلاث مجموعات سجلات حقيقية في المشروع الناتج؛ أضف مفاهيمك وعلاقاتها من «نموذج البيانات».', relation:'يبقى سجل الانتباه والسياق والقرار في هذا التطبيق؛ حقائق الأعمال الخارجية تحتاج مصدرًا وربطًا موثقين.', concepts:[['الانتباه','ما يحتاج مراجعة أو تصرفًا.','bell'],['السياق','المعلومات التي تشرح لماذا ظهر الانتباه.','doc.text'],['القرار','الاختيار الذي اتُخذ أو ينتظر الاعتماد.','checkmark.circle']], structures:[['حدود المصدر','حقائق الأعمال الخارجية تُنسب إلى مصدرها ولا تُنسخ بوصفها حقائق داخلية.']], pages:[{label:'الانتباه',icon:'bell',display:'list',title:'الانتباه',items:'',purpose:'سجلات ما يحتاج مراجعة أو تصرفًا.',tools:['searchfield'],recordMode:'local',schema:[['المصدر','text'],['تاريخ الظهور','date']]},{label:'السياق',icon:'doc.text',display:'list',title:'السياق',items:'',purpose:'سجلات المعلومات التي تفسر الانتباه.',tools:['searchfield'],recordMode:'local',schema:[['المصدر','text'],['تاريخ المعلومة','date']]},{label:'القرارات',icon:'checkmark.circle',display:'list',title:'القرارات',items:'',purpose:'سجلات الاختيارات وحالتها.',tools:['searchfield'],recordMode:'local',schema:[['حالة القرار','text'],['تاريخ القرار','date']]}] },
     { id:'residential-core', name:'نواة برزة المعزب السكنية', summary:'مدخل واحد ثم سجلات الوحدات والمستأجرين والعقود والطلبات؛ أوراق إدخال مستقلة وصفحات تفاصيل مرتبطة بكل اختيار.', relation:'العقار ← الوحدة؛ العقد يربط معرّف الوحدة بمعرّف المستأجر؛ الطلب يرتبط بوحدة وعقد عند الحاجة.', pages:[
       {label:'الوحدات',icon:'building.2',display:'list',title:'الوحدات',items:'وحدة سكنية تجريبية ١، وحدة سكنية تجريبية ٢',purpose:'سجل الوحدة ومعرّفها وربطها بالعقار والعقد.',tools:['searchfield'],add:'إضافة وحدة',fields:['معرّف الوحدة','معرّف العقار','رقم الوحدة','نوع الوحدة','الطابق','حالة الإشغال','ملاحظات']},
       {label:'المستأجرون',icon:'person.2',display:'list',title:'المستأجرون',items:'مستأجر تجريبي ١، مستأجر تجريبي ٢',purpose:'سجل طرف تجريبي؛ تربطه العقود بالوحدات دون خلط بيانات الطرف بالسجل المالي.',tools:['searchfield'],add:'إضافة مستأجر',fields:renterFields},
@@ -1115,7 +1238,9 @@ body.build-open{overflow:hidden}
     if ((pristine ? 0 : state.tabs.length) + kit.pages.length > 50) return false;
     const pages = kit.pages.map(def => {
       const page = makeTab(def.label, def.icon);
-      page.kind = 'list'; page.display = def.display; page.dataTitle = def.title; page.dataItems = def.items;
+      page.kind = 'list'; page.display = def.display; page.dataTitle = def.title; page.dataItems = def.items ?? (def.recordMode === 'local' ? '' : 'سجل تجريبي');
+      page.recordMode = def.recordMode || 'sample';
+      if (def.recordMode === 'local') { page.seedExamples = false; page.recordFields = (def.schema || []).map(([label,type])=>({label,type})); }
       page.purpose = def.purpose; page.tools = [...def.tools]; page.action = 'push';
       if (def.add) page.headerActions = [makeHeaderAction(def.add, 'plus.circle', 'sheet')];
       reconcileFlowPages(page);
@@ -1135,7 +1260,16 @@ body.build-open{overflow:hidden}
     else state.tabs.splice(at, 0, ...pages);
     state.activeTab = at; state.tabsEnabled = true;
     if (kit.id === 'residential-core' && pristine) { state.appName = 'برزة المعزب'; appNameInput.value = state.appName; }
-    if (!state.appGoal) { state.appGoal = `نموذج أولي لإدارة الوحدات والسجلات: ${kit.relation}`; appGoalInput.value = state.appGoal; }
+    if (kit.concepts) state.conceptBlueprint = { title: kit.name, concepts: kit.concepts.map(([name,meaning],i)=>({name,meaning,datasetKey:pages[i]?.dataKey})), supportingStructures: kit.structures.map(([kind,meaning])=>({kind,meaning})), status: 'المجموعات وروابط السجلات العامة قابلة للحفظ في مشروع Xcode؛ قواعد المجال والمال والتحقق تحتاج تنفيذًا متخصصًا.' };
+    if (kit.id === 'business-core-ten') {
+      const key = name => pages.find(page=>page.label===name)?.dataKey;
+      [['الطرف','الطرف','تفويض'],['الطرف','الطرف','تمثيل'],['الطرف','الأصل','حصة ملكية'],['التخصيص','حركة المال','يربط حركة'],['التخصيص','الاستحقاق المالي','يسدد استحقاقًا']].forEach(([from,to,name])=>state.modelLinks.push({sourceKey:key(from),targetKey:key(to),name}));
+    }
+    if (kit.id === 'binqdair-idea') {
+      const key=name=>pages.find(page=>page.label===name)?.dataKey;
+      [['الانتباه','السياق','يفسّره'],['القرارات','الانتباه','يعالج']].forEach(([from,to,name])=>state.modelLinks.push({sourceKey:key(from),targetKey:key(to),name}));
+    }
+    if (!state.appGoal) { state.appGoal = kit.id === 'business-core-ten' ? 'إدارة مفاهيم الأعمال العشرة وروابط سجلاتها ضمن نموذج قابل للتوسع.' : kit.id === 'binqdair-idea' ? 'إدارة الانتباه والسياق والقرارات مع حفظ مصدر كل معلومة وروابطها.' : `نموذج أولي لإدارة الوحدات والسجلات: ${kit.relation}`; appGoalInput.value = state.appGoal; }
     flowPath = []; boardSelected = { page: at, routeId: '' }; boardEditing = false;
     selectBuildPanel('canvas'); renderAll(); renderDesignCanvas(true);
     return true;
@@ -1165,12 +1299,13 @@ body.build-open{overflow:hidden}
   };
   const defaultValues = () => ({ toggle: true, slider: 0.6, period: 'اليوم', segment: 0, count: 0, text: '', search: '', sampleInput: '', sampleNote: '', sheetCells: ['', '', '', '', '', '', '', '', ''], detail: false, detailTitle: '' });
   function newHeaderId() { return `h${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`; }
+  function newDataKey() { return `d${Date.now().toString(36)}${Math.random().toString(36).slice(2, 9)}`; }
   const makeHeaderAction = (label = 'إضافة', icon = 'plus.circle', behavior = 'sheet') => ({
     id: newHeaderId(), label, icon, placement: 'trailing', behavior,
     menuItems: [{ label: 'إضافة عنصر', behavior: 'count' }, { label: 'عرض التفاصيل', behavior: 'push' }]
   });
   const makeTab = (label = 'صفحة جديدة', icon = 'square.grid.2x2') => ({
-    label, icon, kind: 'overview', display: 'summary', dataTitle: 'البيانات', dataItems: 'العنصر الأول، العنصر الثاني، العنصر الثالث', action: 'push', purpose: 'صفحة جديدة في التطبيق.', layoutMode: 'native', canvasScreens: 1, layoutVersion: 2, layout: {}, boardLayout: {}, tabBarMode: 'normal', hideTabBar: false, templateForm: false, backgroundStyle: 'system', backgroundMotion: true, listStyle: 'inset', cardStyle: 'glass', titleStyle: 'inline', contentUnderHeader: false, featureCard: false, featureTitle: 'بطاقة مميزة', featureSubtitle: 'معلومة رئيسية داخل الصفحة', collapseFeatureOnScroll: false, keyboardStyle: 'numbers', headerActions: [], tools: [], componentOptions: {}, blocks: [], values: defaultValues(), detailPage: null, flowPages: []
+    label, icon, kind: 'overview', display: 'summary', dataTitle: 'البيانات', dataItems: 'العنصر الأول، العنصر الثاني، العنصر الثالث', recordMode: 'sample', seedExamples: true, recordFields: [], dataKey: newDataKey(), dataSourceKey: '', action: 'push', purpose: 'صفحة جديدة في التطبيق.', layoutMode: 'native', canvasScreens: 1, layoutVersion: 2, layout: {}, boardLayout: {}, tabBarMode: 'normal', hideTabBar: false, templateForm: false, backgroundStyle: 'system', backgroundMotion: true, listStyle: 'inset', cardStyle: 'glass', titleStyle: 'inline', contentUnderHeader: false, featureCard: false, featureTitle: 'بطاقة مميزة', featureSubtitle: 'معلومة رئيسية داخل الصفحة', collapseFeatureOnScroll: false, keyboardStyle: 'numbers', headerActions: [], tools: [], componentOptions: {}, blocks: [], values: defaultValues(), detailPage: null, flowPages: []
   });
   function makeDetailPage(title = 'صفحة التفاصيل', parent = null) {
     return { ...makeTab(clean(title, 18) || 'صفحة التفاصيل', 'doc.text'), kind: 'list', display: 'list', dataTitle: 'التفاصيل', dataItems: parent?.dataItems || 'العنصر الأول، العنصر الثاني، العنصر الثالث', purpose: 'تفاصيل قابلة للتحرير لهذه الصفحة.', action: 'sheet', detailPage: null };
@@ -1183,7 +1318,7 @@ body.build-open{overflow:hidden}
   const reviewKeys = ['pages', 'navigation', 'data', 'interaction', 'options'];
   const emptyReview = () => Object.fromEntries(reviewKeys.map(key => [key, false]));
   const freshArchitecture = () => ({ data: 'undecided', sync: 'undecided', audience: 'private', selectedTools: [], inspiredBy: [] });
-  const freshState = () => ({ architecture: freshArchitecture(), appName: 'تطبيقي', appGoal: '', intendedType: 'auto', mapView: 'network', reviewed: emptyReview(), tabsEnabled: true, tabBarBehavior: 'onScrollDown', searchRoleEnabled: true, platformChoices: [], activeTab: 0, tabs: defaultTabs() });
+  const freshState = () => ({ architecture: freshArchitecture(), conceptBlueprint: null, modelLinks: [], appName: 'تطبيقي', appGoal: '', intendedType: 'auto', mapView: 'network', reviewed: emptyReview(), tabsEnabled: true, tabBarBehavior: 'onScrollDown', searchRoleEnabled: true, platformChoices: [], activeTab: 0, tabs: defaultTabs() });
   const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
   const swiftString = value => '"' + String(value).replace(/[\u0000-\u001f\u007f]/g, ' ').replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"';
   const formatNumber = value => new Intl.NumberFormat('ar').format(value);
@@ -1193,6 +1328,13 @@ body.build-open{overflow:hidden}
     const safe = freshState();
     safe.appName = clean(candidate.appName, 40) || 'تطبيقي';
     safe.appGoal = clean(candidate.appGoal, 500);
+    if (candidate.conceptBlueprint && typeof candidate.conceptBlueprint === 'object') safe.conceptBlueprint = {
+      title: clean(candidate.conceptBlueprint.title, 80),
+      concepts: Array.isArray(candidate.conceptBlueprint.concepts) ? candidate.conceptBlueprint.concepts.slice(0, 30).map(item => ({ name: clean(item.name, 60), meaning: clean(item.meaning, 220), datasetKey: /^d[a-z0-9]{8,40}$/.test(item.datasetKey || '') ? item.datasetKey : null })) : [],
+      supportingStructures: Array.isArray(candidate.conceptBlueprint.supportingStructures) ? candidate.conceptBlueprint.supportingStructures.slice(0, 30).map(item => ({ kind: clean(item.kind, 60), meaning: clean(item.meaning, 220) })) : [],
+      status: clean(candidate.conceptBlueprint.status, 300)
+    };
+    safe.modelLinks = Array.isArray(candidate.modelLinks) ? candidate.modelLinks.slice(0, 100).filter(item => item && /^d[a-z0-9]{8,40}$/.test(item.sourceKey || '') && /^d[a-z0-9]{8,40}$/.test(item.targetKey || '')).map(item => ({ sourceKey: item.sourceKey, targetKey: item.targetKey, name: clean(item.name, 60) || 'مرتبط بـ' })) : [];
     const arch = candidate.architecture && typeof candidate.architecture === 'object' ? candidate.architecture : {};
     safe.architecture = { data: ['undecided', 'swiftdata', 'files', 'remote'].includes(arch.data) ? arch.data : 'undecided', sync: ['undecided', 'none', 'cloudkit', 'custom'].includes(arch.sync) ? arch.sync : 'undecided', audience: ['private', 'shared', 'public'].includes(arch.audience) ? arch.audience : 'private', selectedTools: Array.isArray(arch.selectedTools) ? arch.selectedTools.filter(id => typeof id === 'string' && /^[a-z0-9-]{1,32}$/.test(id)).slice(0, 50) : [], inspiredBy: Array.isArray(arch.inspiredBy) ? arch.inspiredBy.filter(id => typeof id === 'string' && /^[a-z0-9-]{1,32}$/.test(id)).slice(0, 50) : [] };
     safe.intendedType = ['auto', 'admin', 'finance', 'reminders', 'gallery', 'notes', 'commerce', 'general'].includes(candidate.intendedType) ? candidate.intendedType : 'auto';
@@ -1235,6 +1377,11 @@ body.build-open{overflow:hidden}
         keyboardStyle: current?.keyboardStyle === 'system' ? 'system' : 'numbers',
         dataTitle: clean(current?.dataTitle, 40) || fallback.dataTitle,
         dataItems: clean(current?.dataItems, 180) || fallback.dataItems,
+        seedExamples: current?.seedExamples !== false,
+        recordFields: Array.isArray(current?.recordFields) ? current.recordFields.slice(0, 16).filter(field=>field&&typeof field==='object').map(field=>({label:clean(field.label,40),type:['text','number','date','boolean'].includes(field.type)?field.type:'text'})).filter(field=>field.label) : [],
+        recordMode: ['local', 'linked', 'count'].includes(current?.recordMode) ? current.recordMode : 'sample',
+        dataKey: /^d[a-z0-9]{8,40}$/.test(current?.dataKey || '') ? current.dataKey : newDataKey(),
+        dataSourceKey: /^d[a-z0-9]{8,40}$/.test(current?.dataSourceKey || '') ? current.dataSourceKey : '',
         action: navigationKinds[current?.action] ? current.action : fallback.action,
         purpose: clean(current?.purpose, 90) || fallback.purpose,
         layoutMode: current?.layoutMode === 'native' ? 'native' : 'free',
@@ -1297,6 +1444,39 @@ body.build-open{overflow:hidden}
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || localStorage.getItem(OLD_STORAGE_KEY) || 'null');
     if (saved?.state) state = validatedState(saved.state);
   } catch (_) { /* Local file storage may be unavailable. */ }
+  const undoStack = [], redoStack = [];
+  let historyLast = JSON.stringify(state), restoringHistory = false;
+  function updateHistoryButtons() {
+    const undo = document.querySelector('#buildUndo'), redo = document.querySelector('#buildRedo');
+    if (undo) undo.disabled = undoStack.length === 0;
+    if (redo) redo.disabled = redoStack.length === 0;
+  }
+  function captureHistory() {
+    if (restoringHistory || simulatorMode === 'experience') return;
+    const now = JSON.stringify(state);
+    if (now === historyLast) return;
+    undoStack.push(historyLast);
+    if (undoStack.length > 80) undoStack.shift();
+    redoStack.length = 0;
+    historyLast = now;
+    updateHistoryButtons();
+  }
+  function travelHistory(direction) {
+    const from = direction === 'undo' ? undoStack : redoStack;
+    const to = direction === 'undo' ? redoStack : undoStack;
+    if (!from.length) return;
+    to.push(JSON.stringify(state));
+    restoringHistory = true;
+    state = validatedState(JSON.parse(from.pop()));
+    historyLast = JSON.stringify(state);
+    flowPath = [];
+    boardSelected = { page: Math.min(boardSelected.page, state.tabs.length - 1), routeId: '' };
+    renderAll(true);
+    restoringHistory = false;
+    updateHistoryButtons();
+    if (buildWorkspaceOpen && !designCanvasWorkspace.hidden) renderDesignCanvas(true);
+    historyLast = JSON.stringify(state);
+  }
   let overlay = null;
   let inspected = 'tabbar';
   let layoutEditing = false;
@@ -1375,7 +1555,7 @@ body.build-open{overflow:hidden}
     document.querySelector('#toggleBuildPhone').setAttribute('aria-pressed', 'false');
     document.querySelector('#toggleBuildPhone').textContent = '⤢ تكبير الهاتف';
     buildOverlay.querySelectorAll('[data-build-panel]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.buildPanel === name)));
-    document.querySelector('#buildContext').textContent = canvas ? 'واجهات كل اختيار والورقة على لوحة تحرير واحدة' : name === 'tools' ? 'اختر مكوّنًا ليُضاف للشاشة الحالية' : name === 'editor' ? `تحرير ${activePage().label}` : name === 'next' ? 'إرشادات عند الحاجة' : 'احفظ المشروع والكود';
+    document.querySelector('#buildContext').textContent = canvas ? 'الشاشات والوجهات والخصائص في مكان واحد' : name === 'tools' ? 'اختر مكوّنًا ليُضاف للشاشة الحالية' : name === 'editor' ? `تحرير ${activePage().label}` : name === 'next' ? 'إرشادات عند الحاجة' : 'احفظ المشروع والكود';
     if (canvas) requestAnimationFrame(() => renderDesignCanvas(true));
     else requestAnimationFrame(updateBuildScale);
   }
@@ -1383,11 +1563,13 @@ body.build-open{overflow:hidden}
   const boardWorld = document.querySelector('#screenBoardWorld');
   const boardCards = document.querySelector('#screenBoardCards');
   const boardInspector = document.querySelector('#screenBoardInspector');
+  const boardNavigator = document.querySelector('#screenBoardNavigator');
   let boardZoom = 0.86, boardPanX = 24, boardPanY = 30;
   let boardGesture = null, boardWheelTimer = null;
   let boardSelected = { page: 0, routeId: '' };
   let boardEditing = false;
   let boardScope = 'focus';
+  const boardNavExpanded = new Set([0]);
   let boardDrag = null;
   const boardPointers = new Map();
   let boardPinch = null;
@@ -1493,7 +1675,41 @@ body.build-open{overflow:hidden}
       const child = tab.flowPages.find(item => item.parentId === routeId && item.sourceKey === source.key);
       return child ? `<button type="button" data-board-follow="${child.id}" class="screen-board-source ${child.presentation} ${boardSelected.routeId === child.id ? 'is-origin' : ''}"><span>${escapeHtml(source.label)}</span><b>${child.presentation === 'sheet' ? '▧' : '←'}</b></button>` : '';
     }).join('');
-    return `<article class="screen-board-card ${selected ? 'selected' : ''} ${selected && boardEditing ? 'editing' : ''} ${route?.presentation === 'sheet' ? 'sheet-card' : ''}" data-board-page="${index}" data-board-route="${routeId}" style="left:${pos.x}px;top:${pos.y}px"><div class="screen-board-card-head"><span>${label}</span><strong>${escapeHtml(page.label)}</strong></div><div class="screen-board-phone"><div class="screen-board-preview phone builder-phone" aria-hidden="true"><div class="phone-screen"><div class="${preview.className}" dir="rtl">${preview.html}</div></div></div></div><div class="screen-board-card-foot"><button type="button" data-board-edit-mode="${index}" data-board-edit-route="${routeId}">✎ تحرير هذه الشاشة</button><span>${sources.length} وجهة</span></div><div class="screen-board-source-list">${sourceButtons}</div></article>`;
+    const dataMark = route ? '' : page.recordMode === 'local' ? '<em class="board-data-mark local">● محفوظ</em>' : page.recordMode === 'linked' ? '<em class="board-data-mark linked">● مرتبط</em>' : page.recordMode === 'count' ? '<em class="board-data-mark count">● محسوب</em>' : '<em class="board-data-mark sample">● مثال</em>';
+    return `<article class="screen-board-card ${selected ? 'selected' : ''} ${selected && boardEditing ? 'editing' : ''} ${route?.presentation === 'sheet' ? 'sheet-card' : ''}" data-board-page="${index}" data-board-route="${routeId}" style="left:${pos.x}px;top:${pos.y}px"><div class="screen-board-card-head"><span>${label} ${dataMark}</span><strong>${escapeHtml(page.label)}</strong></div><div class="screen-board-phone"><div class="screen-board-preview phone builder-phone" aria-hidden="true"><div class="phone-screen"><div class="${preview.className}" dir="rtl">${preview.html}</div></div></div></div><div class="screen-board-card-foot"><button type="button" data-board-edit-mode="${index}" data-board-edit-route="${routeId}">✎ تحرير هذه الشاشة</button><span>${sources.length} وجهة</span></div><div class="screen-board-source-list">${sourceButtons}</div></article>`;
+  }
+  function boardRenderNavigator() {
+    const query = boardNavigator.querySelector('#boardNavSearch')?.value || '';
+    const items = state.tabs.map((tab, index) => {
+      const selectedTab = index === boardSelected.page;
+      const routes = tab.flowPages || [];
+      const screenButton = (route, depth = 0) => {
+        const active = selectedTab && boardSelected.routeId === route.id;
+        const children = routes.filter(item => item.parentId === route.id);
+        return `<li class="board-nav-item" data-board-nav-label="${escapeHtml(`${route.page.label} ${route.sourceLabel}`.toLowerCase())}"><button type="button" data-board-nav-page="${index}" data-board-nav-route="${escapeHtml(route.id)}" aria-current="${active ? 'page' : 'false'}" style="--depth:${Math.min(depth,6)}"><span class="board-nav-icon">${route.presentation === 'sheet' ? '▧' : '↳'}</span><span class="board-nav-label"><b>${escapeHtml(route.page.label)}</b><small>${escapeHtml(route.sourceLabel)}</small></span></button>${children.length ? `<ul>${children.map(item => screenButton(item, depth + 1)).join('')}</ul>` : ''}</li>`;
+      };
+      const expanded = boardNavExpanded.has(index);
+      return `<section class="board-nav-group" data-board-nav-label="${escapeHtml(tab.label.toLowerCase())}" data-board-nav-group="${index}"><div class="board-nav-group-head"><button type="button" class="board-nav-root" data-board-nav-page="${index}" data-board-nav-route="" aria-current="${selectedTab && !boardSelected.routeId ? 'page' : 'false'}"><span class="board-nav-index">${formatNumber(index + 1)}</span><span class="board-nav-label"><b>${escapeHtml(tab.label)}</b><small>${formatNumber(routes.length)} شاشة مرتبطة</small></span></button>${routes.length ? `<button type="button" class="board-nav-toggle" data-board-toggle="${index}" aria-expanded="${expanded}" aria-label="${expanded ? 'طي' : 'فتح'} شاشات ${escapeHtml(tab.label)}">⌄</button>` : ''}</div>${routes.length ? `<ul class="board-nav-children" ${expanded ? '' : 'hidden'}>${routes.filter(route => !route.parentId).map(route => screenButton(route, 1)).join('')}</ul>` : ''}</section>`;
+    }).join('');
+    boardNavigator.innerHTML = `<div class="board-nav-head"><div><strong>شاشات التطبيق</strong><small>اختَر شاشة لتعديلها أو تتبّع مسارها</small></div><button type="button" data-board-command="navigator" class="board-mobile-control" aria-label="إغلاق قائمة الشاشات">✕</button></div><label class="board-nav-search"><span>بحث في الشاشات</span><input id="boardNavSearch" type="search" placeholder="اسم الشاشة أو الاختيار" value="${escapeHtml(query)}"></label><div class="board-nav-list">${items}</div><button type="button" class="board-nav-add" data-board-add-page>＋ تبويب جديد</button>`;
+    boardFilterNavigator(query);
+  }
+  function boardFilterNavigator(value) {
+    const query = value.trim().toLowerCase();
+    boardNavigator.querySelectorAll('.board-nav-group').forEach(group => {
+      const rootMatch = group.dataset.boardNavLabel.includes(query);
+      let matches = 0;
+      [...group.querySelectorAll('.board-nav-item')].reverse().forEach(item => {
+        const ownMatch = !query || rootMatch || item.dataset.boardNavLabel.includes(query);
+        const childMatch = [...item.querySelectorAll('.board-nav-item')].some(child => !child.hidden);
+        const match = ownMatch || childMatch;
+        item.hidden = !match;
+        if (match) matches++;
+      });
+      group.hidden = Boolean(query) && !rootMatch && !matches;
+      const children = group.querySelector('.board-nav-children');
+      if (children) children.hidden = query ? false : !boardNavExpanded.has(Number(group.dataset.boardNavGroup));
+    });
   }
   function boardRenderInspector() {
     const index = Math.max(0, Math.min(state.tabs.length - 1, boardSelected.page));
@@ -1512,29 +1728,48 @@ body.build-open{overflow:hidden}
     linked.append(connection);
     boardInspector.querySelector('.screen-board-inspector-head').after(linked);
     const fields = boardInspector.querySelector('.screen-board-inspector-fields');
+    const actions = boardInspector.querySelector('.screen-board-inspector-actions');
+    if (!route && ['list', 'settings', 'cards', 'summary', 'metrics'].includes(page.display)) {
+      const localSources = state.tabs.filter(other => other !== page && other.recordMode === 'local' && ['list', 'settings', 'cards'].includes(other.display));
+      const modeLabel = document.createElement('label');
+      modeLabel.innerHTML = `مصدر البيانات<select data-board-field="recordMode"><option value="sample" ${page.recordMode === 'sample' ? 'selected' : ''}>أمثلة للتصميم</option>${['list', 'settings', 'cards'].includes(page.display) ? `<option value="local" ${page.recordMode === 'local' ? 'selected' : ''}>سجلات محفوظة محليًا · SwiftData</option>${localSources.length ? `<option value="linked" ${page.recordMode === 'linked' ? 'selected' : ''}>اعرض سجلات شاشة أخرى</option>` : ''}` : ''}${['summary', 'metrics'].includes(page.display) && localSources.length ? `<option value="count" ${page.recordMode === 'count' ? 'selected' : ''}>احسب عدد سجلات شاشة أخرى</option>` : ''}</select>`;
+      fields.querySelector('[data-board-field="dataTitle"]').parentElement.before(modeLabel);
+      const source = state.tabs.find(other => other.dataKey === page.dataSourceKey && other.recordMode === 'local');
+      if (['linked', 'count'].includes(page.recordMode)) {
+        const sourceLabel = document.createElement('label');
+        sourceLabel.innerHTML = `الشاشة المصدر<select data-board-field="dataSourceKey"><option value="">اختر مصدرًا</option>${localSources.map(other => `<option value="${escapeHtml(other.dataKey)}" ${page.dataSourceKey === other.dataKey ? 'selected' : ''}>${escapeHtml(other.label)} · ${escapeHtml(other.dataTitle)}</option>`).join('')}</select>`;
+        modeLabel.after(sourceLabel);
+      }
+      const relation = document.createElement('section');
+      relation.className = `board-data-relation ${page.recordMode}`;
+      const sourceName = page.recordMode === 'local' ? 'SwiftData على الجهاز' : page.recordMode === 'linked' || page.recordMode === 'count' ? source?.label || 'مصدر غير محدد' : 'أمثلة التصميم';
+      const resultName = page.recordMode === 'local' ? 'إضافة · تعديل · حذف' : page.recordMode === 'linked' ? 'سجلات المصدر نفسها' : page.recordMode === 'count' ? 'عدد السجلات' : 'معاينة فقط';
+      relation.innerHTML = `<strong>رحلة بيانات هذه الشاشة</strong><div class="board-data-flow"><span><small>المصدر</small><b>${escapeHtml(sourceName)}</b></span><i aria-hidden="true">←</i><span><small>الشاشة</small><b>${escapeHtml(page.label)}</b></span><i aria-hidden="true">←</i><span><small>الناتج</small><b>${escapeHtml(resultName)}</b></span></div><p>${page.recordMode === 'local' ? 'ينشئ مشروع Xcode سجلًا عامًا قابلًا للحفظ. أمثلة الويب لا تمثل قاعدة البيانات.' : page.recordMode === 'count' ? 'يحسب مشروع Xcode عدد السجلات المحفوظة في الشاشة المصدر. الحسابات المالية تحتاج نموذج مبالغ وقواعد مجال مستقلة.' : page.recordMode === 'linked' ? 'تعرض الشاشتان السجلات نفسها من المصدر المختار؛ تعديل السجل يظهر في كليهما.' : 'هذه بيانات شرح وتخطيط. اختر مصدرًا محفوظًا عندما تحتاج سجلات حقيقية.'}</p>`;
+      actions.after(relation);
+    }
     const advanced = document.createElement('details');
     advanced.className = 'screen-board-advanced';
     advanced.innerHTML = '<summary>خيارات الشاشة الإضافية</summary>';
-    const essentials = page.display === 'form' ? ['label', 'purpose', 'display'] : ['label', 'display', 'dataTitle', 'dataItems'];
+    const essentials = page.display === 'form' ? ['label', 'purpose', 'display'] : ['label', 'display', 'recordMode', 'dataSourceKey', 'dataTitle', 'dataItems'];
     [...fields.children].forEach(label => {
       const field = label.querySelector('[data-board-field]')?.dataset.boardField;
       if (field && !essentials.includes(field)) advanced.append(label);
       if (field === 'dataItems' && page.display === 'form') advanced.append(label);
     });
     fields.append(advanced);
-    const actions = boardInspector.querySelector('.screen-board-inspector-actions');
     const moreActions = document.createElement('details');
     moreActions.className = 'screen-board-more-actions';
     moreActions.innerHTML = '<summary>أدوات تحرير متقدمة</summary><p>افتح محرر الهاتف عندما تحتاج خصائص عنصر لا تظهر هنا.</p>';
-    moreActions.append(actions.querySelector('[data-board-edit]'), actions.querySelector('[data-board-add-page]'));
+    moreActions.append(actions.querySelector('[data-board-add-page]'));
     actions.after(moreActions);
+    boardInspector.querySelector('.screen-board-inspector-head').after(actions);
     boardInspector.classList.toggle('is-editing', boardEditing);
     boardInspector.querySelector('.screen-board-inspector-head').insertAdjacentHTML('beforeend', `<button type="button" data-board-mode="${boardEditing ? 'close' : 'edit'}" class="screen-board-mode-button" aria-pressed="${boardEditing}">${boardEditing ? '✓ إنهاء تحرير هذه الشاشة' : '✎ تحرير هذه الشاشة'}</button>`);
     if (boardEditing) {
       const choices = sampleItems(page);
       const repeatable = page.blocks.filter(block => block.type === 'divider');
       const available = toolGroups.flatMap(group => group.tools).filter(([id]) => !['tabbar','toolbar','divider'].includes(id) && !page.tools.includes(id));
-      boardInspector.querySelector('.screen-board-inspector-actions').insertAdjacentHTML('beforebegin', `<section class="screen-board-components"><strong>مكوّنات «${escapeHtml(page.label)}»</strong><p>كل إضافة وتعديل يخص هذه الشاشة فقط.</p><div class="screen-board-component-add"><select data-board-tool-choice aria-label="اختر مكوّنًا">${available.map(([id,name]) => `<option value="${id}">${escapeHtml(name)}</option>`).join('')}</select><button type="button" data-board-add-tool ${available.length ? '' : 'disabled'}>＋ أضف المكوّن</button></div><div class="screen-board-component-list">${page.tools.map(id => `<div><span>${escapeHtml(toolInfo[id]?.name || id)}</span><button type="button" data-board-remove-tool="${id}" aria-label="إزالة ${escapeHtml(toolInfo[id]?.name || id)}">إزالة</button></div>`).join('') || '<small>لا توجد مكوّنات مضافة بعد.</small>'}</div><div class="screen-board-divider-head"><strong>الفواصل بين الخيارات</strong><button type="button" data-board-add-divider>＋ أضف فاصلًا</button></div><div class="screen-board-divider-list">${repeatable.map((block,i) => `<div data-board-divider="${escapeHtml(block.id)}"><span>فاصل ${formatNumber(i+1)}</span><select data-board-divider-after="${escapeHtml(block.id)}" aria-label="موضع الفاصل ${i+1}"><option value="0" ${block.afterRow === 0 ? 'selected' : ''}>قبل الخيار الأول</option>${choices.map((item,n) => `<option value="${n+1}" ${block.afterRow === n+1 ? 'selected' : ''}>بعد «${escapeHtml(item)}»</option>`).join('')}</select><button type="button" data-board-remove-divider="${escapeHtml(block.id)}" aria-label="حذف الفاصل ${i+1}">حذف</button></div>`).join('') || '<small>اضغط «أضف فاصلًا» ويمكنك تكرار الإضافة.</small>'}</div></section>`);
+      actions.insertAdjacentHTML('afterend', `<section class="screen-board-components"><strong>مكوّنات «${escapeHtml(page.label)}»</strong><p>كل إضافة وتعديل يخص هذه الشاشة فقط.</p><div class="screen-board-component-add"><select data-board-tool-choice aria-label="اختر مكوّنًا">${available.map(([id,name]) => `<option value="${id}">${escapeHtml(name)}</option>`).join('')}</select><button type="button" data-board-add-tool ${available.length ? '' : 'disabled'}>＋ أضف المكوّن</button></div><div class="screen-board-component-list">${page.tools.map(id => `<div><span>${escapeHtml(toolInfo[id]?.name || id)}</span><button type="button" data-board-remove-tool="${id}" aria-label="إزالة ${escapeHtml(toolInfo[id]?.name || id)}">إزالة</button></div>`).join('') || '<small>لا توجد مكوّنات مضافة بعد.</small>'}</div><div class="screen-board-divider-head"><strong>الفواصل بين الخيارات</strong><button type="button" data-board-add-divider>＋ أضف فاصلًا</button></div><div class="screen-board-divider-list">${repeatable.map((block,i) => `<div data-board-divider="${escapeHtml(block.id)}"><span>فاصل ${formatNumber(i+1)}</span><select data-board-divider-after="${escapeHtml(block.id)}" aria-label="موضع الفاصل ${i+1}"><option value="0" ${block.afterRow === 0 ? 'selected' : ''}>قبل الخيار الأول</option>${choices.map((item,n) => `<option value="${n+1}" ${block.afterRow === n+1 ? 'selected' : ''}>بعد «${escapeHtml(item)}»</option>`).join('')}</select><button type="button" data-board-remove-divider="${escapeHtml(block.id)}" aria-label="حذف الفاصل ${i+1}">حذف</button></div>`).join('') || '<small>اضغط «أضف فاصلًا» ويمكنك تكرار الإضافة.</small>'}</div></section>`);
     }
   }
   function renderDesignCanvas(focus = false) {
@@ -1565,11 +1800,13 @@ body.build-open{overflow:hidden}
     document.querySelector('#screenBoardLinks').setAttribute('viewBox',`0 0 ${boardWorldSize.width} ${boardWorldSize.height}`);
     document.querySelector('#screenBoardLinks').innerHTML=`<defs><marker id="boardArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#438acb"/></marker></defs>${links.join('')}`;
     boardHighlightSource(tab);
+    boardRenderNavigator();
     boardRenderInspector();
     boardInspector.dataset.screenKey = selectedKey;
     if (advancedOpen) boardInspector.querySelector('.screen-board-advanced').open = true;
     if (moreActionsOpen) boardInspector.querySelector('.screen-board-more-actions').open = true;
     boardInspector.scrollTop = inspectorScroll;
+    if (!document.querySelector('#lifecyclePanel').hidden) renderLifecyclePanel();
     const scopeButton = designCanvasWorkspace.querySelector('[data-board-command="scope"]');
     scopeButton.textContent = boardScope === 'focus' ? 'عرض كل الشاشات' : 'التركيز على الشاشة';
     scopeButton.setAttribute('aria-pressed', String(boardScope === 'focus'));
@@ -1579,6 +1816,9 @@ body.build-open{overflow:hidden}
     if (!Number.isInteger(index) || !state.tabs[index]) return;
     boardEditing = true;
     boardSelected={page:index,routeId:flowRoute(state.tabs[index],routeId)?.id || ''};
+    boardNavExpanded.add(index);
+    designCanvasWorkspace.classList.remove('navigator-open');
+    designCanvasWorkspace.querySelectorAll('[data-board-command="navigator"]').forEach(button => button.setAttribute('aria-expanded','false'));
     renderDesignCanvas();
     boardInspector.scrollTop = 0;
     boardFocus(index,boardSelected.routeId);
@@ -1592,6 +1832,14 @@ body.build-open{overflow:hidden}
     if (boardSuppressClick) { boardSuppressClick = false; event.preventDefault(); return; }
     const command=event.target.closest('[data-board-command]')?.dataset.boardCommand;
     if(command){
+      if(command==='navigator' || command==='inspector'){
+        const name = command === 'navigator' ? 'navigator-open' : 'inspector-open';
+        designCanvasWorkspace.classList.toggle(name);
+        if (command === 'navigator') designCanvasWorkspace.classList.remove('inspector-open');
+        if (command === 'inspector') designCanvasWorkspace.classList.remove('navigator-open');
+        designCanvasWorkspace.querySelectorAll(`[data-board-command="${command}"]`).forEach(button => button.setAttribute('aria-expanded', String(designCanvasWorkspace.classList.contains(name))));
+        return;
+      }
       if(command==='scope'){boardScope=boardScope==='focus'?'all':'focus';renderDesignCanvas(boardScope==='focus');if(boardScope==='all')boardFitVisible();return;}
       if(command==='zoom-in')boardZoom=Math.min(1.8,boardZoom+.06);
       if(command==='zoom-out')boardZoom=Math.max(.25,boardZoom-.06);
@@ -1599,6 +1847,10 @@ body.build-open{overflow:hidden}
       if(command==='center'){boardFocus(boardSelected.page,boardSelected.routeId);return;}
       boardTransform();return;
     }
+    const navScreen=event.target.closest('[data-board-nav-page]');
+    if(navScreen){boardSelect(Number(navScreen.dataset.boardNavPage),navScreen.dataset.boardNavRoute || '');return;}
+    const navToggle=event.target.closest('[data-board-toggle]');
+    if(navToggle){const index=Number(navToggle.dataset.boardToggle);if(boardNavExpanded.has(index))boardNavExpanded.delete(index);else boardNavExpanded.add(index);boardRenderNavigator();return;}
     const previewTarget=event.target.closest('.screen-board-preview [data-flow-key],.screen-board-preview [data-header-id],.screen-board-preview [data-block-id],.screen-board-preview [data-tool-inspect="sheet"],.screen-board-preview .builder-tab');
     if(previewTarget){
       event.preventDefault();
@@ -1626,6 +1878,7 @@ body.build-open{overflow:hidden}
     if(event.target.closest('[data-board-add-page]')){if(state.tabs.length>=50)return;state.tabs.push(makeTab());state.activeTab=state.tabs.length-1;state.reviewed.pages=true;boardSelect(state.activeTab);renderAll();return;}
     const card=event.target.closest('[data-board-page]');if(card)boardSelect(Number(card.dataset.boardPage),card.dataset.boardRoute);
   });
+  boardNavigator.addEventListener('input',event=>{if(event.target.id==='boardNavSearch')boardFilterNavigator(event.target.value);});
   boardInspector.addEventListener('change',event=>{
     const dividerId=event.target.dataset.boardDividerAfter;if(dividerId){const page=flowParentPage(state.tabs[boardSelected.page],boardSelected.routeId),block=page.blocks.find(item=>item.id===dividerId);if(block){block.afterRow=Math.max(0,Math.min(50,Number(event.target.value)||0));renderAll(true);}return;}
     if(event.target.dataset.boardTab){boardSelect(Number(event.target.value),'');return;}
@@ -1636,9 +1889,13 @@ body.build-open{overflow:hidden}
     if(field==='display'&&displayKinds[event.target.value])page.display=event.target.value;
     if(field==='dataTitle')page.dataTitle=clean(event.target.value,40)||'المحتوى';
     if(field==='dataItems')page.dataItems=clean(event.target.value,180);
+    if(field==='recordMode' && !boardSelected.routeId){page.recordMode=['local','linked','count'].includes(event.target.value)?event.target.value:'sample';if(['linked','count'].includes(page.recordMode)&&!state.tabs.some(other=>other.dataKey===page.dataSourceKey&&other.recordMode==='local'))page.dataSourceKey=state.tabs.find(other=>other!==page&&other.recordMode==='local')?.dataKey||'';}
+    if(field==='dataSourceKey' && !boardSelected.routeId)page.dataSourceKey=state.tabs.some(other=>other!==page&&other.dataKey===event.target.value&&other.recordMode==='local')?event.target.value:'';
+    if(field==='display' && !(['list','settings','cards'].includes(page.display) && ['local','linked'].includes(page.recordMode) || ['summary','metrics'].includes(page.display) && page.recordMode==='count'))page.recordMode='sample';
     if(field==='action'&&navigationKinds[event.target.value])page.action=event.target.value;
     if(field==='tabBarMode')page.tabBarMode=event.target.value==='compact'?'compact':'normal';
     if(field==='hideTabBar')page.hideTabBar=event.target.value==='hide';
+    if(!boardSelected.routeId)syncBlueprintConcept(page);
     state.reviewed.pages=true;state.reviewed.data=true;state.reviewed.navigation=true;
     reconcileFlowPages(tab);renderAll(true);
   });
@@ -1652,6 +1909,7 @@ body.build-open{overflow:hidden}
     if(field==='purpose')page.purpose=value;
     if(field==='dataTitle')page.dataTitle=value||'المحتوى';
     if(field==='dataItems')page.dataItems=value;
+    if(!boardSelected.routeId)syncBlueprintConcept(page);
     state.reviewed.pages=true;
     state.reviewed.data=true;
     if(field==='label'){
@@ -1693,6 +1951,7 @@ body.build-open{overflow:hidden}
       boardSuppressClick = true;
       setTimeout(() => { boardSuppressClick = false; }, 300);
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 2, state })); } catch (_) { /* Export remains available. */ }
+      captureHistory();
       window.dispatchEvent(new Event('ios-builder-change'));
     } else if (drag.moved) renderDesignCanvas();
   };
@@ -1792,6 +2051,9 @@ body.build-open{overflow:hidden}
       buildMarkers.set(panel, marker);
       buildDock.appendChild(panel);
     });
+    buildDock.querySelectorAll('.panel:not(.builder-stage)').forEach(panel => {
+      if (!panel.querySelector('.build-return-canvas')) panel.insertAdjacentHTML('afterbegin', '<button type="button" class="build-return-canvas" data-build-return>↩ العودة إلى شاشة التصميم</button>');
+    });
     selectBuildPanel('canvas');
     buildOverlay.hidden = false;
     buildWorkspaceOpen = true;
@@ -1827,7 +2089,119 @@ body.build-open{overflow:hidden}
   document.querySelector('#openBuildFromPhone').addEventListener('click', openBuildWorkspace);
   document.querySelector('#closeBuildWorkspace').addEventListener('click', () => closeBuildWorkspace());
   document.querySelector('#buildSave').addEventListener('click', () => document.querySelector('#saveDraft').click());
-  document.querySelector('#buildExport').addEventListener('click', () => document.querySelector('#downloadProject').click());
+  document.querySelector('#buildUndo').addEventListener('click', () => travelHistory('undo'));
+  document.querySelector('#buildRedo').addEventListener('click', () => travelHistory('redo'));
+  buildOverlay.addEventListener('keydown', event => {
+    if (!(event.metaKey || event.ctrlKey) || event.altKey || event.key.toLowerCase() !== 'z') return;
+    if (event.target.closest('input,textarea,[contenteditable="true"]')) return;
+    event.preventDefault();
+    travelHistory(event.shiftKey ? 'redo' : 'undo');
+  });
+  document.querySelector('#buildTry').addEventListener('click', () => openExperience());
+  document.querySelector('#buildExport').addEventListener('click', () => document.querySelector('#downloadXcodeProject').click());
+  const lifecyclePanel = document.querySelector('#lifecyclePanel');
+  const lifecycleButton = document.querySelector('#buildLifecycle');
+  const modelPanel = document.querySelector('#modelPanel');
+  const modelButton = document.querySelector('#buildModel');
+  const themeButton = document.querySelector('#buildTheme');
+  function renderModelPanel() {
+    if (modelPanel.hidden) return;
+    const sources = state.tabs.filter(page => page.recordMode === 'local' && ['list','cards','settings'].includes(page.display));
+    const optionTags = sources.map(page => `<option value="${page.dataKey}">${escapeHtml(page.label)}</option>`).join('');
+    modelPanel.innerHTML = `<div class="lifecycle-head"><div><small>من الفكرة إلى سجل قابل للحفظ</small><h3>نموذج البيانات والعلاقات</h3></div><button type="button" data-model-close aria-label="إغلاق نموذج البيانات">✕</button></div><p>أضف مفهومًا فينشئ المختبر شاشة سجلات محلية مستقلة. اربط مفهومين بعلاقة مسماة، ثم اختبر سجلاتهما. الأسماء قابلة للتعديل من خصائص الشاشة.</p><form id="modelAddConcept" class="model-form"><label>اسم المفهوم<input name="name" maxlength="18" required placeholder="مثل: الطرف أو القرار"></label><label>معناه<input name="meaning" maxlength="90" required placeholder="ماذا يمثل هذا السجل؟"></label><button type="submit">＋ مفهوم وسجل</button></form><div class="model-concepts">${sources.map(page=>`<button type="button" data-model-select="${page.dataKey}"><b>${escapeHtml(page.label)}</b><small>● محفوظ محليًا · ${escapeHtml(page.purpose)}</small></button>`).join('') || '<p>لا يوجد مفهوم محفوظ بعد. أضف أول مفهوم أعلاه.</p>'}</div><h4>حقول كل سجل</h4><form id="modelAddField" class="model-form"><label>المفهوم<select name="datasetKey" required>${optionTags}</select></label><label>اسم الحقل<input name="label" maxlength="40" required placeholder="مثل: المبلغ أو المصدر"></label><label>نوع الحقل<select name="type"><option value="text">نص</option><option value="number">رقم</option><option value="date">تاريخ</option><option value="boolean">نعم أو لا</option></select></label><button type="submit" ${sources.length < 1 ? 'disabled' : ''}>＋ حقل</button></form><div class="model-links">${sources.flatMap(page=>(page.recordFields||[]).map((field,index)=>`<div><span>${escapeHtml(page.label)} · ${escapeHtml(field.label)} <small>(${escapeHtml(({text:'نص',number:'رقم',date:'تاريخ',boolean:'نعم أو لا'})[field.type])})</small></span><button type="button" data-model-remove-field="${page.dataKey}:${index}" aria-label="حذف حقل ${escapeHtml(field.label)}">حذف</button></div>`)).join('') || '<p>يمكنك إضافة حقول مختلفة لكل مفهوم.</p>'}</div><h4>العلاقات بين السجلات</h4><form id="modelAddLink" class="model-form"><label>من<select name="sourceKey" required>${optionTags}</select></label><label>العلاقة<input name="name" maxlength="60" required placeholder="مثل: يمثّل أو يخصّ"></label><label>إلى<select name="targetKey" required>${optionTags}</select></label><button type="submit" ${sources.length < 1 ? 'disabled' : ''}>＋ علاقة</button></form><div class="model-links">${state.modelLinks.map((link,index)=>{const a=state.tabs.find(page=>page.dataKey===link.sourceKey)?.label||'شاشة محذوفة',b=state.tabs.find(page=>page.dataKey===link.targetKey)?.label||'شاشة محذوفة';return `<div><span>${escapeHtml(a)} <b>← ${escapeHtml(link.name)} ←</b> ${escapeHtml(b)}</span><button type="button" data-model-remove="${index}" aria-label="حذف علاقة ${escapeHtml(link.name)}">حذف</button></div>`}).join('') || '<p>أضف علاقة لتوثيقها في المشروع. روابط السجلات الفردية تُضبط في مشروع Xcode.</p>'}</div><p class="lifecycle-boundary">السجل الناتج يحفظ عنوانًا وملاحظات وحالة والحقول التي تحددها. هذا المحرر يحدد أنواع السجلات والعلاقات المسمّاة؛ قواعد المجال والمال والصلاحيات والتحقق تحتاج اعتمادًا وتنفيذًا متخصصًا.</p><p id="modelStatus" role="status"></p>`;
+  }
+  function syncBlueprintConcept(page) {
+    const concept = state.conceptBlueprint?.concepts.find(item=>item.datasetKey===page.dataKey);
+    if (concept) { concept.name=page.label; concept.meaning=page.purpose; }
+  }
+  modelButton.addEventListener('click',()=>{modelPanel.hidden=!modelPanel.hidden;modelButton.setAttribute('aria-expanded',String(!modelPanel.hidden));if(!modelPanel.hidden){lifecyclePanel.hidden=true;lifecycleButton.setAttribute('aria-expanded','false');renderModelPanel();}});
+  modelPanel.addEventListener('click',event=>{
+    if(event.target.closest('[data-model-close]')){modelPanel.hidden=true;modelButton.setAttribute('aria-expanded','false');return;}
+    const selected=event.target.closest('[data-model-select]');if(selected){const index=state.tabs.findIndex(page=>page.dataKey===selected.dataset.modelSelect);if(index>=0){boardSelect(index);renderModelPanel();}return;}
+    const removeField=event.target.closest('[data-model-remove-field]');if(removeField){const [key,index]=removeField.dataset.modelRemoveField.split(':');const page=state.tabs.find(item=>item.dataKey===key);if(page){page.recordFields.splice(Number(index),1);renderAll(true);renderModelPanel();}return;}
+    const remove=event.target.closest('[data-model-remove]');if(remove){state.modelLinks.splice(Number(remove.dataset.modelRemove),1);renderAll(true);renderModelPanel();}
+  });
+  modelPanel.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(event.target.id==='modelAddConcept'){
+      if(state.tabs.length>=50){modelPanel.querySelector('#modelStatus').textContent='وصلت إلى الحد الأقصى للشاشات.';return;}
+      const name=clean(event.target.elements.namedItem('name')?.value,18), meaning=clean(event.target.elements.namedItem('meaning')?.value,90);
+      if(!name||!meaning)return;
+      const page=makeTab(name,'square.grid.2x2');page.kind='list';page.display='list';page.dataTitle=name;page.dataItems='';page.purpose=meaning;page.recordMode='local';page.seedExamples=false;page.tools=['searchfield'];
+      state.tabs.push(page);state.tabsEnabled=true;state.activeTab=state.tabs.length-1;
+      state.conceptBlueprint ||= {title:'نموذج مفاهيم مخصص',concepts:[],supportingStructures:[],status:'سجلات عامة وعلاقات مسماة تحتاج قواعد مجال معتمدة.'};
+      state.conceptBlueprint.concepts.push({name,meaning,datasetKey:page.dataKey});
+      boardSelected={page:state.activeTab,routeId:''};renderAll();renderModelPanel();
+      return;
+    }
+    if(event.target.id==='modelAddField'){
+      const key=event.target.elements.namedItem('datasetKey')?.value,label=clean(event.target.elements.namedItem('label')?.value,40),type=event.target.elements.namedItem('type')?.value;
+      const page=state.tabs.find(item=>item.dataKey===key&&item.recordMode==='local');
+      if(!page||!label||!['text','number','date','boolean'].includes(type))return;
+      if(page.recordFields.length>=16||page.recordFields.some(field=>field.label===label)){modelPanel.querySelector('#modelStatus').textContent='اسم الحقل موجود أو وصلت إلى حد ١٦ حقلًا.';return;}
+      page.recordFields.push({label,type});renderAll(true);renderModelPanel();return;
+    }
+    if(event.target.id==='modelAddLink'){
+      const sourceKey=event.target.elements.namedItem('sourceKey')?.value,targetKey=event.target.elements.namedItem('targetKey')?.value,name=clean(event.target.elements.namedItem('name')?.value,60);
+      if(!name||!state.tabs.some(page=>page.dataKey===sourceKey&&page.recordMode==='local')||!state.tabs.some(page=>page.dataKey===targetKey&&page.recordMode==='local'))return;
+      state.modelLinks.push({sourceKey,targetKey,name});renderAll(true);renderModelPanel();
+    }
+  });
+  const LAB_THEME_KEY = 'ios-builder-lab-theme';
+  function setLabTheme(dark) {
+    buildOverlay.classList.toggle('lab-dark', dark);
+    themeButton.setAttribute('aria-pressed', String(dark));
+    themeButton.textContent = dark ? '☀ الوضع الفاتح' : '☾ الوضع الداكن';
+    try { localStorage.setItem(LAB_THEME_KEY, dark ? 'dark' : 'light'); } catch (_) { /* theme still works for this visit */ }
+  }
+  try { setLabTheme(localStorage.getItem(LAB_THEME_KEY) === 'dark'); } catch (_) { setLabTheme(false); }
+  themeButton.addEventListener('click', () => setLabTheme(!buildOverlay.classList.contains('lab-dark')));
+  function lifecycleStoreKey(page) { return `ios-builder-lifecycle-${page.dataKey}`; }
+  function lifecycleRecords(page) {
+    try { const records = JSON.parse(localStorage.getItem(lifecycleStoreKey(page)) || '[]'); return Array.isArray(records) ? records.filter(item => item && typeof item.title === 'string').slice(0, 50) : []; }
+    catch (_) { return []; }
+  }
+  function renderLifecyclePanel() {
+    if (lifecyclePanel.hidden) return;
+    const tab = designCanvasWorkspace.hidden ? currentTab() : state.tabs[boardSelected.page];
+    const source = tab.recordMode === 'local' ? tab : state.tabs.find(page => page.dataKey === tab.dataSourceKey && page.recordMode === 'local');
+    const mode = tab.recordMode;
+    const records = source ? lifecycleRecords(source) : [];
+    const lifecycleLabel = mode === 'local' ? 'سجلات محلية' : mode === 'linked' ? 'شاشة مرتبطة' : mode === 'count' ? 'عدد محسوب' : 'أمثلة عرض';
+    const behaviorRows = tab.tools.map(id => {
+      const saved = ['textfield', 'toggle', 'slider', 'picker', 'button'].includes(id);
+      const transient = ['searchfield', 'segmented'].includes(id);
+      const stateLabel = saved ? 'يُحفظ في المشروع الأصلي عبر AppStorage' : transient ? 'حالة استخدام مؤقتة' : 'اختبر الناتج والحفظ في Xcode';
+      return `<li class="${saved ? 'saved' : transient ? 'transient' : 'native'}"><b>${escapeHtml(toolInfo[id]?.name || id)}</b><span>${stateLabel}</span></li>`;
+    }).join('') || '<li class="transient"><b>لا توجد أدوات مستقلة</b><span>أضف مكوّنًا من مكتبة الأدوات عند الحاجة.</span></li>';
+    lifecyclePanel.innerHTML = `<div class="lifecycle-head"><div><small>الشاشة المحددة · ${escapeHtml(tab.label)}</small><h3>فحص دورة المخرجات والحفظ</h3></div><button type="button" data-lifecycle-close aria-label="إغلاق الفحص">✕</button></div><div class="lifecycle-steps"><span>١ · إدخال</span><i>←</i><span>٢ · نتيجة ظاهرة</span><i>←</i><span>٣ · حفظ واسترجاع</span></div><div class="lifecycle-data ${escapeHtml(mode)}"><strong>${lifecycleLabel}</strong><p>${mode === 'local' ? 'مشروع Xcode ينشئ سجلات SwiftData ويتيح الإضافة والتعديل والحذف.' : mode === 'linked' ? `تقرأ شاشة «${escapeHtml(tab.label)}» سجلات «${escapeHtml(source?.label || 'مصدر غير محدد')}» نفسها.` : mode === 'count' ? `يعرض مشروع Xcode عدد سجلات «${escapeHtml(source?.label || 'مصدر غير محدد')}» المحفوظة.` : 'البيانات الحالية أمثلة تصميم؛ لا يوجد حفظ لسجلات جديدة.'}</p>${source ? `<label>جرّب إدخال سجل في متصفحك<input id="lifecycleInput" maxlength="80" placeholder="اسم السجل التجريبي"></label>${(source.recordFields||[]).map(field=>`<label>${escapeHtml(field.label)}${field.type === 'boolean' ? `<select data-lifecycle-field="${escapeHtml(field.label)}"><option value="false">لا</option><option value="true">نعم</option></select>` : `<input data-lifecycle-field="${escapeHtml(field.label)}" type="${field.type === 'date' ? 'date' : field.type === 'number' ? 'number' : 'text'}" inputmode="${field.type === 'number' ? 'decimal' : 'text'}">`}</label>`).join('')}<div class="lifecycle-buttons"><button type="button" data-lifecycle-add>إضافة وتجربة الحفظ</button><button type="button" data-lifecycle-clear>مسح بيانات الفحص</button></div><div class="lifecycle-output"><small>الناتج المسترجع من تخزين المتصفح</small><b>${mode === 'count' ? `${formatNumber(records.length)} سجل` : `${formatNumber(records.length)} سجل محفوظ للتجربة`}</b><div>${records.map(item => `<span><b>${escapeHtml(item.title)}</b>${Object.entries(item.fields||{}).map(([key,value])=>`<small>${escapeHtml(key)}: ${escapeHtml(value)}</small>`).join('')}</span>`).join('') || '<em>لا توجد سجلات تجريبية بعد.</em>'}</div></div><p class="lifecycle-boundary">هذا فحص لتدفق المتصفح وحفظه المحلي. حفظ SwiftData في التطبيق الناتج يحتاج تشغيل المشروع واختباره في Xcode.</p>` : '<p class="lifecycle-boundary">اختر «سجلات محفوظة محليًا» في شاشة قائمة، ثم اربط شاشة عرض أو عدادًا بها لتختبر رحلة البيانات.</p>'}</div><details class="lifecycle-tools"><summary>نتيجة الأدوات على هذه الشاشة · ${formatNumber(tab.tools.length)}</summary><ul>${behaviorRows}</ul></details><p id="lifecycleStatus" role="status"></p>`;
+  }
+  lifecycleButton.addEventListener('click', () => {
+    lifecyclePanel.hidden = !lifecyclePanel.hidden;
+    lifecycleButton.setAttribute('aria-expanded', String(!lifecyclePanel.hidden));
+    if(!lifecyclePanel.hidden){modelPanel.hidden=true;modelButton.setAttribute('aria-expanded','false');}
+    if (!lifecyclePanel.hidden) renderLifecyclePanel();
+  });
+  lifecyclePanel.addEventListener('click', event => {
+    if (event.target.closest('[data-lifecycle-close]')) { lifecyclePanel.hidden = true; lifecycleButton.setAttribute('aria-expanded', 'false'); return; }
+    const tab = designCanvasWorkspace.hidden ? currentTab() : state.tabs[boardSelected.page];
+    const source = tab.recordMode === 'local' ? tab : state.tabs.find(page => page.dataKey === tab.dataSourceKey && page.recordMode === 'local');
+    if (!source) return;
+    if (event.target.closest('[data-lifecycle-clear]')) { try { localStorage.removeItem(lifecycleStoreKey(source)); } catch (_) {} renderLifecyclePanel(); return; }
+    if (event.target.closest('[data-lifecycle-add]')) {
+      const title = lifecyclePanel.querySelector('#lifecycleInput')?.value.trim();
+      if (!title) { lifecyclePanel.querySelector('#lifecycleStatus').textContent = 'اكتب اسم السجل أولًا.'; return; }
+      const records = lifecycleRecords(source);
+      const fields=Object.fromEntries([...lifecyclePanel.querySelectorAll("[data-lifecycle-field]")].map(input=>[input.dataset.lifecycleField,input.value]));
+      records.push({ title, fields, createdAt: Date.now() });
+      try {
+        localStorage.setItem(lifecycleStoreKey(source), JSON.stringify(records));
+        const restored = lifecycleRecords(source);
+        renderLifecyclePanel();
+        lifecyclePanel.querySelector('#lifecycleStatus').textContent = restored.at(-1)?.title === title ? '✓ ظهر السجل واستُرجع من تخزين المتصفح.' : 'تعذّر التحقق من السجل بعد الحفظ.';
+      } catch (_) { lifecyclePanel.querySelector('#lifecycleStatus').textContent = 'تعذّر الحفظ في هذا المتصفح؛ نزّل المشروع للاحتفاظ به.'; }
+    }
+  });
   document.querySelector('#toggleBuildPhone').addEventListener('click', event => {
     const expanded = buildDock.classList.toggle('phone-expanded');
     event.currentTarget.setAttribute('aria-pressed', String(expanded));
@@ -1835,6 +2209,7 @@ body.build-open{overflow:hidden}
     requestAnimationFrame(updateBuildScale);
   });
   buildOverlay.querySelectorAll('[data-build-panel]').forEach(button => button.addEventListener('click', () => selectBuildPanel(button.dataset.buildPanel)));
+  buildOverlay.addEventListener('click', event => { if (event.target.closest('[data-build-return]')) selectBuildPanel('canvas'); });
   buildOverlay.addEventListener('keydown', event => {
     if (event.key === 'Escape' && !event.defaultPrevented && buildWorkspaceOpen) {
       event.preventDefault();
@@ -2155,6 +2530,15 @@ body.build-open{overflow:hidden}
       </div>`).join('')}</div>`;
   }
   function sampleItems(tab) {
+    if (tab.recordMode === 'local' && tab.seedExamples === false) return [];
+    if (tab.recordMode === 'linked' || tab.recordMode === 'count') {
+      const source = state.tabs.find(page => page.dataKey === tab.dataSourceKey && page.recordMode === 'local');
+      if (source) {
+        if (tab.recordMode === 'count') return [`${String(source.dataItems || '').split(/[،,\n]/).map(value => value.trim()).filter(Boolean).length} سجل`];
+        return String(source.dataItems || '').split(/[،,\n]/).map(value => value.trim()).filter(Boolean).slice(0, 50);
+      }
+      return ['اختر مصدر السجلات'];
+    }
     const items = String(tab.dataItems || '').split(/[،,\n]/).map(value => value.trim()).filter(Boolean).slice(0, 50);
     return items.length ? items : ['العنصر الأول', 'العنصر الثاني', 'العنصر الثالث'];
   }
@@ -2553,6 +2937,10 @@ body.build-open{overflow:hidden}
     document.querySelector('#builderCount').textContent = `${formatNumber(count)} أداة`;
   }
   function swiftVisibleItems(tab, index) {
+    if (['local', 'linked', 'count'].includes(tab.recordMode)) {
+      const sourceKey = tab.recordMode === 'local' ? tab.dataKey : tab.dataSourceKey;
+      return [`    private var localRecords${index}: [BuilderRecord] {`, `        storedItems.filter { record in`, `            record.datasetKey == ${swiftString(sourceKey)}${tab.tools.includes('searchfield') ? ` && (searchText${index}.isEmpty || record.title.localizedStandardContains(searchText${index}) || record.notes.localizedStandardContains(searchText${index}))` : ''}`, '        }', '    }', `    private var visibleItems${index}: [String] { ${tab.recordMode === 'count' ? ` ["\\(localRecords${index}.count) سجل"]` : `localRecords${index}.map(\\.title)`} }`].join('\n');
+    }
     const items = sampleItems(tab).map(swiftString).join(', ');
     const conditions = [];
     if (tab.tools.includes('searchfield')) conditions.push(`(searchText${index}.isEmpty || entry.element.localizedStandardContains(searchText${index}))`);
@@ -2562,6 +2950,15 @@ body.build-open{overflow:hidden}
   function swiftDataSection(tab, index) {
     const items = sampleItems(tab);
     const result = [`                Section(${swiftString(tab.dataTitle)}) {`];
+    if (tab.recordMode === 'count' && ['summary', 'metrics'].includes(tab.display)) {
+      result.push(`                    Text("\\(localRecords${index}.count)").font(.largeTitle.bold())`, '                    Text("عدد السجلات المحفوظة في المصدر").foregroundStyle(.secondary)', '                }');
+      return result;
+    }
+    if (['local', 'linked'].includes(tab.recordMode) && ['list', 'settings', 'cards'].includes(tab.display)) {
+      result.push(`                    ForEach(localRecords${index}) { record in`, '                        NavigationLink {', '                            BuilderRecordDetail(record: record)', '                        } label: {', '                            HStack {', '                                Text(record.title)', '                                Spacer()', '                                if record.isComplete { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green) }', '                            }', '                        }', '                        .swipeActions {', `                            Button("حذف", role: .destructive) { deleteRecord(record) }`, '                        }', '                    }', `                    if localRecords${index}.isEmpty { ContentUnavailableView("لا توجد سجلات", systemImage: "tray", description: Text("أضف سجلًا جديدًا أو غيّر البحث.")) }`, `                    Button { showNewRecord${index} = true } label: { Label("إضافة سجل", systemImage: "plus") }`);
+      result.push('                }');
+      return result;
+    }
     if (tab.display === 'summary') {
       result.push(`                    if let item = visibleItems${index}.first {`, '                        Text(item)');
       if (tab.action === 'push') result.push('                        NavigationLink { Text(item).navigationTitle(item) } label: { Label("استكشف المزيد", systemImage: "chevron.left") }');
@@ -2833,7 +3230,7 @@ body.build-open{overflow:hidden}
     return out.join('\n');
   }
   function swiftPage(tab, index) {
-    if (tab.layoutMode === 'free') return swiftFreePage(tab, index);
+    if (tab.layoutMode === 'free' && !(['local', 'linked'].includes(tab.recordMode) && ['list', 'settings', 'cards'].includes(tab.display) || tab.recordMode === 'count' && ['summary', 'metrics'].includes(tab.display))) return swiftFreePage(tab, index);
     const enabled = new Set(tab.tools);
     const needsSheet = tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet') || tab.flowPages.some(route => route.presentation === 'sheet');
     const needsAlert = tab.action === 'alert' || enabled.has('alert') || hasHeaderBehavior(tab, 'alert') || tab.blocks.some(block => block.type === 'button' && block.action === 'alert');
@@ -2891,6 +3288,9 @@ body.build-open{overflow:hidden}
     if (tab.backgroundStyle !== 'system') result.push(`        .background { VisualSceneBackground(style: ${swiftString(tab.backgroundStyle)}, motion: ${tab.backgroundMotion}) }`);
     if (needsSheet) result.push(`        .sheet(isPresented: $showSheet${index}) {`, '            NavigationStack {', `                ${tab.flowPages.some(route=>route.presentation==='sheet')?`flowSheetDestination${index}`:'Text("مهمة مؤقتة مرتبطة بالصفحة")'}`, '                    .toolbar {', '                        ToolbarItem(placement: .cancellationAction) {', `                            Button("إغلاق") { showSheet${index} = false }`, '                        }', '                    }', '            }', '        }');
     if (needsAlert) result.push(`        .alert("تنبيه", isPresented: $showAlert${index}) {`, '            Button("حسنًا", role: .cancel) { }', '        } message: {', '            Text("معلومة قصيرة مرتبطة بالقسم الحالي.")', '        }');
+    if (['local', 'linked'].includes(tab.recordMode) && ['list', 'settings', 'cards'].includes(tab.display)) {
+      result.push(`        .alert("سجل جديد", isPresented: $showNewRecord${index}) {`, `            TextField("اسم السجل", text: $newRecordTitle${index})`, `            Button("إضافة") {`, `                let title = newRecordTitle${index}.trimmingCharacters(in: .whitespacesAndNewlines)`, '                guard !title.isEmpty else { return }', `                modelContext.insert(BuilderRecord(datasetKey: ${swiftString(tab.recordMode === 'local' ? tab.dataKey : tab.dataSourceKey)}, title: title))`, '                saveRecords()', `                newRecordTitle${index} = ""`, '            }', '            Button("إلغاء", role: .cancel) { }', '        } message: { Text("سيُحفظ السجل على هذا الجهاز.") }', '        .alert("تعذر حفظ البيانات", isPresented: Binding(get: { storageError != nil }, set: { if !$0 { storageError = nil } })) {', '            Button("حسنًا", role: .cancel) { storageError = nil }', '        } message: { Text(storageError ?? "") }', ...(tab.recordMode === 'local' ? [`        .task { seedRecords${index}() }`] : []));
+    }
     result.push('    }');
     return result.join('\n');
   }
@@ -3087,17 +3487,22 @@ struct BuilderWebPreview: UIViewRepresentable {
     const tabs = state.tabsEnabled ? state.tabs : state.tabs.slice(0, 1);
     tabs.forEach(reconcileFlowPages);
     const declarations = [];
+    const localRecordTabs = tabs.map((tab, index) => ({ tab, index })).filter(({ tab }) => tab.recordMode === 'local' && ['list', 'settings', 'cards'].includes(tab.display));
+    const recordPages = tabs.map((tab, index) => ({ tab, index })).filter(({ tab }) => ['local', 'linked'].includes(tab.recordMode) && ['list', 'settings', 'cards'].includes(tab.display) || tab.recordMode === 'count' && ['summary', 'metrics'].includes(tab.display));
+    if (recordPages.length) declarations.push('    @Environment(\\.modelContext) private var modelContext', '    @Query private var storedItems: [BuilderRecord]', '    @Query private var storedLinks: [BuilderRecordLink]', '    @State private var storageError: String?');
     if (state.tabsEnabled) declarations.push('    @State private var selectedTab = 0');
     if (state.tabsEnabled && state.searchRoleEnabled) declarations.push('    @State private var globalSearchText = ""');
     tabs.forEach((tab, i) => {
       const enabled = new Set(tab.tools);
+      if (localRecordTabs.some(item => item.index === i)) declarations.push(`    @AppStorage("builder-seeded-${tab.dataKey}") private var didSeed${i} = false`);
+      if (['local', 'linked'].includes(tab.recordMode) && ['list', 'settings', 'cards'].includes(tab.display)) declarations.push(`    @State private var showNewRecord${i} = false`, `    @State private var newRecordTitle${i} = ""`);
       if (enabled.has('searchfield')) declarations.push(`    @State private var searchText${i} = ${swiftString(tab.values.search || '')}`);
       if (enabled.has('segmented')) declarations.push(`    @State private var segment${i} = ${Number(tab.values.segment) === 1 ? 1 : 0}`);
-      if (enabled.has('textfield')) declarations.push(`    @State private var titleText${i} = ${swiftString(tab.values.text || '')}`);
-      if (enabled.has('toggle')) declarations.push(`    @State private var toggleOn${i} = ${tab.values.toggle ? 'true' : 'false'}`);
-      if (enabled.has('slider')) declarations.push(`    @State private var level${i} = ${Math.max(0, Math.min(1, Number(tab.values.slider) || 0)).toFixed(2)}`);
-      if (enabled.has('picker')) declarations.push(`    @State private var period${i} = ${swiftString(tab.values.period || 'اليوم')}`);
-      if (enabled.has('button') || hasHeaderBehavior(tab, 'count')) declarations.push(`    @State private var itemCount${i} = ${Math.max(0, Math.floor(Number(tab.values.count) || 0))}`);
+      if (enabled.has('textfield')) declarations.push(`    @AppStorage("${tab.dataKey}-text") private var titleText${i} = ${swiftString(tab.values.text || '')}`);
+      if (enabled.has('toggle')) declarations.push(`    @AppStorage("${tab.dataKey}-toggle") private var toggleOn${i} = ${tab.values.toggle ? 'true' : 'false'}`);
+      if (enabled.has('slider')) declarations.push(`    @AppStorage("${tab.dataKey}-slider") private var level${i} = ${Math.max(0, Math.min(1, Number(tab.values.slider) || 0)).toFixed(2)}`);
+      if (enabled.has('picker')) declarations.push(`    @AppStorage("${tab.dataKey}-picker") private var period${i} = ${swiftString(tab.values.period || 'اليوم')}`);
+      if (enabled.has('button') || hasHeaderBehavior(tab, 'count')) declarations.push(`    @AppStorage("${tab.dataKey}-count") private var itemCount${i} = ${Math.max(0, Math.floor(Number(tab.values.count) || 0))}`);
       if (tab.action === 'push' || hasHeaderBehavior(tab, 'push')) ensureDetailPage(tab);
       if (hasHeaderBehavior(tab, 'push')) { declarations.push(`    @State private var showDetail${i} = false`); if(tab.flowPages.some(route=>route.parentId===''&&route.sourceKey.startsWith('header:')&&route.presentation==='push'))declarations.push(`    @State private var selectedFlowPush${i} = ""`); }
       if (tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet') || tab.flowPages.some(route=>route.presentation==='sheet')) { declarations.push(`    @State private var showSheet${i} = false`); if(tab.flowPages.some(route=>route.presentation==='sheet'))declarations.push(`    @State private var selectedFlowSheet${i} = ""`); }
@@ -3141,7 +3546,7 @@ struct BuilderWebPreview: UIViewRepresentable {
       '    private struct SearchResult: Identifiable {',
       '        let id: Int', '        let title: String', '        let section: String', '    }',
       '    private var searchResults: [SearchResult] {',
-      `        let all = [${tabs.flatMap(tab => sampleItems(tab).map(title => `[${swiftString(title)}, ${swiftString(tab.label)}]`)).join(', ')}]`,
+      `        let all: [[String]] = [${tabs.flatMap((tab, index) => recordPages.some(item => item.index === index) ? [] : sampleItems(tab).map(title => `[${swiftString(title)}, ${swiftString(tab.label)}]`)).join(', ')}]${recordPages.length ? ` + storedItems.map { [$0.title, [${localRecordTabs.map(({ tab }) => `${swiftString(tab.dataKey)}: ${swiftString(tab.label)}`).join(', ')}][$0.datasetKey] ?? "سجلات"] }` : ''}`,
       '        return all.enumerated().map { SearchResult(id: $0.offset, title: $0.element[0], section: $0.element[1]) }',
       '            .filter { globalSearchText.isEmpty || $0.title.localizedStandardContains(globalSearchText) || $0.section.localizedStandardContains(globalSearchText) }',
       '    }',
@@ -3161,10 +3566,21 @@ struct BuilderWebPreview: UIViewRepresentable {
       '        }',
       '    }'
     ].join('\n') : '';
-    const oldTabs = tabs.flatMap((tab, i) => [`                page${i}`, `                    .tabItem { Label(${swiftString(tab.label)}, systemImage: ${swiftString(tab.icon)}) }`, `                    .tag(${i})`]);
-    if (state.searchRoleEnabled) oldTabs.push('                searchPage.searchable(text: $globalSearchText)', '                    .tabItem { Label("بحث", systemImage: "magnifyingglass") }', '                    .tag(-1)');
-    const modernTabs = tabs.map((tab, i) => `                Tab(${swiftString(tab.label)}, systemImage: ${swiftString(tab.icon)}, value: ${i}) { page${i} }`);
-    if (state.searchRoleEnabled) modernTabs.push('                Tab(value: -1, role: .search) { searchPage }');
+    const visibleTabLimit = state.searchRoleEnabled ? 4 : 5;
+    const shownTabs = tabs.slice(0, visibleTabLimit);
+    const overflowTabs = tabs.slice(visibleTabLimit);
+    const oldTabs = shownTabs.flatMap((tab, i) => [`                page${i}`, `                    .tabItem { Label(${swiftString(tab.label)}, systemImage: ${swiftString(tab.icon)}) }`, `                    .tag(${i})`]);
+    const modernTabs = shownTabs.map((tab, i) => `                Tab(${swiftString(tab.label)}, systemImage: ${swiftString(tab.icon)}, value: ${i}) { page${i} }`);
+    let moreSupport = '';
+    if (overflowTabs.length) {
+      moreSupport = ['    private var morePage: some View {', '        NavigationStack {', `            List { ForEach(0..<${overflowTabs.length}, id: \\.self) { extra in`, '                NavigationLink { moreDestination(extra) } label: {', `                    Label([${overflowTabs.map(tab=>swiftString(tab.label)).join(', ')}][extra], systemImage: [${overflowTabs.map(tab=>swiftString(tab.icon)).join(', ')}][extra])`, '                }', '            } }', '            .navigationTitle("المزيد")', '        }', '    }', '    @ViewBuilder private func moreDestination(_ index: Int) -> some View {', '        switch index {', ...overflowTabs.map((tab,i)=>`        case ${i}: page${i+visibleTabLimit}`), '        default: EmptyView()', '        }', '    }'].join('\n');
+      oldTabs.push('                morePage', '                    .tabItem { Label("المزيد", systemImage: "ellipsis") }', `                    .tag(${visibleTabLimit})`);
+      modernTabs.push(`                Tab("المزيد", systemImage: "ellipsis", value: ${visibleTabLimit}) { morePage }`);
+    }
+    if (state.searchRoleEnabled) {
+      oldTabs.push('                searchPage.searchable(text: $globalSearchText)', '                    .tabItem { Label("بحث", systemImage: "magnifyingglass") }', '                    .tag(-1)');
+      modernTabs.push('                Tab(value: -1, role: .search) { searchPage }');
+    }
     const behavior = state.tabBarBehavior === 'onScrollUp' ? '.onScrollUp' : state.tabBarBehavior === 'never' ? '.never' : '.onScrollDown';
     const body = state.tabsEnabled
       ? ['    var body: some View {', '        if #available(iOS 26.0, *) {', '            TabView(selection: $selectedTab) {', ...modernTabs, '            }', ...(state.searchRoleEnabled ? ['            .searchable(text: $globalSearchText)'] : []), `            .tabBarMinimizeBehavior(${behavior})`, '        } else {', '            TabView(selection: $selectedTab) {', ...oldTabs, '            }', '        }', '    }'].join('\n')
@@ -3209,7 +3625,85 @@ private struct VisualSceneBackground: View {
 ` : '';
     const hasExtended = tabs.some(tab => tab.tools.some(id => extendedIds.has(id)) || tab.detailPage?.tools.some(id => extendedIds.has(id)) || tab.flowPages.some(route=>route.page.tools.some(id=>extendedIds.has(id))));
     const extraImports = hasExtended ? '\nimport Charts\nimport MapKit\nimport PhotosUI\nimport AVKit\nimport WebKit\nimport UniformTypeIdentifiers' : tabs.some(tab => tab.display === 'chart') ? '\nimport Charts' : '';
-    return `import SwiftUI${extraImports}\n\n@main\nstruct VisualBuilderApp: App {\n    var body: some Scene {\n        WindowGroup {\n            BuilderContentView()\n        }\n    }\n}\n\nstruct BuilderContentView: View {\n${declarations.join('\n')}\n\n${tabs.map(swiftVisibleItems).join('\n\n')}\n\n${searchModel}\n\n${body}\n\n${tabs.map(swiftPage).join('\n\n')}\n\n${tabs.map(swiftDetailPage).filter(Boolean).join('\n\n')}\n\n${tabs.map((tab,i)=>swiftFlowHelpers(tab,i)).filter(Boolean).join('\n\n')}\n\n${tabs.flatMap((tab,i)=>tab.flowPages.map(route=>swiftFlowPage(tab,i,route))).join('\n\n')}\n}\n${sceneSupport}${hasExtended ? extendedSwiftSupport : ''}`;
+    const recordFieldSchemas = recordPages.map(({tab})=>`${swiftString(tab.dataKey)}: [${(tab.recordFields||[]).map(field=>`BuilderField(label: ${swiftString(field.label)}, kind: ${swiftString(field.type)})`).join(', ')}]`).join(',\n        ');
+    const recordSupport = recordPages.length ? `\n@Model\nfinal class BuilderRecord {\n    var id: UUID\n    var datasetKey: String\n    var title: String\n    var notes: String\n    var fieldsJSON: String = "{}"\n    var isComplete: Bool\n    var createdAt: Date\n\n    init(datasetKey: String, title: String, notes: String = "", isComplete: Bool = false) {\n        self.id = UUID()\n        self.datasetKey = datasetKey\n        self.title = title\n        self.notes = notes\n        self.fieldsJSON = "{}"\n        self.isComplete = isComplete\n        self.createdAt = Date()\n    }\n}\n\nstruct BuilderField { let label: String; let kind: String }\n\nstruct BuilderRecordDetail: View {\n    @Environment(\\.modelContext) private var modelContext\n    @Bindable var record: BuilderRecord\n    @State private var fieldValues: [String: String] = [:]\n    @State private var saveError: String?\n    private let fieldSchemas: [String: [BuilderField]] = [${recordFieldSchemas}]\n    private var definitions: [BuilderField] { fieldSchemas[record.datasetKey] ?? [] }\n    private func setField(_ label: String, _ value: String) {\n        fieldValues[label] = value\n        if let data = try? JSONEncoder().encode(fieldValues) { record.fieldsJSON = String(data: data, encoding: .utf8) ?? "{}" }\n    }\n\n    var body: some View {\n        Form {\n            TextField("العنوان", text: $record.title)\n            if !definitions.isEmpty {\n                Section("حقول السجل") {\n                    ForEach(definitions, id: \\.label) { field in\n                        if field.kind == "boolean" {\n                            Toggle(field.label, isOn: Binding(get: { fieldValues[field.label] == "true" }, set: { setField(field.label, $0 ? "true" : "false") }))\n                        } else if field.kind == "date" {\n                            if let value = fieldValues[field.label], !value.isEmpty {\n                                DatePicker(field.label, selection: Binding(get: { ISO8601DateFormatter().date(from: value + "T00:00:00Z") ?? Date() }, set: { setField(field.label, String(ISO8601DateFormatter().string(from: $0).prefix(10))) }), displayedComponents: .date)\n                                Button("مسح التاريخ") { setField(field.label, "") }\n                            } else {\n                                Button("تحديد " + field.label) { setField(field.label, String(ISO8601DateFormatter().string(from: Date()).prefix(10))) }\n                            }\n                        } else {\n                            TextField(field.label, text: Binding(get: { fieldValues[field.label] ?? "" }, set: { setField(field.label, $0) }))\n                                .keyboardType(field.kind == "number" ? .decimalPad : .default)\n                        }\n                    }\n                }\n            }\n            Section("التفاصيل") {\n                TextEditor(text: $record.notes).frame(minHeight: 160)\n                Toggle("مكتمل", isOn: $record.isComplete)\n            }\n        }\n        .navigationTitle(record.title.isEmpty ? "السجل" : record.title)\n        .onAppear { fieldValues = (try? JSONDecoder().decode([String: String].self, from: Data(record.fieldsJSON.utf8))) ?? [:] }\n        .toolbar { ToolbarItem(placement: .confirmationAction) { Button("حفظ") {\n            do { try modelContext.save() } catch { saveError = error.localizedDescription }\n        } } }\n        .alert("تعذر حفظ السجل", isPresented: Binding(get: { saveError != nil }, set: { if !$0 { saveError = nil } })) {\n            Button("حسنًا", role: .cancel) { saveError = nil }\n        } message: { Text(saveError ?? "") }\n    }\n}\n` : '';
+    const relationSupport = recordPages.length ? `
+@Model
+final class BuilderRecordLink {
+    var id: UUID
+    var sourceID: UUID
+    var targetID: UUID
+    var kind: String
+
+    init(sourceID: UUID, targetID: UUID, kind: String) {
+        self.id = UUID()
+        self.sourceID = sourceID
+        self.targetID = targetID
+        self.kind = kind
+    }
+}
+
+struct BuilderRecordLinks: View {
+    @Environment(\\.modelContext) private var modelContext
+    @Query private var records: [BuilderRecord]
+    @Query private var links: [BuilderRecordLink]
+    let record: BuilderRecord
+    @State private var chosenID: UUID?
+    @State private var kind = "مرتبط بـ"
+    @State private var saveError: String?
+    private let suggestions: [(String, String, String)] = [${state.modelLinks.map(link=>`(${swiftString(link.sourceKey)}, ${swiftString(link.targetKey)}, ${swiftString(link.name)})`).join(', ')}]
+
+    var body: some View {
+        Form {
+            Section("علاقات السجل") {
+                ForEach(links.filter { $0.sourceID == record.id }) { link in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(link.kind)
+                            Text(records.first(where: { $0.id == link.targetID })?.title ?? "سجل محذوف")
+                                .font(.caption).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        Button("حذف", role: .destructive) {
+                            modelContext.delete(link)
+                            do { try modelContext.save() } catch { saveError = error.localizedDescription }
+                        }
+                    }
+                }
+                if !links.contains(where: { $0.sourceID == record.id }) {
+                    Text("لا توجد علاقات بعد").foregroundStyle(.secondary)
+                }
+            }
+            Section("ربط سجل آخر") {
+                Picker("السجل", selection: $chosenID) {
+                    Text("اختر سجلًا").tag(Optional<UUID>.none)
+                    ForEach(records.filter { $0.id != record.id }) { candidate in
+                        Text(candidate.title).tag(Optional(candidate.id))
+                    }
+                }
+                TextField("اسم العلاقة", text: $kind)
+                if let target = records.first(where: { $0.id == chosenID }) {
+                    ForEach(suggestions.filter { $0.0 == record.datasetKey && $0.1 == target.datasetKey }.map { $0.2 }, id: \\.self) { name in
+                        Button(name) { kind = name }
+                    }
+                }
+                Button("حفظ العلاقة") {
+                    guard let targetID = chosenID, !kind.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+                    modelContext.insert(BuilderRecordLink(sourceID: record.id, targetID: targetID, kind: kind))
+                    do { try modelContext.save(); chosenID = nil } catch { modelContext.rollback(); saveError = error.localizedDescription }
+                }
+            }
+        }
+        .navigationTitle("علاقات \\(record.title)")
+        .alert("تعذر حفظ العلاقة", isPresented: Binding(get: { saveError != nil }, set: { if !$0 { saveError = nil } })) {
+            Button("حسنًا", role: .cancel) { saveError = nil }
+        } message: { Text(saveError ?? "") }
+    }
+}
+` : '';
+    const enhancedRecordSupport = recordPages.length ? recordSupport.replace('            }\n        }\n        .navigationTitle', '            }\n            Section { NavigationLink("علاقات السجل") { BuilderRecordLinks(record: record) } }\n        }\n        .navigationTitle') + relationSupport : '';
+    const recordMethods = recordPages.length ? ['    private func saveRecords() {', '        do { try modelContext.save() } catch { modelContext.rollback(); storageError = error.localizedDescription }', '    }', '    private func deleteRecord(_ record: BuilderRecord) {', '        storedLinks.filter { $0.sourceID == record.id || $0.targetID == record.id }.forEach { modelContext.delete($0) }', '        modelContext.delete(record)', '        saveRecords()', '    }', ...localRecordTabs.flatMap(({ tab, index }) => [`    private func seedRecords${index}() {`, `        guard !didSeed${index} else { return }`, ...sampleItems(tab).map(title => `        modelContext.insert(BuilderRecord(datasetKey: ${swiftString(tab.dataKey)}, title: ${swiftString(title)}))`), '        do {', '            try modelContext.save()', `            didSeed${index} = true`, '        } catch {', '            modelContext.rollback()', '            storageError = error.localizedDescription', '        }', '    }'])].join('\n') : '';
+    return `import SwiftUI${recordPages.length ? '\nimport SwiftData' : ''}${extraImports}\n${enhancedRecordSupport}\n@main\nstruct VisualBuilderApp: App {\n    var body: some Scene {\n        WindowGroup {\n            BuilderContentView()\n        }${recordPages.length ? '\n        .modelContainer(for: [BuilderRecord.self, BuilderRecordLink.self])' : ''}\n    }\n}\n\nstruct BuilderContentView: View {\n${declarations.join('\n')}\n\n${tabs.map(swiftVisibleItems).join('\n\n')}\n\n${searchModel}\n\n${moreSupport}\n\n${body}\n\n${recordMethods}\n\n${tabs.map(swiftPage).join('\n\n')}\n\n${tabs.map(swiftDetailPage).filter(Boolean).join('\n\n')}\n\n${tabs.map((tab,i)=>swiftFlowHelpers(tab,i)).filter(Boolean).join('\n\n')}\n\n${tabs.flatMap((tab,i)=>tab.flowPages.map(route=>swiftFlowPage(tab,i,route))).join('\n\n')}\n}\n${sceneSupport}${hasExtended ? extendedSwiftSupport : ''}`;
   }
   function renderCode() {
     const oldTop = codeElement.parentElement.scrollTop;
@@ -3235,6 +3729,7 @@ private struct VisualSceneBackground: View {
   const previousSelect = select;
   select = function (id) { previousSelect(id); updateDetailBuildAction(id); };
   function renderAll(preserveScroll = false) {
+    captureHistory();
     renderNavigationEditor();
     renderHeaderActionsEditor();
     renderToolPalette();
@@ -3252,6 +3747,9 @@ private struct VisualSceneBackground: View {
     renderAppMap();
     renderQuality();
     if (buildWorkspaceOpen && !designCanvasWorkspace.hidden) renderDesignCanvas();
+    if (buildWorkspaceOpen && !document.querySelector('#modelPanel').hidden) renderModelPanel();
+    if (buildWorkspaceOpen && !document.querySelector('#lifecyclePanel').hidden) renderLifecyclePanel();
+    historyLast = JSON.stringify(state);
   }
   function renderPlatformBehaviors() {
     const panel = document.querySelector('#platformBehaviors');
@@ -3702,7 +4200,8 @@ private struct VisualSceneBackground: View {
     if (tab.display === 'summary') steps.push({ id: 'display', title: 'اختر عرضًا للبيانات', detail: 'جرّب قائمة أو بطاقات أو مؤشرات أو مخططًا.' });
     steps.push({ id: 'handoff', title: 'احفظ ما بنيته', detail: 'نزّل ملف الوصف وأرفقه لأي نموذج ذكاء اصطناعي.' });
     document.querySelector('#nextStepPanel').innerHTML = `<details class="builder-guide-group"><summary>الخطوة التالية حسب ما بنيته</summary>${steps.slice(0, 5).map((step, index) => `<button class="next-step" type="button" data-next-action="${step.id}"><small>الخطوة ${formatNumber(index + 1)}</small><strong>${step.title}</strong><span>${step.detail}</span><b>نفّذ الآن ←</b></button>`).join('')}</details><details class="builder-guide-group"><summary>طرق بناء عملية</summary>${builderMethods.map(method=>`<article class="builder-method"><strong>${escapeHtml(method.name)}</strong><p>${escapeHtml(method.text)}</p><button type="button" data-method-pattern="${method.pattern}">اعرض مثالًا مناسبًا</button></article>`).join('')}</details><details class="builder-guide-group" open><summary>اقتراحات صفحات من تطبيقات Apple</summary><p>اختر نمط واجهة أو أداة مستقلة، ثم عدّل شاشاته ومحتواه بما يناسب تطبيقك. الأمثلة تعليمية ولا تصف بنية تطبيقات Apple الداخلية.</p><label class="builder-pattern-search">اختر تطبيق Apple<select id="builderPatternApp"><option value="">جميع التطبيقات (${formatNumber(new Set(builderPatterns.map(item=>item.app)).size)})</option>${[...new Set(builderPatterns.map(item=>item.app))].map(app=>`<option value="${escapeHtml(app)}" ${builderPatternApp===app?'selected':''}>${escapeHtml(app)}</option>`).join('')}</select></label><label class="builder-pattern-search">بحث في الواجهات والأدوات<input type="search" id="builderPatternSearch" value="${escapeHtml(builderPatternQuery)}" placeholder="قائمة، خريطة، رسم، صوت…" autocomplete="off"></label><div id="builderPatternResults" class="builder-pattern-results"></div></details>`;
-    document.querySelector('#nextStepPanel').insertAdjacentHTML('beforeend', `<details class="builder-guide-group" open><summary>قوالب نواة برزة المعزب والسجلات السكنية</summary><p>اختر قالبًا لإضافة شاشاته إلى مشروعك الحالي. حقول المستأجر والوحدة والعقد نماذج أولية بلا بيانات شخصية. الربط هنا مرئي بالمعرّفات ومسارات الواجهات؛ حفظ السجلات والتحقق من صحتها يحتاجان نموذج بيانات وقواعد عمل معتمدة.</p><div class="builder-pattern-results">${builderStarterKits.map(kit => `<article class="builder-pattern-card"><strong>${escapeHtml(kit.name)}</strong><p>${escapeHtml(kit.summary)}</p><small>${escapeHtml(kit.relation)}</small><div class="builder-pattern-actions"><button type="button" data-starter-kit="${kit.id}">＋ أضف ${kit.pages.length > 1 ? 'النواة' : 'القالب'} إلى المشروع</button></div></article>`).join('')}</div><p id="builderStarterStatus" role="status"></p></details>`);
+    document.querySelector('#nextStepPanel').insertAdjacentHTML('beforeend', `<details class="builder-guide-group" open><summary>بدايات قابلة للتطبيق · الأعمال وبن قضير والسكن</summary><p>اختر نقطة بداية ثم عدّل المفاهيم والعلاقات من «نموذج البيانات». النواة العشرية وفكرة بن قضير تنشئان سجلات محلية عامة تحفظ في مشروع Xcode. قوالب السكن الأخرى تخطيط واجهة وحقول مقترحة؛ يلزم تخصيص نموذج البيانات وقواعده قبل الاعتماد.</p><div class="builder-pattern-results">${builderStarterKits.map(kit => `<article class="builder-pattern-card"><strong>${escapeHtml(kit.name)}</strong><p>${escapeHtml(kit.summary)}</p><small>${escapeHtml(kit.relation)}</small><div class="builder-pattern-actions"><button type="button" data-starter-kit="${kit.id}">＋ أضف ${kit.pages.length > 1 ? 'النواة' : 'القالب'} إلى المشروع</button></div></article>`).join('')}</div><p id="builderStarterStatus" role="status"></p></details>`);
+    if (state.conceptBlueprint) document.querySelector('#nextStepPanel').insertAdjacentHTML('afterbegin', `<details class="builder-guide-group"><summary>النموذج المفاهيمي المضاف · ${formatNumber(state.conceptBlueprint.concepts.length)} مفاهيم</summary><p>كل مفهوم له مجموعة سجلات SwiftData عامة في المشروع الناتج. يمكن ربط السجلات الفردية بعلاقة مسماة في صفحة السجل؛ قواعد المال والحقول المتخصصة والتحقق تحتاج تنفيذًا مستقلًا.</p><div class="builder-concept-grid">${state.conceptBlueprint.concepts.map(item=>`<article><strong>${escapeHtml(item.name)}</strong><span>${escapeHtml(item.meaning)}</span></article>`).join('')}</div><h4>بنى وعلاقات داعمة، وليست مفاهيم مستقلة</h4><div class="builder-concept-grid">${state.conceptBlueprint.supportingStructures.map(item=>`<article><strong>${escapeHtml(item.kind)}</strong><span>${escapeHtml(item.meaning)}</span></article>`).join('')}</div></details>`);
     renderBuilderPatternResults();
   }
   document.querySelector('#nextStepPanel').addEventListener('input',event=>{if(event.target.id==='builderPatternSearch'){builderPatternQuery=event.target.value;renderBuilderPatternResults();}});
@@ -3831,6 +4330,7 @@ private struct VisualSceneBackground: View {
       if (state.tabs.length >= 50) { document.querySelector('#projectStatus').textContent = 'الحد العملي ٥٠ تبويبًا لكل مشروع.'; return; }
       const copy = structuredClone(currentTab());
       copy.label = clean(`${copy.label} نسخة`, 18);
+      copy.dataKey = newDataKey();
       copy.values.detail = false;
       copy.blocks.forEach(block => { block.id = newBlockId(); });
       state.tabs.splice(i + 1, 0, copy);
@@ -3841,7 +4341,7 @@ private struct VisualSceneBackground: View {
     }
     if (command === 'move-prev' && i > 0) { [state.tabs[i - 1], state.tabs[i]] = [state.tabs[i], state.tabs[i - 1]]; state.activeTab = i - 1; state.reviewed.navigation = true; }
     if (command === 'move-next' && i < state.tabs.length - 1) { [state.tabs[i + 1], state.tabs[i]] = [state.tabs[i], state.tabs[i + 1]]; state.activeTab = i + 1; state.reviewed.navigation = true; }
-    if (command === 'remove' && state.tabs.length > 1) { state.tabs.splice(i, 1); state.activeTab = Math.min(i, state.tabs.length - 1); state.reviewed.pages = true; state.reviewed.navigation = true; }
+    if (command === 'remove' && state.tabs.length > 1) { const removed=state.tabs.splice(i, 1)[0];state.modelLinks=state.modelLinks.filter(link=>link.sourceKey!==removed.dataKey&&link.targetKey!==removed.dataKey);if(state.conceptBlueprint)state.conceptBlueprint.concepts=state.conceptBlueprint.concepts.filter(item=>item.datasetKey!==removed.dataKey);state.activeTab = Math.min(i, state.tabs.length - 1); state.reviewed.pages = true; state.reviewed.navigation = true; }
     overlay = null;
     renderAll();
   });
@@ -4387,6 +4887,54 @@ private struct VisualSceneBackground: View {
     document.body.appendChild(link); link.click(); link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 5000);
   }
+  const XCODE_PROJECT_PBXPROJ = "// !$*UTF8*$!\n{\n\tarchiveVersion = 1;\n\tclasses = {};\n\tobjectVersion = 56;\n\tobjects = {\n\t\tA10000000000000000000001 = {isa = PBXBuildFile; fileRef = A10000000000000000000002; };\n\t\tA10000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualBuilderApp.swift; sourceTree = \"<group>\"; };\n\t\tA10000000000000000000003 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisualBuilderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };\n\t\tA10000000000000000000004 = {isa = PBXGroup; children = (A10000000000000000000005, A10000000000000000000006); sourceTree = \"<group>\"; };\n\t\tA10000000000000000000005 = {isa = PBXGroup; children = (A10000000000000000000002); path = VisualBuilderApp; sourceTree = \"<group>\"; };\n\t\tA10000000000000000000006 = {isa = PBXGroup; children = (A10000000000000000000003); name = Products; sourceTree = \"<group>\"; };\n\t\tA10000000000000000000007 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001); runOnlyForDeploymentPostprocessing = 0; };\n\t\tA10000000000000000000008 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };\n\t\tA10000000000000000000009 = {\n\t\t\tisa = PBXNativeTarget;\n\t\t\tbuildConfigurationList = A10000000000000000000010;\n\t\t\tbuildPhases = (A10000000000000000000007, A10000000000000000000008);\n\t\t\tbuildRules = ();\n\t\t\tdependencies = ();\n\t\t\tname = VisualBuilderApp;\n\t\t\tproductName = VisualBuilderApp;\n\t\t\tproductReference = A10000000000000000000003;\n\t\t\tproductType = \"com.apple.product-type.application\";\n\t\t};\n\t\tA1000000000000000000000A = {\n\t\t\tisa = PBXProject;\n\t\t\tattributes = { BuildIndependentTargetsInParallel = 1; LastUpgradeCheck = 2700; TargetAttributes = { A10000000000000000000009 = { CreatedOnToolsVersion = 27.0; }; }; };\n\t\t\tbuildConfigurationList = A10000000000000000000011;\n\t\t\tcompatibilityVersion = \"Xcode 14.0\";\n\t\t\tdevelopmentRegion = en;\n\t\t\thasScannedForEncodings = 0;\n\t\t\tknownRegions = (en, Base);\n\t\t\tmainGroup = A10000000000000000000004;\n\t\t\tproductRefGroup = A10000000000000000000006;\n\t\t\tprojectDirPath = \"\";\n\t\t\tprojectRoot = \"\";\n\t\t\ttargets = (A10000000000000000000009);\n\t\t};\n\t\tA10000000000000000000010 = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000012, A10000000000000000000013); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };\n\t\tA10000000000000000000011 = {isa = XCConfigurationList; buildConfigurations = (A10000000000000000000014, A10000000000000000000015); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };\n\t\tA10000000000000000000012 = {isa = XCBuildConfiguration; buildSettings = { ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIUserInterfaceStyle = Automatic; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = \"com.example.visualbuilderapp\"; PRODUCT_NAME = \"$(TARGET_NAME)\"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = \"1,2\"; }; name = Debug; };\n\t\tA10000000000000000000013 = {isa = XCBuildConfiguration; buildSettings = { ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES; CODE_SIGN_STYLE = Automatic; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIUserInterfaceStyle = Automatic; IPHONEOS_DEPLOYMENT_TARGET = 17.0; PRODUCT_BUNDLE_IDENTIFIER = \"com.example.visualbuilderapp\"; PRODUCT_NAME = \"$(TARGET_NAME)\"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = \"1,2\"; }; name = Release; };\n\t\tA10000000000000000000014 = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; SDKROOT = iphoneos; SWIFT_OPTIMIZATION_LEVEL = \"-Onone\"; }; name = Debug; };\n\t\tA10000000000000000000015 = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; }; name = Release; };\n\t};\n\trootObject = A1000000000000000000000A;\n}\n";
+  function zipFiles(files) {
+    const encoder = new TextEncoder();
+    const local = [], central = [];
+    let offset = 0;
+    const crc32 = bytes => {
+      let crc = 0xffffffff;
+      for (const byte of bytes) {
+        crc ^= byte;
+        for (let bit = 0; bit < 8; bit++) crc = (crc >>> 1) ^ (crc & 1 ? 0xedb88320 : 0);
+      }
+      return (crc ^ 0xffffffff) >>> 0;
+    };
+    for (const [path, content] of Object.entries(files)) {
+      const name = encoder.encode(path), data = encoder.encode(content), crc = crc32(data);
+      if (name.length > 65535) throw new Error('اسم ملف طويل جدًا.');
+      const header = new Uint8Array(30 + name.length), h = new DataView(header.buffer);
+      h.setUint32(0, 0x04034b50, true); h.setUint16(4, 20, true); h.setUint16(6, 0x0800, true);
+      h.setUint16(8, 0, true); h.setUint32(14, crc, true); h.setUint32(18, data.length, true);
+      h.setUint32(22, data.length, true); h.setUint16(26, name.length, true); header.set(name, 30);
+      local.push(header, data);
+      const record = new Uint8Array(46 + name.length), c = new DataView(record.buffer);
+      c.setUint32(0, 0x02014b50, true); c.setUint16(4, 20, true); c.setUint16(6, 20, true);
+      c.setUint16(8, 0x0800, true); c.setUint32(16, crc, true); c.setUint32(20, data.length, true);
+      c.setUint32(24, data.length, true); c.setUint16(28, name.length, true); c.setUint32(42, offset, true);
+      record.set(name, 46); central.push(record);
+      offset += header.length + data.length;
+    }
+    const centralSize = central.reduce((sum, item) => sum + item.length, 0);
+    const end = new Uint8Array(22), view = new DataView(end.buffer);
+    view.setUint32(0, 0x06054b50, true); view.setUint16(8, central.length, true);
+    view.setUint16(10, central.length, true); view.setUint32(12, centralSize, true);
+    view.setUint32(16, offset, true);
+    return new Blob([...local, ...central, end], { type: 'application/zip' });
+  }
+  function downloadBlob(filename, blob) {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url; link.download = filename;
+    document.body.appendChild(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+  }
+  function xcodeReadme(project) {
+    const localPages = project.pages.filter(page => page.dataPresentation.recordMode === 'local');
+    const linkedPages = project.pages.filter(page => page.dataPresentation.recordMode === 'linked');
+    const countPages = project.pages.filter(page => page.dataPresentation.recordMode === 'count');
+    return `# ${project.appName} — مشروع Xcode\n\nافتح VisualBuilderApp.xcodeproj في Xcode، اختر iPhone Simulator واضغط Run. ملف VisualBuilderApp.swift يحتوي الواجهات والتنقل التي صممتها. ملف VisualBuilderProject.json يحفظ قرارات المختبر ويمكن استيراده مجددًا في صفحة الويب.\n\n## تخزين السجلات\n\n${localPages.length ? `صفحات ${localPages.map(page => `«${page.title}»`).join('، ')} تستخدم SwiftData لإضافة سجلات محلية وتعديل عنوانها وملاحظاتها وحالة إكمالها وحذفها. تُنشأ أمثلة البداية مرة واحدة. تظهر في مشروع Xcode بقائمة SwiftUI نظامية ولو كان تخطيط المعاينة حرًا.` : 'جميع السجلات الحالية أمثلة عرض. اختر «سجلات محفوظة محليًا» في خصائص شاشة قائمة إذا أردت تخزينًا محليًا.'}\n${linkedPages.length ? `الشاشات المرتبطة: ${linkedPages.map(page => `«${page.title}» ← «${page.dataPresentation.sourcePage}»`).join('، ')}. تعرض السجلات نفسها.` : ''}\n${countPages.length ? `شاشات العدّ: ${countPages.map(page => `«${page.title}» ← «${page.dataPresentation.sourcePage}»`).join('، ')}. تعرض عدد السجلات المحفوظة.` : ''}\n${project.conceptBlueprint ? `\n## المثال المفاهيمي الاختياري\n\n${project.conceptBlueprint.concepts.map(item => `- ${item.name}: ${item.meaning}`).join('\n')}\n\nالعلاقات والآليات الداعمة: ${project.conceptBlueprint.supportingStructures.map(item => `${item.kind} (${item.meaning})`).join('؛ ')}. يمكن ربط السجلات الفردية بعلاقات مسماة وحفظها في SwiftData؛ حسابات المال وقواعد المجال والصلاحيات لم تُنفّذ تلقائيًا.\n` : ''}\n## قبل الاختبار على جهازك\n\n1. اختر فريق التوقيع في Signing & Capabilities، ثم غيّر Bundle Identifier الافتراضي com.example.visualbuilderapp.\n2. راجع جميع الصفحات والانتقالات والمكوّنات على المحاكي وجهاز فعلي.\n3. صمّم نموذج بيانات مجالك وقواعد التحقق والتحديث؛ السجل المحلي العام يحتوي عنوانًا وملاحظات وحالة فقط.\n4. نفّذ خدمات iCloud/CloudKit والصلاحيات وWidgets وLive Activities فقط إذا كانت مطلوبة في خطة مشروعك، مع قدراتها واختبارها في Xcode. خيارات المختبر توثّق هذه القرارات ولا تفعّل خدمات Apple تلقائيًا.\n5. راجع الخصوصية وإتاحة الوصول واختبارات الوظائف قبل توزيع التطبيق.\n\nهذا مشروع SwiftUI قابل للبناء للشاشات والتنقل والسجلات المحلية الاختيارية، ولا يُنشئ خادمًا أو حسابات مستخدمين أو مزامنة تلقائيًا.\n`;
+  }
   function projectDocument() {
     state.tabs.forEach(reconcileFlowPages);
     return {
@@ -4395,6 +4943,8 @@ private struct VisualSceneBackground: View {
       target: { platform: 'iOS', device: 'iPhone 17 Pro', portraitScreenPoints: { width: 402, height: 874 }, framework: 'SwiftUI' },
       appName: state.appName,
       appGoal: state.appGoal,
+      conceptBlueprint: state.conceptBlueprint ? JSON.parse(JSON.stringify(state.conceptBlueprint)) : null,
+      modelLinks: state.modelLinks.map(link => ({ ...link, sourcePage: state.tabs.find(tab => tab.dataKey === link.sourceKey)?.label || null, targetPage: state.tabs.find(tab => tab.dataKey === link.targetKey)?.label || null })),
       nativePlan: JSON.parse(JSON.stringify(state.architecture)),
       nativeImplementation: window.iOSNativeCatalog?.forPlan(state.architecture) || null,
       intendedType: state.intendedType || 'auto',
@@ -4404,7 +4954,7 @@ private struct VisualSceneBackground: View {
       navigation: { tabBarEnabled: state.tabsEnabled, tabBarMinimizeBehavior: state.tabBarBehavior, dedicatedSearchButton: state.tabsEnabled && state.searchRoleEnabled, searchScope: 'أمثلة بيانات جميع الصفحات المحفوظة', activePageIndex: state.activeTab, overflowRule: 'عند وجود أكثر من خمسة تبويبات تظهر أول أربعة ثم المزيد؛ يعمل TabView الأصلي بالطريقة التي يحددها iOS.' },
       pages: state.tabs.map((tab, index) => ({
         order: index + 1, title: tab.label, icon: tab.icon, pageType: tab.kind, pageTypeMeaning: pageKinds[tab.kind].help,
-        purpose: tab.purpose, layout: { mode: tab.layoutMode, screenCount: tab.canvasScreens, positionsPercent: JSON.parse(JSON.stringify(tab.layout)), canvasCardPositions: JSON.parse(JSON.stringify(tab.boardLayout || {})) }, tabBarMode: tab.tabBarMode, visualPresentation: { background: tab.backgroundStyle, animated: tab.backgroundMotion, listStyle: tab.listStyle, cardStyle: tab.cardStyle, titleStyle: tab.titleStyle, contentUnderHeader: tab.contentUnderHeader, featureCard: tab.featureCard ? { title: tab.featureTitle, subtitle: tab.featureSubtitle, fadesOnScroll: tab.collapseFeatureOnScroll } : null, numericKeyboard: tab.keyboardStyle }, dataPresentation: { style: tab.display, meaning: displayKinds[tab.display].help, title: tab.dataTitle, sampleItems: sampleItems(tab), sampleNumbers: tab.display === 'chart' ? [12, 20, 16, 28] : undefined }, primaryNavigation: { type: tab.action, meaning: navigationKinds[tab.action].help },
+        purpose: tab.purpose, layout: { mode: tab.layoutMode, screenCount: tab.canvasScreens, positionsPercent: JSON.parse(JSON.stringify(tab.layout)), canvasCardPositions: JSON.parse(JSON.stringify(tab.boardLayout || {})) }, tabBarMode: tab.tabBarMode, visualPresentation: { background: tab.backgroundStyle, animated: tab.backgroundMotion, listStyle: tab.listStyle, cardStyle: tab.cardStyle, titleStyle: tab.titleStyle, contentUnderHeader: tab.contentUnderHeader, featureCard: tab.featureCard ? { title: tab.featureTitle, subtitle: tab.featureSubtitle, fadesOnScroll: tab.collapseFeatureOnScroll } : null, numericKeyboard: tab.keyboardStyle }, dataPresentation: { style: tab.display, meaning: displayKinds[tab.display].help, title: tab.dataTitle, recordMode: tab.recordMode, datasetKey: tab.dataKey, sourceDatasetKey: tab.dataSourceKey || null, sourcePage: state.tabs.find(other => other.dataKey === tab.dataSourceKey)?.label || null, savedFields: tab.recordMode === 'local' ? [{ label: 'العنوان', type: 'text' }, { label: 'ملاحظات', type: 'text' }, { label: 'مكتمل', type: 'boolean' }, ...tab.recordFields] : [], calculation: tab.recordMode === 'count' ? 'recordCount' : null, sampleItems: sampleItems(tab), sampleNumbers: tab.display === 'chart' ? [12, 20, 16, 28] : undefined }, primaryNavigation: { type: tab.action, meaning: navigationKinds[tab.action].help },
         headerActions: JSON.parse(JSON.stringify(tab.headerActions)),
         tools: tab.tools.map(id => ({ type: id, name: toolInfo[id].name, purpose: toolInfo[id].description, ...(extendedIds.has(id) ? { label: componentOption(tab, id).label, behavior: behaviorChoice(id, componentOption(tab, id).behavior)?.[1], behaviorId: componentOption(tab, id).behavior, browserSupport: behaviorChoice(id, componentOption(tab, id).behavior)?.[2] } : {}) })),
         customElements: tab.blocks.map(block => ({ type: block.type, label: block.label, action: block.type === 'button' ? block.action : undefined, previewValue: block.value })),
@@ -4416,7 +4966,7 @@ private struct VisualSceneBackground: View {
       blueprintAssessment: (() => { const result = assessProject(); return { completed: result.complete, total: result.checks.length, checks: result.checks, inferredType: result.inferred, selectedType: result.chosen, directionGoal: result.directionGoal, limitation: 'هذا تقييم لمدى توثيق مخطط الواجهة فقط؛ لا يثبت تنفيذ البيانات أو الخصوصية أو الوصولية أو الاختبار على جهاز.' }; })(),
       builderState: JSON.parse(JSON.stringify(state)),
       swiftUI: generateCode(),
-      scope: 'نموذج تعليمي تفاعلي للواجهة والتنقل؛ تأثيرات HTML تقرّب المظهر والحركة ولا تطابق نظام iOS أو Taptic Engine. الكود المولد يستخدم TabView وواجهة البحث الأصلية على iOS 26 فأحدث؛ لا يحدد نموذج البيانات أو الخادم أو الصلاحيات أو اختبارات جهاز فعلي.'
+      scope: 'نموذج تعليمي تفاعلي للواجهة والتنقل ومجموعات سجلات SwiftData عامة وروابط مسماة؛ تأثيرات HTML تقرّب المظهر والحركة ولا تطابق نظام iOS أو Taptic Engine. الكود المولد يستخدم TabView وواجهة البحث الأصلية على iOS 26 فأحدث؛ لا يحدد نموذج المجال المتخصص أو الخادم أو الصلاحيات أو اختبارات جهاز فعلي.'
     };
   }
   function handoffMarkdown(project) {
@@ -4428,6 +4978,18 @@ private struct VisualSceneBackground: View {
   document.querySelector('#downloadProject').addEventListener('click', () => {
     downloadText('VisualBuilderProject.json', JSON.stringify(projectDocument(), null, 2), 'application/json;charset=utf-8');
     document.querySelector('#projectStatus').textContent = 'نُزّل ملف JSON؛ يمكن استيراده لاستكمال البناء.';
+  });
+  document.querySelector('#downloadXcodeProject').addEventListener('click', () => {
+    const project = projectDocument();
+    const root = 'VisualBuilderApp/';
+    const archive = zipFiles({
+      [`${root}VisualBuilderApp.xcodeproj/project.pbxproj`]: XCODE_PROJECT_PBXPROJ,
+      [`${root}VisualBuilderApp/VisualBuilderApp.swift`]: project.swiftUI,
+      [`${root}VisualBuilderProject.json`]: JSON.stringify(project, null, 2),
+      [`${root}README_AR.md`]: xcodeReadme(project)
+    });
+    downloadBlob('VisualBuilderApp-Xcode.zip', archive);
+    document.querySelector('#projectStatus').textContent = 'نُزّل مشروع Xcode. افتحه لاختبار الواجهات والتنقل، ثم أكمل ربط البيانات والخدمات المطلوبة.';
   });
   document.querySelector('#downloadHandoff').addEventListener('click', () => {
     downloadText('VisualBuilderAI-Handoff.md', handoffMarkdown(projectDocument()), 'text/markdown;charset=utf-8');
