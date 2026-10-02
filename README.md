@@ -4,4 +4,8 @@
 
 [افتح المحاكي مباشرة](https://binjednan.github.io/IOS-simulator-HTLM/#builderStage)
 
+[افتح مختبر المزامنة بين جهازين](https://binjednan.github.io/IOS-simulator-HTLM/dual_sync_simulator.html)
+
+مختبر المزامنة ملف HTML مستقل: يستورد مشروع JSON لكل جهاز، ويحاكي سجلات محلية على نمط SwiftData وطابور CloudKit وحساب iCloud تجريبيًا. يمكنك حفظ الجهازين وحالة السحابة في ملف JSON واحد ثم استيراده لاستكمال التجربة. كل البيانات محلية في المتصفح؛ لا يتصل المختبر بخدمات Apple.
+
 المعاينة في المتصفح تعليمية، ويحتاج التطبيق النهائي إلى تنفيذ واختبار داخل Xcode وعلى جهاز iPhone.
