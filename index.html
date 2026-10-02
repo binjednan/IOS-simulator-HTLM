@@ -83,8 +83,9 @@
     </aside>
     <section class="panel code-panel output-panel" aria-label="تصدير المشروع وكود SwiftUI">
       <div class="code-heading"><div><span class="code-kicker">الناتج القابل للحفظ</span><h2>المشروع وكود SwiftUI</h2></div><p>احفظ نموذجك لاستكماله هنا أو أرفق الوصف لنموذج ذكاء اصطناعي.</p></div>
-      <div class="project-actions" aria-label="حفظ المشروع ونقله"><button id="downloadXcodeProject" class="text-button primary" type="button">تنزيل مشروع Xcode قابل للبناء</button><button id="downloadProject" class="text-button" type="button">تنزيل ملف التحرير JSON</button><button id="importProject" class="text-button" type="button">استيراد مشروع</button><button id="downloadHandoff" class="text-button" type="button">تنزيل وصف للذكاء الاصطناعي</button><input id="projectFile" type="file" accept=".json,.md,application/json,text/markdown" hidden></div>
-      <p id="projectStatus" class="project-status" role="status">ملف Xcode يحتوي الواجهات والتنقل. اربط بياناتك وخدمات Apple الفعلية قبل استخدام التطبيق ببيانات حقيقية.</p>
+      <div class="project-actions" aria-label="حفظ المشروع ونقله"><button id="downloadXcodeProject" class="text-button primary" type="button">تنزيل مسودة مشروع Xcode</button><button id="downloadProject" class="text-button" type="button">تنزيل ملف التحرير JSON</button><button id="showProjectJson" class="text-button" type="button" aria-expanded="false" aria-controls="projectJsonPreview">عرض JSON للنسخ</button><button id="importProject" class="text-button" type="button">استيراد مشروع</button><button id="downloadHandoff" class="text-button" type="button">تنزيل وصف للذكاء الاصطناعي</button><input id="projectFile" type="file" accept=".json,.md,application/json,text/markdown" hidden></div>
+      <pre id="projectJsonPreview" dir="ltr" tabindex="0" hidden></pre>
+      <p id="projectStatus" class="project-status" role="status">المسودة تحفظ محليًا في هذا المتصفح فقط. الرابط العام يفتح المحرر ولا يحمل مشروعك؛ انقل المشروع بملف JSON. ملف Xcode يحتاج اختبارًا ومراجعة قبل استخدام بيانات حقيقية.</p>
       <div class="code-heading code-subhead"><div><span class="code-kicker">SwiftUI</span><h2>الكود الناتج</h2></div><div class="code-heading-actions"><button id="expandCode" class="text-button" type="button">تكبير</button><button id="copyCode" class="text-button" type="button">نسخ</button></div></div>
       <div class="code-frame"><div class="code-frame-head"><span>VisualBuilderApp.swift</span><button id="downloadCode" type="button">تنزيل الملف ↓</button></div><pre dir="ltr"><code id="swiftCode"></code></pre></div>
       <p class="builder-rule last">نموذج تعليمي لواجهة تطبيق. عناصر النظام، مثل شريط الحالة والجزيرة الديناميكية، لا تُضاف كعناصر عادية داخل SwiftUI View.</p>
@@ -160,11 +161,11 @@
         <div class="guide-file"><strong>حفظ المسودة</strong><code>داخل المتصفح</code><p>يحفظ الحالة في التخزين المحلي لهذا المتصفح إذا كان متاحًا. تُحدّث المسودة أيضًا أثناء التحرير. مناسب للمتابعة السريعة على الجهاز نفسه.</p><a href="#saveDraft">اذهب إلى «حفظ المسودة» ↑</a></div>
         <div class="guide-file"><strong>مشروع قابل للاستيراد</strong><code>VisualBuilderProject.json</code><p>يحفظ الصفحات والأدوات والمواضع وخطة Apple Native مع كود SwiftUI. هذه النسخة التي نزّلها للاحتفاظ بالمشروع أو نقله ثم استيراده لاحقًا.</p><a href="#downloadProject">اذهب إلى «تنزيل مشروع JSON» ↑</a></div>
         <div class="guide-file"><strong>وصف لنموذج ذكاء اصطناعي</strong><code>VisualBuilderAI-Handoff.md</code><p>وصف مقروء يتضمن بنية المشروع بصيغة JSON والكود. أرفقه مع طلبك؛ ويمكن استيراد الملف نفسه هنا إذا لم يُعدّل بناؤه.</p><a href="#downloadHandoff">اذهب إلى «تنزيل وصف للذكاء الاصطناعي» ↑</a></div>
-        <div class="guide-file"><strong>مشروع Xcode</strong><code>VisualBuilderApp.zip</code><p>مشروع SwiftUI قابل للبناء. يتضمن شاشاتك وسجلات SwiftData العامة وروابطها عندما تختار التخزين المحلي.</p><a href="#downloadXcodeProject">اذهب إلى «تنزيل مشروع Xcode» ↑</a></div>
+        <div class="guide-file"><strong>مشروع Xcode</strong><code>VisualBuilderApp.zip</code><p>مسودة SwiftUI تتضمن شاشاتك وسجلات SwiftData العامة وروابطها عند اختيار التخزين المحلي. راجعها وابنها واختبرها في Xcode.</p><a href="#downloadXcodeProject">اذهب إلى «تنزيل مشروع Xcode» ↑</a></div>
       </div><p class="guide-note">للاحتفاظ بنسخة يمكن استعادتها بثقة، نزّل ملف <bdi dir="ltr">JSON</bdi> بعد التغييرات المهمة. التخزين المحلي قد لا ينتقل إلى متصفح آخر أو مسار ملف آخر.</p></article>
       <article class="guide-card wide" id="guideImport"><h3>٦. استورد مشروعًا محفوظًا</h3><ol><li>إذا أردت الاحتفاظ بما تراه الآن، نزّل <a href="#downloadProject">مشروع JSON</a> قبل الاستيراد؛ الاستيراد يستبدل البناء الحالي.</li><li>اضغط <a href="#importProject">«استيراد مشروع»</a> واختر ملف <bdi dir="ltr">VisualBuilderProject.json</bdi> أو ملف الوصف <bdi dir="ltr">VisualBuilderAI-Handoff.md</bdi> الذي نزّلته من هذا المختبر.</li><li>انتظر رسالة حالة المشروع أسفل أزرار التصدير، ثم راجع عدد الصفحات والهاتف والخريطة والكود.</li></ol><p class="guide-note warning">ملف <bdi dir="ltr">.swift</bdi> وحده لا يعيد إعدادات المحاكي. لا تعدّل بنية <bdi dir="ltr">JSON</bdi> داخل ملف الوصف إذا كنت تنوي استيراده.</p></article>
       <article class="guide-card wide" id="guideNative"><h3>٧. من النموذج إلى تطبيق Apple Native</h3><p>افتح <a href="#nativeLab">مختبر Apple Native</a> واختر التخزين والمزامنة والجمهور. ابحث عن تطبيق يشبه فكرتك، أضف صفحته إلى المحاكي، ثم اختر التقنيات العامة ذات الصلة. نزّل خطة التنفيذ ومشروع JSON؛ تظهر الاختيارات أيضًا في ملف وصف الذكاء الاصطناعي.</p><p class="guide-note warning">مخطط CloudKit داخل الملف قرار هندسي فقط. يلزم إعداد Xcode والقدرات ونموذج بيانات متوافق، ثم اختبار السلوك على أجهزة وحسابات حقيقية.</p></article>
-      <article class="guide-card wide" id="guideSwift"><h3>٨. انقل الفكرة إلى التطوير الفعلي</h3><ol><li>لإكمال العمل مع نموذج ذكاء اصطناعي، أرفق ملف <bdi dir="ltr">VisualBuilderAI-Handoff.md</bdi> واذكر بوضوح ما تريد إضافته أو تغييره؛ يتضمن الملف البنية والكود الحاليين.</li><li>لبدء مشروع Xcode، نزّل الحزمة من «تنزيل مشروع Xcode قابل للبناء» وافتح <bdi dir="ltr">VisualBuilderApp.xcodeproj</bdi>. لا تضف ملف التطبيق إلى مشروع آخر فيه مدخل <bdi dir="ltr">@main</bdi> ثانٍ.</li><li>استبدل بيانات الأمثلة بمنطق التطبيق الحقيقي، ثم راجع التنقل والوصولية والصلاحيات واختبر الناتج على الجهاز المستهدف.</li></ol><p class="guide-note">يعرض كود SwiftUI الناتج بنية أولية قابلة للتطوير، بينما يبقى ملف <bdi dir="ltr">JSON</bdi> مرجعك لاستكمال التحرير في هذا المختبر.</p></article>
+      <article class="guide-card wide" id="guideSwift"><h3>٨. انقل الفكرة إلى التطوير الفعلي</h3><ol><li>لإكمال العمل مع نموذج ذكاء اصطناعي، أرفق ملف <bdi dir="ltr">VisualBuilderAI-Handoff.md</bdi> واذكر بوضوح ما تريد إضافته أو تغييره؛ يتضمن الملف البنية والكود الحاليين.</li><li>لبدء مشروع Xcode، نزّل الحزمة من «تنزيل مسودة مشروع Xcode» وافتح <bdi dir="ltr">VisualBuilderApp.xcodeproj</bdi>. لا تضف ملف التطبيق إلى مشروع آخر فيه مدخل <bdi dir="ltr">@main</bdi> ثانٍ.</li><li>استبدل بيانات الأمثلة بمنطق التطبيق الحقيقي، ثم راجع التنقل والوصولية والصلاحيات واختبر الناتج على الجهاز المستهدف.</li></ol><p class="guide-note">يعرض كود SwiftUI الناتج بنية أولية قابلة للتطوير، بينما يبقى ملف <bdi dir="ltr">JSON</bdi> مرجعك لاستكمال التحرير في هذا المختبر.</p></article>
     </div>
     <details class="guide-faq" id="guideHelp"><summary>أسئلة سريعة وحل المشكلات</summary><div class="guide-faq-content"><ul><li><strong>أين أجد الملفات التي نزّلتها؟</strong> في مجلد التنزيلات أو الموقع الذي اخترته في المتصفح؛ يمكنك البحث عن اسم الملف الظاهر في قسم الحفظ أعلاه.</li><li><strong>اختفت مسودتي بعد فتح الملف في مكان آخر؟</strong> استورد نسخة <bdi dir="ltr">JSON</bdi> التي نزّلتها؛ الحفظ المحلي مرتبط بالمتصفح والسياق الذي فتح منه الملف.</li><li><strong>لم يظهر عنصر في الهاتف؟</strong> تأكد من اختيار الصفحة الصحيحة، وأن الأداة مفعّلة، ثم راجع تبويب «العنصر وموضعه» أو عقدته في الخريطة. بعض عناصر النظام معروضة للتعلّم فقط.</li><li><strong>لم أستطع استيراد ملف؟</strong> استخدم ملف <bdi dir="ltr">JSON</bdi> أو <bdi dir="ltr">Markdown</bdi> الصادر من المختبر نفسه، وراجع رسالة الحالة التي تظهر بعد المحاولة.</li><li><strong>هل المشروع تطبيق مكتمل؟</strong> مشروع Xcode قابل للبناء، ويدعم سجلات وروابط محلية عامة. أمثلة العرض وبقية قواعد المجال والخدمات لا تصبح منطق أعمال تلقائيًا؛ اختبرها وأكملها في Xcode وعلى iPhone.</li></ul></div></details>
     <div class="guide-card wide" id="shareSimulator" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px;background:#eef8ff"><div><h3>رابط المحاكي للمشاركة</h3><p>افتح الرابط أو امسح رمز QR لعرض مساحة البناء والاقتراحات في النسخة المنشورة.</p><a dir="ltr" href="https://binjednan.github.io/IOS-simulator-HTLM/#builderStage" style="overflow-wrap:anywhere">https://binjednan.github.io/IOS-simulator-HTLM/#builderStage</a></div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMMAAADDAQAAAAAXBJgHAAACGUlEQVR4nO2YwY6bQAyGfwPS0NPQJ5hI+x4heaxKaSGi77Vh90WGW4/DbZCAvxrYYyP1sHEu6wtCFrLlsb9/jBD/tiG74wC+PPh0D0VE6uoqUzYWmE64ikilmpslI3BxZnGTAMjJVbk6VwHGAnjDb5SpCeWkfz4Smh4Y6flaPTLOfQ+dHORMqcv38L/ffKKnIWSYgePY+cgKjjfdDEaRks74SNcO0y8sIpliBuBuIadZbes+XkmvyINqERH3M/GAPSjtMGnyoADGFmRG74DlZRBiKOub5imstmOUkPu49SSQ+0Qpr5kBacjWRQkNudrZRd0MGBpGYetwtPSxZkfedGuA3JubbZHi0jBcnPIsSICbzgN9KWGRSGd6ZV2gmwezVHDTCbmfTuMMsNIlUpueF0ThjHgEYLSJBGdWa7x5lQKlsPOjJpHAFQ3TBHikgeDNzvtUZEoZZBDKwV5ldua1yv10Dnn/kDh3jQlBqHdl2mA0p0PR5UHj2ad2FM4u1uGi24lg0uR9DGA7mj7x+Qm6sNrOb3RM1XCx1q0Bch8lADua00VdlcoFJCny8n1++ZNWBcCGYfq26vIAwDHJUx+QWqDzUZQ7kYzHtDOladyEGZoZZB87kzX9eA7AdBrlwEV3b9ztxwFvwFCmakzZE7a2oXBl0mR2AcPj4tzvgzpcXDwmKHDb2pSpjH0W0iXBbfcDVR7I138kPN/zFwZDamELt2hvAAAAAElFTkSuQmCC" alt="رمز QR يفتح محاكي بناء تطبيقات iOS" width="154" height="154" style="border:1px solid #d6e4ec;border-radius:12px;background:white;padding:5px"></div>
@@ -1011,6 +1012,11 @@ body.build-open{overflow:hidden}
 @media(min-width:711px){.build-workspace-body>.build-workspace-dock{width:min(900px,78%)}}
 .build-overlay.lab-dark .board-task-quickbar button{background:#264861!important;color:#e9f5ff!important;border-color:#4c7190!important}
 .build-overlay.lab-dark .board-task-quickbar [data-board-edit]{background:#2872ab!important;color:#fff!important}
+.builder-capability-editor{display:grid;gap:9px;margin-top:12px}.builder-capability-settings{border:1px solid #d5e4ef;border-radius:11px;background:#f8fbff;padding:8px;color:#284a66}.builder-capability-settings>summary{cursor:pointer;font-weight:800;font-size:11px;padding:5px}.builder-capability-settings[open]>summary{margin-bottom:9px}.builder-capability-settings>small{display:block;color:#66839a;line-height:1.55;margin-top:7px}.capability-editor-list,.destination-editor-list{display:grid;gap:7px}.capability-editor-grid,.capability-editor-item{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;align-items:end}.capability-editor-item{background:#fff;border:1px solid #dce8f1;border-radius:9px;padding:7px}.capability-editor-item label,.capability-editor-grid label{display:grid;gap:4px;font-size:9px;font-weight:700;color:#5b7790;min-width:0}.capability-editor-item input:not([type=checkbox]),.capability-editor-item select,.capability-editor-grid input,.capability-editor-grid select{width:100%;min-width:0;border:1px solid #cfdfeb;border-radius:7px;padding:7px;background:#fff;color:#21435d;font:inherit;font-size:11px}.builder-capability-settings button,.destination-editor-list button{border:1px solid #bdd7ea;border-radius:7px;background:#fff;color:#2167ac;padding:6px 9px;cursor:pointer}.destination-editor-list>div{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fff;border:1px solid #dce8f1;border-radius:8px;padding:7px}.destination-editor-list span{display:grid;gap:2px}.destination-editor-list small{color:#688297}.builder-segments-configurable{overflow-x:auto;scrollbar-width:thin}.builder-segments-configurable button{min-width:44px;white-space:nowrap}
+.weekly-timeline{background:#fff;border:1px solid #dce8f1;border-radius:12px;padding:10px;margin:8px 0;color:#254566}.weekly-timeline-heading,.weekly-timeline-legend{display:flex;justify-content:space-between;gap:9px;font-size:9px}.weekly-timeline-heading span{color:#2278bf}.weekly-timeline-scroll{overflow-x:auto;padding:9px 1px}.weekly-timeline-track{position:relative;display:grid;grid-template-columns:repeat(var(--timeline-days),minmax(47px,1fr));min-width:max-content;gap:2px}.weekly-timeline-track:before,.weekly-timeline-actual{content:"";position:absolute;top:39px;right:0;height:4px;border-radius:6px;background:#d6e3ed}.weekly-timeline-track:before{left:0}.weekly-timeline-actual{z-index:1;background:#288cdb;max-width:100%}.weekly-timeline-day{min-width:47px;display:grid;justify-items:center;align-content:start;gap:3px;font-size:9px}.weekly-timeline-day small{color:#617f98}.weekly-timeline-dot{height:9px;width:9px;border:2px solid #2587d6;background:#fff;border-radius:50%;z-index:2;margin-top:3px}.weekly-timeline-day.future .weekly-timeline-dot{border-color:#9baabd}.weekly-timeline-day .event{background:#ec9b25;border-color:#ec9b25}.weekly-timeline-day em{max-width:44px;text-align:center;font-size:8px;font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#946426}.weekly-timeline-legend{color:#668096;flex-wrap:wrap}
+.builder-test-row{position:relative;display:flex;align-items:stretch;flex-wrap:wrap;border-bottom:1px solid #e7edf3;touch-action:pan-y}.builder-test-row>.builder-row{flex:1;min-width:0;border:0}.builder-test-row .row-main small{display:block;color:#7892a7;font-size:8px;margin-top:2px}.builder-test-actions{display:flex;align-items:center;gap:1px;padding-inline-end:4px}.builder-test-actions button{border:0;background:transparent;color:#5680a5;font-size:10px;min-width:21px;min-height:28px;cursor:pointer}.builder-test-actions .row-drag-handle{cursor:grab;touch-action:none}.builder-test-row.dragging{opacity:.55;outline:2px solid #358adb}.builder-test-row.drag-target{box-shadow:inset 0 3px #358adb}.builder-test-row.swiped{background:#eaf5ff;box-shadow:inset 3px 0 #2686d4}.builder-swipe-options{display:none;flex-basis:100%;padding:4px;gap:4px;background:#eaf5ff}.builder-test-row.swiped .builder-swipe-options{display:flex}.builder-swipe-options button{border:0;border-radius:6px;background:#2677cc;color:#fff;padding:5px 8px;font-size:9px}.builder-test-editor{display:grid;gap:8px}.builder-test-editor label{display:grid;gap:3px;font-size:10px}.builder-test-editor input,.builder-test-editor select{border:1px solid #c9d9e7;border-radius:7px;padding:8px;min-width:0}.builder-test-editor-actions{display:flex;gap:6px}.builder-test-editor-actions button{flex:1}.builder-screen.experience-dark .weekly-timeline{background:#243750;border-color:#4c6480;color:#f3f7fd}.builder-screen.experience-dark .builder-test-row.swiped,.builder-screen.experience-dark .builder-swipe-options{background:#294b6b}
+.capability-status-list{display:grid;gap:5px}.capability-status-list>div{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px;background:#fff;border:1px solid #dce8f1;border-radius:8px}.capability-status-list span{display:grid;gap:2px}.capability-status-list small{font-size:9px;color:#678298}.capability-status-list em{font-size:9px;font-style:normal;font-weight:800;color:#1b6b93;background:#e8f5fb;border-radius:99px;padding:4px 7px;white-space:nowrap}
+#projectJsonPreview{max-height:28rem;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;padding:1rem;border:1px solid #b9cfe6;border-radius:12px;background:#10213a;color:#f4f8ff;font-size:.78rem;line-height:1.5;direction:ltr;text-align:left}
 </style>
 <script>
 (function () {
@@ -1055,6 +1061,7 @@ body.build-open{overflow:hidden}
     ] },
     { title: 'محتوى الصفحة', tools: [
       ['segmented', 'تحكم مقسّم', 'يبدّل عرضًا محليًا داخل الصفحة.'],
+      ['weeklytimeline', 'خط زمني أسبوعي', 'يعرض الأيام والأحداث والتقدم الفعلي والنهاية المتوقعة دون تمديد الفعلي إلى المستقبل.'],
       ['textfield', 'حقل نص', 'يستقبل إدخالًا قصيرًا.'],
       ['toggle', 'مفتاح تشغيل', 'يحفظ قيمة تشغيل أو إيقاف.'],
       ['slider', 'شريط قيمة', 'يغيّر قيمة ضمن مدى متصل.'],
@@ -1360,14 +1367,27 @@ body.build-open{overflow:hidden}
     alert: { label: 'عرض تنبيه', help: 'رسالة قصيرة تطلب الانتباه أو القرار.' }
   };
   const defaultValues = () => ({ toggle: true, slider: 0.6, period: 'اليوم', segment: 0, count: 0, text: '', search: '', sampleInput: '', sampleNote: '', sheetCells: ['', '', '', '', '', '', '', '', ''], detail: false, detailTitle: '' });
+  const defaultSegments = () => [{ id: 'all', label: 'الكل', filter: 'all', value: '' }, { id: 'priority', label: 'المهم', filter: 'indices', value: '1,3,5' }];
+  const defaultTimeline = () => ({ startDate: new Date().toISOString().slice(0, 10), days: 7, currentDate: new Date().toISOString().slice(0, 10), actualEndDate: new Date().toISOString().slice(0, 10), expectedEndDate: '', currentStatus: 'جارٍ', events: [] });
+  const defaultSwipeActions = () => [{ direction: 'leading', label: 'تغيير الحالة', action: 'status', fullSwipe: false, showMenu: false }, { direction: 'trailing', label: 'تحرير', action: 'edit', fullSwipe: false, showMenu: true }];
+  const capabilityStatus = [
+    { id: 'segments', label: 'خيارات التحكم المقسّم والتصفية', status: 'تعمل في المتصفح', detail: 'العدد والتسمية والتصفية تحفظ في المشروع.' },
+    { id: 'timeline', label: 'الخط الزمني والأحداث', status: 'تعمل في المتصفح', detail: 'خط المنجز يتوقف عند اليوم الفعلي، والنهاية المتوقعة منفصلة.' },
+    { id: 'routes', label: 'وجهات الصفوف والأزرار والقوائم', status: 'تعمل في المتصفح', detail: 'لكل عنصر وجهة مستقلة في اللوحة والهاتف والخريطة.' },
+    { id: 'localTest', label: 'تحرير بيانات التجربة وحالاتها', status: 'تعمل في المتصفح', detail: 'حفظ محلي في هذا المتصفح فقط؛ ليس منطق التطبيق الإنتاجي.' },
+    { id: 'swipe', label: 'إجراءات السحب وترتيب الصفوف', status: 'تعمل في المتصفح', detail: 'تدعم اللمس والمؤشر حيث تسمح بيئة الويب.' },
+    { id: 'nativeMotion', label: 'حركة iOS وملمس عناصر النظام', status: 'محاكاة بصرية', detail: 'التأثير المرئي تقريبي.' },
+    { id: 'haptics', label: 'اهتزاز iPhone الحقيقي', status: 'تتطلب iOS/Xcode', detail: 'Taptic Engine غير متاح لصفحة الويب.' },
+    { id: 'appleServices', label: 'iCloud وCloudKit وخدمات Apple', status: 'تتطلب iOS/Xcode', detail: 'لا تتصل المعاينة بخدمات Apple الأصلية.' }
+  ];
   function newHeaderId() { return `h${Date.now().toString(36)}${Math.random().toString(36).slice(2, 7)}`; }
   function newDataKey() { return `d${Date.now().toString(36)}${Math.random().toString(36).slice(2, 9)}`; }
   const makeHeaderAction = (label = 'إضافة', icon = 'plus.circle', behavior = 'sheet') => ({
     id: newHeaderId(), label, icon, placement: 'trailing', behavior,
-    menuItems: [{ label: 'إضافة عنصر', behavior: 'count' }, { label: 'عرض التفاصيل', behavior: 'push' }]
+    menuItems: [{ id: newHeaderId(), label: 'إضافة عنصر', behavior: 'count' }, { id: newHeaderId(), label: 'عرض التفاصيل', behavior: 'push' }]
   });
   const makeTab = (label = 'صفحة جديدة', icon = 'square.grid.2x2') => ({
-    label, icon, kind: 'overview', display: 'summary', dataTitle: 'البيانات', dataItems: 'العنصر الأول، العنصر الثاني، العنصر الثالث', recordMode: 'sample', seedExamples: true, recordFields: [], dataKey: newDataKey(), dataSourceKey: '', action: 'push', purpose: 'صفحة جديدة في التطبيق.', layoutMode: 'native', canvasScreens: 1, layoutVersion: 2, layout: {}, boardLayout: {}, tabBarMode: 'normal', hideTabBar: false, templateForm: false, backgroundStyle: 'system', backgroundMotion: true, listStyle: 'inset', cardStyle: 'glass', titleStyle: 'inline', contentUnderHeader: false, featureCard: false, featureTitle: 'بطاقة مميزة', featureSubtitle: 'معلومة رئيسية داخل الصفحة', collapseFeatureOnScroll: false, keyboardStyle: 'numbers', headerActions: [], tools: [], componentOptions: {}, blocks: [], values: defaultValues(), detailPage: null, flowPages: []
+    label, icon, kind: 'overview', display: 'summary', dataTitle: 'البيانات', dataItems: 'العنصر الأول، العنصر الثاني، العنصر الثالث', recordMode: 'sample', seedExamples: true, recordFields: [], dataKey: newDataKey(), dataSourceKey: '', action: 'push', purpose: 'صفحة جديدة في التطبيق.', layoutMode: 'native', canvasScreens: 1, layoutVersion: 2, layout: {}, boardLayout: {}, tabBarMode: 'normal', hideTabBar: false, templateForm: false, backgroundStyle: 'system', backgroundMotion: true, listStyle: 'inset', cardStyle: 'glass', titleStyle: 'inline', contentUnderHeader: false, keyboardStyle: 'numbers', featureCard: false, featureTitle: 'بطاقة مميزة', featureSubtitle: 'معلومة رئيسية داخل الصفحة', collapseFeatureOnScroll: false, headerActions: [], tools: [], componentOptions: {}, blocks: [], rowKeys: ['item-0', 'item-1', 'item-2'], segmentOptions: defaultSegments(), timeline: defaultTimeline(), swipeActions: defaultSwipeActions(), rowState: {}, buttonAction: { label: 'إضافة عنصر', behavior: 'count' }, values: defaultValues(), detailPage: null, flowPages: []
   });
   function makeDetailPage(title = 'صفحة التفاصيل', parent = null) {
     return { ...makeTab(clean(title, 18) || 'صفحة التفاصيل', 'doc.text'), kind: 'list', display: 'list', dataTitle: 'التفاصيل', dataItems: parent?.dataItems || 'العنصر الأول، العنصر الثاني، العنصر الثالث', purpose: 'تفاصيل قابلة للتحرير لهذه الصفحة.', action: 'sheet', detailPage: null };
@@ -1438,7 +1458,7 @@ body.build-open{overflow:hidden}
         collapseFeatureOnScroll: current?.collapseFeatureOnScroll === true,
         keyboardStyle: current?.keyboardStyle === 'system' ? 'system' : 'numbers',
         dataTitle: clean(current?.dataTitle, 40) || fallback.dataTitle,
-        dataItems: clean(current?.dataItems, 180) || fallback.dataItems,
+        dataItems: typeof current?.dataItems === 'string' ? clean(current.dataItems, 2000) : fallback.dataItems,
         seedExamples: current?.seedExamples !== false,
         recordFields: Array.isArray(current?.recordFields) ? current.recordFields.slice(0, 16).filter(field=>field&&typeof field==='object').map(field=>({label:clean(field.label,40),type:['text','number','date','boolean'].includes(field.type)?field.type:'text'})).filter(field=>field.label) : [],
         recordMode: ['local', 'linked', 'count'].includes(current?.recordMode) ? current.recordMode : 'sample',
@@ -1461,7 +1481,7 @@ body.build-open{overflow:hidden}
           icon: iconChoices[action?.icon] ? action.icon : 'plus.circle',
           placement: action?.placement === 'leading' ? 'leading' : 'trailing',
           behavior: ['count', 'push', 'sheet', 'alert', 'menu'].includes(action?.behavior) ? action.behavior : 'sheet',
-          menuItems: Array.isArray(action?.menuItems) ? action.menuItems.slice(0, 12).map(item => ({ label: clean(item?.label, 28) || 'خيار', behavior: ['count', 'push', 'sheet', 'alert'].includes(item?.behavior) ? item.behavior : 'count' })) : []
+          menuItems: Array.isArray(action?.menuItems) ? action.menuItems.slice(0, 12).map(item => ({ id: clean(item?.id, 36) || newHeaderId(), label: clean(item?.label, 28) || 'خيار', behavior: ['count', 'push', 'sheet', 'alert'].includes(item?.behavior) ? item.behavior : 'count' })) : []
         })) : Array.isArray(current?.tools) && current.tools.includes('toolbar') ? [makeHeaderAction('إضافة', 'plus.circle', 'count')] : [],
         tools: Array.isArray(current?.tools) ? [...new Set(current.tools.filter(id => toolInfo[id] && id !== 'tabbar' && id !== 'toolbar'))] : fallback.tools,
         componentOptions: Object.fromEntries(Object.entries(current?.componentOptions && typeof current.componentOptions === 'object' ? current.componentOptions : {}).filter(([id]) => extendedIds.has(id)).map(([id, option]) => [id, {
@@ -1477,6 +1497,12 @@ body.build-open{overflow:hidden}
           value: block.type === 'toggle' ? block.value !== false : block.type === 'button' ? Math.max(0, Number(block.value) || 0) : block.type === 'slider' ? Math.max(0, Math.min(1, Number(block.value) || 0)) : block.type === 'picker' ? ['اليوم', 'الأسبوع', 'الشهر'].includes(block.value) ? block.value : 'اليوم' : clean(block.value, 100),
           afterRow: block.type === 'divider' ? Math.max(0, Math.min(50, Number(block.afterRow) || 0)) : 0
         })) : [],
+        segmentOptions: Array.isArray(current?.segmentOptions) && current.segmentOptions.length ? current.segmentOptions.slice(0, 8).map((option, n) => ({ id: clean(option?.id, 36) || `segment-${n}`, label: clean(option?.label, 24) || `خيار ${n + 1}`, filter: ['all', 'contains', 'indices', 'status'].includes(option?.filter) ? option.filter : 'all', value: clean(option?.value, 100) })) : defaultSegments(),
+        timeline: (() => { const t = current?.timeline || {}; const date = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? value : ''; return { startDate: date(t.startDate) || defaultTimeline().startDate, days: Math.max(2, Math.min(31, Number(t.days) || 7)), currentDate: date(t.currentDate) || defaultTimeline().currentDate, actualEndDate: date(t.actualEndDate) || defaultTimeline().actualEndDate, expectedEndDate: date(t.expectedEndDate), currentStatus: clean(t.currentStatus, 40) || 'جارٍ', events: Array.isArray(t.events) ? t.events.slice(0, 30).map(e => ({ date: date(e?.date), label: clean(e?.label, 40) })).filter(e => e.date && e.label) : [] }; })(),
+        swipeActions: Array.isArray(current?.swipeActions) ? current.swipeActions.slice(0, 4).map(a => ({ direction: a?.direction === 'trailing' ? 'trailing' : 'leading', label: clean(a?.label, 24) || 'إجراء', action: ['status', 'edit', 'delete', 'menu'].includes(a?.action) ? a.action : 'menu', fullSwipe: a?.fullSwipe === true, showMenu: a?.showMenu === true })) : defaultSwipeActions(),
+        rowState: Object.fromEntries(Object.entries(current?.rowState && typeof current.rowState === 'object' ? current.rowState : {}).slice(0, 50).filter(([key, value]) => /^\d{1,2}$/.test(key) && value && typeof value === 'object').map(([key, value]) => [key, { title: clean(value.title, 80), status: clean(value.status, 32) || 'جديد', value: clean(value.value, 120), deleted: value.deleted === true }])),
+        rowKeys: Array.isArray(current?.rowKeys) ? current.rowKeys.slice(0, 50).map((key, n) => /^[a-zA-Z0-9_-]{1,36}$/.test(key) ? key : `item-${n}`) : String(current?.dataItems || fallback.dataItems).split(/[،,\n]/).filter(value => value.trim()).slice(0, 50).map((_, n) => `item-${n}`),
+        buttonAction: { label: clean(current?.buttonAction?.label, 36) || 'إضافة عنصر', behavior: ['count', 'push', 'sheet', 'alert'].includes(current?.buttonAction?.behavior) ? current.buttonAction.behavior : 'count' },
         values: { ...defaultValues(), ...values, sheetCells: Array.isArray(values.sheetCells) ? [...values.sheetCells.slice(0, 9).map(value => clean(value, 24)), ...Array(9).fill('')].slice(0, 9) : defaultValues().sheetCells, detail: false },
         detailPage: current?.detailPage && typeof current.detailPage === 'object' ? sanitizeDetailPage(current.detailPage, current) : null,
         flowLeaf: current?.flowLeaf === true,
@@ -2061,7 +2087,10 @@ body.build-open{overflow:hidden}
     if(field==='label'){
       boardInspector.querySelector('.screen-board-inspector-head h3').textContent=page.label;
       boardCards.querySelector('.screen-board-card.selected .screen-board-card-head strong').textContent=page.label;
+      boardRenderNavigator();
     }
+    renderCode();
+    renderAppMap();
   });
   boardCards.addEventListener('pointerdown', event => {
     if (event.button !== 0 || event.target.closest('button,input,select,textarea')) return;
@@ -2465,10 +2494,15 @@ body.build-open{overflow:hidden}
     }
     return false;
   }
+  function rowSourceKey(page, index) { return `row:${page.rowKeys?.[index] || `item-${index}`}`; }
   function flowSources(page) {
     const sources = [];
-    if (['list', 'cards', 'settings', 'forecast'].includes(page.display)) sampleItems(page).slice(0, 20).forEach((label, index) => sources.push({ key: `row:${index}`, label, presentation: page.action === 'sheet' ? 'sheet' : 'push' }));
-    page.headerActions.forEach(action => { if (['push', 'sheet'].includes(action.behavior)) sources.push({ key: `header:${action.id}`, label: action.label, presentation: action.behavior }); });
+    if (['list', 'cards', 'settings', 'forecast'].includes(page.display)) sampleItems(page).slice(0, 20).forEach((label, index) => sources.push({ key: rowSourceKey(page, index), label, presentation: page.action === 'sheet' ? 'sheet' : 'push' }));
+    page.headerActions.forEach(action => {
+      if (['push', 'sheet'].includes(action.behavior)) sources.push({ key: `header:${action.id}`, label: action.label, presentation: action.behavior });
+      if (action.behavior === 'menu') action.menuItems.forEach(item => { if (['push', 'sheet'].includes(item.behavior)) sources.push({ key: `menu:${item.id}`, label: item.label, presentation: item.behavior }); });
+    });
+    if (page.tools.includes('button') && ['push', 'sheet'].includes(page.buttonAction?.behavior)) sources.push({ key: 'tool:button', label: page.buttonAction.label, presentation: page.buttonAction.behavior });
     if (page.tools.includes('sheet')) sources.push({ key: 'tool:sheet', label: 'ورقة الأداة', presentation: 'sheet' });
     page.blocks.forEach(block => { if (block.type === 'button' && ['push', 'sheet'].includes(block.action)) sources.push({ key: `block:${block.id}`, label: block.label, presentation: block.action }); });
     if (!page.flowLeaf && !['list', 'cards', 'settings', 'forecast'].includes(page.display) && ['push', 'sheet'].includes(page.action)) sources.push({ key: 'primary', label: page.action === 'sheet' ? 'ورقة' : 'التفاصيل', presentation: page.action });
@@ -2477,8 +2511,8 @@ body.build-open{overflow:hidden}
   function newFlowId() { return `r${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`; }
   function makeFlowDestination(source) {
     const page = makeTab(source.label, source.presentation === 'sheet' ? 'square.and.pencil' : 'doc.text');
-    page.display = 'summary'; page.kind = 'overview'; page.dataTitle = 'المحتوى'; page.dataItems = 'محتوى جديد';
-    page.purpose = source.presentation === 'sheet' ? 'صمّم المهمة التي تظهر في هذه الورقة.' : 'صمّم محتوى هذه الشاشة.';
+    page.display = 'summary'; page.kind = 'overview'; page.dataTitle = source.label; page.dataItems = '';
+    page.purpose = source.presentation === 'sheet' ? `ورقة «${source.label}» قابلة للتحرير.` : `صفحة «${source.label}» قابلة للتحرير.`;
     page.headerActions = []; page.tools = []; page.action = 'push'; page.detailPage = null; page.flowLeaf = true;
     return page;
   }
@@ -2529,7 +2563,40 @@ body.build-open{overflow:hidden}
     }
     else inspector.textContent = 'اختر أداة لتعرف وظيفتها.';
   }
+  function renderSegmentControl(page) {
+    const options = page.segmentOptions?.length ? page.segmentOptions : defaultSegments();
+    return `<div class="builder-segments builder-segments-configurable" data-tool-inspect="segmented" role="group" aria-label="خيارات العرض">${options.map((option, index) => `<button type="button" class="${Number(page.values.segment) === index ? 'active' : ''}" data-ui="segment" data-value="${index}" aria-pressed="${Number(page.values.segment) === index}">${escapeHtml(option.label)}</button>`).join('')}</div>`;
+  }
+  function renderWeeklyTimeline(page) {
+    const t = page.timeline || defaultTimeline();
+    const start = new Date(`${t.startDate}T12:00:00Z`);
+    if (!Number.isFinite(start.getTime())) return '';
+    const today = new Date().toISOString().slice(0, 10);
+    const actual = [t.actualEndDate || t.currentDate, t.currentDate, today].sort()[0];
+    const elapsed = Math.max(0, Math.min(t.days, (new Date(`${actual}T12:00:00Z`) - start) / 86400000 + 1));
+    const progress = Math.max(0, Math.min(100, elapsed / t.days * 100));
+    const days = Array.from({ length: t.days }, (_, index) => {
+      const date = new Date(start.getTime() + index * 86400000).toISOString().slice(0, 10);
+      const events = (t.events || []).filter(item => item.date === date);
+      return `<div class="weekly-timeline-day ${date > today ? 'future' : ''}" title="${escapeHtml(date)}"><b>${new Intl.DateTimeFormat('ar', { weekday: 'short', timeZone: 'UTC' }).format(new Date(`${date}T12:00:00Z`))}</b><small>${date.slice(8)}</small><span class="weekly-timeline-dot ${events.length ? 'event' : ''}"></span>${events.map(item => `<em title="${escapeHtml(item.label)}">${escapeHtml(item.label)}</em>`).join('')}</div>`;
+    }).join('');
+    return `<section class="weekly-timeline" data-tool-inspect="weeklytimeline" aria-label="خط زمني أسبوعي"><div class="weekly-timeline-heading"><strong>الخط الزمني</strong><span>${escapeHtml(t.currentStatus)}</span></div><div class="weekly-timeline-scroll"><div class="weekly-timeline-track" style="--timeline-days:${t.days}"><div class="weekly-timeline-actual" style="width:${progress}%"></div>${days}</div></div><div class="weekly-timeline-legend"><span>● المنجز فعليًا حتى ${escapeHtml(actual)}</span><span>◇ النهاية المتوقعة: ${escapeHtml(t.expectedEndDate || 'غير محددة')}</span></div></section>`;
+  }
+  function renderCapabilityEditor(page) {
+    const segmentEditor = page.tools.includes('segmented') ? `<details class="builder-capability-settings" data-capability="segments"><summary>خيارات التحكم المقسّم · ${page.segmentOptions.length}</summary><div class="capability-editor-list">${page.segmentOptions.map((option, index) => `<div class="capability-editor-item" data-segment-index="${index}"><label>التسمية<input data-segment-field="label" maxlength="24" value="${escapeHtml(option.label)}"></label><label>السلوك<select data-segment-field="filter"><option value="all" ${option.filter === 'all' ? 'selected' : ''}>جميع العناصر</option><option value="contains" ${option.filter === 'contains' ? 'selected' : ''}>يحتوي النص</option><option value="indices" ${option.filter === 'indices' ? 'selected' : ''}>أرقام العناصر</option><option value="status" ${option.filter === 'status' ? 'selected' : ''}>الحالة</option></select></label><label>القيمة<input data-segment-field="value" maxlength="100" value="${escapeHtml(option.value)}" placeholder="مثال: 1,3,5 أو جارٍ"></label><button type="button" data-segment-remove="${index}" ${page.segmentOptions.length === 1 ? 'disabled' : ''}>حذف</button></div>`).join('')}</div><button type="button" data-segment-add ${page.segmentOptions.length >= 8 ? 'disabled' : ''}>＋ خيار</button><small>الخيارات والسلوك تحفظ في JSON وتظهر كما هي في الهاتف والكود.</small></details>` : '';
+    const t = page.timeline;
+    const timelineEditor = page.tools.includes('weeklytimeline') ? `<details class="builder-capability-settings" data-capability="timeline"><summary>ضبط الخط الزمني الأسبوعي</summary><div class="capability-editor-grid"><label>بداية النافذة<input type="date" data-timeline-field="startDate" value="${escapeHtml(t.startDate)}"></label><label>عدد الأيام<input type="number" min="2" max="31" data-timeline-field="days" value="${t.days}"></label><label>التاريخ الجاري<input type="date" data-timeline-field="currentDate" value="${escapeHtml(t.currentDate)}"></label><label>نهاية العمل الفعلي<input type="date" data-timeline-field="actualEndDate" value="${escapeHtml(t.actualEndDate)}"></label><label>النهاية المتوقعة<input type="date" data-timeline-field="expectedEndDate" value="${escapeHtml(t.expectedEndDate)}"></label><label>الحالة الجارية<input data-timeline-field="currentStatus" maxlength="40" value="${escapeHtml(t.currentStatus)}"></label></div><strong>علامات الأحداث</strong>${t.events.map((event, index) => `<div class="capability-editor-item" data-timeline-event="${index}"><input type="date" data-timeline-event-field="date" value="${escapeHtml(event.date)}" aria-label="تاريخ الحدث"><input data-timeline-event-field="label" maxlength="40" value="${escapeHtml(event.label)}" aria-label="اسم الحدث"><button type="button" data-timeline-remove="${index}">حذف</button></div>`).join('')}<button type="button" data-timeline-add ${t.events.length >= 30 ? 'disabled' : ''}>＋ علامة حدث</button><small>ينتهي الخط الفعلي عند أقرب تاريخ من نهاية العمل، التاريخ الجاري، واليوم الحقيقي. النهاية المتوقعة علامة منفصلة.</small></details>` : '';
+    const swipeEditor = ['list', 'settings', 'cards'].includes(page.display) ? `<details class="builder-capability-settings" data-capability="swipe"><summary>إجراءات السحب والسحب والإفلات</summary><div class="capability-editor-list">${page.swipeActions.map((action, index) => `<div class="capability-editor-item" data-swipe-index="${index}"><label>الاتجاه<select data-swipe-field="direction"><option value="leading" ${action.direction === 'leading' ? 'selected' : ''}>نحو البداية</option><option value="trailing" ${action.direction === 'trailing' ? 'selected' : ''}>نحو النهاية</option></select></label><label>الاسم<input data-swipe-field="label" maxlength="24" value="${escapeHtml(action.label)}"></label><label>الفعل<select data-swipe-field="action">${[['status','تغيير الحالة'],['edit','تحرير'],['delete','إزالة من بيانات التجربة'],['menu','قائمة خيارات']].map(([id, label]) => `<option value="${id}" ${action.action === id ? 'selected' : ''}>${label}</option>`).join('')}</select></label><label><input type="checkbox" data-swipe-field="fullSwipe" ${action.fullSwipe ? 'checked' : ''}> تنفيذ بالسحب الكامل</label><label><input type="checkbox" data-swipe-field="showMenu" ${action.showMenu ? 'checked' : ''}> قائمة خيارات بعد السحب</label><button type="button" data-swipe-remove="${index}">حذف</button></div>`).join('')}</div><button type="button" data-swipe-add ${page.swipeActions.length >= 4 ? 'disabled' : ''}>＋ إجراء سحب</button><small>الحركة والمؤثر المرئي يعملان في المتصفح؛ اهتزاز Taptic Engine الحقيقي يتطلب iPhone وXcode.</small></details>` : '';
+    const buttonEditor = page.tools.includes('button') ? `<details class="builder-capability-settings" data-capability="button"><summary>سلوك زر الصفحة</summary><div class="capability-editor-grid"><label>تسمية الزر<input data-button-field="label" maxlength="36" value="${escapeHtml(page.buttonAction.label)}"></label><label>عند الضغط<select data-button-field="behavior">${[['count','زيادة العداد'],['push','فتح صفحة مستقلة'],['sheet','فتح ورقة مستقلة'],['alert','تنبيه']].map(([id,label])=>`<option value="${id}" ${page.buttonAction.behavior===id?'selected':''}>${label}</option>`).join('')}</select></label></div></details>` : '';
+    const tab = currentTab(), parentId = activeFlowRoute()?.id || '';
+    reconcileFlowPages(tab);
+    const destinations = tab.flowPages.filter(route => route.parentId === parentId);
+    const destinationEditor = destinations.length ? `<details class="builder-capability-settings" data-capability="destinations"><summary>وجهات عناصر هذه الصفحة · ${destinations.length}</summary><div class="destination-editor-list">${destinations.map(route => `<div><span><b>${escapeHtml(route.sourceLabel)}</b><small>${escapeHtml(route.page.label)} · ${route.presentation === 'sheet' ? 'ورقة' : 'صفحة'}</small></span><button type="button" data-destination-edit="${escapeHtml(route.id)}">تحرير الوجهة ←</button></div>`).join('')}</div></details>` : '';
+    const statusEditor = `<details class="builder-capability-settings capability-status"><summary>حالة القدرات وحدود المحاكي</summary><div class="capability-status-list">${capabilityStatus.map(item => `<div><span><b>${escapeHtml(item.label)}</b><small>${escapeHtml(item.detail)}</small></span><em>${escapeHtml(item.status)}</em></div>`).join('')}</div></details>`;
+    return `<div class="builder-capability-editor">${segmentEditor}${timelineEditor}${buttonEditor}${swipeEditor}${destinationEditor}${statusEditor}</div>`;
+  }
   function renderNavigationEditor() {
+    const openCapabilities = new Set([...navigationEditor.querySelectorAll('[data-capability][open]')].map(node => node.dataset.capability));
     const tab = currentTab();
     const detail = Boolean(flowPath.length || tab.values.detail);
     const page = activePage();
@@ -2551,9 +2618,9 @@ body.build-open{overflow:hidden}
         <label>ترتيب الصفحة<select data-nav-field="layoutMode"><option value="free" ${page.layoutMode === 'free' ? 'selected' : ''}>حر بالسحب</option><option value="native" ${page.layoutMode === 'native' ? 'selected' : ''}>نظامي</option></select></label>
         <label>طول صفحة التحريك<input data-nav-field="canvasScreens" type="number" min="1" max="20" value="${page.canvasScreens}" title="عدد ارتفاعات الشاشة القابلة للتمرير"></label>
         <label>عنوان البيانات<input data-nav-field="dataTitle" maxlength="40" value="${escapeHtml(page.dataTitle)}"></label>
-        <label>أمثلة بيانات<input data-nav-field="dataItems" maxlength="180" value="${escapeHtml(page.dataItems)}" title="افصل الأسماء بفاصلة عربية"></label>
-        ${page.tools.includes('segmented') ? '<p class="wide builder-field-note">«المهم» تصفية توضيحية للعناصر ١ و٣ و٥ من أمثلة البيانات. لتحديد الأولوية فعليًا، أضفها إلى نموذج بيانات التطبيق عند التطوير.</p>' : ''}
+        <label>أمثلة بيانات<input data-nav-field="dataItems" maxlength="2000" value="${escapeHtml(page.dataItems)}" title="افصل الأسماء بفاصلة عربية"></label>
       </div>
+      ${renderCapabilityEditor(page)}
       <details class="visual-settings" ${visualSettingsOpen ? 'open' : ''}><summary>المشهد والتمرير وأسلوب العرض</summary><div class="nav-fields">
         <label>خلفية الصفحة<select data-visual-field="backgroundStyle"><option value="system" ${page.backgroundStyle === 'system' ? 'selected' : ''}>لون النظام</option><option value="night" ${page.backgroundStyle === 'night' ? 'selected' : ''}>سماء ليلية</option><option value="aurora" ${page.backgroundStyle === 'aurora' ? 'selected' : ''}>شفق متحرك</option><option value="sunset" ${page.backgroundStyle === 'sunset' ? 'selected' : ''}>غروب متدرج</option></select></label>
         <label>عرض الصفوف<select data-visual-field="listStyle"><option value="inset" ${page.listStyle === 'inset' ? 'selected' : ''}>قائمة داخلية</option><option value="plain" ${page.listStyle === 'plain' ? 'selected' : ''}>صفوف بسيطة</option><option value="grouped" ${page.listStyle === 'grouped' ? 'selected' : ''}>مجموعات</option><option value="tiles" ${page.listStyle === 'tiles' ? 'selected' : ''}>بلاطات ملونة</option><option value="carousel" ${page.listStyle === 'carousel' ? 'selected' : ''}>شريط أفقي</option></select></label>
@@ -2571,6 +2638,7 @@ body.build-open{overflow:hidden}
       <div class="page-suggestion"><strong>مقترح لصفحة «${pageKinds[page.kind].label}»</strong><p>${suggestion.text}</p><button type="button" data-nav-command="apply-suggestion">تطبيق العرض والتنقل والأدوات المقترحة</button></div>
       <div class="display-suggestions"><strong>مقترحات عرض البيانات</strong><div>${suggestion.alternatives.map(id => `<button type="button" data-display-kind="${id}" aria-pressed="${page.display === id}">${displayKinds[id].label}</button>`).join('')}</div><small>${displayKinds[page.display].help}</small></div>
       <p class="nav-explain">${pageKinds[page.kind].help} ${navigationKinds[page.action].help}</p>`;
+    navigationEditor.querySelectorAll('[data-capability]').forEach(node => { node.open = openCapabilities.has(node.dataset.capability); });
   }
   function renderHeaderActionsEditor() {
     const actions = activePage().headerActions;
@@ -2600,7 +2668,7 @@ body.build-open{overflow:hidden}
     if (command === 'remove' && index >= 0) actions.splice(index, 1);
     if (command === 'up' && index > 0) [actions[index - 1], actions[index]] = [actions[index], actions[index - 1]];
     if (command === 'down' && index >= 0 && index < actions.length - 1) [actions[index + 1], actions[index]] = [actions[index], actions[index + 1]];
-    if (command === 'add-option' && index >= 0 && actions[index].menuItems.length < 12) actions[index].menuItems.push({ label: 'خيار جديد', behavior: 'count' });
+    if (command === 'add-option' && index >= 0 && actions[index].menuItems.length < 12) actions[index].menuItems.push({ id: newHeaderId(), label: 'خيار جديد', behavior: 'count' });
     if (command === 'remove-option' && index >= 0) actions[index].menuItems.splice(Number(event.target.closest('[data-menu-index]')?.dataset.menuIndex), 1);
     state.reviewed.interaction = true;
     state.reviewed.options = true;
@@ -2686,12 +2754,22 @@ body.build-open{overflow:hidden}
       return ['اختر مصدر السجلات'];
     }
     const items = String(tab.dataItems || '').split(/[،,\n]/).map(value => value.trim()).filter(Boolean).slice(0, 50);
-    return items.length ? items : ['العنصر الأول', 'العنصر الثاني', 'العنصر الثالث'];
+    return items.map((item, index) => tab.rowState?.[index]?.title || item);
   }
-  function visibleItems(tab) {
+  function visibleRows(tab) {
     const query = tab.tools.includes('searchfield') ? String(tab.values.search || '').trim().toLocaleLowerCase() : '';
-    return sampleItems(tab).filter((item, index) => (!tab.tools.includes('segmented') || Number(tab.values.segment) !== 1 || index % 2 === 0) && (!query || item.toLocaleLowerCase().includes(query)));
+    const option = tab.tools.includes('segmented') ? (tab.segmentOptions || defaultSegments())[Math.max(0, Number(tab.values.segment) || 0)] : null;
+    return sampleItems(tab).map((item, index) => ({ item, index })).filter(({ item, index }) => {
+      if (tab.rowState?.[index]?.deleted) return false;
+      if (query && !item.toLocaleLowerCase().includes(query)) return false;
+      if (!option || option.filter === 'all') return true;
+      if (option.filter === 'contains') return item.toLocaleLowerCase().includes(option.value.toLocaleLowerCase());
+      if (option.filter === 'status') return (tab.rowState?.[index]?.status || 'جديد').toLocaleLowerCase() === option.value.toLocaleLowerCase();
+      if (option.filter === 'indices') return option.value.split(/[،,\s]+/).map(Number).includes(index + 1);
+      return true;
+    });
   }
+  function visibleItems(tab) { return visibleRows(tab).map(row => row.item); }
   function listDividerHtml(tab, afterRow) {
     return tab.blocks.filter(block => block.type === 'divider' && Math.min(sampleItems(tab).length, block.afterRow || 0) === afterRow)
       .map(block => `<div class="builder-row custom-divider" data-block-inspect="${escapeHtml(block.id)}" aria-label="فاصل"><hr></div>`).join('');
@@ -2703,17 +2781,17 @@ body.build-open{overflow:hidden}
     if (!items.length && tab.display !== 'spreadsheet') return `<div class="builder-section-label">${title}</div><div class="builder-empty">لا توجد نتائج مطابقة في بيانات المثال.</div>`;
     if (tab.display === 'form' && tab.templateForm) return `<div class="builder-section-label">${title}</div><div class="builder-empty">املأ الحقول المحددة في هذه الشاشة. اربط الحفظ والتحقق بمصدر بيانات حقيقي عند تنفيذ التطبيق.</div>`;
     if (tab.display === 'list') {
-      const rows = items.slice(0, 10).map((item, i) => `${i === 0 ? listDividerHtml(tab, 0) : ''}<button class="builder-row selectable list-item tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span class="row-icon">${['▤', '◉', '◫', '✦', '▦'][i % 5]}</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>${listDividerHtml(tab, sampleItems(tab).indexOf(item) + 1)}`).join('');
+      const rows = visibleRows(tab).slice(0, 20).map(({ item, index }, i) => `${i === 0 ? listDividerHtml(tab, 0) : ''}<div class="builder-test-row" data-test-row="${index}" draggable="true"><button class="builder-row selectable list-item tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="${rowSourceKey(tab, index)}"><span class="row-icon">${['▤', '◉', '◫', '✦', '▦'][i % 5]}</span><span class="row-main">${escapeHtml(item)}<small>${escapeHtml(tab.rowState?.[index]?.status || 'جديد')}${tab.rowState?.[index]?.value ? ` · ${escapeHtml(tab.rowState[index].value)}` : ''}</small></span><span class="row-hint">‹</span></button><div class="builder-test-actions"><button type="button" data-ui="record-status" data-row-index="${index}" aria-label="تغيير حالة ${escapeHtml(item)}">✓</button><button type="button" data-ui="record-edit" data-row-index="${index}" aria-label="تحرير ${escapeHtml(item)}">✎</button><button type="button" class="row-drag-handle" data-ui="row-drag" data-row-index="${index}" aria-label="سحب ${escapeHtml(item)} لترتيبه">⋮⋮</button></div><div class="builder-swipe-options">${tab.swipeActions.map((action, actionIndex) => `<button type="button" data-ui="swipe-action" data-row-index="${index}" data-swipe-index="${actionIndex}">${escapeHtml(action.label)}</button>`).join('')}</div></div>${listDividerHtml(tab, index + 1)}`).join('');
       return `<div class="builder-section-label">${title}</div><div class="builder-list-view style-${tab.listStyle}">${tab.listStyle === 'grouped' ? `<small>المجموعة الأولى</small><div class="builder-list-group">${rows}</div>` : rows}</div>`;
     }
-    if (tab.display === 'cards') return `<div class="builder-section-label">${title}</div><div class="builder-card-grid card-style-${tab.cardStyle}">${items.slice(0, 8).map((item, i) => `<button class="builder-data-card tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span>◫</span><strong>${escapeHtml(item)}</strong><small>عرض التفاصيل ←</small></button>`).join('')}</div>`;
+    if (tab.display === 'cards') return `<div class="builder-section-label">${title}</div><div class="builder-card-grid card-style-${tab.cardStyle}">${visibleRows(tab).slice(0, 8).map(({item,index}, i) => `<button class="builder-data-card tone-${i % 5}" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="${rowSourceKey(tab, index)}"><span>◫</span><strong>${escapeHtml(item)}</strong><small>عرض التفاصيل ←</small></button>`).join('')}</div>`;
     if (tab.display === 'metrics') return `<div class="builder-section-label">${title}</div><div class="builder-metric-grid">${items.slice(0, 2).map((item, i) => `<div><strong>${i ? '٨' : '١٢'}</strong><small>${escapeHtml(item)}</small></div>`).join('')}</div>`;
     if (tab.display === 'chart') return `<div class="builder-section-label">${title}</div><div class="builder-chart" aria-label="مخطط أعمدة لبيانات تجريبية"><div class="builder-bars">${items.slice(0, 4).map((item, i) => `<div><i style="height:${Math.round([12, 20, 16, 28][i] / 28 * 100)}%"></i><small>${escapeHtml(item)}</small></div>`).join('')}</div><p>القيم تجريبية لتوضيح أسلوب العرض.</p></div>`;
     if (tab.display === 'table') return `<div class="builder-section-label">${title}</div><div class="builder-mini-table"><div class="table-head"><b>الاسم</b><b>الحالة</b><b>القيمة</b></div>${items.slice(0, 4).map((item, i) => `<div><span>${escapeHtml(item)}</span><span>${i % 2 ? 'قيد العمل' : 'نشط'}</span><span>${formatNumber((i + 1) * 5)}</span></div>`).join('')}</div>`;
-    if (tab.display === 'forecast') return `<div class="builder-section-label">${title}</div><div class="builder-forecast">${items.slice(0, 8).map((item, i) => `<button class="forecast-row" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><b>${escapeHtml(item)}</b><span>${i ? '☀︎' : '☾'}</span><i style="--range-start:${15 + i * 3}%;--range-width:${45 + (i % 3) * 8}%"></i><em>${28 + i}°</em></button>`).join('')}</div>`;
+    if (tab.display === 'forecast') return `<div class="builder-section-label">${title}</div><div class="builder-forecast">${visibleRows(tab).slice(0, 8).map(({item,index}, i) => `<button class="forecast-row" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="${rowSourceKey(tab, index)}"><b>${escapeHtml(item)}</b><span>${i ? '☀︎' : '☾'}</span><i style="--range-start:${15 + i * 3}%;--range-width:${45 + (i % 3) * 8}%"></i><em>${28 + i}°</em></button>`).join('')}</div>`;
     if (tab.display === 'weather') return `<div class="builder-section-label">${title}</div><div class="weather-dashboard"><div class="weather-hours">${['الآن','٩ م','١٠ م','١١ م'].map((hour, i) => `<div><b>${hour}</b><span>☾</span><strong>${33 - i}°</strong></div>`).join('')}</div><button class="weather-map" data-ui="navigate" data-detail-title="خريطة الطقس"><span>خريطة رياح توضيحية</span><i class="map-current">●</i><b>أبو ظبي</b><small>نموذج بصري، ليس بيانات طقس حية</small></button><div class="weather-tile-grid">${[['الرياح','13','كم/س','◌'],['المتوسطات','+3°','اليوم','⌁'],['الشروق','6:13','ص','☼'],['القمر','◐','الطور الحالي','☾'],['الرطوبة','65%','درجة التكثف','◍'],['الضغط','1,009','هكتوباسكال','◉']].map(([name,value,unit,icon]) => `<button class="weather-tile" data-ui="navigate" data-detail-title="${name}"><small>${icon} ${name}</small><strong>${value}</strong><span>${unit}</span></button>`).join('')}</div></div>`;
     if (tab.display === 'spreadsheet') return `<div class="builder-section-label">${title}</div><div class="builder-sheet-grid"><div class="sheet-corner"></div>${['A', 'B', 'C'].map(letter => `<div class="sheet-heading">${letter}</div>`).join('')}${Array.from({ length: 3 }, (_, row) => `<div class="sheet-heading">${row + 1}</div>${Array.from({ length: 3 }, (_, col) => { const n = row * 3 + col; return `<input class="${activeNumberCell === n ? 'active-cell' : ''}" data-ui="number-cell" data-cell-index="${n}" inputmode="${tab.keyboardStyle === 'numbers' ? 'none' : 'decimal'}" ${tab.keyboardStyle === 'numbers' ? 'readonly' : ''} aria-label="خلية ${['A', 'B', 'C'][col]}${row + 1}" value="${escapeHtml(tab.values.sheetCells?.[n] || '')}">`; }).join('')}`).join('')}</div>`;
-    if (tab.display === 'settings') return `<div class="builder-section-label">${title}</div><div class="builder-section">${items.slice(0, 3).map(item => `<button class="builder-row selectable" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="row:${sampleItems(tab).indexOf(item)}"><span class="row-icon">⚙</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div>`;
+    if (tab.display === 'settings') return `<div class="builder-section-label">${title}</div><div class="builder-section">${visibleRows(tab).slice(0, 3).map(({item,index}) => `<button class="builder-row selectable" data-ui="navigate" data-detail-title="${escapeHtml(item)}" data-flow-key="${rowSourceKey(tab, index)}"><span class="row-icon">⚙</span><span class="row-main">${escapeHtml(item)}</span><span class="row-hint">‹</span></button>`).join('')}</div>`;
     if (tab.display === 'form') return `<div class="builder-section-label">${title}</div><div class="builder-section"><div class="builder-row"><span>${label(0, 'الاسم')}</span><input class="builder-input" data-ui="sample-input" data-sample-index="0" value="${escapeHtml(tab.values.sampleInput || '')}" placeholder="اكتب هنا"></div><div class="builder-row"><span>${label(1, 'الملاحظات')}</span><input class="builder-input" data-ui="sample-input" data-sample-index="1" value="${escapeHtml(tab.values.sampleNote || '')}" placeholder="اكتب هنا"></div></div>`;
     return `<div class="builder-section-label">${title}</div><div class="builder-section"><div class="builder-row"><span class="row-icon">◫</span><span class="row-main">${label(0, 'ملخص القسم')}</span><span class="row-hint">${escapeHtml(tab.label)}</span></div><button class="builder-row selectable" data-ui="navigate" data-detail-title="${label(0, 'ملخص القسم')}"><span class="row-icon">↗</span><span class="row-main">استكشف المزيد</span><span class="row-hint">‹</span></button></div>`;
   }
@@ -2759,8 +2837,9 @@ body.build-open{overflow:hidden}
     if (enabled.has('toggle')) rows.push(`<button class="builder-row selectable" data-ui="toggle" data-tool-inspect="toggle" aria-pressed="${!!tab.values.toggle}"><span>التنبيهات</span><span class="builder-toggle ${tab.values.toggle ? 'on' : ''}"></span></button>`);
     if (enabled.has('slider')) rows.push(`<div class="builder-row" data-tool-inspect="slider"><span>المستوى</span><input class="builder-range" type="range" min="0" max="100" value="${Math.round(tab.values.slider * 100)}" data-ui="slider" aria-label="المستوى"><span class="row-hint" id="builderSliderValue">${Math.round(tab.values.slider * 100)}٪</span></div>`);
     if (enabled.has('picker')) rows.push(`<div class="builder-row" data-tool-inspect="picker"><span>الفترة</span><select class="builder-select" data-ui="picker" aria-label="الفترة">${['اليوم', 'الأسبوع', 'الشهر'].map(value => `<option ${tab.values.period === value ? 'selected' : ''}>${value}</option>`).join('')}</select></div>`);
-    if (enabled.has('button')) rows.push(`<button class="builder-row selectable" data-ui="add" data-tool-inspect="button"><span>إضافة عنصر</span><span class="row-hint">العدد: ${formatNumber(tab.values.count)} ＋</span></button>`);
+    if (enabled.has('button')) rows.push(`<button class="builder-row selectable" data-ui="tool-button" data-tool-inspect="button" data-flow-key="tool:button"><span>${escapeHtml(tab.buttonAction?.label || 'إضافة عنصر')}</span><span class="row-hint">${tab.buttonAction?.behavior === 'count' ? `العدد: ${formatNumber(tab.values.count)}` : '‹'} ＋</span></button>`);
     if (enabled.has('progress')) rows.push(`<div class="builder-row" data-tool-inspect="progress"><span>تقدّم مهمة</span><span class="builder-progress"><i></i></span><span class="row-hint">٦٠٪</span></div>`);
+    if (enabled.has('weeklytimeline')) rows.push(renderWeeklyTimeline(tab));
     if (enabled.has('sheet')) rows.push(`<button class="builder-row selectable" data-ui="tool-sheet" data-tool-inspect="sheet"><span>فتح ورقة</span><span class="row-hint">‹</span></button>`);
     if (enabled.has('alert')) rows.push(`<button class="builder-row selectable" data-ui="tool-alert" data-tool-inspect="alert"><span>عرض تنبيه</span><span class="row-hint">‹</span></button>`);
     if (enabled.has('contextmenu')) rows.push(`<button class="builder-row selectable" data-ui="context" data-tool-inspect="contextmenu"><span>${tab.values.contextSelected ? 'تم تحديد العنصر' : 'خيارات العنصر'}</span><span class="row-hint">⋯</span></button>`);
@@ -2807,7 +2886,8 @@ body.build-open{overflow:hidden}
       { id: 'data', label: `عرض ${tab.dataTitle}`, html: previewPageKind(tab) }
     ];
     if (enabled.has('searchfield')) specs.push({ id: 'search', label: 'حقل البحث', html: `<input class="builder-search" type="search" data-ui="search" value="${escapeHtml(tab.values.search)}" placeholder="⌕ ابحث داخل هذا القسم" aria-label="بحث داخل ${escapeHtml(tab.label)}">` });
-    if (enabled.has('segmented')) specs.push({ id: 'segmented', label: 'تحكم مقسّم', html: `<div class="builder-segments" data-tool-inspect="segmented"><button class="${tab.values.segment === 0 ? 'active' : ''}" data-ui="segment" data-value="0">الكل</button><button class="${tab.values.segment === 1 ? 'active' : ''}" data-ui="segment" data-value="1">المهم</button></div>` });
+    if (enabled.has('segmented')) specs.push({ id: 'segmented', label: 'تحكم مقسّم', html: renderSegmentControl(tab) });
+    if (enabled.has('weeklytimeline')) specs.push({ id: 'weeklytimeline', label: 'خط زمني أسبوعي', html: renderWeeklyTimeline(tab) });
     const toolContainer = document.createElement('div');
     toolContainer.innerHTML = previewTools(tab);
     toolContainer.querySelectorAll('.builder-section > .builder-row').forEach(row => {
@@ -2896,6 +2976,15 @@ body.build-open{overflow:hidden}
   }
   function previewOverlay(tab) {
     if (!overlay) return '';
+    if (overlay.startsWith('test-edit:')) {
+      const index = Number(overlay.slice(10)), item = sampleItems(tab)[index] || '';
+      const data = tab.rowState?.[index] || {};
+      return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-sheet builder-test-editor"><h4>تحرير بيانات التجربة</h4><p>هذه قيم محلية للتجربة داخل المتصفح فقط.</p><label>العنوان<input data-test-field="title" value="${escapeHtml(data.title || item)}"></label><label>الحالة<select data-test-field="status">${['جديد','جارٍ','مكتمل','مؤجل'].map(value => `<option ${(data.status || 'جديد') === value ? 'selected' : ''}>${value}</option>`).join('')}</select></label><label>القيمة<input data-test-field="value" value="${escapeHtml(data.value || '')}"></label><div class="builder-test-editor-actions"><button type="button" data-ui="test-save" data-row-index="${index}">حفظ النتيجة</button><button type="button" data-ui="dismiss">إلغاء</button></div></div>`;
+    }
+    if (overlay.startsWith('swipe-menu:')) {
+      const index = Number(overlay.slice(11));
+      return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-menu"><strong>${escapeHtml(sampleItems(tab)[index] || '')}</strong><button type="button" data-ui="record-edit" data-row-index="${index}">تحرير</button><button type="button" data-ui="record-status" data-row-index="${index}">تغيير الحالة</button><button type="button" data-ui="record-delete" data-row-index="${index}">إزالة من بيانات التجربة</button><button type="button" data-ui="dismiss">إغلاق</button></div>`;
+    }
     if (overlay.startsWith('extended:')) {
       const id = overlay.slice(9);
       const option = componentOption(tab, id);
@@ -2907,13 +2996,13 @@ body.build-open{overflow:hidden}
       let actions = [];
       if (overlay.startsWith('header-menu:')) {
         const action = tab.headerActions.find(item => item.id === overlay.slice(12));
-        actions = (action?.menuItems || []).map((item, index) => ({ id: action.id, index, label: item.label, icon: 'list.bullet', ui: 'header-menu-item' }));
+        actions = (action?.menuItems || []).map((item, index) => ({ id: action.id, index, sourceId: item.id, label: item.label, icon: 'list.bullet', ui: 'header-menu-item' }));
       } else {
         const side = overlay.slice(16);
         const sideActions = tab.headerActions.filter(item => item.placement === side);
         actions = sideActions.slice(headerVisibleCount(sideActions)).map(item => ({ id: item.id, label: item.label, icon: item.icon, ui: 'header-action' }));
       }
-      return `<div class="builder-scrim header-menu-scrim" data-ui="dismiss"></div><div class="builder-header-popup ${overlay.endsWith('leading') ? 'leading' : ''}">${actions.map(item => `<button type="button" data-ui="${item.ui}" data-header-id="${escapeHtml(item.id)}" ${item.index === undefined ? '' : `data-menu-index="${item.index}"`}><b>${iconChoices[item.icon]?.[1] || '•'}</b><span>${escapeHtml(item.label)}</span></button>`).join('')}</div>`;
+      return `<div class="builder-scrim header-menu-scrim" data-ui="dismiss"></div><div class="builder-header-popup ${overlay.endsWith('leading') ? 'leading' : ''}">${actions.map(item => `<button type="button" data-ui="${item.ui}" data-header-id="${escapeHtml(item.id)}" ${item.index === undefined ? '' : `data-menu-index="${item.index}" data-menu-id="${escapeHtml(item.sourceId)}"`}><b>${iconChoices[item.icon]?.[1] || '•'}</b><span>${escapeHtml(item.label)}</span></button>`).join('')}</div>`;
     }
     if (overlay.startsWith('flow-sheet:')) {
       const route = flowRoute(currentTab(), overlay.slice(11));
@@ -2928,6 +3017,37 @@ body.build-open{overflow:hidden}
     if (overlay === 'menu') return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-menu"><button data-ui="context-select">تحديد العنصر</button><button data-ui="dismiss">إلغاء</button></div>`;
     if (overlay === 'more') return `<div class="builder-scrim" data-ui="dismiss"></div><div class="builder-sheet builder-more-sheet"><h4>المزيد من التبويبات</h4><p>اختر قسمًا للانتقال إليه.</p>${state.tabs.slice(4).map((item, offset) => `<button data-ui="more-tab" data-index="${offset + 4}">${iconChoices[item.icon]?.[1] || '▦'} ${escapeHtml(item.label)}</button>`).join('')}<button data-ui="dismiss">إغلاق</button></div>`;
     return '';
+  }
+  function runSwipeAction(page, rowIndex, actionIndex, full = false) {
+    const action = page.swipeActions?.[actionIndex];
+    if (!action || !Number.isInteger(rowIndex) || !sampleItems(page)[rowIndex]) return;
+    if (action.showMenu || action.action === 'menu' || (full && !action.fullSwipe)) {
+      overlay = `swipe-menu:${rowIndex}`;
+      renderPreview(true);
+      return;
+    }
+    if (action.action === 'edit') overlay = `test-edit:${rowIndex}`;
+    else {
+      const row = page.rowState[rowIndex] ||= { title: '', status: 'جديد', value: '' };
+      if (action.action === 'status') row.status = row.status === 'مكتمل' ? 'جارٍ' : 'مكتمل';
+      if (action.action === 'delete') row.deleted = true;
+      overlay = null;
+    }
+    renderAll(true);
+    experienceSignal(action.action === 'edit' ? 'فُتح محرر بيانات التجربة' : 'حُفظ إجراء السحب في بيانات التجربة المحلية');
+  }
+  function reorderTestRow(page, from, to) {
+    const items = sampleItems(page);
+    if (!Number.isInteger(from) || !Number.isInteger(to) || from === to || from < 0 || to < 0 || from >= items.length || to >= items.length) return;
+    const keys = Array.from({ length: items.length }, (_, index) => page.rowKeys[index] || `item-${index}`);
+    const statuses = items.map((_, index) => page.rowState[index] || null);
+    for (const list of [items, keys, statuses]) list.splice(to, 0, list.splice(from, 1)[0]);
+    page.dataItems = items.join('، ');
+    page.rowKeys = keys;
+    page.rowState = Object.fromEntries(statuses.flatMap((value, index) => value ? [[index, value]] : []));
+    reconcileFlowPages(currentTab());
+    renderAll(true);
+    experienceSignal('حُفظ ترتيب العناصر في المشروع المحلي');
   }
   function headerVisibleCount(actions) { return actions.length > 2 ? 1 : actions.length; }
   function renderHeaderSide(tab, side) {
@@ -2981,10 +3101,10 @@ body.build-open{overflow:hidden}
     const free = page.layoutMode === 'free';
     const primaryLabel = page.action === 'push' ? 'عرض التفاصيل' : page.action === 'sheet' ? 'فتح ورقة' : 'عرض تنبيه';
     const content = searchOpen && state.tabsEnabled && state.searchRoleEnabled ? renderGlobalSearch() : detail
-      ? `${simulatorMode === 'build' && !board ? '<div class="builder-detail-banner">صفحة تفاصيل قابلة للتحرير · أدوات المكتبة تخص هذه الصفحة <button type="button" data-ui="edit-detail">حرّرها</button></div>' : ''}${free ? renderFreeCanvas(page) : `<h3>${escapeHtml(page.label)}</h3><p class="builder-purpose">${escapeHtml(page.purpose)}</p>${previewFeatureCard(page)}${enabled.has('segmented') ? `<div class="builder-segments" data-tool-inspect="segmented"><button class="${page.values.segment === 0 ? 'active' : ''}" data-ui="segment" data-value="0">الكل</button><button class="${page.values.segment === 1 ? 'active' : ''}" data-ui="segment" data-value="1">المهم</button></div>` : ''}${previewPageKind(page)}${previewTools(page)}${previewCustomBlocks(page)}`}`
+      ? `${simulatorMode === 'build' && !board ? '<div class="builder-detail-banner">صفحة تفاصيل قابلة للتحرير · أدوات المكتبة تخص هذه الصفحة <button type="button" data-ui="edit-detail">حرّرها</button></div>' : ''}${free ? renderFreeCanvas(page) : `<h3>${escapeHtml(page.label)}</h3><p class="builder-purpose">${escapeHtml(page.purpose)}</p>${previewFeatureCard(page)}${enabled.has('segmented') ? renderSegmentControl(page) : ''}${previewPageKind(page)}${previewTools(page)}${previewCustomBlocks(page)}`}`
       : free ? renderFreeCanvas(page)
       : `${tabIndex === 0 ? `<span class="builder-app-name">${escapeHtml(state.appName)}</span>` : ''}<h3>${escapeHtml(page.label)}</h3><p class="builder-purpose">${escapeHtml(page.purpose)}</p>${previewFeatureCard(page)}
-         ${enabled.has('segmented') ? `<div class="builder-segments" data-tool-inspect="segmented"><button class="${page.values.segment === 0 ? 'active' : ''}" data-ui="segment" data-value="0">الكل</button><button class="${page.values.segment === 1 ? 'active' : ''}" data-ui="segment" data-value="1">المهم</button></div>` : ''}
+         ${enabled.has('segmented') ? renderSegmentControl(page) : ''}
          ${previewPageKind(page)}${previewTools(page)}${previewCustomBlocks(page)}
          ${['list','cards','settings','forecast'].includes(page.display) ? '' : `<div class="builder-section-label">طريقة الانتقال المختارة</div><div class="builder-section"><button class="builder-row selectable" data-ui="navigate" data-flow-key="primary" data-tool-inspect="navigation"><span class="row-icon">${page.action === 'push' ? '↩' : page.action === 'sheet' ? '▧' : '!'}</span><span class="row-main">${primaryLabel}</span><span class="row-hint">‹</span></button></div>`}`;
     const nativeSearch = !searchOpen && !free && enabled.has('searchfield') ? `<div class="builder-search-dock"><input class="builder-search" type="search" data-ui="search" value="${escapeHtml(page.values.search)}" placeholder="⌕ ابحث داخل هذا القسم" aria-label="بحث داخل ${escapeHtml(page.label)}"></div>` : '';
@@ -3085,13 +3205,23 @@ body.build-open{overflow:hidden}
   function swiftVisibleItems(tab, index) {
     if (['local', 'linked', 'count'].includes(tab.recordMode)) {
       const sourceKey = tab.recordMode === 'local' ? tab.dataKey : tab.dataSourceKey;
-      return [`    private var localRecords${index}: [BuilderRecord] {`, `        storedItems.filter { record in`, `            record.datasetKey == ${swiftString(sourceKey)}${tab.tools.includes('searchfield') ? ` && (searchText${index}.isEmpty || record.title.localizedStandardContains(searchText${index}) || record.notes.localizedStandardContains(searchText${index}))` : ''}`, '        }', '    }', `    private var visibleItems${index}: [String] { ${tab.recordMode === 'count' ? ` ["\\(localRecords${index}.count) سجل"]` : `localRecords${index}.map(\\.title)`} }`].join('\n');
+      return [`    private var localRecords${index}: [BuilderRecord] {`, `        storedItems.filter { record in`, `            record.datasetKey == ${swiftString(sourceKey)}${tab.tools.includes('searchfield') ? ` && (searchText${index}.isEmpty || record.title.localizedStandardContains(searchText${index}) || record.notes.localizedStandardContains(searchText${index}))` : ''}`, '        }', '    }', `    private var visibleItems${index}: [String] { ${tab.recordMode === 'count' ? ` ["\\(localRecords${index}.count) سجل"]` : `localRecords${index}.map(\\.title)`} }`, `    private var visibleRowIndices${index}: [Int] { Array(visibleItems${index}.indices) }`].join('\n');
     }
     const items = sampleItems(tab).map(swiftString).join(', ');
     const conditions = [];
     if (tab.tools.includes('searchfield')) conditions.push(`(searchText${index}.isEmpty || entry.element.localizedStandardContains(searchText${index}))`);
-    if (tab.tools.includes('segmented')) conditions.push(`(segment${index} == 0 || entry.offset.isMultiple(of: 2))`);
-    return [`    private var visibleItems${index}: [String] {`, `        let items = [${items}]`, conditions.length ? '        return items.enumerated().filter { entry in' : '        return items', ...(conditions.length ? [`            ${conditions.join(' && ')}`, '        }.map { $0.element }'] : []), '    }'].join('\n');
+    if (tab.tools.includes('segmented')) {
+      const cases = (tab.segmentOptions || defaultSegments()).map((option, n) => {
+        const predicate = option.filter === 'contains' ? `entry.element.localizedStandardContains(${swiftString(option.value)})`
+          : option.filter === 'indices' ? (() => { const positions = option.value.split(/[،,\s]+/).map(Number).filter(value => value > 0 && value <= 50).map(value => value - 1); return positions.length ? `[${positions.join(', ')}].contains(entry.offset)` : 'false'; })()
+          : option.filter === 'status' ? `([${sampleItems(tab).map((_, i) => swiftString(tab.rowState?.[i]?.status || 'جديد')).join(', ')}] as [String])[entry.offset] == ${swiftString(option.value)}`
+          : 'true';
+        return `case ${n}: return ${predicate}`;
+      });
+      conditions.push(`({ () -> Bool in switch segment${index} { ${cases.join(' ')} default: return true } })()`);
+    }
+    if (Object.values(tab.rowState || {}).some(row=>row?.deleted)) conditions.push(`![${sampleItems(tab).map((_,i)=>tab.rowState?.[i]?.deleted?'true':'false').join(', ')}][entry.offset]`);
+    return [`    private var visibleRowIndices${index}: [Int] {`, `        let items: [String] = [${items}]`, '        return items.enumerated().filter { entry in', `            ${conditions.join(' && ') || 'true'}`, '        }.map { $0.offset }', '    }', `    private var visibleItems${index}: [String] {`, `        let items: [String] = [${items}]`, `        return visibleRowIndices${index}.map { items[$0] }`, '    }'].join('\n');
   }
   function swiftDataSection(tab, index) {
     const items = sampleItems(tab);
@@ -3116,8 +3246,8 @@ body.build-open{overflow:hidden}
     if (tab.display === 'list' && tab.listStyle !== 'carousel' || tab.display === 'settings' || tab.display === 'cards') {
       if (tab.display === 'list') tab.blocks.filter(block => block.type === 'divider' && block.afterRow === 0).forEach(() => result.push('                    Divider()'));
       result.push(`                    ForEach(Array(visibleItems${index}.prefix(20).enumerated()), id: \\.offset) { entry in`);
-      if (tab.action === 'push') result.push('                        NavigationLink {', `                            flowRowDestination${index}(entry.element)`, '                        } label: {', '                            Label(entry.element, systemImage: "chevron.left")', '                        }');
-      if (tab.action === 'sheet') result.push(`                        Button { selectedFlowSheet${index} = flowSheetRouteID${index}(entry.element); showSheet${index} = true } label: { Label(entry.element, systemImage: "rectangle.portrait.and.arrow.right") }`);
+      if (tab.action === 'push') result.push('                        NavigationLink {', `                            flowRowDestination${index}(visibleRowIndices${index}[entry.offset])`, '                        } label: {', '                            Label(entry.element, systemImage: "chevron.left")', '                        }');
+      if (tab.action === 'sheet') result.push(`                        Button { selectedFlowSheet${index} = flowSheetRouteID${index}(visibleRowIndices${index}[entry.offset]); showSheet${index} = true } label: { Label(entry.element, systemImage: "rectangle.portrait.and.arrow.right") }`);
       if (tab.action === 'alert') result.push(`                        Button { showAlert${index} = true } label: { Label(entry.element, systemImage: "bell") }`);
       if (tab.display === 'list' && tab.listStyle === 'tiles') result.push('                        .listRowBackground(Color.blue.opacity(0.16))');
       if (tab.display === 'list') tab.blocks.filter(block => block.type === 'divider' && block.afterRow > 0).forEach(block => result.push(`                        if entry.offset == ${Math.max(0,block.afterRow-1)} { Divider() }`));
@@ -3141,6 +3271,10 @@ body.build-open{overflow:hidden}
     if (tab.display === 'form' && !tab.templateForm) result.push(`                    if !visibleItems${index}.isEmpty {`, `                        TextField(${swiftString(items[0] || 'الاسم')}, text: $sampleInput${index})`, `                        TextField(${swiftString(items[1] || 'الملاحظات')}, text: $sampleNote${index})`, '                    } else { Text("لا توجد نتائج") }');
     result.push('                }');
     return result;
+  }
+  function swiftTimelineCall(page) {
+    const timeline = page.timeline || defaultTimeline();
+    return `BuilderWeeklyTimeline(startDate: ${swiftString(timeline.startDate)}, days: ${timeline.days}, currentDate: ${swiftString(timeline.currentDate)}, actualEndDate: ${swiftString(timeline.actualEndDate)}, expectedEndDate: ${swiftString(timeline.expectedEndDate)}, status: ${swiftString(timeline.currentStatus)}, events: [${timeline.events.map(event => `BuilderTimelineEvent(date: ${swiftString(event.date)}, label: ${swiftString(event.label)})`).join(', ')}])`;
   }
   function swiftFreeWidget(tab, index, id) {
     const items = sampleItems(tab);
@@ -3183,7 +3317,8 @@ body.build-open{overflow:hidden}
       add(`    if visibleItems${index}.isEmpty { Text("لا توجد نتائج").foregroundStyle(.secondary) }`);
       add('}', '    .padding(10)', '    .frame(maxWidth: .infinity, alignment: .leading)', '    .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))');
     } else if (id === 'search') add(`TextField("ابحث داخل القسم", text: $searchText${index})`, '    .textFieldStyle(.roundedBorder)');
-    else if (id === 'segmented') add(`Picker("العرض", selection: $segment${index}) {`, '    Text("الكل").tag(0)', '    Text("المهم").tag(1)', '}', '    .pickerStyle(.segmented)');
+    else if (id === 'segmented') add(`Picker("العرض", selection: $segment${index}) {`, ...(tab.segmentOptions || defaultSegments()).map((option, n) => `    Text(${swiftString(option.label)}).tag(${n})`), '}', '    .pickerStyle(.segmented)');
+    else if (id === 'weeklytimeline') add(swiftTimelineCall(tab));
     else if (id === 'tool:toolbar') add(`Button { itemCount${index} += 1 } label: { Image(systemName: "plus") }`, '    .buttonStyle(.bordered)');
     else if (id === 'navigation') {
       if (tab.action === 'push') add('NavigationLink {', `    Text(${swiftString('تفاصيل ' + tab.label)})`, '} label: {', '    Label("عرض التفاصيل", systemImage: "chevron.left")', '}');
@@ -3195,7 +3330,7 @@ body.build-open{overflow:hidden}
       if (tool === 'toggle') add(`Toggle("التنبيهات", isOn: $toggleOn${index})`);
       if (tool === 'slider') add(`Slider(value: $level${index}, in: 0...1) { Text("المستوى") }`);
       if (tool === 'picker') add(`Picker("الفترة", selection: $period${index}) {`, '    Text("اليوم").tag("اليوم")', '    Text("الأسبوع").tag("الأسبوع")', '    Text("الشهر").tag("الشهر")', '}');
-      if (tool === 'button') add(`Button("إضافة عنصر · \\(itemCount${index})") { itemCount${index} += 1 }`);
+      if (tool === 'button') add(`Button(${swiftString(tab.buttonAction.label)}) { ${swiftHeaderCommand(tab.buttonAction.behavior, index, 'tool:button')} }`);
       if (tool === 'progress') add('ProgressView("تقدّم مهمة", value: 0.6)');
       if (tool === 'sheet') add(`Button("فتح ورقة") { showSheet${index} = true }`);
       if (tool === 'alert') add(`Button("عرض تنبيه") { showAlert${index} = true }`);
@@ -3235,7 +3370,7 @@ body.build-open{overflow:hidden}
     const pad = ' '.repeat(indent), label = swiftString(action.label), symbol = swiftString(action.icon || 'circle');
     if (action.behavior === 'menu' && !menuItem) {
       const rows = [`${pad}Menu {`];
-      action.menuItems.forEach(item => rows.push(`${pad}    Button(${swiftString(item.label)}) { ${swiftHeaderCommand(item.behavior, index)} }`));
+      action.menuItems.forEach(item => rows.push(`${pad}    Button(${swiftString(item.label)}) { ${swiftHeaderCommand(item.behavior, index, `menu:${item.id}`)} }`));
       rows.push(`${pad}} label: {`, `${pad}    Image(systemName: ${symbol})`, `${pad}}`, `${pad}.accessibilityLabel(${label})`);
       return rows;
     }
@@ -3255,7 +3390,7 @@ body.build-open{overflow:hidden}
         actions.slice(headerVisibleCount(actions)).forEach(action => {
           if (action.behavior === 'menu') {
             rows.push(`                        Menu(${swiftString(action.label)}) {`);
-            action.menuItems.forEach(item => rows.push(`                            Button(${swiftString(item.label)}) { ${swiftHeaderCommand(item.behavior, index)} }`));
+            action.menuItems.forEach(item => rows.push(`                            Button(${swiftString(item.label)}) { ${swiftHeaderCommand(item.behavior, index, `menu:${item.id}`)} }`));
             rows.push('                        }');
           } else rows.push(`                        Button(${swiftString(action.label)}) { ${swiftHeaderCommand(action.behavior, index, `header:${action.id}`)} }`);
         });
@@ -3300,7 +3435,7 @@ body.build-open{overflow:hidden}
     if (['list','cards','settings','forecast'].includes(page.display)) {
       if(page.display==='list')page.blocks.filter(block=>block.type==='divider'&&block.afterRow===0).forEach(()=>rows.push('                Divider()'));
       items.forEach((item,n)=>{
-        const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey===`row:${n}`);
+        const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey===rowSourceKey(page,n));
         if(child?.presentation==='push')rows.push(`                NavigationLink(${swiftString(item)}) { ${swiftFlowName(index,child,tab)} }`);
         else if(child?.presentation==='sheet')rows.push(`                Button(${swiftString(item)}) { selectedFlowSheet${index} = ${swiftString(child.id)}; showSheet${index} = true }`);
         else rows.push(`                Text(${swiftString(item)})`);
@@ -3315,7 +3450,13 @@ body.build-open{overflow:hidden}
         if(id==='textfield')rows.push(`                TextField("العنوان", text: $flowText${suffix})`);
         else if(id==='toggle')rows.push(`                Toggle("تفعيل", isOn: $flowToggle${suffix})`);
         else if(id==='slider')rows.push(`                Slider(value: $flowSlider${suffix}, in: 0...1)`);
-        else if(id==='button')rows.push(`                Button("إضافة") { flowCount${suffix} += 1 }`, `                Text("العدد: \\(flowCount${suffix})")`);
+        else if(id==='button') {
+          const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey==='tool:button');
+          if(child?.presentation==='push')rows.push(`                NavigationLink(${swiftString(page.buttonAction.label)}) { ${swiftFlowName(index,child,tab)} }`);
+          else if(child?.presentation==='sheet')rows.push(`                Button(${swiftString(page.buttonAction.label)}) { selectedFlowSheet${index} = ${swiftString(child.id)}; showSheet${index} = true }`);
+          else rows.push(`                Button(${swiftString(page.buttonAction.label)}) { flowCount${suffix} += 1 }`, `                Text("العدد: \\(flowCount${suffix})")`);
+        }
+        else if(id==='weeklytimeline')rows.push(`                ${swiftTimelineCall(page)}`);
         else if(id==='sheet'){const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey==='tool:sheet');rows.push(`                Button("فتح ورقة") { selectedFlowSheet${index} = ${swiftString(child?.id||'')}; showSheet${index} = true }`);}
         else if(id==='progress')rows.push('                ProgressView("التقدم", value: 0.6)');
         else if(extendedIds.has(id))rows.push(`                BuilderExtendedComponent(kind: ${swiftString(id)}, label: ${swiftString(componentOption(page,id).label)}, behavior: ${swiftString(componentOption(page,id).behavior)})`);
@@ -3343,7 +3484,7 @@ body.build-open{overflow:hidden}
       });
       rows.push('            }');
     }
-    const otherSources=sources.filter(s=>!s.key.startsWith('row:'));
+    const otherSources=sources.filter(s=>!s.key.startsWith('row:')&&s.key!=='tool:button');
     if(otherSources.length){rows.push('            Section("أوامر الشاشة") {');otherSources.forEach(source=>{const child=tab.flowPages.find(r=>r.parentId===route.id&&r.sourceKey===source.key);if(!child)return;if(child.presentation==='push')rows.push(`                NavigationLink(${swiftString(source.label)}) { ${swiftFlowName(index,child,tab)} }`);else rows.push(`                Button(${swiftString(source.label)}) { selectedFlowSheet${index} = ${swiftString(child.id)}; showSheet${index} = true }`);});rows.push('            }');}
     rows.push('        }',`        .navigationTitle(${swiftString(page.label)})`,`        .navigationBarTitleDisplayMode(${page.titleStyle==='large'?'.large':'.inline'})`);
     if (tabBarHiddenForRoute(tab, route.id)) rows.push('        .toolbar(.hidden, for: .tabBar)');
@@ -3357,13 +3498,13 @@ body.build-open{overflow:hidden}
     const sheets=rows.filter(route=>route.presentation==='sheet');
     const out=[];
     if(tab.action==='push') {
-      out.push(`    @ViewBuilder private func flowRowDestination${index}(_ title: String) -> some View {`,'        switch title {');
-      const seen=new Set();push.forEach(route=>{if(seen.has(route.sourceLabel))return;seen.add(route.sourceLabel);out.push(`        case ${swiftString(route.sourceLabel)}: ${swiftFlowName(index,route,tab)}`);});
+      out.push(`    @ViewBuilder private func flowRowDestination${index}(_ sourceIndex: Int) -> some View {`,'        switch sourceIndex {');
+      push.forEach(route=>{const rowIndex=sampleItems(tab).findIndex((_,n)=>rowSourceKey(tab,n)===route.sourceKey);if(rowIndex>=0)out.push(`        case ${rowIndex}: ${swiftFlowName(index,route,tab)}`);});
       out.push(`        default: detailPage${index}`,'        }','    }');
     }
     if(tab.action==='sheet'){
-      out.push(`    private func flowSheetRouteID${index}(_ title: String) -> String {`,'        switch title {');
-      const seen=new Set();sheets.forEach(route=>{if(seen.has(route.sourceLabel))return;seen.add(route.sourceLabel);out.push(`        case ${swiftString(route.sourceLabel)}: return ${swiftString(route.id)}`);});
+      out.push(`    private func flowSheetRouteID${index}(_ sourceIndex: Int) -> String {`,'        switch sourceIndex {');
+      sheets.forEach(route=>{const rowIndex=sampleItems(tab).findIndex((_,n)=>rowSourceKey(tab,n)===route.sourceKey);if(rowIndex>=0)out.push(`        case ${rowIndex}: return ${swiftString(route.id)}`);});
       out.push('        default: return ""','        }','    }');
     }
     if(tab.flowPages.some(route=>route.presentation==='sheet')){
@@ -3371,7 +3512,7 @@ body.build-open{overflow:hidden}
       tab.flowPages.filter(route=>route.presentation==='sheet').forEach(route=>out.push(`        case ${swiftString(route.id)}: ${swiftFlowName(index,route,tab)}`));
       out.push('        default: Text("ورقة")','        }','    }');
     }
-    const headerPush=tab.flowPages.filter(route=>route.parentId===''&&route.sourceKey.startsWith('header:')&&route.presentation==='push');
+    const headerPush=tab.flowPages.filter(route=>route.parentId===''&&!route.sourceKey.startsWith('row:')&&route.presentation==='push');
     if(headerPush.length){out.push(`    @ViewBuilder private var flowPushDestination${index}: some View {`,'        switch selectedFlowPush'+index+' {');headerPush.forEach(route=>out.push(`        case ${swiftString(route.id)}: ${swiftFlowName(index,route,tab)}`));out.push(`        default: detailPage${index}`,'        }','    }');}
     return out.join('\n');
   }
@@ -3391,12 +3532,16 @@ body.build-open{overflow:hidden}
     if (tab.action === 'alert') result.push(`                    Button("عرض تنبيه") { showAlert${index} = true }`);
     result.push('                }');
     const controls = [];
-    if (enabled.has('segmented')) controls.push(`                    Picker("العرض", selection: $segment${index}) {`, '                        Text("الكل").tag(0)', '                        Text("المهم").tag(1)', '                    }', '                    .pickerStyle(.segmented)');
+    if (enabled.has('segmented')) controls.push(`                    Picker("العرض", selection: $segment${index}) {`, ...(tab.segmentOptions || defaultSegments()).map((option, n) => `                        Text(${swiftString(option.label)}).tag(${n})`), '                    }', '                    .pickerStyle(.segmented)');
     if (enabled.has('textfield')) controls.push(`                    TextField("العنوان", text: $titleText${index})`);
     if (enabled.has('toggle')) controls.push(`                    Toggle("التنبيهات", isOn: $toggleOn${index})`);
     if (enabled.has('slider')) controls.push(`                    Slider(value: $level${index}, in: 0...1) {`, '                        Text("المستوى")', '                    }');
     if (enabled.has('picker')) controls.push(`                    Picker("الفترة", selection: $period${index}) {`, '                        Text("اليوم").tag("اليوم")', '                        Text("الأسبوع").tag("الأسبوع")', '                        Text("الشهر").tag("الشهر")', '                    }');
-    if (enabled.has('button')) controls.push(`                    Button("إضافة عنصر") { itemCount${index} += 1 }`, `                    Text("عدد العناصر: \\(itemCount${index})")`);
+    if (enabled.has('button')) {
+      controls.push(`                    Button(${swiftString(tab.buttonAction.label)}) { ${swiftHeaderCommand(tab.buttonAction.behavior, index, 'tool:button')} }`);
+      if(tab.buttonAction.behavior==='count')controls.push(`                    Text("عدد العناصر: \\(itemCount${index})")`);
+    }
+    if (enabled.has('weeklytimeline')) controls.push(`                    ${swiftTimelineCall(tab)}`);
     if (enabled.has('progress')) controls.push('                    ProgressView("التقدّم", value: 0.6)');
     if (enabled.has('sheet')) controls.push(`                    Button("فتح ورقة أداة") { showSheet${index} = true }`);
     if (enabled.has('alert')) controls.push(`                    Button("عرض تنبيه أداة") { showAlert${index} = true }`);
@@ -3426,7 +3571,7 @@ body.build-open{overflow:hidden}
     if (tab.backgroundStyle !== 'system') result.push('            .scrollContentBackground(.hidden)');
     result.push(`            .navigationTitle(${swiftString(tab.label)})`, `            .navigationBarTitleDisplayMode(${tab.titleStyle === 'large' ? '.large' : '.inline'})`);
     if (enabled.has('searchfield')) result.push(`            .searchable(text: $searchText${index}, prompt: "ابحث داخل القسم")`);
-    if (hasHeaderBehavior(tab, 'push')) result.push(`            .navigationDestination(isPresented: $showDetail${index}) { ${tab.flowPages.some(route=>route.parentId===''&&route.sourceKey.startsWith('header:')&&route.presentation==='push')?`flowPushDestination${index}`:`detailPage${index}`} }`);
+    if (hasHeaderBehavior(tab, 'push') || tab.flowPages.some(route=>route.parentId===''&&!route.sourceKey.startsWith('row:')&&route.presentation==='push')) result.push(`            .navigationDestination(isPresented: $showDetail${index}) { ${tab.flowPages.some(route=>route.parentId===''&&!route.sourceKey.startsWith('row:')&&route.presentation==='push')?`flowPushDestination${index}`:`detailPage${index}`} }`);
     result.push(...swiftHeaderToolbar(tab, index));
     if (tab.display === 'spreadsheet' && tab.keyboardStyle === 'numbers') result.push(...swiftNumberKeyboardToolbar(index));
     if (enabled.has('searchfield')) result.push('            .toolbar {', '                if #available(iOS 26.0, *) {', '                    DefaultToolbarItem(kind: .search, placement: .bottomBar)', '                }', '            }');
@@ -3453,7 +3598,7 @@ body.build-open{overflow:hidden}
         else if (id === 'toggle') result.push(`                Toggle("التنبيهات", isOn: $detailToggle${index})`);
         else if (id === 'slider') result.push(`                Slider(value: $detailLevel${index}, in: 0...1) { Text("المستوى") }`);
         else if (id === 'picker') result.push(`                Picker("الفترة", selection: $detailPeriod${index}) {`, '                    Text("اليوم").tag("اليوم")', '                    Text("الأسبوع").tag("الأسبوع")', '                    Text("الشهر").tag("الشهر")', '                }');
-        else if (id === 'segmented') result.push(`                Picker("العرض", selection: $detailSegment${index}) {`, '                    Text("الكل").tag(0)', '                    Text("المهم").tag(1)', '                }.pickerStyle(.segmented)');
+        else if (id === 'segmented') result.push(`                Picker("العرض", selection: $detailSegment${index}) {`, ...(detail.segmentOptions || defaultSegments()).map((option, n) => `                    Text(${swiftString(option.label)}).tag(${n})`), '                }.pickerStyle(.segmented)');
         else if (id === 'button') result.push(`                Button("إضافة عنصر") { detailCount${index} += 1 }`, `                Text("العدد: \(detailCount${index})")`);
         else if (id === 'progress') result.push('                ProgressView("التقدّم", value: 0.6)');
         else if (id === 'sharesheet') result.push('                ShareLink(item: "بيانات التفاصيل")');
@@ -3629,6 +3774,60 @@ struct BuilderWebPreview: UIViewRepresentable {
     func updateUIView(_ view: WKWebView, context: Context) {}
 }
 `;
+  const weeklyTimelineSwiftSupport = `
+struct BuilderTimelineEvent: Identifiable {
+    let id = UUID()
+    let date: String
+    let label: String
+}
+
+struct BuilderWeeklyTimeline: View {
+    let startDate: String
+    let days: Int
+    let currentDate: String
+    let actualEndDate: String
+    let expectedEndDate: String
+    let status: String
+    let events: [BuilderTimelineEvent]
+
+    private var formatter: DateFormatter {
+        let value = DateFormatter()
+        value.dateFormat = "yyyy-MM-dd"
+        value.locale = Locale(identifier: "en_US_POSIX")
+        value.timeZone = TimeZone(secondsFromGMT: 0)
+        return value
+    }
+    private var start: Date { formatter.date(from: startDate) ?? Date() }
+    private var actualLimit: Date {
+        [formatter.date(from: currentDate) ?? Date(), formatter.date(from: actualEndDate) ?? Date(), Date()].min() ?? Date()
+    }
+    private var completedDays: Int {
+        guard actualLimit >= start else { return 0 }
+        return min(max(days, 2), (Calendar(identifier: .gregorian).dateComponents([.day], from: start, to: actualLimit).day ?? 0) + 1)
+    }
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack { Text("الخط الزمني").font(.headline); Spacer(); Text(status).foregroundStyle(.secondary) }
+            ScrollView(.horizontal) {
+                HStack(alignment: .top, spacing: 8) {
+                    ForEach(0..<min(max(days, 2), 31), id: \\.self) { index in
+                        let date = Calendar(identifier: .gregorian).date(byAdding: .day, value: index, to: start) ?? start
+                        let key = formatter.string(from: date)
+                        VStack(spacing: 5) {
+                            Text(date, format: .dateTime.weekday(.abbreviated)).font(.caption2)
+                            Text(date, format: .dateTime.day()).font(.caption)
+                            Circle().fill(index < completedDays ? Color.blue : Color.gray.opacity(0.35)).frame(width: 9, height: 9)
+                            ForEach(events.filter { $0.date == key }) { event in Text(event.label).font(.caption2).lineLimit(1) }
+                        }.frame(width: 55)
+                    }
+                }
+            }
+            Text("المنجز فعليًا حتى " + formatter.string(from: actualLimit)).font(.caption2)
+            if !expectedEndDate.isEmpty { Text("النهاية المتوقعة: " + expectedEndDate).font(.caption2).foregroundStyle(.orange) }
+        }.padding().background(.regularMaterial, in: RoundedRectangle(cornerRadius: 14))
+    }
+}
+`;
   function generateCode() {
     const tabs = state.tabsEnabled ? state.tabs : state.tabs.slice(0, 1);
     tabs.forEach(reconcileFlowPages);
@@ -3643,14 +3842,14 @@ struct BuilderWebPreview: UIViewRepresentable {
       if (localRecordTabs.some(item => item.index === i)) declarations.push(`    @AppStorage("builder-seeded-${tab.dataKey}") private var didSeed${i} = false`);
       if (['local', 'linked'].includes(tab.recordMode) && ['list', 'settings', 'cards'].includes(tab.display)) declarations.push(`    @State private var showNewRecord${i} = false`, `    @State private var newRecordTitle${i} = ""`);
       if (enabled.has('searchfield')) declarations.push(`    @State private var searchText${i} = ${swiftString(tab.values.search || '')}`);
-      if (enabled.has('segmented')) declarations.push(`    @State private var segment${i} = ${Number(tab.values.segment) === 1 ? 1 : 0}`);
+      if (enabled.has('segmented')) declarations.push(`    @State private var segment${i} = ${Math.max(0, Math.min(tab.segmentOptions.length - 1, Number(tab.values.segment) || 0))}`);
       if (enabled.has('textfield')) declarations.push(`    @AppStorage("${tab.dataKey}-text") private var titleText${i} = ${swiftString(tab.values.text || '')}`);
       if (enabled.has('toggle')) declarations.push(`    @AppStorage("${tab.dataKey}-toggle") private var toggleOn${i} = ${tab.values.toggle ? 'true' : 'false'}`);
       if (enabled.has('slider')) declarations.push(`    @AppStorage("${tab.dataKey}-slider") private var level${i} = ${Math.max(0, Math.min(1, Number(tab.values.slider) || 0)).toFixed(2)}`);
       if (enabled.has('picker')) declarations.push(`    @AppStorage("${tab.dataKey}-picker") private var period${i} = ${swiftString(tab.values.period || 'اليوم')}`);
       if (enabled.has('button') || hasHeaderBehavior(tab, 'count')) declarations.push(`    @AppStorage("${tab.dataKey}-count") private var itemCount${i} = ${Math.max(0, Math.floor(Number(tab.values.count) || 0))}`);
       if (tab.action === 'push' || hasHeaderBehavior(tab, 'push')) ensureDetailPage(tab);
-      if (hasHeaderBehavior(tab, 'push')) { declarations.push(`    @State private var showDetail${i} = false`); if(tab.flowPages.some(route=>route.parentId===''&&route.sourceKey.startsWith('header:')&&route.presentation==='push'))declarations.push(`    @State private var selectedFlowPush${i} = ""`); }
+      if (hasHeaderBehavior(tab, 'push') || tab.flowPages.some(route=>route.parentId===''&&!route.sourceKey.startsWith('row:')&&route.presentation==='push')) { declarations.push(`    @State private var showDetail${i} = false`); if(tab.flowPages.some(route=>route.parentId===''&&!route.sourceKey.startsWith('row:')&&route.presentation==='push'))declarations.push(`    @State private var selectedFlowPush${i} = ""`); }
       if (tab.action === 'sheet' || enabled.has('sheet') || hasHeaderBehavior(tab, 'sheet') || tab.blocks.some(block => block.type === 'button' && block.action === 'sheet') || tab.flowPages.some(route=>route.presentation==='sheet')) { declarations.push(`    @State private var showSheet${i} = false`); if(tab.flowPages.some(route=>route.presentation==='sheet'))declarations.push(`    @State private var selectedFlowSheet${i} = ""`); }
       if (tab.action === 'alert' || enabled.has('alert') || hasHeaderBehavior(tab, 'alert') || tab.blocks.some(block => block.type === 'button' && block.action === 'alert')) declarations.push(`    @State private var showAlert${i} = false`);
       if (enabled.has('contextmenu')) declarations.push(`    @State private var selectedText${i} = ${swiftString(tab.values.contextSelected ? 'تم تحديد العنصر' : 'عنصر تجريبي')}`);
@@ -3849,7 +4048,7 @@ struct BuilderRecordLinks: View {
 ` : '';
     const enhancedRecordSupport = recordPages.length ? recordSupport.replace('            }\n        }\n        .navigationTitle', '            }\n            Section { NavigationLink("علاقات السجل") { BuilderRecordLinks(record: record) } }\n        }\n        .navigationTitle') + relationSupport : '';
     const recordMethods = recordPages.length ? ['    private func saveRecords() {', '        do { try modelContext.save() } catch { modelContext.rollback(); storageError = error.localizedDescription }', '    }', '    private func deleteRecord(_ record: BuilderRecord) {', '        storedLinks.filter { $0.sourceID == record.id || $0.targetID == record.id }.forEach { modelContext.delete($0) }', '        modelContext.delete(record)', '        saveRecords()', '    }', ...localRecordTabs.flatMap(({ tab, index }) => [`    private func seedRecords${index}() {`, `        guard !didSeed${index} else { return }`, ...sampleItems(tab).map(title => `        modelContext.insert(BuilderRecord(datasetKey: ${swiftString(tab.dataKey)}, title: ${swiftString(title)}))`), '        do {', '            try modelContext.save()', `            didSeed${index} = true`, '        } catch {', '            modelContext.rollback()', '            storageError = error.localizedDescription', '        }', '    }'])].join('\n') : '';
-    return `import SwiftUI${recordPages.length ? '\nimport SwiftData' : ''}${extraImports}\n${enhancedRecordSupport}\n@main\nstruct VisualBuilderApp: App {\n    var body: some Scene {\n        WindowGroup {\n            BuilderContentView()\n        }${recordPages.length ? '\n        .modelContainer(for: [BuilderRecord.self, BuilderRecordLink.self])' : ''}\n    }\n}\n\nstruct BuilderContentView: View {\n${declarations.join('\n')}\n\n${tabs.map(swiftVisibleItems).join('\n\n')}\n\n${searchModel}\n\n${moreSupport}\n\n${body}\n\n${recordMethods}\n\n${tabs.map(swiftPage).join('\n\n')}\n\n${tabs.map(swiftDetailPage).filter(Boolean).join('\n\n')}\n\n${tabs.map((tab,i)=>swiftFlowHelpers(tab,i)).filter(Boolean).join('\n\n')}\n\n${tabs.flatMap((tab,i)=>tab.flowPages.map(route=>swiftFlowPage(tab,i,route))).join('\n\n')}\n}\n${sceneSupport}${hasExtended ? extendedSwiftSupport : ''}`;
+    return `import SwiftUI${recordPages.length ? '\nimport SwiftData' : ''}${extraImports}\n${enhancedRecordSupport}\n@main\nstruct VisualBuilderApp: App {\n    var body: some Scene {\n        WindowGroup {\n            BuilderContentView()\n        }${recordPages.length ? '\n        .modelContainer(for: [BuilderRecord.self, BuilderRecordLink.self])' : ''}\n    }\n}\n\nstruct BuilderContentView: View {\n${declarations.join('\n')}\n\n${tabs.map(swiftVisibleItems).join('\n\n')}\n\n${searchModel}\n\n${moreSupport}\n\n${body}\n\n${recordMethods}\n\n${tabs.map(swiftPage).join('\n\n')}\n\n${tabs.map(swiftDetailPage).filter(Boolean).join('\n\n')}\n\n${tabs.map((tab,i)=>swiftFlowHelpers(tab,i)).filter(Boolean).join('\n\n')}\n\n${tabs.flatMap((tab,i)=>tab.flowPages.map(route=>swiftFlowPage(tab,i,route))).join('\n\n')}\n}\n${sceneSupport}${hasExtended ? extendedSwiftSupport : ''}${tabs.some(tab=>tab.tools.includes('weeklytimeline')||tab.detailPage?.tools.includes('weeklytimeline')||tab.flowPages.some(route=>route.page.tools.includes('weeklytimeline')))?weeklyTimelineSwiftSupport:''}`;
   }
   function renderCode() {
     const oldTop = codeElement.parentElement.scrollTop;
@@ -3901,7 +4100,7 @@ struct BuilderRecordLinks: View {
     const panel = document.querySelector('#platformBehaviors');
     if (!panel) return;
     const wasOpen = panel.querySelector('details')?.open || false;
-    panel.innerHTML = `<details><summary>سلوكيات iOS العامة وخيارات التجربة</summary><p>اختر السلوكيات التي تريد توثيقها في مشروعك. يبين الوصف حدود المحاكي؛ شريط الحالة والجزيرة الديناميكية يديرهما النظام وليسا مكوّنين قابلين للإضافة.</p>${platformBehaviors.map(([id, label, note, level]) => `<label class="platform-behavior"><input type="checkbox" data-platform-behavior="${id}" ${state.platformChoices.includes(id) ? 'checked' : ''}><span><b>${label}</b><small>${note}</small></span><em>${level === 'native' ? 'تحقق أصلي' : 'معاينة تقريبية'}</em></label>`).join('')}</details>`;
+    panel.innerHTML = `<details><summary>سلوكيات iOS العامة وخيارات التجربة</summary><p>اختر السلوكيات التي تريد توثيقها في مشروعك. شريط الحالة والجزيرة الديناميكية يديرهما النظام وليسا مكوّنين قابلين للإضافة.</p>${platformBehaviors.map(([id, label, note, level]) => `<label class="platform-behavior"><input type="checkbox" data-platform-behavior="${id}" ${state.platformChoices.includes(id) ? 'checked' : ''}><span><b>${label}</b><small>${note}</small></span><em>${level === 'native' ? 'تتطلب iOS/Xcode' : 'محاكاة بصرية'}</em></label>`).join('')}</details>`;
     panel.querySelector('details').open = wasOpen;
   }
   document.querySelector('#platformBehaviors')?.addEventListener('change', event => {
@@ -4155,7 +4354,16 @@ struct BuilderRecordLinks: View {
           edges.push({ from: `header:${index}:${action.id}`, to: choice.key, connected });
         });
       });
-      if (tab.detailPage || tab.action === 'push' || hasHeaderBehavior(tab, 'push')) {
+      (tab.flowPages || []).forEach(route => {
+        const parentKey = route.parentId ? `flow:${index}:${route.parentId}` : pageKey;
+        const sourceKey = `trigger:${index}:${route.id}`;
+        const routeKey = `flow:${index}:${route.id}`;
+        nodes.push({ key: sourceKey, label: `اختيار · ${route.sourceLabel}`, kind: 'choice', page: index, connected });
+        nodes.push({ key: routeKey, label: `${route.presentation === 'sheet' ? 'ورقة' : 'شاشة'} · ${route.page.label}`, kind: 'destination', page: index, connected });
+        edges.push({ from: parentKey, to: sourceKey, connected });
+        edges.push({ from: sourceKey, to: routeKey, connected });
+      });
+      if (!tab.flowPages?.length && (tab.detailPage || tab.action === 'push' || hasHeaderBehavior(tab, 'push'))) {
         const detail = ensureDetailPage(tab);
         const detailKey = `detail:${index}`;
         nodes.push({ key: detailKey, label: `صفحة · ${detail.label}`, kind: 'page', page: index, connected });
@@ -4167,9 +4375,11 @@ struct BuilderRecordLinks: View {
           ...detail.blocks.map(block => ({ key: `detail-custom:${index}:${block.id}`, label: block.label, kind: 'tool' }))
         ].forEach(child => { nodes.push({ ...child, page: index, connected }); edges.push({ from: detailKey, to: child.key, connected }); });
       }
-      const destination = { key: `destination:${index}`, label: tab.action === 'push' ? 'صفحة التفاصيل' : tab.action === 'sheet' ? 'ورقة مؤقتة' : 'التنبيه', kind: 'destination', page: index, connected };
-      nodes.push(destination);
-      edges.push({ from: `nav:${index}`, to: destination.key, connected });
+      if (!tab.flowPages?.length) {
+        const destination = { key: `destination:${index}`, label: tab.action === 'push' ? 'صفحة التفاصيل' : tab.action === 'sheet' ? 'ورقة مؤقتة' : 'التنبيه', kind: 'destination', page: index, connected };
+        nodes.push(destination);
+        edges.push({ from: `nav:${index}`, to: destination.key, connected });
+      }
     });
     if (state.tabsEnabled) {
       nodes.push({ key: 'tabbar:0', label: `شريط التبويبات · ${state.tabBarBehavior === 'never' ? 'ثابت' : state.tabBarBehavior === 'onScrollUp' ? 'ينكمش عند الصعود' : 'ينكمش عند النزول'}`, kind: 'tool', page: 0, connected: true });
@@ -4208,7 +4418,8 @@ struct BuilderRecordLinks: View {
   function renderFlowMap() {
     const pages = state.tabs.map((tab, index) => {
       const connected = state.tabsEnabled || index === 0;
-      return `<section class="flow-page ${connected ? '' : 'is-orphan'}"><div class="flow-page-heading">${mapButton(`page:${index}`, `${formatNumber(index + 1)} · ${tab.label}`, 'flow-page-name')}<small>${connected ? 'يدخل إليها من شريط التبويبات' : 'صفحة محفوظة غير قابلة للوصول'}</small></div><div class="flow-routes">${tab.detailPage ? `<div class="flow-route">${mapButton(`page:${index}`, tab.label, 'flow-source')}<span>←</span>${mapButton(`detail:${index}`, tab.detailPage.label, 'flow-target')}</div>` : ''}${mapEvents(tab, index).map(event => `<div class="flow-route">${mapButton(`page:${index}`, tab.label, 'flow-source')}<span aria-hidden="true">←</span>${mapButton(event.key, event.label, 'flow-action')}<span aria-hidden="true">←</span>${event.target ? mapButton(event.target, mapOutcome(event.behavior), 'flow-target') : `<span class="flow-target">${mapOutcome(event.behavior)}</span>`}</div>`).join('')}</div></section>`;
+      const routes = (tab.flowPages || []).map(route => `<div class="flow-route">${mapButton(route.parentId ? `flow:${index}:${route.parentId}` : `page:${index}`, route.parentId ? flowRoute(tab, route.parentId)?.page.label || tab.label : tab.label, 'flow-source')}<span aria-hidden="true">←</span>${mapButton(`trigger:${index}:${route.id}`, route.sourceLabel, 'flow-action')}<span aria-hidden="true">←</span>${mapButton(`flow:${index}:${route.id}`, route.page.label, 'flow-target')}</div>`).join('');
+      return `<section class="flow-page ${connected ? '' : 'is-orphan'}"><div class="flow-page-heading">${mapButton(`page:${index}`, `${formatNumber(index + 1)} · ${tab.label}`, 'flow-page-name')}<small>${connected ? 'يدخل إليها من شريط التبويبات' : 'صفحة محفوظة غير قابلة للوصول'}</small></div><div class="flow-routes">${routes}${mapEvents(tab, index).filter(event => !['push', 'sheet'].includes(event.behavior)).map(event => `<div class="flow-route">${mapButton(`page:${index}`, tab.label, 'flow-source')}<span aria-hidden="true">←</span>${mapButton(event.key, event.label, 'flow-action')}<span aria-hidden="true">←</span><span class="flow-target">${mapOutcome(event.behavior)}</span></div>`).join('')}</div></section>`;
     }).join('');
     return `<div class="map-flow"><div class="map-flow-start">${mapButton('app', state.appName, 'map-app-chip')}<span>نقطة الدخول إلى التطبيق</span>${mapButton('architecture', 'خطة التنفيذ')}${(state.architecture?.selectedTools || []).map(id => mapButton(`native:${id}`, window.iOSNativeCatalog?.name(id) || id)).join('')}${state.tabsEnabled ? mapButton('tabbar:0', 'شريط التبويبات') : ''}${state.tabsEnabled && state.searchRoleEnabled ? `${mapButton('searchrole:0', 'بحث شامل')}${mapButton('searchresult:0', 'نتيجة ← تفاصيل')}` : ''}</div>${pages}</div>`;
   }
@@ -4218,7 +4429,7 @@ struct BuilderRecordLinks: View {
       const connected = state.tabsEnabled || index === 0;
       const actions = tab.headerActions.map(action => mapButton(`header:${index}:${action.id}`, `${iconChoices[action.icon]?.[1] || '＋'} ${action.label}`, 'board-action')).join('');
       const custom = tab.blocks.filter(block => block.type === 'button').map(block => mapButton(`custom:${index}:${block.id}`, block.label, 'board-action')).join('');
-      return `<article class="board-card ${connected ? '' : 'is-orphan'} ${index === state.activeTab ? 'is-current' : ''}"><div class="board-card-top"><span>${formatNumber(index + 1)} / ${formatNumber(state.tabs.length)}</span><span>${connected ? 'متصلة' : 'غير متصلة'}</span></div><div class="board-mini-screen"><div class="board-mini-status">9:41 <span>●●●</span></div><div class="board-mini-title">${mapButton(`page:${index}`, `${iconChoices[tab.icon]?.[1] || '▦'} ${tab.label}`)}</div><div class="board-mini-data">${mapButton(`data:${index}`, `${displayKinds[tab.display].label} · ${tab.dataTitle}`)}${samples.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div><div class="board-mini-actions">${actions}${custom}</div><div class="board-mini-bottom">${mapButton(`nav:${index}`, `↖ ${navigationKinds[tab.action].label}`)}${tab.detailPage ? mapButton(`detail:${index}`, `↳ ${tab.detailPage.label}`, 'board-action') : ''}</div></div><p>${escapeHtml(tab.purpose)}</p></article>`;
+      return `<article class="board-card ${connected ? '' : 'is-orphan'} ${index === state.activeTab ? 'is-current' : ''}"><div class="board-card-top"><span>${formatNumber(index + 1)} / ${formatNumber(state.tabs.length)}</span><span>${connected ? 'متصلة' : 'غير متصلة'}</span></div><div class="board-mini-screen"><div class="board-mini-status">9:41 <span>●●●</span></div><div class="board-mini-title">${mapButton(`page:${index}`, `${iconChoices[tab.icon]?.[1] || '▦'} ${tab.label}`)}</div><div class="board-mini-data">${mapButton(`data:${index}`, `${displayKinds[tab.display].label} · ${tab.dataTitle}`)}${samples.map(item => `<span>${escapeHtml(item)}</span>`).join('')}</div><div class="board-mini-actions">${actions}${custom}</div><div class="board-mini-bottom">${mapButton(`nav:${index}`, `↖ ${navigationKinds[tab.action].label}`)}${(tab.flowPages || []).slice(0, 12).map(route => mapButton(`flow:${index}:${route.id}`, `↳ ${route.sourceLabel}: ${route.page.label}`, 'board-action')).join('')}</div></div><p>${escapeHtml(tab.purpose)}</p></article>`;
     }).join('');
     return `<div class="map-storyboard"><div class="board-app">${mapButton('app', state.appName)}<small>${formatNumber(state.tabs.length)} صفحات محفوظة</small>${mapButton('architecture', `خطة التنفيذ · ${(state.architecture?.selectedTools || []).length} تقنيات`, 'board-action')}${state.tabsEnabled ? mapButton('tabbar:0', 'تبويبات عائمة', 'board-action') : ''}${state.tabsEnabled && state.searchRoleEnabled ? mapButton('searchrole:0', 'بحث شامل', 'board-action') : ''}</div><div class="board-grid">${cards}</div></div>`;
   }
@@ -4241,9 +4452,13 @@ struct BuilderRecordLinks: View {
     groups.forEach((children, index) => {
       const height = Math.max(82, children.length * 42 + 20);
       positions.set(`page:${index}`, { x: 660, y: y + height / 2 - 17 });
-      children.forEach((node, childIndex) => positions.set(node.key, { x: node.kind === 'choice' ? 20 : 230, y: y + 10 + childIndex * 42 }));
+      children.forEach((node, childIndex) => positions.set(node.key, { x: node.kind === 'choice' && !node.key.startsWith('trigger:') ? 20 : 230, y: y + 10 + childIndex * 42 }));
       const navigation = positions.get(`nav:${index}`);
-      positions.set(`destination:${index}`, { x: 20, y: navigation.y });
+      if (graph.nodes.some(node => node.key === `destination:${index}`)) positions.set(`destination:${index}`, { x: 20, y: navigation.y });
+      graph.nodes.filter(node => node.page === index && node.kind === 'destination' && node.key.startsWith('flow:')).forEach((node, routeIndex) => {
+        const trigger = positions.get(`trigger:${index}:${node.key.split(':')[2]}`);
+        positions.set(node.key, { x: 20, y: trigger?.y ?? y + 10 + routeIndex * 42 });
+      });
       const search = positions.get('searchrole:0');
       if (index === 0 && search) positions.set('searchresult:0', { x: 20, y: search.y });
       y += height + 24;
@@ -4310,6 +4525,16 @@ struct BuilderRecordLinks: View {
     if (!Number.isInteger(index) || index < 0 || index >= state.tabs.length) return;
     if (!state.tabsEnabled && index > 0) state.tabsEnabled = true;
     state.activeTab = index;
+    if (parts[0] === 'flow' || parts[0] === 'trigger') {
+      const route = flowRoute(currentTab(), parts[2]);
+      if (!route) return;
+      flowPath = flowAncestry(currentTab(), route.id);
+      overlay = null;
+      layoutSelection = null;
+      showEditorView('page', true);
+      renderAll(true);
+      return;
+    }
     layoutSelection = null;
     currentTab().values.detail = parts[0].startsWith('detail');
     if (currentTab().values.detail) ensureDetailPage(currentTab());
@@ -4441,6 +4666,54 @@ struct BuilderRecordLinks: View {
     if (input) toggleTool(input.dataset.tool);
   });
   builderTools.addEventListener('click', event => { if (event.target.closest('[data-add-divider]')) toggleTool('divider'); });
+  navigationEditor.addEventListener('click', event => {
+    const page = activePage();
+    const destination = event.target.closest('[data-destination-edit]');
+    if (destination) {
+      const id = destination.dataset.destinationEdit;
+      if (!flowRoute(currentTab(), id)) return;
+      boardSelected = { page: state.activeTab, routeId: id };
+      boardEditing = true;
+      selectBuildPanel('canvas');
+      renderDesignCanvas(true);
+      return;
+    }
+    if (event.target.closest('[data-segment-add]') && page.segmentOptions.length < 8) page.segmentOptions.push({ id: newHeaderId(), label: `خيار ${page.segmentOptions.length + 1}`, filter: 'all', value: '' });
+    else if (event.target.closest('[data-segment-remove]') && page.segmentOptions.length > 1) { page.segmentOptions.splice(Number(event.target.dataset.segmentRemove), 1); page.values.segment = Math.min(Number(page.values.segment) || 0, page.segmentOptions.length - 1); }
+    else if (event.target.closest('[data-timeline-add]') && page.timeline.events.length < 30) page.timeline.events.push({ date: page.timeline.currentDate, label: 'حدث' });
+    else if (event.target.closest('[data-timeline-remove]')) page.timeline.events.splice(Number(event.target.dataset.timelineRemove), 1);
+    else if (event.target.closest('[data-swipe-add]') && page.swipeActions.length < 4) page.swipeActions.push({ direction: 'trailing', label: 'إجراء', action: 'menu', fullSwipe: false, showMenu: true });
+    else if (event.target.closest('[data-swipe-remove]')) page.swipeActions.splice(Number(event.target.dataset.swipeRemove), 1);
+    else return;
+    state.reviewed.options = true;
+    renderAll(true);
+  });
+  navigationEditor.addEventListener('input', event => {
+    const page = activePage();
+    const segmentField = event.target.dataset.segmentField;
+    if (segmentField) {
+      const option = page.segmentOptions[Number(event.target.closest('[data-segment-index]')?.dataset.segmentIndex)];
+      if (option) option[segmentField] = clean(event.target.value, segmentField === 'label' ? 24 : 100);
+    } else if (event.target.dataset.timelineField) {
+      const field = event.target.dataset.timelineField;
+      page.timeline[field] = field === 'days' ? Math.max(2, Math.min(31, Number(event.target.value) || 7)) : clean(event.target.value, 40);
+    } else if (event.target.dataset.timelineEventField) {
+      const item = page.timeline.events[Number(event.target.closest('[data-timeline-event]')?.dataset.timelineEvent)];
+      if (item) item[event.target.dataset.timelineEventField] = clean(event.target.value, 40);
+    } else if (event.target.dataset.swipeField) {
+      const item = page.swipeActions[Number(event.target.closest('[data-swipe-index]')?.dataset.swipeIndex)];
+      if (item) item[event.target.dataset.swipeField] = event.target.type === 'checkbox' ? event.target.checked : clean(event.target.value, 24);
+    } else if (event.target.dataset.buttonField) page.buttonAction[event.target.dataset.buttonField] = clean(event.target.value, 36);
+    else return;
+    state.reviewed.options = true;
+    renderPreview(true); renderCode(); renderAppMap();
+    if (buildWorkspaceOpen && !designCanvasWorkspace.hidden) renderDesignCanvas();
+  });
+  navigationEditor.addEventListener('change', event => {
+    if (!event.target.matches('[data-segment-field],[data-timeline-field],[data-timeline-event-field],[data-swipe-field],[data-button-field]')) return;
+    reconcileFlowPages(currentTab());
+    renderAll(true);
+  });
   navigationEditor.addEventListener('click', event => {
     const button = event.target.closest('[data-nav-tab]');
     if (button) { switchTab(Number(button.dataset.navTab)); return; }
@@ -4790,6 +5063,35 @@ struct BuilderRecordLinks: View {
     if (!element) return;
     const action = element.dataset.ui;
     const tab = interactionPage(element);
+    if (action === 'record-edit') { overlay = `test-edit:${Number(element.dataset.rowIndex)}`; renderPreview(true); return; }
+    if (action === 'record-status' || action === 'record-delete') {
+      const index = Number(element.dataset.rowIndex);
+      if (!Number.isInteger(index) || !sampleItems(tab)[index]) return;
+      tab.rowState ||= {};
+      const row = tab.rowState[index] ||= { title: '', status: 'جديد', value: '' };
+      if (action === 'record-status') row.status = row.status === 'مكتمل' ? 'جارٍ' : 'مكتمل';
+      else row.deleted = true;
+      overlay = null; renderAll(true); experienceSignal(action === 'record-status' ? 'حُفظت حالة العنصر في بيانات التجربة المحلية' : 'أزيل العنصر من بيانات التجربة المحلية');
+      return;
+    }
+    if (action === 'test-save') {
+      const index = Number(element.dataset.rowIndex);
+      const title = clean(builderScreen.querySelector('[data-test-field="title"]')?.value, 80);
+      const status = clean(builderScreen.querySelector('[data-test-field="status"]')?.value, 32);
+      const value = clean(builderScreen.querySelector('[data-test-field="value"]')?.value, 120);
+      tab.rowState ||= {}; tab.rowState[index] = { ...tab.rowState[index], title, status, value };
+      overlay = null; reconcileFlowPages(currentTab()); renderAll(true); experienceSignal('حُفظت القيمة والحالة محليًا للتجربة');
+      return;
+    }
+    if (action === 'tool-button') {
+      const behavior = tab.buttonAction?.behavior || 'count';
+      runHeaderBehavior(tab, behavior, tab.buttonAction?.label || 'إضافة عنصر', 'tool:button');
+      return;
+    }
+    if (action === 'swipe-action') {
+      runSwipeAction(tab, Number(element.dataset.rowIndex), Number(element.dataset.swipeIndex));
+      return;
+    }
     if (action === 'number-cell') {
       activeNumberCell = Number(element.dataset.cellIndex);
       if (tab.keyboardStyle === 'numbers') renderPreview(true);
@@ -4813,7 +5115,7 @@ struct BuilderRecordLinks: View {
     if (action === 'global-search-cancel') { globalSearchOpen = false; globalSearchText = ''; pendingMotion = 'back'; renderPreview(); experienceSignal('عودة إلى التبويب السابق'); return; }
     if (action === 'keyboard-key' || action === 'keyboard-delete') { globalSearchText = action === 'keyboard-delete' ? globalSearchText.slice(0, -1) : globalSearchText + (element.dataset.key || ''); renderPreview(); builderScreen.querySelector('[data-ui="global-search-input"]')?.focus({ preventScroll: true }); return; }
     if (action === 'keyboard-done') { builderScreen.querySelector('[data-ui="global-search-input"]')?.blur(); experienceSignal('اكتمل البحث'); return; }
-    if (action === 'global-search-result') { const index = Number(element.dataset.index); globalSearchOpen = false; globalSearchText = ''; switchTab(index); const title = element.dataset.title || 'النتيجة'; if (!openFlowSource('', `row:${sampleItems(currentTab()).indexOf(title)}`, title)) { currentTab().values.detail = true; currentTab().values.detailTitle = title; ensureDetailPage(currentTab(), title); } pendingMotion = 'push'; renderAll(); experienceSignal('فُتحت نتيجة البحث'); return; }
+    if (action === 'global-search-result') { const index = Number(element.dataset.index); globalSearchOpen = false; globalSearchText = ''; switchTab(index); const title = element.dataset.title || 'النتيجة'; if (!openFlowSource('', rowSourceKey(currentTab(), sampleItems(currentTab()).indexOf(title)), title)) { currentTab().values.detail = true; currentTab().values.detailTitle = title; ensureDetailPage(currentTab(), title); } pendingMotion = 'push'; renderAll(); experienceSignal('فُتحت نتيجة البحث'); return; }
     if (action === 'edit-detail') { showEditorView('page', true); renderAll(true); return; }
     if (action === 'edit-flow-sheet') { const id=element.dataset.routeId;overlay=null;flowPath=flowAncestry(currentTab(),id);showEditorView('page',true);renderAll();return; }
     if (action === 'extended-action') {
@@ -4871,7 +5173,7 @@ struct BuilderRecordLinks: View {
     if (action === 'header-menu-item') {
       const header = tab.headerActions.find(item => item.id === element.dataset.headerId);
       const item = header?.menuItems[Number(element.dataset.menuIndex)];
-      if (item) runHeaderBehavior(tab, item.behavior, item.label);
+      if (item) runHeaderBehavior(tab, item.behavior, item.label, `menu:${item.id}`);
       return;
     }
     if (action === 'tab') { if (builderScreen.classList.contains('tabbar-compact')) { tabBarExpanded = true; setTabBarCompact(false); experienceSignal('ظهر شريط التبويبات'); return; } switchTab(Number(element.dataset.index)); return; }
@@ -4880,7 +5182,7 @@ struct BuilderRecordLinks: View {
     if (action === 'back') { if (flowPath.length) { const leaving=flowRoute(currentTab(),flowPath.pop()); if(leaving?.parentId && flowRoute(currentTab(),leaving.parentId)?.presentation==='sheet')overlay=`flow-sheet:${leaving.parentId}`; } else { currentTab().values.detail = false; currentTab().values.detailTitle = ''; } if (isExperience) pendingMotion = 'back'; else inspect('navigation'); renderAll(); experienceSignal('عودة إلى القسم'); return; }
     if (action === 'navigate') {
       if (!isExperience) inspect('navigation');
-      const key = element.dataset.flowKey || (element.dataset.detailTitle ? `row:${sampleItems(tab).indexOf(element.dataset.detailTitle)}` : 'primary');
+      const key = element.dataset.flowKey || (element.dataset.detailTitle ? rowSourceKey(tab, sampleItems(tab).indexOf(element.dataset.detailTitle)) : 'primary');
       const opened = openFlowSource(interactionParentId(element), key, element.dataset.detailTitle || 'التفاصيل');
       if (!opened && tab.action === 'push') { const root = currentTab(); root.values.detail = true; root.values.detailTitle = element.dataset.detailTitle || 'التفاصيل'; ensureDetailPage(root, root.values.detailTitle); }
       else if (!opened) overlay = tab.action;
@@ -5079,12 +5381,12 @@ struct BuilderRecordLinks: View {
     const localPages = project.pages.filter(page => page.dataPresentation.recordMode === 'local');
     const linkedPages = project.pages.filter(page => page.dataPresentation.recordMode === 'linked');
     const countPages = project.pages.filter(page => page.dataPresentation.recordMode === 'count');
-    return `# ${project.appName} — مشروع Xcode\n\nافتح VisualBuilderApp.xcodeproj في Xcode، اختر iPhone Simulator واضغط Run. ملف VisualBuilderApp.swift يحتوي الواجهات والتنقل التي صممتها. ملف VisualBuilderProject.json يحفظ قرارات المختبر ويمكن استيراده مجددًا في صفحة الويب.\n\n## تخزين السجلات\n\n${localPages.length ? `صفحات ${localPages.map(page => `«${page.title}»`).join('، ')} تستخدم SwiftData لإضافة سجلات محلية وتعديل عنوانها وملاحظاتها وحالة إكمالها وحذفها. تُنشأ أمثلة البداية مرة واحدة. تظهر في مشروع Xcode بقائمة SwiftUI نظامية ولو كان تخطيط المعاينة حرًا.` : 'جميع السجلات الحالية أمثلة عرض. اختر «سجلات محفوظة محليًا» في خصائص شاشة قائمة إذا أردت تخزينًا محليًا.'}\n${linkedPages.length ? `الشاشات المرتبطة: ${linkedPages.map(page => `«${page.title}» ← «${page.dataPresentation.sourcePage}»`).join('، ')}. تعرض السجلات نفسها.` : ''}\n${countPages.length ? `شاشات العدّ: ${countPages.map(page => `«${page.title}» ← «${page.dataPresentation.sourcePage}»`).join('، ')}. تعرض عدد السجلات المحفوظة.` : ''}\n${project.conceptBlueprint ? `\n## المثال المفاهيمي الاختياري\n\n${project.conceptBlueprint.concepts.map(item => `- ${item.name}: ${item.meaning}`).join('\n')}\n\nالعلاقات والآليات الداعمة: ${project.conceptBlueprint.supportingStructures.map(item => `${item.kind} (${item.meaning})`).join('؛ ')}. يمكن ربط السجلات الفردية بعلاقات مسماة وحفظها في SwiftData؛ حسابات المال وقواعد المجال والصلاحيات لم تُنفّذ تلقائيًا.\n` : ''}\n## قبل الاختبار على جهازك\n\n1. اختر فريق التوقيع في Signing & Capabilities، ثم غيّر Bundle Identifier الافتراضي com.example.visualbuilderapp.\n2. راجع جميع الصفحات والانتقالات والمكوّنات على المحاكي وجهاز فعلي.\n3. صمّم نموذج بيانات مجالك وقواعد التحقق والتحديث؛ السجل المحلي العام يحتوي عنوانًا وملاحظات وحالة فقط.\n4. نفّذ خدمات iCloud/CloudKit والصلاحيات وWidgets وLive Activities فقط إذا كانت مطلوبة في خطة مشروعك، مع قدراتها واختبارها في Xcode. خيارات المختبر توثّق هذه القرارات ولا تفعّل خدمات Apple تلقائيًا.\n5. راجع الخصوصية وإتاحة الوصول واختبارات الوظائف قبل توزيع التطبيق.\n\nهذا مشروع SwiftUI قابل للبناء للشاشات والتنقل والسجلات المحلية الاختيارية، ولا يُنشئ خادمًا أو حسابات مستخدمين أو مزامنة تلقائيًا.\n`;
+    return `# ${project.appName} — مشروع Xcode\n\nافتح VisualBuilderApp.xcodeproj في Xcode، اختر iPhone Simulator واضغط Run. ملف VisualBuilderApp.swift يحتوي الواجهات والتنقل التي صممتها. ملف VisualBuilderProject.json يحفظ قرارات المختبر ويمكن استيراده مجددًا في صفحة الويب.\n\n## تخزين السجلات\n\n${localPages.length ? `صفحات ${localPages.map(page => `«${page.title}»`).join('، ')} تستخدم SwiftData لإضافة سجلات محلية وتعديل عنوانها وملاحظاتها وحالة إكمالها وحذفها. تُنشأ أمثلة البداية مرة واحدة. تظهر في مشروع Xcode بقائمة SwiftUI نظامية ولو كان تخطيط المعاينة حرًا.` : 'جميع السجلات الحالية أمثلة عرض. اختر «سجلات محفوظة محليًا» في خصائص شاشة قائمة إذا أردت تخزينًا محليًا.'}\n${linkedPages.length ? `الشاشات المرتبطة: ${linkedPages.map(page => `«${page.title}» ← «${page.dataPresentation.sourcePage}»`).join('، ')}. تعرض السجلات نفسها.` : ''}\n${countPages.length ? `شاشات العدّ: ${countPages.map(page => `«${page.title}» ← «${page.dataPresentation.sourcePage}»`).join('، ')}. تعرض عدد السجلات المحفوظة.` : ''}\n${project.conceptBlueprint ? `\n## المثال المفاهيمي الاختياري\n\n${project.conceptBlueprint.concepts.map(item => `- ${item.name}: ${item.meaning}`).join('\n')}\n\nالعلاقات والآليات الداعمة: ${project.conceptBlueprint.supportingStructures.map(item => `${item.kind} (${item.meaning})`).join('؛ ')}. يمكن ربط السجلات الفردية بعلاقات مسماة وحفظها في SwiftData؛ حسابات المال وقواعد المجال والصلاحيات لم تُنفّذ تلقائيًا.\n` : ''}\n## قبل الاختبار على جهازك\n\n1. اختر فريق التوقيع في Signing & Capabilities، ثم غيّر Bundle Identifier الافتراضي com.example.visualbuilderapp.\n2. راجع جميع الصفحات والانتقالات والمكوّنات على المحاكي وجهاز فعلي.\n3. صمّم نموذج بيانات مجالك وقواعد التحقق والتحديث؛ السجل المحلي العام يحتوي عنوانًا وملاحظات وحالة فقط.\n4. نفّذ خدمات iCloud/CloudKit والصلاحيات وWidgets وLive Activities فقط إذا كانت مطلوبة في خطة مشروعك، مع قدراتها واختبارها في Xcode. خيارات المختبر توثّق هذه القرارات ولا تفعّل خدمات Apple تلقائيًا.\n5. راجع الخصوصية وإتاحة الوصول واختبارات الوظائف قبل توزيع التطبيق.\n\nهذه مسودة مشروع SwiftUI للشاشات والتنقل والسجلات المحلية الاختيارية. تتطلب المراجعة والبناء والاختبار في Xcode، ولا تُنشئ خادمًا أو حسابات مستخدمين أو مزامنة تلقائيًا.\n`;
   }
   function projectDocument() {
     state.tabs.forEach(reconcileFlowPages);
     return {
-      format: 'ios-visual-builder-project', schemaVersion: 3,
+      format: 'ios-visual-builder-project', schemaVersion: 4,
       exportedAt: new Date().toISOString(),
       target: { platform: 'iOS', device: 'iPhone 17 Pro', portraitScreenPoints: { width: 402, height: 874 }, framework: 'SwiftUI' },
       appName: state.appName,
@@ -5094,6 +5396,8 @@ struct BuilderRecordLinks: View {
       nativePlan: JSON.parse(JSON.stringify(state.architecture)),
       nativeImplementation: window.iOSNativeCatalog?.forPlan(state.architecture) || null,
       intendedType: state.intendedType || 'auto',
+      capabilityStatus: capabilityStatus.map(item => ({ ...item })),
+      projectAvailability: { browserStorage: 'مسودة محلية في هذا المتصفح فقط', publicLink: 'الرابط العام يفتح المحرر ولا يحمل مشروع المستخدم', transfer: 'صدّر JSON واستورده في المتصفح الآخر' },
       platformBehaviors: state.platformChoices.map(id => { const item = platformBehaviors.find(entry => entry[0] === id); return { id, name: item[1], verification: item[2], level: item[3] }; }),
       systemManaged: ['شريط الحالة: يديره iOS', 'الجزيرة الديناميكية: يديرها iOS، وتشارك التطبيقات عبر Live Activities المؤهلة'],
       mapView: state.mapView || 'network',
@@ -5102,17 +5406,18 @@ struct BuilderRecordLinks: View {
         order: index + 1, title: tab.label, icon: tab.icon, pageType: tab.kind, pageTypeMeaning: pageKinds[tab.kind].help,
         purpose: tab.purpose, layout: { mode: tab.layoutMode, screenCount: tab.canvasScreens, positionsPercent: JSON.parse(JSON.stringify(tab.layout)), canvasCardPositions: JSON.parse(JSON.stringify(tab.boardLayout || {})) }, tabBarMode: tab.tabBarMode, visualPresentation: { background: tab.backgroundStyle, animated: tab.backgroundMotion, listStyle: tab.listStyle, cardStyle: tab.cardStyle, titleStyle: tab.titleStyle, contentUnderHeader: tab.contentUnderHeader, featureCard: tab.featureCard ? { title: tab.featureTitle, subtitle: tab.featureSubtitle, fadesOnScroll: tab.collapseFeatureOnScroll } : null, numericKeyboard: tab.keyboardStyle }, dataPresentation: { style: tab.display, meaning: displayKinds[tab.display].help, title: tab.dataTitle, recordMode: tab.recordMode, datasetKey: tab.dataKey, sourceDatasetKey: tab.dataSourceKey || null, sourcePage: state.tabs.find(other => other.dataKey === tab.dataSourceKey)?.label || null, savedFields: tab.recordMode === 'local' ? [{ label: 'العنوان', type: 'text' }, { label: 'ملاحظات', type: 'text' }, { label: 'مكتمل', type: 'boolean' }, ...tab.recordFields] : [], calculation: tab.recordMode === 'count' ? 'recordCount' : null, sampleItems: sampleItems(tab), sampleNumbers: tab.display === 'chart' ? [12, 20, 16, 28] : undefined }, primaryNavigation: { type: tab.action, meaning: navigationKinds[tab.action].help },
         headerActions: JSON.parse(JSON.stringify(tab.headerActions)),
+        segmentControl: JSON.parse(JSON.stringify(tab.segmentOptions)), weeklyTimeline: JSON.parse(JSON.stringify(tab.timeline)), swipeActions: JSON.parse(JSON.stringify(tab.swipeActions)), testRowState: JSON.parse(JSON.stringify(tab.rowState)), rowKeys: [...tab.rowKeys], buttonAction: { ...tab.buttonAction },
         tools: tab.tools.map(id => ({ type: id, name: toolInfo[id].name, purpose: toolInfo[id].description, ...(extendedIds.has(id) ? { label: componentOption(tab, id).label, behavior: behaviorChoice(id, componentOption(tab, id).behavior)?.[1], behaviorId: componentOption(tab, id).behavior, browserSupport: behaviorChoice(id, componentOption(tab, id).behavior)?.[2] } : {}) })),
         customElements: tab.blocks.map(block => ({ type: block.type, label: block.label, action: block.type === 'button' ? block.action : undefined, previewValue: block.value })),
         previewState: { ...tab.values, detail: false },
         detailPage: tab.detailPage ? { title: tab.detailPage.label, purpose: tab.detailPage.purpose, pageType: tab.detailPage.kind, dataPresentation: { style: tab.detailPage.display, title: tab.detailPage.dataTitle, sampleItems: sampleItems(tab.detailPage) }, headerActions: tab.detailPage.headerActions, tools: tab.detailPage.tools, customElements: tab.detailPage.blocks, visualPresentation: { background: tab.detailPage.backgroundStyle, listStyle: tab.detailPage.listStyle, cardStyle: tab.detailPage.cardStyle }, layout: { mode: tab.detailPage.layoutMode, positionsPercent: tab.detailPage.layout } } : null,
-        flowScreens: tab.flowPages.map(route => ({ id: route.id, parentId: route.parentId || null, trigger: route.sourceKey, triggerLabel: route.sourceLabel, presentation: route.presentation, title: route.page.label, purpose: route.page.purpose, display: route.page.display, hideTabBarHereAndDescendants: route.page.hideTabBar, tabBarEffectivelyHidden: tabBarHiddenForRoute(tab, route.id), dataTitle: route.page.dataTitle, choices: sampleItems(route.page), headerActions: route.page.headerActions, tools: route.page.tools, customElements: route.page.blocks }))
+        flowScreens: tab.flowPages.map(route => ({ id: route.id, parentId: route.parentId || null, trigger: route.sourceKey, triggerLabel: route.sourceLabel, presentation: route.presentation, title: route.page.label, purpose: route.page.purpose, display: route.page.display, hideTabBarHereAndDescendants: route.page.hideTabBar, tabBarEffectivelyHidden: tabBarHiddenForRoute(tab, route.id), dataTitle: route.page.dataTitle, choices: sampleItems(route.page), headerActions: route.page.headerActions, tools: route.page.tools, segmentControl: route.page.segmentOptions, weeklyTimeline: route.page.timeline, swipeActions: route.page.swipeActions, customElements: route.page.blocks }))
       })),
       integration: { nodes: appGraph().nodes.length, connectedNodes: appGraph().nodes.filter(node => node.connected).length, interpretation: 'العداد يقيس ترابط مخطط الصفحات والأدوات وتقنيات التنفيذ المختارة، وليس تنفيذها في Xcode أو جاهزية التطبيق للإنتاج.' },
       blueprintAssessment: (() => { const result = assessProject(); return { completed: result.complete, total: result.checks.length, checks: result.checks, inferredType: result.inferred, selectedType: result.chosen, directionGoal: result.directionGoal, limitation: 'هذا تقييم لمدى توثيق مخطط الواجهة فقط؛ لا يثبت تنفيذ البيانات أو الخصوصية أو الوصولية أو الاختبار على جهاز.' }; })(),
       builderState: JSON.parse(JSON.stringify(state)),
       swiftUI: generateCode(),
-      scope: 'نموذج تعليمي تفاعلي للواجهة والتنقل ومجموعات سجلات SwiftData عامة وروابط مسماة؛ تأثيرات HTML تقرّب المظهر والحركة ولا تطابق نظام iOS أو Taptic Engine. الكود المولد يستخدم TabView وواجهة البحث الأصلية على iOS 26 فأحدث؛ لا يحدد نموذج المجال المتخصص أو الخادم أو الصلاحيات أو اختبارات جهاز فعلي.'
+      scope: 'نموذج تعليمي تفاعلي للواجهة والتنقل وبيانات تجربة محلية وسجلات SwiftData عامة وروابط مسماة؛ رابط الصفحة لا يحمل مشروعك المحفوظ محليًا. تأثيرات HTML تقرّب المظهر والحركة ولا تطابق نظام iOS أو Taptic Engine. الكود المولد يحتاج مراجعة واختبارًا في Xcode؛ لا يحدد نموذج المجال المتخصص أو الخادم أو الصلاحيات أو اختبارات جهاز فعلي.'
     };
   }
   function handoffMarkdown(project) {
@@ -5123,7 +5428,21 @@ struct BuilderRecordLinks: View {
   }
   document.querySelector('#downloadProject').addEventListener('click', () => {
     downloadText('VisualBuilderProject.json', JSON.stringify(projectDocument(), null, 2), 'application/json;charset=utf-8');
-    document.querySelector('#projectStatus').textContent = 'نُزّل ملف JSON؛ يمكن استيراده لاستكمال البناء.';
+    document.querySelector('#projectStatus').textContent = 'طُلب تنزيل ملف JSON. إن منع المتصفح التنزيل، افتح «عرض JSON للنسخ» واحفظ النص بامتداد .json.';
+  });
+  document.querySelector('#showProjectJson').addEventListener('click', event => {
+    const preview = document.querySelector('#projectJsonPreview');
+    const expanded = event.currentTarget.getAttribute('aria-expanded') === 'true';
+    if (expanded) {
+      preview.hidden = true;
+      preview.textContent = '';
+      event.currentTarget.setAttribute('aria-expanded', 'false');
+      return;
+    }
+    preview.textContent = JSON.stringify(projectDocument(), null, 2);
+    preview.hidden = false;
+    event.currentTarget.setAttribute('aria-expanded', 'true');
+    preview.focus();
   });
   document.querySelector('#downloadXcodeProject').addEventListener('click', () => {
     const project = projectDocument();
@@ -5148,22 +5467,27 @@ struct BuilderRecordLinks: View {
     if (!file) return;
     const status = document.querySelector('#projectStatus');
     try {
-      if (file.size > 2_000_000) throw new Error('الملف أكبر من ٢ ميغابايت.');
+      if (file.size > 10_000_000) throw new Error('الملف أكبر من ١٠ ميغابايت.');
       const content = await file.text();
-      const jsonText = file.name.toLowerCase().endsWith('.md') ? content.match(/`{4}json\s*([\s\S]*?)`{4}/)?.[1] : content;
+      const jsonText = file.name.toLowerCase().endsWith('.md') ? content.match(/`{3,4}json\s*([\s\S]*?)`{3,4}/)?.[1] : content;
       if (!jsonText) throw new Error('لم أجد بنية JSON في ملف الوصف.');
       const project = JSON.parse(jsonText);
       if (project.format !== 'ios-visual-builder-project' || !project.builderState) throw new Error('هذا ليس ملف مشروع صادرًا من المختبر.');
       state = validatedState(project.builderState);
       flowPath = [];
+      boardSelected = { page: state.activeTab, routeId: '' };
+      boardScope = 'all';
+      boardEditing = false;
       globalSearchOpen = false; globalSearchText = ''; tabBarCompact = false;
       appNameInput.value = state.appName;
       appGoalInput.value = state.appGoal;
       overlay = null;
       inspected = 'tabbar';
       renderAll();
+      if (buildWorkspaceOpen && !designCanvasWorkspace.hidden) renderDesignCanvas(true);
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 2, state })); } catch (_) {}
       window.dispatchEvent(new Event('ios-builder-change'));
-      status.textContent = `استُورد مشروع «${state.appName}» وفيه ${formatNumber(state.tabs.length)} صفحات.`;
+      status.textContent = `استُورد مشروع «${state.appName}» وفيه ${formatNumber(state.tabs.length)} صفحات. حُفظ محليًا؛ الرابط العام لا يحمل بياناته.`;
     } catch (error) { status.textContent = `تعذر الاستيراد: ${error.message}`; }
     projectFile.value = '';
   });
@@ -5191,6 +5515,65 @@ struct BuilderRecordLinks: View {
       experienceSignal('عودة إلى القسم');
     }
   });
+  let rowPointer = null;
+  builderScreen.addEventListener('pointerdown', event => {
+    const row = event.target.closest('.builder-test-row');
+    if (!row || !['mouse', 'pen', 'touch'].includes(event.pointerType)) return;
+    rowPointer = { pointerId: event.pointerId, page: interactionPage(row), from: Number(row.dataset.testRow), x: event.clientX, y: event.clientY, drag: Boolean(event.target.closest('.row-drag-handle')), moved: false };
+    if (rowPointer.drag) { event.preventDefault(); row.classList.add('dragging'); }
+  });
+  builderScreen.addEventListener('pointermove', event => {
+    if (!rowPointer || rowPointer.pointerId !== event.pointerId || !rowPointer.drag) return;
+    if (Math.abs(event.clientY - rowPointer.y) < 8) return;
+    rowPointer.moved = true;
+    builderScreen.querySelectorAll('.builder-test-row.drag-target').forEach(node => node.classList.remove('drag-target'));
+    document.elementFromPoint(event.clientX, event.clientY)?.closest('.builder-test-row')?.classList.add('drag-target');
+  });
+  builderScreen.addEventListener('pointerup', event => {
+    if (!rowPointer || rowPointer.pointerId !== event.pointerId) return;
+    const start = rowPointer; rowPointer = null;
+    const dx = event.clientX - start.x, dy = event.clientY - start.y;
+    if (start.drag) {
+      const target = document.elementFromPoint(event.clientX, event.clientY)?.closest('.builder-test-row');
+      builderScreen.querySelectorAll('.builder-test-row.drag-target,.builder-test-row.dragging').forEach(node => node.classList.remove('drag-target', 'dragging'));
+      if (start.moved && target) reorderTestRow(start.page, start.from, Number(target.dataset.testRow));
+      return;
+    }
+    if (Math.abs(dx) < 42 || Math.abs(dx) <= Math.abs(dy) * 1.2) return;
+    const direction = dx > 0 ? 'leading' : 'trailing';
+    const actionIndex = start.page.swipeActions.findIndex(action => action.direction === direction);
+    if (actionIndex < 0) return;
+    if (Math.abs(dx) > 125) runSwipeAction(start.page, start.from, actionIndex, true);
+    else {
+      builderScreen.querySelectorAll('.builder-test-row.swiped').forEach(node => node.classList.remove('swiped'));
+      builderScreen.querySelector(`.builder-test-row[data-test-row="${start.from}"]`)?.classList.add('swiped');
+      experienceSignal('ظهرت إجراءات السحب؛ اهتزاز iPhone الحقيقي غير متاح في المتصفح');
+    }
+  });
+  builderScreen.addEventListener('pointercancel', () => { rowPointer = null; });
+  let draggedRow = null;
+  builderScreen.addEventListener('dragstart', event => {
+    const row = event.target.closest('.builder-test-row');
+    if (!row) return;
+    draggedRow = { page: interactionPage(row), from: Number(row.dataset.testRow) };
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/plain', String(draggedRow.from));
+    row.classList.add('dragging');
+  });
+  builderScreen.addEventListener('dragover', event => {
+    const row = event.target.closest('.builder-test-row');
+    if (!row || !draggedRow) return;
+    event.preventDefault(); event.dataTransfer.dropEffect = 'move'; row.classList.add('drag-target');
+  });
+  builderScreen.addEventListener('dragleave', event => event.target.closest('.builder-test-row')?.classList.remove('drag-target'));
+  builderScreen.addEventListener('drop', event => {
+    const row = event.target.closest('.builder-test-row');
+    if (!row || !draggedRow) return;
+    event.preventDefault();
+    reorderTestRow(draggedRow.page, draggedRow.from, Number(row.dataset.testRow));
+    draggedRow = null;
+  });
+  builderScreen.addEventListener('dragend', () => { draggedRow = null; builderScreen.querySelectorAll('.builder-test-row.drag-target,.builder-test-row.dragging').forEach(node => node.classList.remove('drag-target', 'dragging')); });
   let experiencePointer = null;
   builderScreen.addEventListener('pointerdown', event => {
     if (simulatorMode !== 'experience') return;
